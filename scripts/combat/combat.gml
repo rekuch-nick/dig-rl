@@ -12,7 +12,7 @@ function combat(c1, c2){
 		var dam = irandom_range(getMeleeMin(c1), getMeleeMax(c1));
 		c2.hp -= dam;
 		
-		var sn = c2.hp < 1 ? ". " + c2.nam + " is killed!" : "";
+		var sn = c2.hp < 1 ? ". " + c2.nam + " is killed!" : ".";
 		var v = c1 == pc ? " hit " : " hits ";
 		logMessage(c1.nam + v + c2.nam + " for " + string(dam) + sn);
 		

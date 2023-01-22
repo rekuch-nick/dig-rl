@@ -18,11 +18,21 @@ if(dis < -30){
 	
 	var m = ww.mmap[floor(xt / 64), floor(yt / 64)];
 	if(m != noone){
-		m.hp -= throwPower;	
+		
 		
 		if(throwProc != ""){
 			
 		}
+		
+		
+		var dam = throwPower;
+		m.hp -= dam;	
+		
+		
+		var sn = m.hp < 1 ? m.nam + " is killed!" : "";
+		
+		logMessage("Threw the " + nam + " at " + m.nam + " for " + string(dam) + ".");
+		if(sn != ""){ logMessage(sn); }
 		
 	}
 	

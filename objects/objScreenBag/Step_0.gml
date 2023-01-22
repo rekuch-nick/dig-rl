@@ -48,6 +48,16 @@ if(pc.bag[cursor] != noone && pc.clickChar != ""){
 		}
 	}
 	
+	if((pc.clickChar == "U" || pc.clickChar == "Q")&& pc.bag[cursor] != noone){
+		if(itemIsEquipped(pc.bag[cursor]) == -1){
+			
+			//eat food, drink potions, activate other things
+			
+			
+			
+		}
+	}
+	
 	
 	playerEatInput();
 }
