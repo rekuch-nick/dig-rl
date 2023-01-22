@@ -1,6 +1,19 @@
 draw_self();
 
 
+if(instance_number(objScreenThrow) > 0){
+	
+	for(var i=1; i<array_length(line); i++){
+		draw_sprite_stretched(imgCursorAim, image_index, line[i].a * 64, line[i].b * 64, 64, 64);
+		
+		if(i == array_length(line) - 1){
+			draw_sprite_stretched(imgCursorAim2, image_index, line[i].a * 64, line[i].b * 64, 64, 64);
+		}
+	}
+	
+	
+}
+
 if(txt != ""){
 	var c = c_orange;
 	if(txt == "HIT"){ c = c_red; }

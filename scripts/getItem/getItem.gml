@@ -11,6 +11,8 @@ function getItem(t){
 		armor: 0,
 		armorCheck: 0,
 		food: 0,
+		throwPower: 10,
+		spell: "",
 	};
 	
 	if(t == "Rock"){ 
@@ -29,6 +31,7 @@ function getItem(t){
 	
 	
 	if(t == "Sword"){ 
+		itm.img = imgGearWepSword;
 		itm.kind = "Weapon";
 		itm.bonus = 0;
 		itm.col = c_white;
@@ -88,6 +91,7 @@ function getItem(t){
 	
 	
 	if(t == "Ring of Protection"){ 
+		itm.img = imgGearRing;
 		itm.kind = "Ring";
 		itm.bonus = 1;
 		itm.col = c_green;

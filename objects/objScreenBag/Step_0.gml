@@ -1,8 +1,5 @@
-subCursor = mouse_y % 64 >= 32 ? 1 : 0;
-cursor = pc.yMouse * 2 + subCursor;
-
-
-
+subCursor = device_mouse_y_to_gui(0) % 64 >= 32 ? 1 : 0;
+cursor = (floor(device_mouse_y_to_gui(0) / 64) * 2) + subCursor;
 
 
 
@@ -27,7 +24,29 @@ if(pc.bag[cursor] != noone && pc.clickChar != ""){
 		
 	}
 	
+	if(pc.clickChar == "F" && ww.pmap[pc.xSpot, pc.ySpot] == noone){
+		if(itemIsEquipped(pc.bag[cursor]) == -1){
+			ww.pmap[pc.xSpot, pc.ySpot] = instance_create_depth(pc.xSpot * 64, pc.ySpot * 64, ww.layerP, objPup);
+			ww.pmap[pc.xSpot, pc.ySpot].itm = pc.bag[cursor];
+			ww.pmap[pc.xSpot, pc.ySpot].sprite_index = pc.bag[cursor].img;
+			pc.bag[cursor] = noone;
+		}
+	}
 	
+	if(pc.clickChar == "T" && pc.bag[cursor] != noone){
+		if(itemIsEquipped(pc.bag[cursor]) == -1){
+			logClear();
+			logMessage("Throw the " + pc.bag[cursor].nam + " where?");
+			logMessage("Warning: it will be gone forever! R-Click to cancel");
+			
+			
+			//visible = false;
+			var s = instance_create_depth(0, 0, ww.layerS, objScreenThrow);
+			s.index = cursor;
+			
+			instance_destroy();
+		}
+	}
 	
 	
 	playerEatInput();

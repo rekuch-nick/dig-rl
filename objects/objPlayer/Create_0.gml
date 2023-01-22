@@ -5,7 +5,7 @@ image_xscale = 2; image_yscale = 2;
 
 depth = -7010;
 stage = 0;
-
+wait = 0;
 moveSpeed = 4;
 moved = false;
 justFinished = false;

@@ -1,6 +1,6 @@
 playerGetInput();
 if(instance_number(objScreen) > 0){ return; }
-
+if(wait > 0){ wait--; return; }
 
 
 
@@ -12,9 +12,9 @@ if(!moved){
 	
 	
 	
-	
-	
 	xTar = xSpot; yTar = ySpot;
+	
+	
 	
 	xTar += xIn;
 	yTar += yIn;

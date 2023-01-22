@@ -1,3 +1,4 @@
+if(!visible){ return; }
 draw_self();
 
 draw_rectangle_color(x + 64, cursor * 32, x + (64 * 9), cursor * 32 + 32, c_navy, c_navy, c_navy, c_navy, false);

@@ -4,3 +4,4 @@ image_alpha = .5;
 depth = ww.layerM - 100;
 
 txt = "GO";
+line = [];

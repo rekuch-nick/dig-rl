@@ -8,7 +8,7 @@ function playerPickupItem(a, b){
 		return; 
 	}
 	
-	//pc.bag[playerGetEmptyBagSlot()] = i.itm;
+	pc.bag[playerGetEmptyBagSlot()] = i.itm;
 	
 	instance_destroy(ww.pmap[a, b]);
 	ww.pmap[a, b] = noone;

@@ -1,0 +1,33 @@
+
+
+
+
+
+
+if(pc.clickNO || pc.clickRM){
+	logClear();
+	playerEatInput();
+	instance_destroy();	
+}
+
+
+
+if(pc.clickLM){
+	logClear();
+	
+	
+	var s = instance_create_depth(pc.xSpot * 64, pc.ySpot * 64, ww.layerM - 200, objThrowable);
+	s.sprite_index = pc.bag[index].img;
+	s.throwPower = pc.bag[index].throwPower;
+	s.throwProc = pc.bag[index].spell;
+	s.xt = pc.xMouse * 64;
+	s.yt = pc.yMouse * 64;
+	
+	
+	
+	pc.bag[index] = noone;
+	playerEatInput();
+	instance_destroy();	
+}
+
+
