@@ -1,0 +1,3 @@
+function logClear(){
+	ww.messageLog = [];
+}
