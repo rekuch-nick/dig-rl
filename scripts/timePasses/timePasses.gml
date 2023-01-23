@@ -9,7 +9,8 @@ function timePasses(){
 		}
 	}
 	
-	pc.food = clamp(pc.food - 1, 0, pc.foodMax);
+	playerDigest(2);
+	
 	
 	if(pc.food > 0){
 		
@@ -28,6 +29,8 @@ function timePasses(){
 			if(hp < 1){ logMessageWhom(nam, "succumb", "to the poison", id); }
 		}
 	}
+	
+	
 	
 	mobsAttack();
 }

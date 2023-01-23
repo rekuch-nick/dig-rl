@@ -19,7 +19,7 @@ function playerInit(){
 	pc.food = 2000;
 	pc.foodMax = 2000;
 
-
+	pc.props = [];
 
 	pc.stepsMax = 12; //
 

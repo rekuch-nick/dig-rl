@@ -40,8 +40,7 @@ function potionEffect(pid, a, b){
 	if(pid == ww.potIce){
 		instance_create_depth(a * 64, b * 64, ww.layerE, effColdBlast);
 		if(m != noone){
-			m.frozen += irandom_range(1, 4);
-			if(m != pc){ m.frozen += irandom_range(1, 4); }
+			m.frozen += 6;
 			logMessageWhom(m.nam, "freeze", "", m);
 		}
 	}
@@ -108,6 +107,37 @@ function potionEffect(pid, a, b){
 						break;
 					}
 				}
+			}
+		}
+	}
+	
+	if(pid == ww.potBlessWep){
+		if(m != noone){
+			if(m.gear[0] != noone){
+				itemEnchant(m.gear[0], 1);
+			} else {
+				logMessage("No weapon to bless there");
+			}
+		}
+	}
+	
+	if(pid == ww.potBlessArm){
+		if(m != noone){
+			if(m.gear[1] != noone){
+				itemEnchant(m.gear[1], 1);
+			} else {
+				logMessage("No armor to bless there");
+			}
+		}
+	}
+	
+	if(pid == ww.potBlessRing){
+		if(m != noone){
+			if(m.gear[2] != noone){ itemEnchant(m.gear[2], 1); }
+			if(m.gear[3] != noone){ itemEnchant(m.gear[3], 1); }
+			
+			if(m.gear[2] == noone && m.gear[3] == noone){
+				logMessage("No rings to bless there");
 			}
 		}
 	}

@@ -19,7 +19,7 @@ splRange = 4;
 food = 2000;
 foodMax = 2000;
 
-for(var i=0; i<12; i++){ gear[i] = noone; }
+for(var i=0; i<26; i++){ gear[i] = noone; }
 
 stepsMax = 12;
 
@@ -28,3 +28,5 @@ frozen = 0;
 poison = 0;
 swordmastery = 0;
 defense = 0;
+
+props = [];

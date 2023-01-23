@@ -20,7 +20,20 @@ function randomItem(r){
 			"Plate Armor",
 	); }
 	
-	if( r >= 3 && r <= 8){ return choose(
+	if(r == 3){ return choose(
+			"Sword",
+			"Axe",
+			"Spear"
+	); }
+	
+	if(r == 4){ return choose(
+			"Ring of Protection",
+			"Ring of Sustenance",
+			"Ring of Lightning",
+			"Ring of Striking"
+	); }
+	
+	if( r >= 5 && r <= 8){ return choose(
 			"Healing Potion",
 			"Blasting Potion",
 			"Ice Potion",
@@ -32,7 +45,10 @@ function randomItem(r){
 	
 	if( r == 9 ){ return choose(
 			"STR Potion",
-			"AGI Potion"
+			"AGI Potion",
+			"Bless Weapon Potion","Bless Weapon Potion",
+			"Bless Armor Potion","Bless Armor Potion",
+			"Bless Rings Potion"
 	); }
 
 }

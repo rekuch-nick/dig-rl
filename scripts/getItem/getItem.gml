@@ -38,6 +38,22 @@ function getItem(t){
 		itm.col = c_white;
 		itm.damRange = 10;
 	}
+	if(t == "Spear"){ 
+		itm.img = imgGearWepSpear;
+		itm.kind = "Weapon";
+		itm.bonus = 0;
+		itm.col = c_white;
+		itm.damRange = 10;
+		itm.props = ["Pierce"];
+	}
+	if(t == "Axe"){ 
+		itm.img = imgGearWepAxe;
+		itm.kind = "Weapon";
+		itm.bonus = 0;
+		itm.col = c_white;
+		itm.damRange = 10;
+		itm.props = ["Cleave"];
+	}
 	
 	
 	if(t == "Leather Armor"){ 
@@ -91,12 +107,37 @@ function getItem(t){
 	}
 	
 	
+	
 	if(t == "Ring of Protection"){ 
 		itm.img = imgGearRing;
 		itm.kind = "Ring";
 		itm.bonus = 1;
-		itm.col = c_green;
+		itm.col = c_lime;
 		itm.props = ["Protection"];
+	}
+	
+	if(t == "Ring of Sustenance"){ 
+		itm.img = imgGearRing;
+		itm.kind = "Ring";
+		itm.bonus = 1;
+		itm.col = c_lime;
+		itm.props = ["Slow Digestion"];
+	}
+	
+	if(t == "Ring of Lightning"){ 
+		itm.img = imgGearRing;
+		itm.kind = "Ring";
+		itm.bonus = 1;
+		itm.col = c_lime;
+		itm.props = ["Random Bolts"];
+	}
+	
+	if(t == "Ring of Striking"){ 
+		itm.img = imgGearRing;
+		itm.kind = "Ring";
+		itm.bonus = 1;
+		itm.col = c_lime;
+		itm.props = ["Melee Aim"];
 	}
 	
 	
@@ -109,7 +150,7 @@ function getItem(t){
 		itm.kind = "Potion";
 		itm.throwPower = 0;
 		itm.bonus = 0;
-		itm.col = c_ltgrey;
+		itm.col = c_orange;
 		itm.potID = ww.potHeal;
 	}
 	
@@ -118,7 +159,7 @@ function getItem(t){
 		itm.kind = "Potion";
 		itm.throwPower = 0;
 		itm.bonus = 0;
-		itm.col = c_ltgrey;
+		itm.col = c_orange;
 		itm.potID = ww.potBomb;
 	}
 	
@@ -127,7 +168,7 @@ function getItem(t){
 		itm.kind = "Potion";
 		itm.throwPower = 0;
 		itm.bonus = 0;
-		itm.col = c_ltgrey;
+		itm.col = c_orange;
 		itm.potID = ww.potIce;
 	}
 	
@@ -136,7 +177,7 @@ function getItem(t){
 		itm.kind = "Potion";
 		itm.throwPower = 0;
 		itm.bonus = 0;
-		itm.col = c_ltgrey;
+		itm.col = c_orange;
 		itm.potID = ww.potPoison;
 	}
 	
@@ -145,7 +186,7 @@ function getItem(t){
 		itm.kind = "Potion";
 		itm.throwPower = 0;
 		itm.bonus = 0;
-		itm.col = c_ltgrey;
+		itm.col = c_orange;
 		itm.potID = ww.potSTR;
 	}
 	
@@ -154,7 +195,7 @@ function getItem(t){
 		itm.kind = "Potion";
 		itm.throwPower = 0;
 		itm.bonus = 0;
-		itm.col = c_ltgrey;
+		itm.col = c_orange;
 		itm.potID = ww.potAGI;
 	}
 	
@@ -163,7 +204,7 @@ function getItem(t){
 		itm.kind = "Potion";
 		itm.throwPower = 0;
 		itm.bonus = 0;
-		itm.col = c_ltgrey;
+		itm.col = c_orange;
 		itm.potID = ww.potWarp;
 	}
 	
@@ -172,7 +213,7 @@ function getItem(t){
 		itm.kind = "Potion";
 		itm.throwPower = 0;
 		itm.bonus = 0;
-		itm.col = c_ltgrey;
+		itm.col = c_orange;
 		itm.potID = ww.potSword;
 	}
 	
@@ -181,8 +222,35 @@ function getItem(t){
 		itm.kind = "Potion";
 		itm.throwPower = 0;
 		itm.bonus = 0;
-		itm.col = c_ltgrey;
+		itm.col = c_orange;
 		itm.potID = ww.potDefense;
+	}
+	
+	if(t == "Bless Weapon Potion"){ 
+		itm.img = imgPotionBlessWep;
+		itm.kind = "Potion";
+		itm.throwPower = 0;
+		itm.bonus = 0;
+		itm.col = c_orange;
+		itm.potID = ww.potBlessWep;
+	}
+	
+	if(t == "Bless Armor Potion"){ 
+		itm.img = imgPotionBlessArm;
+		itm.kind = "Potion";
+		itm.throwPower = 0;
+		itm.bonus = 0;
+		itm.col = c_orange;
+		itm.potID = ww.potBlessArm;
+	}
+	
+	if(t == "Bless Rings Potion"){ 
+		itm.img = imgPotionBlessRing;
+		itm.kind = "Potion";
+		itm.throwPower = 0;
+		itm.bonus = 0;
+		itm.col = c_orange;
+		itm.potID = ww.potBlessRing;
 	}
 	
 	

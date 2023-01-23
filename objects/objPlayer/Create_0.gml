@@ -25,8 +25,11 @@ autoPickup = true;
 
 
 
-//bag[2] = getItem("Ring of Protection");
-//bag[3] = getItem("Ring of Protection");
+//bag[2] = getItem("Spear");
+//bag[3] = getItem("Axe");
+
+bag[3] = itemEnchant( getItem("Ring of Lightning"), 4);
+
 //bag[4] = getItem("Ring of Protection");
 //bag[5] = getItem("Leather Armor");
 

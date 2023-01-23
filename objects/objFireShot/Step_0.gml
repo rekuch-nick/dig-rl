@@ -8,7 +8,7 @@ if(firstFrame){
 	dis = point_distance(x, y, xt, yt);
 }
 
-pc.wait = true;
+pc.wait = 1;
 
 x += xs;
 y += ys;

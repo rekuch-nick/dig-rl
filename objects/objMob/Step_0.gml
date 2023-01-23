@@ -1,5 +1,5 @@
 if(instance_number(objScreen) > 0){ return; }
-
+if(pc.wait > 0){ return; }
 
 characterMove(id);
 if(!moved && ready){
@@ -12,6 +12,7 @@ if(!moved && ready){
 	
 	
 	var tar = pathing(xSpot, ySpot, pc.xSpot, pc.ySpot, true);
+	if(tar == noone){ tar = pathing(xSpot, ySpot, pc.xSpot, pc.ySpot, false); }
 	
 	if(tar != noone){
 		if(characterCanMove(id, tar.a, tar.b)){

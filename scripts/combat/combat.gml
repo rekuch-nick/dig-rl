@@ -10,6 +10,12 @@ function combat(c1, c2){
 	if(hitRoll >= tar || c2.frozen > 0){
 		
 		var dam = irandom_range(getMeleeMin(c1), getMeleeMax(c1));
+		
+		if(characterHasProp(c2, "Protection")){
+			var protReduction = itemPropBonus(c2, "Protection");
+			dam = clamp(dam - protReduction, 0, dam);
+		}
+		
 		if(c2.frozen > 0){ dam *= 2; }
 		if(c1.swordmastery > 0){
 			c1.swordmastery --;

@@ -52,6 +52,7 @@ if(!moved){
 		if(xTar > xSpot){ face = 1; }
 	
 		if(characterCanMove(id, xTar, yTar)){
+			
 			ww.mmap[xSpot, ySpot] = noone;
 			xSpot = xTar; ySpot = yTar;
 			ww.mmap[xSpot, ySpot] = id;
@@ -60,7 +61,14 @@ if(!moved){
 		} else if(inBounds(xTar, yTar) && ww.mmap[xTar, yTar] != noone && (clickLM || !holdLM) ) {
 			logClear();
 			
+			if(characterHasProp(pc, "Random Bolts")){
+				var n = itemPropBonus(pc, "Random Bolts") * 10;
+				if(irandom_range(0, 99) < n){ playerRandomLightning(); }
+			}
+			
+			
 			characterShiftTowards(id, xTar, yTar);
+			combatExtraTiles(id, xTar, yTar);
 			combat(id, ww.mmap[xTar, yTar]);
 			//mobsAttack();
 		
@@ -68,9 +76,10 @@ if(!moved){
 		
 			if(inBounds(xTar, yTar)){
 				if(ww.bmap[xTar, yTar] != noone && tileDigCost(xTar, yTar) > 0){
-					pc.food -= .2;
+					//pc.food -= .2;
 					ww.bmap[xTar, yTar].hp --;
 					if(ww.bmap[xTar, yTar].hp < 1){
+						playerDigest(20);
 						tileBreak(xTar, yTar);
 						//instance_destroy(ww.bmap[xTar, yTar]);
 						//ww.bmap[xTar, yTar] = noone;

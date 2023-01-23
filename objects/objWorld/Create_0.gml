@@ -25,6 +25,9 @@ potAGI = 5;
 potWarp = 6;
 potSword = 7;
 potDefense = 8;
+potBlessWep = 9;
+potBlessArm = 10;
+potBlessRing = 11;
 
 rollWord = false;
 seed = 1;

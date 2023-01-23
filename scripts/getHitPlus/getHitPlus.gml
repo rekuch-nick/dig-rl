@@ -7,5 +7,9 @@ function getHitPlus(c){
 		n += c.gear[ww.gsWep].bonus;
 	}
 	
+	if(characterHasProp(c, "Melee Aim")){
+		n += itemPropBonus(c, "Melee Aim");
+	}
+	
 	return n;
 }
