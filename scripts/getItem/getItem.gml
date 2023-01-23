@@ -13,6 +13,7 @@ function getItem(t){
 		food: 0,
 		throwPower: 10,
 		spell: "",
+		potID: -1,
 	};
 	
 	if(t == "Rock"){ 
@@ -97,6 +98,93 @@ function getItem(t){
 		itm.col = c_green;
 		itm.props = ["Protection"];
 	}
+	
+	
+	
+	
+	
+	
+	if(t == "Healing Potion"){ 
+		itm.img = imgPotionHealing;
+		itm.kind = "Potion";
+		itm.throwPower = 0;
+		itm.bonus = 0;
+		itm.col = c_ltgrey;
+		itm.potID = ww.potHeal;
+	}
+	
+	if(t == "Blasting Potion"){ 
+		itm.img = imgPotionBlasting;
+		itm.kind = "Potion";
+		itm.throwPower = 0;
+		itm.bonus = 0;
+		itm.col = c_ltgrey;
+		itm.potID = ww.potBomb;
+	}
+	
+	if(t == "Ice Potion"){ 
+		itm.img = imgPotionIce;
+		itm.kind = "Potion";
+		itm.throwPower = 0;
+		itm.bonus = 0;
+		itm.col = c_ltgrey;
+		itm.potID = ww.potIce;
+	}
+	
+	if(t == "Poison Potion"){ 
+		itm.img = imgPotionPoison;
+		itm.kind = "Potion";
+		itm.throwPower = 0;
+		itm.bonus = 0;
+		itm.col = c_ltgrey;
+		itm.potID = ww.potPoison;
+	}
+	
+	if(t == "STR Potion"){ 
+		itm.img = imgPotionStr;
+		itm.kind = "Potion";
+		itm.throwPower = 0;
+		itm.bonus = 0;
+		itm.col = c_ltgrey;
+		itm.potID = ww.potSTR;
+	}
+	
+	if(t == "AGI Potion"){ 
+		itm.img = imgPotionAgi;
+		itm.kind = "Potion";
+		itm.throwPower = 0;
+		itm.bonus = 0;
+		itm.col = c_ltgrey;
+		itm.potID = ww.potAGI;
+	}
+	
+	if(t == "Warp Potion"){ 
+		itm.img = imgPotionWarp;
+		itm.kind = "Potion";
+		itm.throwPower = 0;
+		itm.bonus = 0;
+		itm.col = c_ltgrey;
+		itm.potID = ww.potWarp;
+	}
+	
+	if(t == "Swordmastery Potion"){ 
+		itm.img = imgPotionSwordmastery;
+		itm.kind = "Potion";
+		itm.throwPower = 0;
+		itm.bonus = 0;
+		itm.col = c_ltgrey;
+		itm.potID = ww.potSword;
+	}
+	
+	if(t == "Defense Potion"){ 
+		itm.img = imgPotionDefense;
+		itm.kind = "Potion";
+		itm.throwPower = 0;
+		itm.bonus = 0;
+		itm.col = c_ltgrey;
+		itm.potID = ww.potDefense;
+	}
+	
 	
 	
 	return itm;

@@ -1,4 +1,5 @@
 playerGetInput();
+if(hp < 1){ gameOver(); playerEatInput(); return; }
 if(instance_number(objScreen) > 0){ return; }
 if(wait > 0){ wait--; return; }
 
@@ -43,6 +44,8 @@ if(!moved){
 	
 	
 	if(xTar != xSpot || yTar != ySpot){
+		if(frozen > 0){ timePasses(); frozen --; return; }
+		
 		if(clickLM || !holdLM){ logClear(); }
 		
 		if(xTar < xSpot){ face = -1; }
@@ -68,8 +71,9 @@ if(!moved){
 					pc.food -= .2;
 					ww.bmap[xTar, yTar].hp --;
 					if(ww.bmap[xTar, yTar].hp < 1){
-						instance_destroy(ww.bmap[xTar, yTar]);
-						ww.bmap[xTar, yTar] = noone;
+						tileBreak(xTar, yTar);
+						//instance_destroy(ww.bmap[xTar, yTar]);
+						//ww.bmap[xTar, yTar] = noone;
 						ww.fmap[xTar, yTar].playerSeen = true;
 						
 						timePasses();
@@ -122,7 +126,8 @@ if(viewCD > 0){ viewCD --; } else {
 }
 
 
-if(clickChar == "I" || clickChar == "B"){
+if(clickChar == "I" || clickChar == "B" || clickChar == "Z" || clickChar == "Q" || clickChar == "E" ){
+	if(frozen > 0){ return; }
 	instance_create_depth(0, 0, ww.layerS, objScreenBag);
 }
 

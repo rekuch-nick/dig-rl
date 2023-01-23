@@ -4,6 +4,8 @@ if(instance_number(objScreen) > 0){ return; }
 characterMove(id);
 if(!moved && ready){
 	ready = false;
+	if(moveCD > 0){ moveCD --; return; }
+	if(frozen > 0){ frozen --; return; }
 	
 	if(irandom_range(0, 99) < sleepChance){ return; }
 	if(abs(xSpot - pc.xSpot) + abs(ySpot - pc.ySpot) > stepsMax){ return; }

@@ -8,6 +8,7 @@ layerF = -100;
 layerB = -2000;
 layerP = -5000;
 layerM = -7000;
+layerE = -8000;
 layerS = -9000;
 
 gsWep = 0;
@@ -15,6 +16,15 @@ gsArm = 1;
 gsRing = 2;
 gsRing2 = 3;
 
+potHeal = 0;
+potBomb = 1;
+potIce = 2;
+potPoison = 3;
+potSTR = 4;
+potAGI = 5;
+potWarp = 6;
+potSword = 7;
+potDefense = 8;
 
 rollWord = false;
 seed = 1;
@@ -23,9 +33,7 @@ draw_set_font(fntPlain);
 
 instance_create_depth(0, 0, layerS, objScreenTitle);
 logClear();
-logMessage("Welcome, brave rogue!");
-logMessage("You seek the holy rouge, an enchanted makeup said to");
-logMessage("grant any wish.");
-logMessage("Beware, it is garded by monsters and trap, and worst");
-logMessage("of all, you are not the only rogue who seeks it.");
+
+logInit();
+
 

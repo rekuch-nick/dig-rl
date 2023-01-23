@@ -9,6 +9,12 @@ function playerPickupItem(a, b){
 	}
 	
 	pc.bag[playerGetEmptyBagSlot()] = i.itm;
+	var n = i.itm.nam;
+	if(i.itm.potID != -1 && !pc.potionKnown[i.itm.potID]){
+		n = "Unidentified Potion";
+	}
+	logMessage("Picked up " + n);
+	
 	
 	instance_destroy(ww.pmap[a, b]);
 	ww.pmap[a, b] = noone;

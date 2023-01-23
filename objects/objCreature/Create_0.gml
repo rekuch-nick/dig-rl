@@ -14,7 +14,7 @@ agi = 10; //+evd (reduced by armor penalty)
 ac = 10; // bast / monster def stat
 aim = 0; // monster +hit stat
 damRange = 4; // damagerange when not weirlding a weapon only
-
+splRange = 4;
 
 food = 2000;
 foodMax = 2000;
@@ -24,3 +24,7 @@ for(var i=0; i<12; i++){ gear[i] = noone; }
 stepsMax = 12;
 
 
+frozen = 0;
+poison = 0;
+swordmastery = 0;
+defense = 0;

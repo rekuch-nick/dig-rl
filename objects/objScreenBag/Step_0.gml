@@ -33,11 +33,13 @@ if(pc.bag[cursor] != noone && pc.clickChar != ""){
 		}
 	}
 	
-	if(pc.clickChar == "T" && pc.bag[cursor] != noone){
+	if( (pc.clickChar == "T" || pc.clickChar == "Z") && pc.bag[cursor] != noone){
 		if(itemIsEquipped(pc.bag[cursor]) == -1){
 			logClear();
-			logMessage("Throw the " + pc.bag[cursor].nam + " where?");
-			logMessage("Warning: it will be gone forever! R-Click to cancel");
+			var s = pc.bag[cursor].nam;
+			if(pc.bag[cursor].potID != -1 && !pc.potionKnown[pc.bag[cursor].potID]){s = "Unidentified Potion"; }
+			logMessage("Throw the " + s + " where?");
+			logMessage("Warning: thrown items will be LOST. R-Click to cancel");
 			
 			
 			//visible = false;
@@ -49,15 +51,34 @@ if(pc.bag[cursor] != noone && pc.clickChar != ""){
 	}
 	
 	if((pc.clickChar == "U" || pc.clickChar == "Q")&& pc.bag[cursor] != noone){
+		logClear();
+		
 		if(itemIsEquipped(pc.bag[cursor]) == -1){
+			var used = false
 			
-			//eat food, drink potions, activate other things
+			if(pc.bag[cursor].food > 0){
+				pc.food = clamp(pc.food + pc.bag[cursor].food, 0, pc.foodMax);
+				if(pc.food >= pc.foodMax){
+					logMessage("You are full.")
+				} else {
+					logMessage("You feel less hungry.")
+				}
+				used = true;
+			}
 			
 			
+			if(pc.bag[cursor].potID != -1){
+				potionEffect(pc.bag[cursor].potID, pc.xSpot, pc.ySpot);
+				used = true;
+			}
 			
+			
+			if(used){
+				pc.bag[cursor] = noone;
+				instance_destroy();
+			}
 		}
 	}
-	
 	
 	playerEatInput();
 }

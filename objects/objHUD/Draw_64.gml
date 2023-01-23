@@ -19,11 +19,17 @@ var hung = 100 - floor( (pc.food / pc.foodMax) * 100);
 draw_text(4, ym, "Hunger: " + string(hung) + "%");
 
 
+
+
+draw_text(384, ym - 28, "Deep: " + string(pc.stage) );
+//draw_text(304, ym, "Score: " + string(pc.xp) );
+
+
 draw_set_halign(fa_right);
 
 //draw_text(xm, 4, "Bag");
 
-draw_text(xm, ym - 28, "ATK: +" + string(getHitPlus(pc)) + " " + string(getMeleeMin(pc)) + "-" + string(getMeleeMax(pc)) + "   AC: " + string(getArmorClass(pc)));
+draw_text(xm, ym - 28, "ATK: +" + string(getHitPlus(pc)) + ", " + string(getMeleeMin(pc)) + "-" + string(getMeleeMax(pc)) + "   AC: " + string(getArmorClass(pc)));
 draw_text(xm, ym, "STR: " + string(pc.str) + "    AGI: " + string(pc.agi));
 
 

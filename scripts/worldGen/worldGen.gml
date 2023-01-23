@@ -6,6 +6,12 @@ function worldGen(){
 		var n = irandom_range(0, 99);
 	}
 	
+	
+	
+	
+	
+	
+	
 	pc.stage ++;
 	
 	groundLevel = 6;
