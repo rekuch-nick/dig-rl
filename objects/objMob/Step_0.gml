@@ -5,6 +5,8 @@ characterMove(id);
 if(!moved && ready){
 	ready = false;
 	if(moveCD > 0){ moveCD --; return; }
+	
+	if(characterHasProp(id, "Ice Immune")){ frozen = 0; }
 	if(frozen > 0){ frozen --; return; }
 	
 	if(irandom_range(0, 99) < sleepChance){ return; }
@@ -30,5 +32,7 @@ if(!moved && ready){
 
 if(hp < 1){
 	ww.mmap[xSpot, ySpot] = noone;
+	var caller = id;
+	with(objFireShot){ if(shooter == caller){ shooter = noone; } }
 	instance_destroy();
 }

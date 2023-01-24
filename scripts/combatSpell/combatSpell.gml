@@ -1,4 +1,5 @@
 function combatSpell(c1, c2){
+	if(c1 == noone || c2 == noone){ return; }
 	
 	if(c1.hp < 1){ return; }
 	

@@ -3,6 +3,14 @@ function playerPickupItem(a, b){
 	var i = ww.pmap[a, b];
 	if(i == noone){ return; }
 	
+	if(i.object_index == objRougeFlake){
+		instance_create_depth(0, 0, ww.layerS, objScreenRougeUpgrade);
+		
+		instance_destroy(ww.pmap[a, b]);
+		ww.pmap[a, b] = noone;
+		return;
+	}
+	
 	if(playerGetEmptyBagSlot() == -1){ 
 		logMessage("Backpack is full.")
 		return; 

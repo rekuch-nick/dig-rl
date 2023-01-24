@@ -44,7 +44,7 @@ if(!moved){
 	
 	
 	if(xTar != xSpot || yTar != ySpot){
-		if(frozen > 0){ timePasses(); frozen --; return; }
+		if(frozen > 0){ timePasses(); frozen --; wait += 6; return; }
 		
 		if(clickLM || !holdLM){ logClear(); }
 		
@@ -76,17 +76,13 @@ if(!moved){
 		
 			if(inBounds(xTar, yTar)){
 				if(ww.bmap[xTar, yTar] != noone && tileDigCost(xTar, yTar) > 0){
-					//pc.food -= .2;
-					ww.bmap[xTar, yTar].hp --;
-					if(ww.bmap[xTar, yTar].hp < 1){
+					
+					if(digAt(xTar, yTar, 1)){
 						playerDigest(20);
-						tileBreak(xTar, yTar);
-						//instance_destroy(ww.bmap[xTar, yTar]);
-						//ww.bmap[xTar, yTar] = noone;
-						ww.fmap[xTar, yTar].playerSeen = true;
-						
 						timePasses();
 					}
+					
+					
 				}
 			}
 		
@@ -141,7 +137,10 @@ if(clickChar == "I" || clickChar == "B" || clickChar == "Z" || clickChar == "Q" 
 }
 
 
-if(keyboard_check_pressed(vk_backspace)){ spawnMobClose(); }
+if(keyboard_check_pressed(vk_backspace)){ 
+	instance_create_depth(0, 0, ww.layerS, objScreenRougeUpgrade);
+	//spawnMobClose(); 
+}
 
 if(keyboard_check_pressed(vk_f1)){
 	for(var a=0; a<ww.W; a++){ for(var b=0; b<ww.H; b++){

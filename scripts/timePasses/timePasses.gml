@@ -30,6 +30,18 @@ function timePasses(){
 		}
 	}
 	
+	if(characterHasProp(pc, "Dig Aura")){
+		digAt(pc.xSpot - 1, pc.ySpot - 1, 5);
+		digAt(pc.xSpot - 1, pc.ySpot, 5);
+		digAt(pc.xSpot - 1, pc.ySpot + 1, 5);
+		
+		digAt(pc.xSpot, pc.ySpot - 1, 5);
+		digAt(pc.xSpot, pc.ySpot + 1, 5);
+		
+		digAt(pc.xSpot + 1, pc.ySpot - 1, 5);
+		digAt(pc.xSpot + 1, pc.ySpot, 5);
+		digAt(pc.xSpot + 1, pc.ySpot + 1, 5);
+	}
 	
 	
 	mobsAttack();

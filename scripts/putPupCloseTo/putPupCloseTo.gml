@@ -1,5 +1,6 @@
 function putPupCloseTo(t, aa, bb){
 	
+	
 	t = getItem(t);
 	
 	//enchant, color change

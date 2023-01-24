@@ -54,6 +54,22 @@ function getItem(t){
 		itm.damRange = 10;
 		itm.props = ["Cleave"];
 	}
+	if(t == "Venom Sword"){ 
+		itm.img = imgGearWepSwordVenom;
+		itm.kind = "Weapon";
+		itm.bonus = 1;
+		itm.col = c_green;
+		itm.damRange = 6;
+		itm.props = ["Poison Strikes"];
+	}
+	if(t == "Earth Blade"){ 
+		itm.img = imgGearWepSwordEarth;
+		itm.kind = "Weapon";
+		itm.bonus = 1;
+		itm.col = c_green;
+		itm.damRange = 10;
+		itm.props = ["Dig Aura"];
+	}
 	
 	
 	if(t == "Leather Armor"){ 

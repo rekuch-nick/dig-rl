@@ -46,7 +46,8 @@ function playerInit(){
 		pc.bag[i] = noone;
 	}
 	pc.bag[0] = getItem("Sword"); pc.gear[ww.gsWep] = pc.bag[0];
-	pc.bag[1] = getItem("Scale Armor"); pc.gear[ww.gsArm] = pc.bag[1];
+	//pc.bag[1] = getItem("Scale Armor"); pc.gear[ww.gsArm] = pc.bag[1];
+	pc.bag[1] = getItem("Leather Armor"); pc.gear[ww.gsArm] = pc.bag[1];
 	
 	
 	

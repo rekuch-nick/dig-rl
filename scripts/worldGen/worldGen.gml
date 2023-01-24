@@ -73,6 +73,15 @@ function worldGen(){
 	fmap[a, H - 1] = imgExit;
 	
 	
+	
+	var a = irandom_range(1, 15);
+	var b = irandom_range(ww.H - 16, ww.H - 2);
+	bmap[a, b] = noone;
+	instance_destroy(pmap[a, b]);
+	pmap[a, b] = instance_create_depth(a*64, b*64, layerP, objRougeFlake);
+	
+	
+	
 	//implement images to tile obects
 	for(var a=0; a<W; a++){ for(var b=0; b<H; b++){
 		if(fmap[a, b] != noone){
