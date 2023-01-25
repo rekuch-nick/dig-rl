@@ -1,3 +1,12 @@
+potions to add:
+restoration (will need to track max str / agi )
+sense monster (as max level but temp buff)
+(?) remove curse (return all held items to +0 or better)
+displacment (dodge chance, use char sprite flicker as visual)
+slow (stun chance on move, minus on attack roll)
+web (put web traps all over, web debuff mobs inside)
+
+
 
 ring of sense monster scales:
 see minor ghosts
@@ -6,4 +15,6 @@ see major ghosts
 see mob intent (do they see player?)
 see all unseen mobs
 (gonna be hard to make it improve each level, every other might be enough)
+
+
 
