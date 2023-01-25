@@ -1,0 +1,9 @@
+
+ring of sense monster scales:
+see minor ghosts
+see closeby unseen mobs
+see major ghosts
+see mob intent (do they see player?)
+see all unseen mobs
+(gonna be hard to make it improve each level, every other might be enough)
+

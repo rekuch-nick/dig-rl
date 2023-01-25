@@ -3,6 +3,21 @@
 
 trap tiles, mobs who path around and who don't
 
+-level features
 hall of mirrors maze
+patches
+square rooms
+forest with line of sight vision
+trap run
+river
+longgrass
+spreading lava
+(some rolled, some scripted which level they will appear at)
+
+-area biomes
+(just set tiles and mob sets, maaayyybe limited other worldgen)
+((maybe treasure level decided by this? could make the gameflow better by encouraging less exporation at diff times))
+
+
 
 enemy rogue
