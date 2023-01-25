@@ -11,6 +11,8 @@ hpMax = 6;
 hpRegen = 0;
 str = 10;
 agi = 10;
-ac = 2;
+ac = 8;
 damRange = 4;
-aim = 4;
+aim = 6;
+
+//moveType = "flee";

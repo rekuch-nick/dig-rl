@@ -23,10 +23,13 @@ for(var i=0; i<26; i++){ gear[i] = noone; }
 
 stepsMax = 12;
 
-
+attackIsCleave = false;
 frozen = 0;
 poison = 0;
+tangle = 0;
 swordmastery = 0;
 defense = 0;
 
 props = [];
+
+moveType = "chase";

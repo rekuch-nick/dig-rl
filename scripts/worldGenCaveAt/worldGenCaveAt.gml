@@ -22,7 +22,7 @@ function worldGenCaveAt(aa, bb){
 	worldGenMobsAt(aa, bb);
 	
 	
-	if(choose(true, false)){
+	if(choose(true, false, false)){
 		var t = randomItem(-1);
 		putPupCloseTo(t, aa, bb)
 	}

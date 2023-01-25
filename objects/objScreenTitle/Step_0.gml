@@ -1,7 +1,8 @@
 
 
 
-if(pc.clickChar == "R"){
+//if(pc.clickChar == "R"){
+if(keyboard_check(ord("R"))){
 	ww.seed = irandom_range(1, 1000000);
 	playerEatInput();
 }

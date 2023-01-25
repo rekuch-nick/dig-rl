@@ -14,7 +14,9 @@ function combatExtraTiles(c, aa, bb){
 			if(i == 8){ a = c.xSpot +1; b = c.ySpot + 1; }
 			
 			if(a != aa || b != bb){
+				c.attackIsCleave = true;
 				combatTile(c, a, b);
+				c.attackIsCleave = false;
 			}
 		}
 		

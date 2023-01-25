@@ -12,7 +12,7 @@ function potionEffect(pid, a, b){
 				m.hp = clamp(m.hp + floor(m.hpMax / 5), 0, m.hpMax);
 				logMessageWhom(m.nam, "recover", " some HP", m);
 			} else {
-				m.hpMax += floor(m.hpMax) / 20;
+				m.hpMax += floor(m.hpMax / 20);
 				logMessageWhom(m.nam, "gain", " some Max HP", m);
 			}
 		}
@@ -73,14 +73,14 @@ function potionEffect(pid, a, b){
 	if(pid == ww.potSword){
 		if(m != noone){
 			m.swordmastery += 10;
-			logMessage(m.nam + " can strike with precision.");
+			logMessage(m.nam + " can strike with might.");
 		}
 	}
 	
 	if(pid == ww.potDefense){
 		if(m != noone){
 			m.defense += 10;
-			logMessage(m.nam + " can resist attacks.");
+			logMessage(m.nam + " can endure attacks.");
 		}
 	}
 	

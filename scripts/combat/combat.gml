@@ -2,10 +2,16 @@ function combat(c1, c2){
 	
 	if(c1.hp < 1){ return; }
 	
+	var isShockwave = false;
 	var hitRoll = irandom_range(1, 20) + getHitPlus(c1);
 	
 	
 	var tar = getArmorClass(c2);
+	
+	if(hitRoll < tar && characterHasProp(c1, "Shockwave")){
+		hitRoll = tar;
+		isShockwave = true;
+	}
 	
 	if(hitRoll >= tar || c2.frozen > 0){
 		
@@ -21,7 +27,7 @@ function combat(c1, c2){
 		if(characterHasProp(c1, "Steal Potions")){
 			var i = irandom_range(0, 25);
 			if(pc.bag[i] != noone){
-				if(pc.bag[i].kind == "Potion"){
+				if(pc.bag[i].kind == "Potion" || pc.bag[i].kind == "Food" || (choose(true, false) && (!itemIsEquipped(pc.bag[i])) )){
 					logMessage(c1.nam + " stole a " + pc.bag[i].nam);
 					pc.bag[i] = noone;
 				}
@@ -30,9 +36,42 @@ function combat(c1, c2){
 		
 		var dam = irandom_range(getMeleeMin(c1), getMeleeMax(c1));
 		
+		if(characterHasProp(c1, "Knockback")){
+			var a = c2.xSpot; var b = c2.ySpot;
+			if(c1.xSpot < c2.xSpot){ a ++; }
+			if(c1.xSpot > c2.xSpot){ a --; }
+			if(c1.ySpot < c2.ySpot){ b ++; }
+			if(c1.ySpot > c2.ySpot){ b --; }
+			
+			if(inBounds(a, b) && ( ww.bmap[a, b] == noone || tileDigCost(a, b) != 0) ){
+				if(ww.mmap[a, b] == noone){
+					//just move too strong //
+					if(ww.bmap[a, b] != noone){
+						ww.mmap[c2.xSpot, c2.ySpot] = noone;
+						c2.xSpot = a; c2.ySpot = b; c2.x = a*64; c2.y = b*64;
+						ww.mmap[a, b] = c2;
+						//break tile
+						dam += ceil(dam / 5);
+						digAt(a, b, 30000);
+					}
+				} else {
+					//bump monster
+					dam += ceil(dam / 5);
+				}
+			} else {
+				//bump edge of world or unbreakable
+				dam += ceil(dam / 5);
+			}
+		}
+		
+		if(c1.attackIsCleave || isShockwave){
+			dam = ceil(dam / 3);
+		}
+		
 		if(characterHasProp(c1, "Poison Strikes")){
 			c2.poison += dam;
-			logMessage(c1.nam + " poisons " + c2.nam);
+			var v = c1 == pc ? " poison " : " poisons ";
+			logMessage(c1.nam + v + c2.nam);
 		}
 		
 		if(characterHasProp(c1, "Ice Strikes") && choose(true, false, false) ){
@@ -58,8 +97,16 @@ function combat(c1, c2){
 		
 		var sn = c2.hp < 1 ? ". " + c2.nam + " is killed!" : ".";
 		var v = c1 == pc ? " hit " : " hits ";
+		if(c1.attackIsCleave){ v = c1 == pc ? " cleave " : " cleaves "; }
+		if(isShockwave){ v = c1 == pc ? " clip " : " clips "; }
 		logMessage(c1.nam + v + c2.nam + " for " + string(dam) + sn);
 		
+		if(c2.hp > 0 && characterHasProp(c2, "Thorns")){
+			if(choose(false, false, true)){
+				c1.tangle += irandom_range(3, 6);
+				//logMessage("The roots aid " + c2.nam);
+			}
+		}
 		
 	} else {
 		var v = " misses ";
@@ -68,7 +115,6 @@ function combat(c1, c2){
 		//miss
 		
 	}
-	
 	
 	
 	

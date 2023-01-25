@@ -1,0 +1,9 @@
+slime hp6, ac8, +6 1-4
+imp hp10, ac10, +6 2-8
+grimp hp20, ac6, +6 2-10, zap 1-4
+snail hp30, ac10, +4 5-8 decay armor
+grub hp20, ac16, +4 5-8
+thief hp30, ac16, +8, 1-10 steal
+flytap hp42, ac8, +8, 1-10 poison
+ice golem hp42, ac10, +8 5-10 freeze
+cyclops 62, ac10, +4 8-18

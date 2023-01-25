@@ -19,6 +19,10 @@ function drawCharacter(){
 		draw_sprite_ext(imgPoison, floor(current_time / 400) % 2, x, y, 4, 4, 0, c_white, .5);
 	}
 	
+	if(tangle > 0){
+		draw_sprite_ext(imgTangle, floor(current_time / 400) % 2, x, y, 4, 4, 0, c_white, .7);
+	}
+	
 	if(swordmastery > 0){
 		draw_sprite_ext(imgSwordmastery, floor(current_time / 400) % 2, x, y, 4, 4, 0, c_white, .5);
 	}

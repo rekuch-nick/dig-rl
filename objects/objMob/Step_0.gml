@@ -12,9 +12,18 @@ if(!moved && ready){
 	if(irandom_range(0, 99) < sleepChance){ return; }
 	if(abs(xSpot - pc.xSpot) + abs(ySpot - pc.ySpot) > stepsMax){ return; }
 	
-	
-	var tar = pathing(xSpot, ySpot, pc.xSpot, pc.ySpot, true);
-	if(tar == noone){ tar = pathing(xSpot, ySpot, pc.xSpot, pc.ySpot, false); }
+	var tar = noone;
+	if(moveType == "flee"){
+		var t = chooseClosestSpaceXFromPlayer(xSpot, ySpot, 3);
+		
+		if(t.a != -1){
+			var tar = pathing(xSpot, ySpot, t.a, t.b, true);
+			if(tar == noone){ tar = pathing(xSpot, ySpot, t.a, t.b, false); }
+		}
+	} else {
+		var tar = pathing(xSpot, ySpot, pc.xSpot, pc.ySpot, true);
+		if(tar == noone){ tar = pathing(xSpot, ySpot, pc.xSpot, pc.ySpot, false); }
+	}
 	
 	if(tar != noone){
 		if(characterCanMove(id, tar.a, tar.b)){

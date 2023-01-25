@@ -10,7 +10,9 @@ function itemEnchant(itm, val){
 	if(itm.bonus >= 7){ itm.col = c_orange; }
 	if(itm.bonus >= 9){ itm.col = c_yellow; }
 	
-	logMessage(itm.nam + " becomes +" + string(itm.bonus));
+	if(instance_number(objScreenRougeUpgrade) < 1){
+		logMessage(itm.nam + " becomes +" + string(itm.bonus));
+	}
 	
 	return itm;
 }

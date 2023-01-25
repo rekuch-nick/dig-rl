@@ -6,13 +6,13 @@ stepsMax = 8;
 
 
 
-hp = 22;
-hpMax = 22;
+hp = 30;
+hpMax = 30;
 hpRegen = 0;
-str = 14;
+str = 10;
 agi = 10;
-ac = 12;
-damRange = 6;
+ac = 16;
+damRange = 10;
 aim = 4;
 
 props = ["Steal Potions"];

@@ -24,7 +24,7 @@ function getItem(t){
 	
 	if(t == "Food"){ 
 		itm.img = imgFood;
-		itm.kind = "Other";
+		itm.kind = "Food";
 		itm.bonus = 0;
 		itm.col = $A3620A;
 		itm.food = 1000;
@@ -37,6 +37,7 @@ function getItem(t){
 		itm.bonus = 0;
 		itm.col = c_white;
 		itm.damRange = 10;
+		itm.props = ["Lunge"];
 	}
 	if(t == "Spear"){ 
 		itm.img = imgGearWepSpear;
@@ -54,22 +55,15 @@ function getItem(t){
 		itm.damRange = 10;
 		itm.props = ["Cleave"];
 	}
-	if(t == "Venom Sword"){ 
-		itm.img = imgGearWepSwordVenom;
+	if(t == "Maul"){ 
+		itm.img = imgGearWepMaul;
 		itm.kind = "Weapon";
-		itm.bonus = 1;
-		itm.col = c_green;
-		itm.damRange = 6;
-		itm.props = ["Poison Strikes"];
-	}
-	if(t == "Earth Blade"){ 
-		itm.img = imgGearWepSwordEarth;
-		itm.kind = "Weapon";
-		itm.bonus = 1;
-		itm.col = c_green;
+		itm.bonus = 0;
+		itm.col = c_white;
 		itm.damRange = 10;
-		itm.props = ["Dig Aura"];
+		itm.props = ["Shockwave"];
 	}
+	
 	
 	
 	if(t == "Leather Armor"){ 
@@ -77,7 +71,7 @@ function getItem(t){
 		itm.kind = "Armor";
 		itm.bonus = 0;
 		itm.col = c_white;
-		itm.armor = 3;
+		itm.armor = 2;
 		itm.armorCheck = 10;
 		itm.props = ["Not Metal"];
 	}

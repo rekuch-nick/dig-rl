@@ -54,13 +54,31 @@ if(pc.bag[cursor] != noone){
 		draw_text_color(640 + 10, 64 + 38, "(worn)", c_grey, c_grey, c_grey, c_grey, 1);
 	}
 	
+	if(itm.kind == "Armor"){
+		var def = itm.armor + itm.bonus;
+		var chk = itm.armorCheck;
+		draw_text(650, 130, "AC: " + string(def) + "   Weight: " + string(chk));
+	}
+	
+	if(itm.kind == "Weapon"){
+		var hit = itm.bonus;
+		var dmin = 1 + itm.bonus;
+		var dmax = itm.damRange + itm.bonus;
+		draw_text(650, 130, "Hit: +" + string(hit) + " Dam: " + string(dmin) + "-" + string(dmax));
+	}
+	
+	for(var i=0; i<array_length(itm.props); i++){
+		draw_text(660, 156 + (i * 26), itm.props[i]);
+	}
 	
 	
 	
 	
+	/*
 	s = "E-equip   U/Q-use";
 	draw_text_color(640 + 30, 64 * 10 + 10, s, c_grey, c_grey, c_grey, c_grey, 1);
 	s = "T/Z-throw   F-drop"
 	draw_text_color(640 + 30, 64 * 10 + 38, s, c_grey, c_grey, c_grey, c_grey, 1);
+	*/
 }
 

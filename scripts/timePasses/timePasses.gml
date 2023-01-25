@@ -28,6 +28,13 @@ function timePasses(){
 			hp -= clamp(floor(hpMax / 100), 1, 20);
 			if(hp < 1){ logMessageWhom(nam, "succumb", "to the poison", id); }
 		}
+		
+		if(tangle > 0){ 
+			tangle --;
+			hp -= clamp(floor(hpMax / 30), 1, 20);
+			if(hp < 1){ logMessageWhom(nam, "succumb", "to the thorns", id); }
+		}
+		
 	}
 	
 	if(characterHasProp(pc, "Dig Aura")){

@@ -22,3 +22,5 @@ shotType = objFireShot;
 shotChance = 100;
 shotRange = 4;
 splRange = 4;
+
+//moveType = "flee";

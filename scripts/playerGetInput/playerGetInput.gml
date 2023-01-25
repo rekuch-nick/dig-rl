@@ -28,6 +28,11 @@ function playerGetInput(){
 	clickEnter = keyboard_check_pressed(vk_enter);
 	
 	clickSpace = keyboard_check_pressed(vk_space);
+	if(keyboard_check(vk_space)){
+		holdSpaceTime ++
+	} else {
+		holdSpaceTime = 0;
+	}
 	
 	clickLM = mouse_check_button_pressed(mb_left);
 	clickRM = mouse_check_button_pressed(mb_right);

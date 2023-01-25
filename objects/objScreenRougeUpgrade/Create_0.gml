@@ -19,8 +19,15 @@ up[3] = getItem(up[3]);
 
 for(var i=1; i<4; i++){
 	if(up[i].kind == "Weapon" || up[i].kind == "Armor" || up[i].kind == "Ring"){
-		var n = 2;
-		if(up[i].kind != "Ring"){ n = 3; }
+		var nMax = ceil(pc.stage / 3);
+		var n = irandom_range(1, nMax);
+		if(up[i].kind == "Ring"){ n --; }
 		up[i] = itemEnchant(up[i], n);
+		if(up[i].kind == "Weapon" && ( choose(true, false) || n >= 3 ) ){
+			up[i] = itemEnchantWepProp(up[i], -1);
+		}
+		if(up[i].kind == "Armor" && ( choose(true, false) || n >= 2 ) ){
+			up[i] = itemEnchantArmorProp(up[i], -1);
+		}
 	}
 }

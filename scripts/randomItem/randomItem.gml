@@ -18,18 +18,18 @@ function randomItem(r){
 	); }
 	
 	if(r >= 8 && r <= 9){ return choose(
-			"Leather Armor","Leather Armor","Leather Armor","Leather Armor",
+			"Leather Armor","Leather Armor",
 			"Scale Armor","Scale Armor","Scale Armor",
 			"Chain Armor","Chain Armor","Chain Armor",
 			"Banded Armor","Banded Armor",
 			"Splint Armor",
 			"Plate Armor",
 			
-			"Sword",
+			"Sword","Sword","Sword",
 			"Axe","Axe","Axe",
 			"Spear","Spear","Spear",
-			"Venom Sword",
-			"Earth Blade",
+			"Maul","Maul","Maul"
+
 	); }
 	
 	

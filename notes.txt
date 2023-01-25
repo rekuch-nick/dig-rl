@@ -1,0 +1,8 @@
+
+
+
+trap tiles, mobs who path around and who don't
+
+hall of mirrors maze
+
+enemy rogue

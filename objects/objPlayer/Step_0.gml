@@ -5,7 +5,7 @@ if(wait > 0){ wait--; return; }
 
 
 
-
+if(characterHasProp(id, "Ice Immune")){ frozen = 0; }
 
 
 
@@ -53,6 +53,18 @@ if(!moved){
 	
 		if(characterCanMove(id, xTar, yTar)){
 			
+			if(characterHasProp(id, "Lunge")){
+				var a = xTar; var b = yTar; var aa = xTar * 64; var bb = yTar * 64;
+				if(xSpot < xTar){ a ++; aa += 32; }
+				if(xSpot > xTar){ a --; aa -= 32; }
+				if(ySpot < yTar){ b ++; bb += 32; }
+				if(ySpot > yTar){ b --; bb -= 32; }
+				if(inBounds(a, b) && ww.mmap[a, b] != noone){
+					combat(id, ww.mmap[a, b]);
+					x = aa; y = bb;
+				}
+			}
+			
 			ww.mmap[xSpot, ySpot] = noone;
 			xSpot = xTar; ySpot = yTar;
 			ww.mmap[xSpot, ySpot] = id;
@@ -68,8 +80,8 @@ if(!moved){
 			
 			
 			characterShiftTowards(id, xTar, yTar);
-			combatExtraTiles(id, xTar, yTar);
 			combat(id, ww.mmap[xTar, yTar]);
+			combatExtraTiles(id, xTar, yTar);
 			//mobsAttack();
 		
 		} else {
@@ -77,8 +89,9 @@ if(!moved){
 			if(inBounds(xTar, yTar)){
 				if(ww.bmap[xTar, yTar] != noone && tileDigCost(xTar, yTar) > 0){
 					
+					playerDigest(1);
+					
 					if(digAt(xTar, yTar, 1)){
-						playerDigest(20);
 						timePasses();
 					}
 					
@@ -91,7 +104,8 @@ if(!moved){
 		
 	}
 	
-	if(clickSpace){ 
+	if(clickSpace || holdSpaceTime > 10){ 
+		holdSpaceTime = 0;
 		logClear();
 		timePasses(); 
 	}

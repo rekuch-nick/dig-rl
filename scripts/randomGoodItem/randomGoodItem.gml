@@ -1,13 +1,12 @@
 function randomGoodItem(){
 	
-	//randomItem()
 	
 	return choose(
-		"STR Potion",
-		"AGI Potion",
-		"Bless Weapon Potion",
-		"Bless Armor Potion",
-		"Bless Rings Potion",
+		"STR Potion","STR Potion","STR Potion",
+		"AGI Potion","AGI Potion","AGI Potion",
+		"Bless Weapon Potion","Bless Weapon Potion",
+		"Bless Armor Potion","Bless Armor Potion",
+		"Bless Rings Potion","Bless Rings Potion",
 		
 		
 		"Ring of Protection",
@@ -17,11 +16,12 @@ function randomGoodItem(){
 		
 		"Food",
 		
-		"Earth Blade",
-		"Venom Sword",
-	
+		"Sword","Axe","Spear","Maul","Sword","Axe","Spear","Maul",
+		
+		"Leather Armor","Scale Armor","Chain Armor","Banded Armor","Splint Armor","Plate Armor"
 	
 	
 	);
+	
 
 }

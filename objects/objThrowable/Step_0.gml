@@ -28,7 +28,7 @@ if(dis < -30){
 		
 		
 		if(throwPower > 0){		
-			var dam = throwPower;
+			var dam = getMeleeMax(thrower);
 			m.hp -= dam;	
 			var sn = m.hp < 1 ? m.nam + " is killed!" : "";
 			logMessage("Threw the " + nam + " at " + m.nam + " for " + string(dam) + ".");

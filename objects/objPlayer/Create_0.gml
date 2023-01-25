@@ -21,16 +21,18 @@ viewCD = 10;
 
 autoPickup = true;
 
-
+holdSpaceTime = 0;
 
 
 
 //bag[2] = getItem("Spear");
 //bag[3] = getItem("Axe");
+//bag[4] = getItem("Maul");
 
 //bag[3] = itemEnchant( getItem("Ring of Protection"), 9);
 //bag[4] = itemEnchant( getItem("Ring of Striking"), 9);
 //bag[5] = itemEnchant( getItem("Venom Sword"), 9);
+//bag[6] = itemEnchant( getItem("Leather Armor"), 1); bag[6] = itemEnchantArmorProp(bag[6], 3);
 
 //bag[4] = getItem("Ring of Protection");
 

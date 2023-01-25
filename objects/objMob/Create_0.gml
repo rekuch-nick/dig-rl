@@ -22,7 +22,7 @@ hpMax = 10;
 hpRegen = 0;
 str = 14;
 agi = 10;
-ac = 6;
+ac = 10;
 damRange = 6;
 aim = 6;
 
@@ -32,3 +32,4 @@ shotType = noone;
 shotChance = 0;
 shotRange = 0;
 splRange = 1;
+
