@@ -1,9 +1,8 @@
 potions to add:
-restoration (will need to track max str / agi )
+
+
 sense monster (as max level but temp buff)
 (?) remove curse (return all held items to +0 or better)
-displacment (dodge chance, use char sprite flicker as visual)
-slow (stun chance on move, minus on attack roll)
 web (put web traps all over, web debuff mobs inside)
 
 

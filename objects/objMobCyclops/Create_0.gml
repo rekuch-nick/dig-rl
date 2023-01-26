@@ -16,3 +16,4 @@ damRange = 10;
 aim = 4;
 
 props = ["Big"];
+willStepOnTrap = true;

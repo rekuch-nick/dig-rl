@@ -11,6 +11,8 @@ str = 10; //+dmg,
 agi = 10; //+evd (reduced by armor penalty) 
 	      //+hit
 
+strMax = 10; agiMax = 10;
+
 ac = 10; // bast / monster def stat
 aim = 0; // monster +hit stat
 damRange = 4; // damagerange when not weirlding a weapon only
@@ -23,13 +25,19 @@ for(var i=0; i<26; i++){ gear[i] = noone; }
 
 stepsMax = 12;
 
+shadow = 0;
 attackIsCleave = false;
 frozen = 0;
 poison = 0;
 tangle = 0;
+displace = 0;
+slow = 0;
 swordmastery = 0;
 defense = 0;
 
 props = [];
 
 moveType = "chase";
+
+willStepOnTrap = true;
+rollingHitPlus = 0;

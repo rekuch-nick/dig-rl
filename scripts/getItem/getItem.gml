@@ -30,7 +30,13 @@ function getItem(t){
 		itm.food = 1000;
 	}
 	
-	
+	if(t == "Gladius"){ 
+		itm.img = imgGearWepSword;
+		itm.kind = "Weapon";
+		itm.bonus = 0;
+		itm.col = c_white;
+		itm.damRange = 8;
+	}
 	if(t == "Sword"){ 
 		itm.img = imgGearWepSword;
 		itm.kind = "Weapon";
@@ -261,6 +267,33 @@ function getItem(t){
 		itm.bonus = 0;
 		itm.col = c_orange;
 		itm.potID = ww.potBlessRing;
+	}
+	
+	if(t == "Slow Potion"){ 
+		itm.img = imgPotionSlow;
+		itm.kind = "Potion";
+		itm.throwPower = 0;
+		itm.bonus = 0;
+		itm.col = c_orange;
+		itm.potID = ww.potSlow;
+	}
+	
+	if(t == "Restore Potion"){ 
+		itm.img = imgPotionRestore;
+		itm.kind = "Potion";
+		itm.throwPower = 0;
+		itm.bonus = 0;
+		itm.col = c_orange;
+		itm.potID = ww.potRestore;
+	}
+	
+	if(t == "Displacement Potion"){
+		itm.img = imgPotionDisplace;
+		itm.kind = "Potion";
+		itm.throwPower = 0;
+		itm.bonus = 0;
+		itm.col = c_orange;
+		itm.potID = ww.potDisplace;
 	}
 	
 	

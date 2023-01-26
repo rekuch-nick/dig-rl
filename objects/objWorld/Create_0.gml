@@ -5,6 +5,7 @@ W = 17;
 H = 68;
 
 layerF = -100;
+layerT = -1800;
 layerB = -2000;
 layerP = -5000;
 layerM = -7000;
@@ -28,6 +29,9 @@ potDefense = 8;
 potBlessWep = 9;
 potBlessArm = 10;
 potBlessRing = 11;
+potRestore = 12;
+potSlow = 13;
+potDisplace = 14;
 
 rollWord = false;
 seed = 1;

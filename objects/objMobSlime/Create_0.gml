@@ -16,3 +16,4 @@ damRange = 4;
 aim = 6;
 
 //moveType = "flee";
+willStepOnTrap = true;

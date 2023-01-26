@@ -16,6 +16,7 @@ if(pc.clickChar == "1" || pc.clickChar == "2" || pc.clickChar == "3"){
 		pc.potionKnown[ ww.pmap[pc.xSpot, pc.ySpot].potID ] = true;
 	}
 	
+	playerPickupItem(pc.xSpot, pc.ySpot);
 	playerEatInput();
 	instance_destroy();
 }

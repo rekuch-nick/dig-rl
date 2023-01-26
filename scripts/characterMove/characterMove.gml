@@ -35,7 +35,7 @@ function characterMove(who){
 		if(who.moved){
 			who.justFinished = true;
 			
-			
+			characterEnterTile(who, who.xSpot, who.ySpot);
 		}
 	}
 	

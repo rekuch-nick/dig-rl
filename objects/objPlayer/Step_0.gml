@@ -122,6 +122,7 @@ if(justFinished){
 		playerPickupItem(xSpot, ySpot);
 	}
 	
+	
 	timePasses();
 	
 	if(ww.fmap[xSpot, ySpot].sprite_index == imgExit){

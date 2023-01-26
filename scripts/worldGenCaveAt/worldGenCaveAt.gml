@@ -15,6 +15,7 @@ function worldGenCaveAt(aa, bb){
 			
 			if(inBounds(a, b)){
 				bmap[a, b] = noone;
+				
 			}
 		}
 	}

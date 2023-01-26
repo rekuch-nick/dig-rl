@@ -33,3 +33,4 @@ shotChance = 0;
 shotRange = 0;
 splRange = 1;
 
+willStepOnTrap = false;

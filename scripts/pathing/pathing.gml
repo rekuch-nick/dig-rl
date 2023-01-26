@@ -77,6 +77,13 @@ function pathing(xStart, yStart, xEnd, yEnd, avoidMobs){
 				if(avoidMobs && ww.mmap[cx, cy] != noone){ continue; }
 			}
 			
+			//trap check
+			if(ww.tmap[cx, cy] != noone){
+				if(ww.mmap[xStart, yStart] != noone && !ww.mmap[xStart, yStart].willStepOnTrap){
+					continue;
+				}
+			}
+			
 			//path too far out of zone check
 			if(point_distance(cx, cy, xStart, yStart) > stepsMax){ continue; }
 		

@@ -4,16 +4,28 @@ function combat(c1, c2){
 	
 	var isShockwave = false;
 	var hitRoll = irandom_range(1, 20) + getHitPlus(c1);
+	hitRoll += c1.rollingHitPlus;
 	
+	if(slow > 0){ 
+		logMessage("The slow effect makes " + c1.nam + " miss");
+		slow --; hitRoll -= 10; 
+	}
 	
 	var tar = getArmorClass(c2);
+	if(c2.displace > 0){ displace --; if(choose(true, false)){ 
+		logMessageWhom(c1.nam, "strike", "at illusions", c1);
+		hitRoll = 0; } }
+	
 	
 	if(hitRoll < tar && characterHasProp(c1, "Shockwave")){
 		hitRoll = tar;
 		isShockwave = true;
 	}
 	
+	//if(hitRoll < tar && c1.id == pc){ c1.rollingHitPlus ++; }
+	
 	if(hitRoll >= tar || c2.frozen > 0){
+		if(!isShockwave){ c1.rollingHitPlus = 0; }
 		
 		if(characterHasProp(c1, "Mold Armor") && c2.gear[1] != noone){
 			if(!itemHasProp(c2.gear[1], "Not Metal")){

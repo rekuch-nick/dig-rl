@@ -16,3 +16,4 @@ damRange = 6;
 aim = 8;
 
 props = ["Ice Strikes", "Ice Immune"];
+willStepOnTrap = false;

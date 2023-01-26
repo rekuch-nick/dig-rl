@@ -5,6 +5,11 @@ characterMove(id);
 if(!moved && ready){
 	ready = false;
 	if(moveCD > 0){ moveCD --; return; }
+	if(slow > 0 && choose(true, false)){ slow --; return; }
+	
+	var disToPlayer = abs(xSpot - pc.xSpot) + abs(ySpot - pc.ySpot);
+	if(disToPlayer >= stepsMax - getShadow(pc) && disToPlayer > 2){ return; }
+	
 	
 	if(characterHasProp(id, "Ice Immune")){ frozen = 0; }
 	if(frozen > 0){ frozen --; return; }

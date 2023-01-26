@@ -58,6 +58,7 @@ function potionEffect(pid, a, b){
 		
 		if(m != noone){
 			m.str += 1;
+			if(m.str > m.strMax){ m.strMax = m.str; }
 			logMessageWhom(m.nam, "get", "more STR", m);
 		}
 	}
@@ -66,6 +67,7 @@ function potionEffect(pid, a, b){
 		
 		if(m != noone){
 			m.agi += 1;
+			if(m.agi > m.agiMax){ m.agiMax = m.agi; }
 			logMessageWhom(m.nam, "get", "more AGI", m);
 		}
 	}
@@ -139,6 +141,28 @@ function potionEffect(pid, a, b){
 			if(m.gear[2] == noone && m.gear[3] == noone){
 				logMessage("No rings to bless there");
 			}
+		}
+	}
+	
+	if(pid == ww.potRestore){
+		if(m != noone){
+			m.str = m.strMax;
+			m.agi = m.agiMax;
+			logMessageWhom(m.nam, "feel", "amazing", m);
+		}
+	}
+	
+	if(pid == ww.potSlow){
+		if(m != noone){
+			m.slow += 10;
+			logMessageWhom(m.nam, "become", "slower", m);
+		}
+	}
+	
+	if(pid == ww.potDisplace){
+		if(m != noone){
+			m.displace += 10;
+			logMessageWhom(m.nam, "become", "hard to see", m);
 		}
 	}
 	

@@ -14,7 +14,10 @@ function randomItem(r){
 			"Poison Potion",
 			"Swordmastery Potion",
 			"Defense Potion",
-			"Warp Potion"
+			"Warp Potion",
+			"Displacement Potion",
+			"Restoration Potion",
+			"Slow Potion"
 	); }
 	
 	if(r >= 8 && r <= 9){ return choose(

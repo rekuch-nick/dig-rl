@@ -10,6 +10,8 @@ function playerInit(){
 
 	pc.str = 10;
 	pc.agi = 10;
+	pc.strMax = pc.str;
+	pc.agiMax = pc.agi;
 
 	pc.ac = 10;
 	pc.aim = 0;
@@ -30,6 +32,8 @@ function playerInit(){
 	pc.defense = 0;
 	
 	
+	pc.shadow = 0;
+	
 	
 	
 	pc.xp = 0;
@@ -45,7 +49,7 @@ function playerInit(){
 		pc.gear[i] = noone;
 		pc.bag[i] = noone;
 	}
-	pc.bag[0] = getItem("Sword"); pc.gear[ww.gsWep] = pc.bag[0];
+	pc.bag[0] = getItem("Gladius"); pc.gear[ww.gsWep] = pc.bag[0];
 	//pc.bag[1] = getItem("Scale Armor"); pc.gear[ww.gsArm] = pc.bag[1];
 	pc.bag[1] = getItem("Leather Armor"); pc.gear[ww.gsArm] = pc.bag[1];
 	

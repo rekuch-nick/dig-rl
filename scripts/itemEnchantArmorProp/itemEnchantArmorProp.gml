@@ -6,7 +6,7 @@ function itemEnchantArmorProp(itm, fix){
 	}
 	
 	
-	var r = irandom_range(1, 3);
+	var r = irandom_range(1, 4);
 	if(fix != -1){ r = fix; }
 	var t = "Mage"; var p =  "Cast Damage Up";
 	if(r == 2){ t = "Yeti"; p = "Ice Immune"; }
@@ -16,6 +16,7 @@ function itemEnchantArmorProp(itm, fix){
 			t = "Druid"; p = "Thorns"; 
 		}
 	}
+	if(r == 4){ t = "Shadow"; p = "Shadow"; }
 	
 	
 	if(itm.nam == "Leather Armor"){

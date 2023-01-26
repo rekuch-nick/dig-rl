@@ -16,3 +16,4 @@ damRange = 10;
 aim = 8;
 
 props = ["Poison Strikes"];
+willStepOnTrap = true;

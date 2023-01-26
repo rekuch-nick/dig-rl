@@ -18,10 +18,12 @@ function worldGen(){
 	
 	with(objTile){ instance_destroy(); }
 	with(objPup){ instance_destroy(); }
+	with(objTrap){ instance_destroy(); }
 	with(objCreature){ if(object_index != objPlayer){ instance_destroy(); }}
 	
 	for(var a=0; a<W; a++){ for(var b=0; b<H; b++){
 		fmap[a, b] = noone;
+		tmap[a, b] = noone;
 		bmap[a, b] = noone;
 		pmap[a, b] = noone;
 		mmap[a, b] = noone;
@@ -81,6 +83,16 @@ function worldGen(){
 	pmap[a, b] = instance_create_depth(a*64, b*64, layerP, objRougeFlake);
 	
 	
+	for(var a=0; a<W; a++){ for(var b=groundLevel + 1; b<H - 1; b++){
+		if(bmap[a, b] == noone && pmap[a, b] == noone){
+			if(irandom_range(1, 30) == 1){
+				tmap[a, b] = objTrap;
+			}
+		}
+	}}
+	
+	
+	
 	
 	//implement images to tile obects
 	for(var a=0; a<W; a++){ for(var b=0; b<H; b++){
@@ -89,6 +101,10 @@ function worldGen(){
 			til.sprite_index = fmap[a, b];
 			if(b > groundLevel){ til.playerSeen = false; }
 			fmap[a, b] = til;
+		}
+		
+		if(tmap[a, b] != noone){
+			tmap[a, b] = instance_create_depth(a*64, b*64, layerT, tmap[a, b]);
 		}
 		
 		if(bmap[a, b] != noone){

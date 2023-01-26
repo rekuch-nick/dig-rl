@@ -23,11 +23,13 @@ autoPickup = true;
 
 holdSpaceTime = 0;
 
+rollingHitPlus = 0;
 
 
 //bag[2] = getItem("Spear");
-//bag[3] = getItem("Axe");
-//bag[4] = getItem("Maul");
+//bag[3] = getItem("Displacement Potion");
+//bag[4] = getItem("Slow Potion");
+//bag[5] = getItem("Restore Potion");
 
 //bag[3] = itemEnchant( getItem("Ring of Protection"), 9);
 //bag[4] = itemEnchant( getItem("Ring of Striking"), 9);
@@ -35,7 +37,6 @@ holdSpaceTime = 0;
 //bag[6] = itemEnchant( getItem("Leather Armor"), 1); bag[6] = itemEnchantArmorProp(bag[6], 3);
 
 //bag[4] = getItem("Ring of Protection");
-
 
 
 

@@ -8,6 +8,7 @@ function worldGenMobsAt(aa, bb){
 	if(r == 6){	putMobCloseTo(objMobSnail, aa, bb, choose(1, 2)); }
 	
 	if(r == 7){	putMobCloseTo(objMobGrub, aa, bb, choose(1, 2)); }
+	
 	if(r == 8){	putMobCloseTo(objMobThief, aa, bb, choose(1, 2)); }
 	if(r == 9){	putMobCloseTo(objMobFlyTrap, aa, bb, choose(1, 4)); }
 	if(r == 10){	putMobCloseTo(objMobIceGolem, aa, bb, 1); }

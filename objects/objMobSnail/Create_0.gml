@@ -15,4 +15,5 @@ ac = 10;
 damRange = 4;
 aim = 4;
 
-props = ["Mold Armor"];
+//props = ["Mold Armor"];
+willStepOnTrap = true;
