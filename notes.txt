@@ -1,7 +1,10 @@
 
+teleport monster image
+flytryp poisions verb order
+make ground trearue more interesting
 
 
-trap tiles, mobs who path around and who don't
+
 
 -level features
 hall of mirrors maze

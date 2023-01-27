@@ -9,7 +9,7 @@ function potionEffect(pid, a, b){
 	if(pid == ww.potHeal){
 		if(m != noone){
 			if(m.hp < m.hpMax){
-				m.hp = clamp(m.hp + floor(m.hpMax / 5), 0, m.hpMax);
+				m.hp = clamp(m.hp + ceil(m.hpMax / 3), 0, m.hpMax);
 				logMessageWhom(m.nam, "recover", " some HP", m);
 			} else {
 				m.hpMax += floor(m.hpMax / 20);
@@ -34,6 +34,23 @@ function potionEffect(pid, a, b){
 			}
 			
 		}}
+		
+	}
+	
+	if(pid == ww.potBombSmall){
+		
+		if(!inBounds(a, b)){ return; }
+		
+		instance_create_depth(a * 64, b * 64, ww.layerE, effBlast);
+		
+		var mm = ww.mmap[a, b];
+		if(mm != noone){
+			mm.hp -= 20;
+			logMessageWhom(mm.nam, "get", " caught in the blast", mm);
+		}
+		if(ww.bmap[a, b] != noone && tileDigCost(a, b) != 0){
+			tileBreak(a, b);
+		}
 		
 	}
 	

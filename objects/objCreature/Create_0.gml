@@ -23,10 +23,14 @@ foodMax = 2000;
 
 for(var i=0; i<26; i++){ gear[i] = noone; }
 
-stepsMax = 12;
+stepsMax = 6;
+state = "z";
+xPlayerAt = 0;
+yPlayerAt = 0;
 
 shadow = 0;
 attackIsCleave = false;
+attackIsLunge = false;
 frozen = 0;
 poison = 0;
 tangle = 0;
@@ -38,6 +42,7 @@ defense = 0;
 props = [];
 
 moveType = "chase";
+lookType = "wander";
 
 willStepOnTrap = true;
 rollingHitPlus = 0;

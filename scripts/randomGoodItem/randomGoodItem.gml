@@ -2,11 +2,11 @@ function randomGoodItem(){
 	
 	
 	return choose(
-		"STR Potion","STR Potion","STR Potion",
-		"AGI Potion","AGI Potion","AGI Potion",
-		"Bless Weapon Potion","Bless Weapon Potion",
-		"Bless Armor Potion","Bless Armor Potion",
-		"Bless Rings Potion","Bless Rings Potion",
+		"STR Potion","STR Potion",
+		"AGI Potion","AGI Potion",
+		"Bless Weapon Potion",
+		"Bless Armor Potion",
+		"Bless Rings Potion",
 		
 		
 		"Ring of Protection",

@@ -6,12 +6,12 @@ stepsMax = 6;
 
 
 
-hp = 45;
-hpMax = 45;
+hp = 40;
+hpMax = 40;
 hpRegen = 0;
 str = 14;
 agi = 10;
-ac = 10;
+ac = 8;
 damRange = 4;
 aim = 4;
 

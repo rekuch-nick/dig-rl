@@ -26,13 +26,15 @@ function combatExtraTiles(c, aa, bb){
 	
 	if(characterHasProp(c, "Pierce")){
 		var a = aa; var b = bb;
+		var a2 = aa; var b2 = bb;
 		
-		if(c.xSpot < a){ a ++; }
-		if(c.xSpot > a){ a --; }
-		if(c.ySpot < b){ b ++; }
-		if(c.ySpot > b){ b --; }
+		if(c.xSpot < a){ a ++; a2 += 2; }
+		if(c.xSpot > a){ a --; a2 -= 2; }
+		if(c.ySpot < b){ b ++; b2 += 2; }
+		if(c.ySpot > b){ b --; b2 -= 2; }
 		
 		combatTile(c, a, b);
+		combatTile(c, a2, b2);
 	}
 	
 	

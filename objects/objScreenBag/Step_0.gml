@@ -1,6 +1,6 @@
 subCursor = device_mouse_y_to_gui(0) % 64 >= 32 ? 1 : 0;
 cursor = (floor(device_mouse_y_to_gui(0) / 64) * 2) + subCursor;
-
+cursor = clamp(cursor, 0, 25);
 
 
 if(pc.bag[cursor] != noone && pc.clickChar != ""){
@@ -10,13 +10,16 @@ if(pc.bag[cursor] != noone && pc.clickChar != ""){
 			pc.gear[ itemIsEquipped(pc.bag[cursor]) ] = noone;
 		} else {
 			var t = pc.bag[cursor].kind;
-			if(t == "Weapon" && pc.gear[ww.gsWep] == noone){ pc.gear[ww.gsWep] = pc.bag[cursor]; }
-			if(t == "Armor" && pc.gear[ww.gsArm] == noone){ pc.gear[ww.gsArm] = pc.bag[cursor]; }
+			var changed = false;
+			if(t == "Weapon" && pc.gear[ww.gsWep] == noone){ pc.gear[ww.gsWep] = pc.bag[cursor]; changed = true; }
+			if(t == "Armor" && pc.gear[ww.gsArm] == noone){ pc.gear[ww.gsArm] = pc.bag[cursor]; changed = true; }
 			if(t == "Ring" && pc.gear[ww.gsRing] == noone){ 
-				pc.gear[ww.gsRing] = pc.bag[cursor]; 
+				pc.gear[ww.gsRing] = pc.bag[cursor]; changed = true;
 			} else if (t == "Ring" && pc.gear[ww.gsRing2] == noone) {
-				pc.gear[ww.gsRing2] = pc.bag[cursor]; 
+				pc.gear[ww.gsRing2] = pc.bag[cursor]; changed = true;
 			}
+			
+			if(changed){ playerDigest(10); }
 		}
 		
 		

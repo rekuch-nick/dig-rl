@@ -2,17 +2,27 @@ function combat(c1, c2){
 	
 	if(c1.hp < 1){ return; }
 	
+	if(c1.id == pc){ instance_create_depth(c2.xSpot * 64, c2.ySpot * 64, ww.layerE, effAttackSpace); }
+	
 	var isShockwave = false;
 	var hitRoll = irandom_range(1, 20) + getHitPlus(c1);
 	hitRoll += c1.rollingHitPlus;
+	
+	if(c1.attackIsLunge){ hitRoll += 4; }
 	
 	if(slow > 0){ 
 		logMessage("The slow effect makes " + c1.nam + " miss");
 		slow --; hitRoll -= 10; 
 	}
 	
+	if(characterHasProp(c1, "Blur Self") && c1.displace < 1 && irandom_range(0, 99) < (c1.gear[0].bonus * 4) ){
+		c1.displace = 4;
+		logMessageWhom(c1.nam, "become", "hard to see", c1);
+	}
+	
 	var tar = getArmorClass(c2);
-	if(c2.displace > 0){ displace --; if(choose(true, false)){ 
+	if(c2.displace > 0){ if(choose(true, false, false)){ 
+		c2.displace --;
 		logMessageWhom(c1.nam, "strike", "at illusions", c1);
 		hitRoll = 0; } }
 	
@@ -25,6 +35,7 @@ function combat(c1, c2){
 	//if(hitRoll < tar && c1.id == pc){ c1.rollingHitPlus ++; }
 	
 	if(hitRoll >= tar || c2.frozen > 0){
+		var v = c1 == pc ? " hit " : " hits ";
 		if(!isShockwave){ c1.rollingHitPlus = 0; }
 		
 		if(characterHasProp(c1, "Mold Armor") && c2.gear[1] != noone){
@@ -47,6 +58,11 @@ function combat(c1, c2){
 		}
 		
 		var dam = irandom_range(getMeleeMin(c1), getMeleeMax(c1));
+		if(c1.attackIsLunge){ 
+			var v = c1 == pc ? " lunge into " : " lunges into ";
+			dam = ceil(dam * 1.5); 
+		}
+		
 		
 		if(characterHasProp(c1, "Knockback")){
 			var a = c2.xSpot; var b = c2.ySpot;
@@ -86,7 +102,7 @@ function combat(c1, c2){
 			logMessage(c1.nam + v + c2.nam);
 		}
 		
-		if(characterHasProp(c1, "Ice Strikes") && choose(true, false, false) ){
+		if(characterHasProp(c1, "Ice Strikes") && choose(true, false, false) && c2.frozen < 1){
 			c2.frozen = 3;
 			logMessage(c1.nam + " freezes " + c2.nam);
 		}
@@ -94,6 +110,14 @@ function combat(c1, c2){
 		if(characterHasProp(c2, "Protection")){
 			var protReduction = itemPropBonus(c2, "Protection");
 			dam = clamp(dam - protReduction, 0, dam);
+		}
+		
+		if(characterHasProp(c1, "Teleport Foe") && irandom_range(0, 99) < 5 + (c1.gear[0].bonus * 2) ){
+			potionEffect(ww.potWarp, c2.xSpot, c2.ySpot);
+		}
+		
+		if(characterHasProp(c1, "Flaming Burst") && irandom_range(0, 99) < (c1.gear[0].bonus * 5) ){
+			potionEffect(ww.potBomb, c2.xSpot, c2.ySpot);
 		}
 		
 		if(c2.frozen > 0){ dam *= 2; }
@@ -108,7 +132,7 @@ function combat(c1, c2){
 		c2.hp -= dam;
 		
 		var sn = c2.hp < 1 ? ". " + c2.nam + " is killed!" : ".";
-		var v = c1 == pc ? " hit " : " hits ";
+		
 		if(c1.attackIsCleave){ v = c1 == pc ? " cleave " : " cleaves "; }
 		if(isShockwave){ v = c1 == pc ? " clip " : " clips "; }
 		logMessage(c1.nam + v + c2.nam + " for " + string(dam) + sn);

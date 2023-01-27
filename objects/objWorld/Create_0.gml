@@ -32,6 +32,7 @@ potBlessRing = 11;
 potRestore = 12;
 potSlow = 13;
 potDisplace = 14;
+potBombSmall = 15;
 
 rollWord = false;
 seed = 1;

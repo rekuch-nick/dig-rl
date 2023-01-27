@@ -24,4 +24,5 @@ shotRange = 4;
 splRange = 4;
 
 //moveType = "flee";
+lookType = "hunt";
 willStepOnTrap = false;

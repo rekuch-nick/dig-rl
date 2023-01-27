@@ -6,6 +6,7 @@ depth = -7010;
 
 playerInit();
 
+stepsMax = 12;
 
 wait = 0;
 moveSpeed = 4;

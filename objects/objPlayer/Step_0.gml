@@ -60,8 +60,10 @@ if(!moved){
 				if(ySpot < yTar){ b ++; bb += 32; }
 				if(ySpot > yTar){ b --; bb -= 32; }
 				if(inBounds(a, b) && ww.mmap[a, b] != noone){
+					attackIsLunge = true;
 					combat(id, ww.mmap[a, b]);
 					x = aa; y = bb;
+					attackIsLunge = false;
 				}
 			}
 			

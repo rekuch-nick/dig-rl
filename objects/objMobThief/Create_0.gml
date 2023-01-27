@@ -15,5 +15,7 @@ ac = 16;
 damRange = 10;
 aim = 4;
 
+lookType = "hunt";
+
 props = ["Steal Potions"];
 willStepOnTrap = false;

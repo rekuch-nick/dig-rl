@@ -11,7 +11,7 @@ hpMax = 20;
 hpRegen = 0;
 str = 14;
 agi = 10;
-ac = 16;
+ac = 15;
 damRange = 4;
 aim = 4;
 

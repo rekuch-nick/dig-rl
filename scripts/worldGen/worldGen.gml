@@ -69,7 +69,7 @@ function worldGen(){
 		}
 	}}
 	
-	
+	for(var a=0; a<W; a++){ bmap[a, H-1] = noone; }
 	var a = irandom_range(1, 15);
 	bmap[a, H - 1] = noone;
 	fmap[a, H - 1] = imgExit;

@@ -6,6 +6,7 @@ y += ys;
 ys += grav;
 
 image_alpha -= fade;
+if(flicker){ image_alpha = random_range(.2, 1); }
 
 timeCD --;
 
