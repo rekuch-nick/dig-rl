@@ -14,9 +14,9 @@ draw_text(room_width / 2, 90, "It's enough for a very minor wish:");
 draw_set_halign(fa_left);
 
 
-for(var i=1; i<4; i++){
+for(var i=1; i<6; i++){
 	var s = up[i].nam;
 	if(up[i].bonus > 0){ s += " +" + string(up[i].bonus); }
 	var c = up[i].col;
-	draw_text_color(100, 250 + i * 130, string(i) + ": " + s, c, c, c, c, random_range(.7, 1));
+	draw_text_color(100, 250 + (i-1) * 130, string(i) + ": " + s, c, c, c, c, random_range(.7, 1));
 }

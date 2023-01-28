@@ -16,7 +16,9 @@ for(var i=0; i<array_length(ww.messageLog); i++){
 //draw_text(4, ym, "Act");
 draw_text(4, ym - 28, "HP: " + string(pc.hp) + " (" + string(pc.hpMax) + ")");
 var hung = 100 - floor( (pc.food / pc.foodMax) * 100);
-draw_text(4, ym, "Hunger: " + string(hung) + "%");
+var c = c_white;
+if(hung >= 99){ c = floor(current_time / 400) % 2 == 1 ? c_red: c_white; }
+draw_text_color(4, ym, "Hunger: " + string(hung) + "%", c, c, c, c, 1);
 
 
 

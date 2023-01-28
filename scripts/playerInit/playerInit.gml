@@ -52,6 +52,7 @@ function playerInit(){
 	pc.bag[0] = getItem("Gladius"); pc.gear[ww.gsWep] = pc.bag[0];
 	//pc.bag[1] = getItem("Scale Armor"); pc.gear[ww.gsArm] = pc.bag[1];
 	pc.bag[1] = getItem("Leather Armor"); pc.gear[ww.gsArm] = pc.bag[1];
+	pc.bag[2] = getItem("Food");
 	
 	
 	

@@ -5,7 +5,7 @@ cursor = clamp(cursor, 0, 25);
 
 if(pc.bag[cursor] != noone && pc.clickChar != ""){
 	
-	if(pc.clickChar == "E"){
+	if(pc.clickChar == "E" || pc.clickChar == "Q"){
 		if(itemIsEquipped(pc.bag[cursor]) != -1){
 			pc.gear[ itemIsEquipped(pc.bag[cursor]) ] = noone;
 		} else {
@@ -19,7 +19,10 @@ if(pc.bag[cursor] != noone && pc.clickChar != ""){
 				pc.gear[ww.gsRing2] = pc.bag[cursor]; changed = true;
 			}
 			
-			if(changed){ playerDigest(10); }
+			if(changed){ 
+				playerDigest(20);
+				return;
+			}
 		}
 		
 		

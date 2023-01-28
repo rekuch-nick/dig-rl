@@ -1,7 +1,8 @@
 
 
 
-if(pc.clickChar == "1" || pc.clickChar == "2" || pc.clickChar == "3"){
+if(pc.clickChar == "1" || pc.clickChar == "2" || pc.clickChar == "3"
+					|| pc.clickChar == "4" || pc.clickChar == "5"){
 	if(ww.pmap[pc.xSpot, pc.ySpot] != noone){
 		instance_destroy(ww.pmap[pc.xSpot, pc.ySpot]);
 	}

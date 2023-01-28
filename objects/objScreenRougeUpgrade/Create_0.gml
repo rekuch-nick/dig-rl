@@ -9,6 +9,8 @@ do {
 	up[1] = randomGoodItem();
 	up[2] = randomGoodItem();
 	up[3] = randomGoodItem();
+	up[4] = "STR Potion";
+	up[5] = "AGI Potion";
 } until (
 	up[1] != up[2] && up[2] != up[3] && up[1] != up[3]
 );
@@ -16,6 +18,8 @@ do {
 up[1] = getItem(up[1]);
 up[2] = getItem(up[2]);
 up[3] = getItem(up[3]);
+up[4] = getItem(up[4]);
+up[5] = getItem(up[5]);
 
 for(var i=1; i<4; i++){
 	if(up[i].kind == "Weapon" || up[i].kind == "Armor" || up[i].kind == "Ring"){
