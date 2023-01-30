@@ -8,8 +8,8 @@ function playerInit(){
 
 	pc.hpRegen = 1;
 
-	pc.str = 10;
-	pc.agi = 10;
+	pc.str = 11;
+	pc.agi = 11;
 	pc.strMax = pc.str;
 	pc.agiMax = pc.agi;
 
@@ -41,8 +41,8 @@ function playerInit(){
 	
 	
 	pc.stage = 0;
-	pc.hp = 100;
-	pc.hpMax = 100;
+	pc.hp = 200;
+	pc.hpMax = 200;
 	
 	
 	for(var i=0; i<26; i++){

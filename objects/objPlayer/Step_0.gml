@@ -4,7 +4,10 @@ if(hp < 1){ gameOver(); playerEatInput(); return; }
 if(instance_number(objScreen) > 0){ return; }
 if(wait > 0){ wait--; return; }
 
-
+if(keyboard_check_pressed(vk_f4)){ debugMode = !debugMode; }
+if(debugMode){ hp = hpMax; food = foodMax; str = 100; agi = 100; digPow = 100; moveSpeed = 16;} else {
+	str = strMax; agi = agiMax; digPow = 1; moveSpeed = 4;
+}
 
 if(characterHasProp(id, "Ice Immune")){ frozen = 0; }
 
@@ -90,11 +93,16 @@ if(!moved){
 		} else {
 		
 			if(inBounds(xTar, yTar)){
-				if(ww.bmap[xTar, yTar] != noone && tileDigCost(xTar, yTar) > 0){
+				var dc = tileDigCost(xTar, yTar);
+				if(ww.bmap[xTar, yTar] != noone && dc > 0){
 					
-					playerDigest(1);
+					playerDigest(dc);
 					
-					if(digAt(xTar, yTar, 1)){
+					if(dc >= 10){
+						logMessage("Digging up rocks is exhausting! Watch your hunger.");
+					}
+					
+					if(digAt(xTar, yTar, digPow)){
 						timePasses();
 					}
 					

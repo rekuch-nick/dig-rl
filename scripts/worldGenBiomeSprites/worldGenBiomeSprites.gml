@@ -4,6 +4,7 @@ function worldGenBiomeSprites(z){
 		
 		if(z == "Desert"){
 			if(bmap[a, b] == imgBlock){ bmap[a, b] = imgBlock02; }
+			if(bmap[a, b] == imgBlockRock){ bmap[a, b] = imgBlockRock02; }
 			if(bmap[a, b] == imgBlockGrass){ bmap[a, b] = imgBlockGrass02; }
 		}
 		

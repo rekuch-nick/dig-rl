@@ -30,6 +30,8 @@ function playerVisionCheck(){
 		*/
 		ww.canSee[a, b] = false;
 		
+		if(pc.debugMode){ ww.canSee[a, b] = true; continue; }
+		
 		var n = 0;
 		if(characterHasProp(pc, "X-Ray")){ n = 1; }
 		

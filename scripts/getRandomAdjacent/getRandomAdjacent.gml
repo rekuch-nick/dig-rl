@@ -14,6 +14,7 @@ function getRandomAdjacent(a, b){
 	} until (
 		( inBounds(t.a, t.b)
 			&& ww.tmap[t.a, t.b] == noone
+			&& ww.pmap[t.a, t.b] == noone
 		) || tries > 40
 	);
 	

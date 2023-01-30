@@ -29,7 +29,8 @@ if(!moved && ready){
 	var tar = noone;
 	
 	if(state == "!" || (state == "?" && lookType == "hunt") ){
-		if(moveType == "flee"){
+		var danceCheck = choose(true, false);
+		if(moveType == "flee" || (moveType == "dance" && danceCheck) ){
 			var t = chooseClosestSpaceXFromPlayer(xSpot, ySpot, 3);
 		
 			if(t.a != -1){

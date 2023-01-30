@@ -9,15 +9,28 @@ function worldGen(){
 	losVision = false;
 	if(pc.stage >= 6){ zone = "Desert"; }
 	
-	//kind = "mix"; 
+	if(pc.stage % 5 == 2){ kind = "mix"; }
+	if(pc.stage % 5 == 4){ kind = "maze"; }
+	if(pc.stage % 5 == 0){ kind = "posts"; }
+	
+	
 	losVision = true;
 	
 	
 	
 	if(kind = "caves"){ worldGenColCaves(); }
 	if(kind = "lakes"){ worldGenPatches(noone, imgWater, false, true); }
-	if(kind = "posts"){ worldGenPosts(imgBlock); }
-	if(kind = "mix"){ worldGenStatic(imgBlock, noone); }
+	if(kind = "posts"){ 
+		if(zone == "Grasslands"){ worldGenPatches(noone, imgBGGrass, false, true); }
+		worldGenPosts(imgBlock); worldGenRandomPopulate(); }
+	if(kind = "mix"){ worldGenStatic(imgBlock, noone); worldGenRandomPopulate(); }
+	if(kind = "maze"){ 
+		worldGenMazeFrom(0, H-1); 
+		worldGenReplaceAllBlocks(imgBlock, imgBlockRock);
+		worldGenRandomPopulate(); 
+	}
+	
+	
 	
 	
 	//place exit

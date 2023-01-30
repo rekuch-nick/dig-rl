@@ -42,6 +42,7 @@ fCD = 2;
 
 //bag[4] = getItem("Ring of Protection");
 
-
+debugMode = false;
+digPow = 1;
 
 
