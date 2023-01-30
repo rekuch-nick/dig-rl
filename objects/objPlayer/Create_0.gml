@@ -19,6 +19,7 @@ yFirst = ySpot;
 
 viewCD = 10;
 
+seeAll = false;
 
 autoPickup = true;
 
@@ -26,6 +27,7 @@ holdSpaceTime = 0;
 
 rollingHitPlus = 0;
 
+fCD = 2;
 
 //bag[2] = getItem("Spear");
 //bag[3] = getItem("Displacement Potion");
@@ -36,6 +38,7 @@ rollingHitPlus = 0;
 //bag[4] = itemEnchant( getItem("Ring of Striking"), 9);
 //bag[5] = itemEnchant( getItem("Venom Sword"), 9);
 //bag[6] = itemEnchant( getItem("Leather Armor"), 1); bag[6] = itemEnchantArmorProp(bag[6], 3);
+//bag[6] = itemEnchant( getItem("Leather Armor"), 1); bag[6] = itemEnchantArmorProp(bag[6], 5);
 
 //bag[4] = getItem("Ring of Protection");
 

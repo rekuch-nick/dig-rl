@@ -2,11 +2,11 @@ function timePasses(){
 	
 	
 	with(objMob){ 
-		if(ww.fmap[xSpot, ySpot].playerSeen){
+		//if(ww.fmap[xSpot, ySpot].playerSeen){
 			if(abs(xSpot - pc.xSpot) + abs(ySpot - pc.ySpot) < stepsMax){
 				ready = true;
 			}
-		}
+		//}
 	}
 	
 	playerDigest(2);

@@ -1,4 +1,5 @@
 playerGetInput();
+if(fCD > 0){ fCD --; }
 if(hp < 1){ gameOver(); playerEatInput(); return; }
 if(instance_number(objScreen) > 0){ return; }
 if(wait > 0){ wait--; return; }
@@ -159,9 +160,6 @@ if(keyboard_check_pressed(vk_backspace)){
 	//spawnMobClose(); 
 }
 
-if(keyboard_check_pressed(vk_f1)){
-	for(var a=0; a<ww.W; a++){ for(var b=0; b<ww.H; b++){
-		ww.fmap[a, b].playerSeen = true;
-	}}
-}
+
+
 

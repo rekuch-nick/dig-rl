@@ -102,24 +102,24 @@ function getItem(t){
 		itm.kind = "Armor";
 		itm.bonus = 0;
 		itm.col = c_white;
-		itm.armor = 7;
-		itm.armorCheck = 15;
+		itm.armor = 6;
+		itm.armorCheck = 14;
 	}
 	if(t == "Splint Armor"){ 
 		itm.img = imgGearArmSplint;
 		itm.kind = "Armor";
 		itm.bonus = 0;
 		itm.col = c_white;
-		itm.armor = 9;
-		itm.armorCheck = 17;
+		itm.armor = 7;
+		itm.armorCheck = 16;
 	}
 	if(t == "Plate Armor"){ 
 		itm.img = imgGearArmPlate;
 		itm.kind = "Armor";
 		itm.bonus = 0;
 		itm.col = c_white;
-		itm.armor = 11;
-		itm.armorCheck = 19;
+		itm.armor = 8;
+		itm.armorCheck = 18;
 	}
 	
 	

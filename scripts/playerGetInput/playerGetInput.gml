@@ -1,8 +1,17 @@
 function playerGetInput(){
 	
+	if(keyboard_check_pressed(vk_f1) && pc.fCD < 1 && instance_number(objScreenHelp) < 1){
+		pc.fCD = 10;
+		instance_create_depth(0, 0, ww.layerS - 1, objScreenHelp);
+	}
+	
+	
 	xMouse = clamp(floor(mouse_x / 64), 0, ww.W - 1);
 	yMouse = clamp(floor(mouse_y / 64), 0, ww.H - 1);
-		
+	
+	
+	
+	
 	xIn = 0;
 	if(keyboard_check(ord("A")) || keyboard_check(vk_left)){ xIn --; }
 	if(keyboard_check(ord("D")) || keyboard_check(vk_right)){ xIn ++; }

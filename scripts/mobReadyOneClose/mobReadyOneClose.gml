@@ -5,12 +5,12 @@ function mobReadyOneClose(){
 	
 	with(objMob){ 
 		hasStruck = false;
-		if(ww.fmap[xSpot, ySpot].playerSeen){
+		//if(ww.fmap[xSpot, ySpot].playerSeen){
 			if(point_distance(xSpot, ySpot, pc.xSpot, pc.ySpot) < stepsMax){
 				ms[mi] = id;
 				mi ++;
 			}
-		}
+		//}
 	}
 
 	if(mi == 0){ return; }

@@ -1,4 +1,5 @@
-if(!ww.fmap[xSpot, ySpot].playerSeen){ return; }
+//if(!ww.fmap[xSpot, ySpot].playerSeen){ return; }
+if(!ww.canSee[xSpot, ySpot]){ return; }
 
 if(itm.potID != -1){
 	

@@ -42,7 +42,7 @@ if(instance_number(objScreenThrow) > 0){
 
 
 
-
+/*
 if(ww.fmap[xx, yy].playerSeen){
 	if(ww.bmap[xx, yy] == noone){
 		txt = "GO";
@@ -58,8 +58,8 @@ if(ww.fmap[xx, yy].playerSeen){
 		}
 	}
 	
-} else {
+} else {*/
 	txt = "";
-}
+//}
 
 if(pc.wait > 0){ txt = ""; }

@@ -32,7 +32,7 @@ draw_set_halign(fa_right);
 //draw_text(xm, 4, "Bag");
 
 draw_text(xm, ym - 28, "ATK: +" + string(getHitPlus(pc)) + ", " + string(getMeleeMin(pc)) + "-" + string(getMeleeMax(pc)) + "   AC: " + string(getArmorClass(pc)));
-draw_text(xm, ym, "STR: " + string(pc.str) + "    AGI: " + string(pc.agi));
+draw_text(xm, ym, "STR: " + string(pc.str) + " (" + string(pc.strMax) + ")    AGI: " + string(pc.agi) + " (" + string(pc.agiMax) + ")");
 
 
 draw_set_halign(fa_left);

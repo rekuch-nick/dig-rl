@@ -4,7 +4,9 @@ function tileBreak(a, b){
 	
 	var spt = ww.bmap[a, b].sprite_index;
 	
-	if(spt == imgBlock || spt == imgBlockGrass){
+	if(spt == imgBlock || spt == imgBlockGrass
+				|| spt == imgBlock02 || spt == imgBlockGrass02
+					){
 		instance_create_depth(a * 64 + 8, b * 64 + 8, ww.layerE, effChip);
 		instance_create_depth(a * 64 + 24, b * 64 + 8, ww.layerE, effChip);
 		instance_create_depth(a * 64 + 8, b * 64 + 24, ww.layerE, effChip);

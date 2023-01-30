@@ -1,24 +1,28 @@
 function getArmorClass(c){
 	
-	var n = c.ac + clamp(c.agi - 10, 0, c.agi);
+	var n = c.ac;
+	var agiBonus = clamp(c.agi - 10, 0, c.agi);
 	
 	
-	var armorCheck = 0;
+	
+	
 	
 	if(c.gear[ww.gsArm] != noone){
-		armorCheck = c.gear[ww.gsArm].armorCheck;
-		armorCheck = clamp(armorCheck - c.str, 0, armorCheck);
+		var weight = c.gear[ww.gsArm].armorCheck;
 		
-		var armorCheckMax = clamp(c.agi - 10, 0, c.agi);
-		if(armorCheck > armorCheckMax){ armorCheck = armorCheckMax; }
-		
+		var armorLoss = weight - c.str;
+		if(armorLoss < 0){ armorLoss = 0; }
+		if(armorLoss > agiBonus){ armorLoss = agiBonus; }
+		agiBonus -= armorLoss;
 		
 		n += c.gear[ww.gsArm].bonus;
 		n += c.gear[ww.gsArm].armor;
+		
+		
 	}
 	
-	n -= armorCheck;
 	
-	return n;
+	
+	return n + agiBonus;
 }
 

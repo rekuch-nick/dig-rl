@@ -3,6 +3,9 @@ function worldGenCaveAt(aa, bb){
 	
 	bmap[aa, bb] = noone;
 	
+	aMin = aa - 2; aMax = aa + 2;
+	bMin = bb - 2; bMax = bb + 2;
+	
 	for(var trails = 0; trails < 10; trails ++){
 		var a = aa; var b = bb;
 				
@@ -27,5 +30,19 @@ function worldGenCaveAt(aa, bb){
 		var t = randomItem(-1);
 		putPupCloseTo(t, aa, bb)
 	}
+	
+	var r = irandom_range(0, 99);
+	if(r < 10){
+		for(var a=aMin; a<=aMax; a++){ for(b=bMin; b<=bMax; b++){ if(inBounds(a, b)){
+			if(bmap[a, b] == noone){
+				r = irandom_range(0, 99);
+				if(r < 25){
+					tmap[a, b] = objTrap;
+				}
+			}
+		}}}
+	}
+	
+	
 	
 }

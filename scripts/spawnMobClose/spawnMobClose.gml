@@ -16,7 +16,7 @@ function spawnMobClose(){
 		if(inBounds(a, b)){
 			if(ww.mmap[a, b] == noone){
 				if(ww.bmap[a, b] == noone){
-					if(ww.fmap[a, b].playerSeen){
+					//if(ww.fmap[a, b].playerSeen){
 					
 						var t = objMob;
 						if(b < ww.groundLevel){ t = objMobSlime; }
@@ -25,7 +25,7 @@ function spawnMobClose(){
 						ww.mmap[a, b].timeSpawn = true;
 					
 						return ww.mmap[a, b];
-					}
+					//}
 				}
 			}
 		}

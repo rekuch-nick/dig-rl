@@ -4,6 +4,9 @@ function playerVisionCheck(){
 	
 	for(var a=0; a<ww.W; a++){ for(var b=bb; b<clamp(bb+20, 0, ww.H); b++){
 		
+		/*
+		if(pc.seeAll){ ww.fmap[a, b].playerSeen = true; continue; }
+		
 		for(var d=1; d<=8; d++){
 			var xx = a; var yy = b;
 			if(d == 1){ yy --; }
@@ -24,8 +27,30 @@ function playerVisionCheck(){
 			}
 			
 		}
+		*/
+		ww.canSee[a, b] = false;
 		
+		var n = 0;
+		if(characterHasProp(pc, "X-Ray")){ n = 1; }
 		
+		//if(ww.losVision && b <= ww.groundLevel){
+		var line = getLine(a, b, pc.xSpot, pc.ySpot);
+		if(lineIsBlocked(line) <= n){ 
+			ww.canSee[a, b] = true;
+			ww.memmap[a, b] = ww.bmap[a, b] == noone ? false : true;
+		}
+		//}
+		
+		if(b <= ww.groundLevel){ ww.canSee[a, b] = true; }
+		//if(ww.fmap[a, b].playerSeen){
+		//	ww.memmap[a, b] = ww.bmap[a, b] == noone ? false : true;
+		//}
 	}}
+	
+	
+	
+	
+	
+	
 	
 }

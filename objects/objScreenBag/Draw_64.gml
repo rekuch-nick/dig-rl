@@ -55,9 +55,9 @@ if(pc.bag[cursor] != noone){
 	}
 	
 	if(itm.kind == "Armor"){
-		var def = itm.armor + itm.bonus;
+		var def = itm.armor;
 		var chk = itm.armorCheck;
-		draw_text(650, 130, "AC: " + string(def) + "   Weight: " + string(chk));
+		draw_text(650, 130, "Armor: " + string(def) + "   Weight: " + string(chk));
 	}
 	
 	if(itm.kind == "Weapon"){
