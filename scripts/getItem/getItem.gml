@@ -202,7 +202,7 @@ function getItem(t){
 		itm.kind = "Potion";
 		itm.throwPower = 0;
 		itm.bonus = 0;
-		itm.col = c_orange;
+		itm.col = c_teal;
 		itm.potID = ww.potSTR;
 	}
 	
@@ -211,7 +211,7 @@ function getItem(t){
 		itm.kind = "Potion";
 		itm.throwPower = 0;
 		itm.bonus = 0;
-		itm.col = c_orange;
+		itm.col = c_teal;
 		itm.potID = ww.potAGI;
 	}
 	
@@ -247,7 +247,7 @@ function getItem(t){
 		itm.kind = "Potion";
 		itm.throwPower = 0;
 		itm.bonus = 0;
-		itm.col = c_orange;
+		itm.col = c_teal;
 		itm.potID = ww.potBlessWep;
 	}
 	
@@ -256,7 +256,7 @@ function getItem(t){
 		itm.kind = "Potion";
 		itm.throwPower = 0;
 		itm.bonus = 0;
-		itm.col = c_orange;
+		itm.col = c_teal;
 		itm.potID = ww.potBlessArm;
 	}
 	
@@ -265,7 +265,7 @@ function getItem(t){
 		itm.kind = "Potion";
 		itm.throwPower = 0;
 		itm.bonus = 0;
-		itm.col = c_orange;
+		itm.col = c_teal;
 		itm.potID = ww.potBlessRing;
 	}
 	

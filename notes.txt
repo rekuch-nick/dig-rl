@@ -1,10 +1,21 @@
+slow effect amks you miss seems wrong
+	plus should end if you run/wait long enough
+freezelock still too strong (maybe not since we x2ed hp?)
+
+
+
+make mouse cursor move with arrorws when throwing / bag screen
+
 
 teleport monster image
 flytryp poisions verb order
-make ground trearue more interesting
+make ground trearue more interesting..
 
 
 
+
+-tips to add:
+	throw a potion into a cauldren to double it
 
 -level features
 hall of mirrors maze

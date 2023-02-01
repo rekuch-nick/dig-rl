@@ -58,6 +58,8 @@ if(pc.bag[cursor] != noone){
 		var def = itm.armor;
 		var chk = itm.armorCheck;
 		draw_text(650, 130, "Armor: " + string(def) + "   Weight: " + string(chk));
+		draw_text_color(650, 156, "(Weight > STR reduces", c_grey, c_grey, c_grey, c_grey, 1);
+		draw_text_color(650, 182, "AGI dodge bonus)", c_grey, c_grey, c_grey, c_grey, 1);
 	}
 	
 	if(itm.kind == "Weapon"){
@@ -68,7 +70,7 @@ if(pc.bag[cursor] != noone){
 	}
 	
 	for(var i=0; i<array_length(itm.props); i++){
-		draw_text(660, 156 + (i * 26), itm.props[i]);
+		draw_text(660, 208 + (i * 26), itm.props[i]);
 	}
 	
 	

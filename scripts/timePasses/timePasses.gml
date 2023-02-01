@@ -19,6 +19,7 @@ function timePasses(){
 			pc.hp = clamp(pc.hp + r, 0, pc.hpMax);
 		}
 	} else {
+		logMessage("You are starving")
 		pc.hp --;
 	}
 	
@@ -37,6 +38,7 @@ function timePasses(){
 		
 	}
 	
+	/*
 	if(characterHasProp(pc, "Dig Aura")){
 		digAt(pc.xSpot - 1, pc.ySpot - 1, 5);
 		digAt(pc.xSpot - 1, pc.ySpot, 5);
@@ -48,7 +50,7 @@ function timePasses(){
 		digAt(pc.xSpot + 1, pc.ySpot - 1, 5);
 		digAt(pc.xSpot + 1, pc.ySpot, 5);
 		digAt(pc.xSpot + 1, pc.ySpot + 1, 5);
-	}
+	}*/
 	
 	
 	mobsAttack();

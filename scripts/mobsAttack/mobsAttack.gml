@@ -13,7 +13,7 @@ function mobsAttack(){
 			continue;
 		}
 		
-		if(shotType != noone && dis < shotRange){
+		if(shotType != noone && dis < shotRange && !pc.debugMode){
 			var r = irandom_range(0, 99);
 			if(r < shotChance){
 				var line = getLine(xSpot, ySpot, pc.xSpot, pc.ySpot);

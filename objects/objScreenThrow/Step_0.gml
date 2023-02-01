@@ -12,7 +12,7 @@ if(pc.clickNO || pc.clickRM){
 
 
 
-if(pc.clickLM){
+if(pc.clickLM || pc.clickChar == "Z"){
 	logClear();
 	
 	

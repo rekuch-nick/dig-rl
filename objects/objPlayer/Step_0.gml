@@ -95,14 +95,17 @@ if(!moved){
 			if(inBounds(xTar, yTar)){
 				var dc = tileDigCost(xTar, yTar);
 				if(ww.bmap[xTar, yTar] != noone && dc > 0){
+					var dp = digPow;
 					
+					if(characterHasProp(pc, "Stone Carving")){ dp = dp * 2; }
 					playerDigest(dc);
 					
 					if(dc >= 10){
 						logMessage("Digging up rocks is exhausting! Watch your hunger.");
 					}
 					
-					if(digAt(xTar, yTar, digPow)){
+					
+					if(digAt(xTar, yTar, dp)){
 						timePasses();
 					}
 					
@@ -115,11 +118,25 @@ if(!moved){
 		
 	}
 	
+	if(holdSpaceTime < 1 || hp >= hpMax){ beenRestingFor = 0; }
 	if(clickSpace || holdSpaceTime > 10){ 
 		holdSpaceTime = 0;
+		beenRestingFor ++;
 		logClear();
 		timePasses(); 
+		
+		if(beenRestingFor > 4){ timePasses(); }
+		if(beenRestingFor > 8){ timePasses(); }
+		if(beenRestingFor > 12){ timePasses(); }
+		if(beenRestingFor > 16){ timePasses(); }
+		if(beenRestingFor > 20){ timePasses(); }
+		if(beenRestingFor > 24){ timePasses(); }
+		if(beenRestingFor > 28){ timePasses(); }
+		if(beenRestingFor > 32){ timePasses(); }
+		if(beenRestingFor > 36){ timePasses(); }
+		if(beenRestingFor > 40){ timePasses(); }
 	}
+	
 	
 } /// end of not moved
 

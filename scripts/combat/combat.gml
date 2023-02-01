@@ -5,13 +5,23 @@ function combat(c1, c2){
 	if(c1.id == pc){ instance_create_depth(c2.xSpot * 64, c2.ySpot * 64, ww.layerE, effAttackSpace); }
 	
 	var isShockwave = false;
-	var hitRoll = irandom_range(1, 20) + getHitPlus(c1);
+	var natRoll = irandom_range(1, 20);
+	var hitRoll = natRoll + getHitPlus(c1);
 	hitRoll += c1.rollingHitPlus;
+	
+	var tar = getArmorClass(c2);
+	
+	
 	
 	if(c1.attackIsLunge){ hitRoll += 4; }
 	
+	
+	if(hitRoll < tar && (natRoll == 19 || natRoll == 20)){ hitRoll = tar; }
+	if(hitRoll >= tar && (natRoll == 1 || natRoll == 2)){ hitRoll = 0; }
+	
+	
 	if(slow > 0){ 
-		logMessage("The slow effect makes " + c1.nam + " miss");
+		logMessage(c1.nam + "s attack is sluggish");
 		slow --; hitRoll -= 10; 
 	}
 	
@@ -20,7 +30,7 @@ function combat(c1, c2){
 		logMessageWhom(c1.nam, "become", "hard to see", c1);
 	}
 	
-	var tar = getArmorClass(c2);
+	
 	if(c2.displace > 0){ if(choose(true, false, false)){ 
 		c2.displace --;
 		logMessageWhom(c1.nam, "strike", "at illusions", c1);
@@ -50,7 +60,7 @@ function combat(c1, c2){
 		if(characterHasProp(c1, "Steal Potions")){
 			var i = irandom_range(0, 25);
 			if(pc.bag[i] != noone){
-				if(pc.bag[i].kind == "Potion" || pc.bag[i].kind == "Food" || (choose(true, false) && (!itemIsEquipped(pc.bag[i])) )){
+				if(pc.bag[i].kind == "Potion" || pc.bag[i].kind == "Food" || (choose(true, false) && (itemIsEquipped(pc.bag[i]) == -1) )){
 					logMessage(c1.nam + " stole a " + pc.bag[i].nam);
 					pc.bag[i] = noone;
 				}
@@ -132,6 +142,7 @@ function combat(c1, c2){
 		c2.hp -= dam;
 		
 		var sn = c2.hp < 1 ? ". " + c2.nam + " is killed!" : ".";
+		if(c2.id == pc){ sn = " (" + string(pc.hp) + ")"; }
 		
 		if(c1.attackIsCleave){ v = c1 == pc ? " cleave " : " cleaves "; }
 		if(isShockwave){ v = c1 == pc ? " clip " : " clips "; }

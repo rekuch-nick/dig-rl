@@ -22,6 +22,7 @@ function combatSpell(c1, c2){
 	
 	var sn = c2.hp < 1 ? ". " + c2.nam + " is killed!" : ".";
 	var v = c1 == pc ? " zap " : " zaps ";
+	if(c2.id == pc){ sn = " (" + string(pc.hp) + ")"; }
 	logMessage(c1.nam + v + c2.nam + " for " + string(dam) + sn);
 		
 		

@@ -16,7 +16,7 @@ function randomItem(r){
 			"Defense Potion",
 			"Warp Potion",
 			"Displacement Potion",
-			"Restoration Potion",
+			"Restore Potion",
 			"Slow Potion"
 	); }
 	
