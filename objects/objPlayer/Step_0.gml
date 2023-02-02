@@ -50,12 +50,21 @@ if(!moved){
 	if(xTar != xSpot || yTar != ySpot){
 		if(frozen > 0){ timePasses(); frozen --; wait += 6; return; }
 		
+		
 		if(clickLM || !holdLM){ logClear(); }
 		
 		if(xTar < xSpot){ face = -1; }
 		if(xTar > xSpot){ face = 1; }
 	
 		if(characterCanMove(id, xTar, yTar)){
+			
+			if(web > 0){ 
+				timePasses();
+				wait += 30;
+				if(choose(true, false)){ web --; }
+				logMessage(nam + " can't move out of the web");
+				return; 
+			}
 			
 			if(characterHasProp(id, "Lunge")){
 				var a = xTar; var b = yTar; var aa = xTar * 64; var bb = yTar * 64;

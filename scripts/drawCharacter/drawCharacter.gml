@@ -35,6 +35,10 @@ function drawCharacter(){
 		draw_sprite_ext(imgSlow, floor(current_time / 400) % 3, x, y, 4, 4, 0, c_white, .5);
 	}
 	
+	if(web > 0){
+		draw_sprite_ext(imgTrapWeb, floor(current_time / 400) % 3, x, y, 4, 4, 0, c_white, .9);
+	}
+	
 	if(displace > 0){
 		var xx = face == -1 ? 64 : 0;
 		draw_sprite_ext(sprite_index, image_index, x+choose(-4,0,4)+xx, y+choose(-4,0,4), 2*face, 2, 0, c_aqua, .5);

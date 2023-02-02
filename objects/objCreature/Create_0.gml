@@ -38,6 +38,7 @@ displace = 0;
 slow = 0;
 swordmastery = 0;
 defense = 0;
+web = 0;
 
 props = [];
 
