@@ -165,6 +165,8 @@ function potionEffect(pid, a, b){
 		if(m != noone){
 			m.str = m.strMax;
 			m.agi = m.agiMax;
+			m.poison = 0;
+			m.slow = 0;
 			logMessageWhom(m.nam, "feel", "amazing", m);
 		}
 	}

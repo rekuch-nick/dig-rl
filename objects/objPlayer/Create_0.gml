@@ -40,7 +40,7 @@ beenRestingFor = 0;
 //bag[4] = itemEnchant( getItem("Ring of Striking"), 9);
 //bag[5] = itemEnchant( getItem("Venom Sword"), 9);
 //bag[6] = itemEnchant( getItem("Leather Armor"), 1); bag[6] = itemEnchantArmorProp(bag[6], 3);
-bag[6] = itemEnchant( getItem("Sword"), 1); bag[6] = itemEnchantWepProp(bag[6], 1);
+//bag[6] = itemEnchant( getItem("Sword"), 1); bag[6] = itemEnchantWepProp(bag[6], 1);
 
 //bag[4] = getItem("Ring of Protection");
 

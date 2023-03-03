@@ -34,3 +34,5 @@ shotRange = 0;
 splRange = 1;
 
 willStepOnTrap = false;
+
+isRogue = false;

@@ -1,5 +1,8 @@
 function tileDigCost(a, b){
 	
+	if(!inBounds(a, b)){ return 0; }
+	if(ww.bmap[a, b] == noone){ return 0; }
+	
 	var t = ww.bmap[a, b].sprite_index;
 	
 	if(t == imgBlock){ return 1; }
