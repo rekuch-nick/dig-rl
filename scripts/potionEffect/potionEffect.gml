@@ -133,7 +133,7 @@ function potionEffect(pid, a, b){
 	if(pid == ww.potBlessWep){
 		if(m != noone){
 			if(m.gear[0] != noone){
-				itemEnchant(m.gear[0], 1);
+				itemEnchant(m.gear[0], 1, false);
 			} else {
 				logMessage("No weapon to bless there");
 			}
@@ -143,7 +143,7 @@ function potionEffect(pid, a, b){
 	if(pid == ww.potBlessArm){
 		if(m != noone){
 			if(m.gear[1] != noone){
-				itemEnchant(m.gear[1], 1);
+				itemEnchant(m.gear[1], 1, false);
 			} else {
 				logMessage("No armor to bless there");
 			}
@@ -152,8 +152,8 @@ function potionEffect(pid, a, b){
 	
 	if(pid == ww.potBlessRing){
 		if(m != noone){
-			if(m.gear[2] != noone){ itemEnchant(m.gear[2], 1); }
-			if(m.gear[3] != noone){ itemEnchant(m.gear[3], 1); }
+			if(m.gear[2] != noone){ itemEnchant(m.gear[2], 1, false); }
+			if(m.gear[3] != noone){ itemEnchant(m.gear[3], 1, false); }
 			
 			if(m.gear[2] == noone && m.gear[3] == noone){
 				logMessage("No rings to bless there");

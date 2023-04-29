@@ -27,8 +27,9 @@ function worldGenCaveAt(aa, bb){
 	
 	
 	if(choose(true, false, false)){
-		var t = randomItem(-1);
-		putPupCloseTo(t, aa, bb)
+		worldGenItemAt(aa, bb);
+		//var t = randomItem(-1);
+		//putPupCloseTo(t, aa, bb)
 	}
 	
 	

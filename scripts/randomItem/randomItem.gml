@@ -7,7 +7,7 @@ function randomItem(r){
 	
 	if(r >= 1 && r <= 2){ return "Food"; }
 	
-	if( r >= 3 && r <= 7){ return choose(
+	if( r >= 3 && r <= 8){ return choose(
 			"Healing Potion",
 			"Blasting Potion",
 			"Ice Potion",
@@ -20,7 +20,7 @@ function randomItem(r){
 			"Slow Potion"
 	); }
 	
-	if(r >= 8 && r <= 9){ return choose(
+	if(r >= 9 && r <= 9){ return choose(
 			"Leather Armor","Leather Armor",
 			"Scale Armor","Scale Armor","Scale Armor",
 			"Chain Armor","Chain Armor","Chain Armor",

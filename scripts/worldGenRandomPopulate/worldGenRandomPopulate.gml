@@ -12,7 +12,8 @@ function worldGenRandomPopulate(){
 		if(ww.mmap[a, b] == noone && ww.bmap[a, b] == noone){
 			worldGenMobsAt(a, b);
 			if(choose(true, false)){
-				putPupCloseTo(randomItem(-1), a, b);
+				//putPupCloseTo(randomItem(-1), a, b);
+				worldGenItemAt(a, b);
 			}
 			n --;
 		}

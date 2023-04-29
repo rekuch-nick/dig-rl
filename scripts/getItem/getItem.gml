@@ -17,6 +17,7 @@ function getItem(t){
 	};
 	
 	if(t == "Rock"){ 
+		itm.img = imgRock;
 		itm.kind = "Other";
 		itm.bonus = 0;
 		itm.col = c_white;

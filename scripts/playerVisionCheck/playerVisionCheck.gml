@@ -40,6 +40,7 @@ function playerVisionCheck(){
 		if(lineIsBlocked(line) <= n){ 
 			ww.canSee[a, b] = true;
 			ww.memmap[a, b] = ww.bmap[a, b] == noone ? false : true;
+			ww.memmap[a, b] = true; ////
 		}
 		//}
 		

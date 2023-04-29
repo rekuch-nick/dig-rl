@@ -21,7 +21,7 @@ function playerPickupItem(a, b){
 	if(i.itm.potID != -1 && !pc.potionKnown[i.itm.potID]){
 		n = "Unidentified Potion";
 	}
-	logMessage("Picked up " + n);
+	logMessage("Picked up " + string(n));
 	
 	
 	instance_destroy(ww.pmap[a, b]);

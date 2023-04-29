@@ -7,6 +7,9 @@ freezelock still too strong (maybe not since we x2ed hp?)
 make mouse cursor move with arrorws when throwing / bag screen
 
 
+web debuff / potion
+regen ring / "safe regen"
+
 teleport monster image
 flytryp poisions verb order
 make ground trearue more interesting..

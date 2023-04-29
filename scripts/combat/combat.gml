@@ -52,7 +52,7 @@ function combat(c1, c2){
 			if(!itemHasProp(c2.gear[1], "Not Metal")){
 				if(c2.gear[1].bonus > -5){
 					logMessage(c1.nam + "'s slime corodes metal armor.");
-					itemEnchant(c2.gear[1], -1);
+					itemEnchant(c2.gear[1], -1, false);
 				}
 			}
 		}

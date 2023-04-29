@@ -16,4 +16,12 @@ if(itm.potID != -1){
 	return;
 }
 
+if(itm.bonus > 0){
+	var c = itemColorByBonus(itm.bonus);
+	draw_set_alpha(.2);
+	draw_rectangle_color(x, y, x+64, y+64, c, c, c, c, false);
+	draw_set_alpha(1);
+}
+
+
 draw_self();

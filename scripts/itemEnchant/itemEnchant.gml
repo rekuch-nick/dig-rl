@@ -1,16 +1,10 @@
-function itemEnchant(itm, val){
+function itemEnchant(itm, val, quiet){
 	
 	itm.bonus = itm.bonus + val;
 	
-	itm.col = c_white;
-	if(itm.bonus < 0){ itm.col = c_red; }
-	if(itm.bonus >= 1){ itm.col = c_lime; }
-	if(itm.bonus >= 3){ itm.col = c_blue; }
-	if(itm.bonus >= 5){ itm.col = c_fuchsia; }
-	if(itm.bonus >= 7){ itm.col = c_orange; }
-	if(itm.bonus >= 9){ itm.col = c_yellow; }
+	itm.col = itemColorByBonus(itm.bonus);
 	
-	if(instance_number(objScreenRougeUpgrade) < 1){
+	if(!quiet){
 		logMessage(itm.nam + " becomes +" + string(itm.bonus));
 	}
 	
