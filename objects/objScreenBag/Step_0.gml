@@ -5,7 +5,11 @@ cursor = clamp(cursor, 0, 25);
 
 if(pc.bag[cursor] != noone && pc.clickChar != ""){
 	
-	if(pc.clickChar == "E" || pc.clickChar == "Q"){
+	/*if(pc.clickChar == "E" || pc.clickChar == "Q"){
+		
+		
+		manageBagQ(cursor);
+		
 		if(itemIsEquipped(pc.bag[cursor]) != -1){
 			pc.gear[ itemIsEquipped(pc.bag[cursor]) ] = noone;
 		} else {
@@ -19,6 +23,8 @@ if(pc.bag[cursor] != noone && pc.clickChar != ""){
 				pc.gear[ww.gsRing2] = pc.bag[cursor]; changed = true;
 			}
 			
+			manageBag();
+			
 			if(changed){ 
 				playerDigest(20);
 				return;
@@ -28,7 +34,7 @@ if(pc.bag[cursor] != noone && pc.clickChar != ""){
 		
 		
 		
-	}
+	}*/
 	
 	if(pc.clickChar == "F" && ww.pmap[pc.xSpot, pc.ySpot] == noone){
 		if(itemIsEquipped(pc.bag[cursor]) == -1){
@@ -36,29 +42,33 @@ if(pc.bag[cursor] != noone && pc.clickChar != ""){
 			ww.pmap[pc.xSpot, pc.ySpot].itm = pc.bag[cursor];
 			ww.pmap[pc.xSpot, pc.ySpot].sprite_index = pc.bag[cursor].img;
 			pc.bag[cursor] = noone;
+			
+			manageBag();
 		}
 	}
 	
 	if( (pc.clickChar == "T" || pc.clickChar == "Z") && pc.bag[cursor] != noone){
 		if(itemIsEquipped(pc.bag[cursor]) == -1){
-			logClear();
-			var s = pc.bag[cursor].nam;
-			if(pc.bag[cursor].potID != -1 && !pc.potionKnown[pc.bag[cursor].potID]){s = "Unidentified Potion"; }
-			logMessage("Throw the " + s + " where?");
-			logMessage("Warning: thrown items will be LOST. R-Click to cancel");
-			
-			
-			//visible = false;
-			var s = instance_create_depth(0, 0, ww.layerS, objScreenThrow);
-			s.index = cursor;
-			
+			manageBagZ(cursor);
 			instance_destroy();
 		}
+		
+		
 	}
 	
-	if((pc.clickChar == "U" || pc.clickChar == "Q")&& pc.bag[cursor] != noone){
+	if((pc.clickChar == "U" || pc.clickChar == "Q" || pc.clickChar == "E") && pc.bag[cursor] != noone){
 		logClear();
 		
+		
+		
+		if(pc.bag[cursor].food > 0 || pc.bag[cursor].potID != -1){
+			manageBagQ(cursor);
+			instance_destroy();
+		} else {
+			manageBagQ(cursor);
+		}
+		
+		/*
 		if(itemIsEquipped(pc.bag[cursor]) == -1){
 			var used = false
 			
@@ -81,10 +91,12 @@ if(pc.bag[cursor] != noone && pc.clickChar != ""){
 			
 			if(used){
 				pc.bag[cursor] = noone;
+				manageBag();
 				instance_destroy();
 			}
-		}
+		}*/
 	}
+	
 	
 	playerEatInput();
 }

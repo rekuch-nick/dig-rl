@@ -30,6 +30,7 @@ if(pc.clickLM || pc.clickChar == "Z"){
 	
 	
 	pc.bag[index] = noone;
+	manageBag();
 	playerEatInput();
 	instance_destroy();	
 }

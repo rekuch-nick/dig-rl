@@ -47,4 +47,4 @@ beenRestingFor = 0;
 debugMode = false;
 digPow = 1;
 
-
+itemCursor = 0;

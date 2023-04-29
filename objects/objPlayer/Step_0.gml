@@ -9,7 +9,10 @@ if(debugMode){ hp = hpMax; food = foodMax; str = 100; agi = 100; digPow = 100; m
 	str = strMax; agi = agiMax; digPow = 1; moveSpeed = 4;
 }
 
-if(characterHasProp(id, "Ice Immune")){ frozen = 0; }
+if(characterHasProp(id, "Ice Immune")){ 
+	if(frozen > 0){ logMessage("You are immune to being frozen"); }
+	frozen = 0; 
+}
 
 
 
@@ -183,10 +186,40 @@ if(viewCD > 0){ viewCD --; } else {
 }
 
 
-if(clickChar == "I" || clickChar == "B" || clickChar == "Z" || clickChar == "Q" || clickChar == "E" ){
+if(clickChar == "Z"){
+	playerEatInput();
+	if(frozen > 0){ return; }
+	if(bag[itemCursor] != noone){ manageBagZ(itemCursor); } else {
+		instance_create_depth(0, 0, ww.layerS, objScreenBag);
+	}
+}
+
+if(clickChar == "Q"){
+	playerEatInput();
+	if(frozen > 0){ return; }
+	if(bag[itemCursor] != noone){ manageBagQ(itemCursor); } else {
+		instance_create_depth(0, 0, ww.layerS, objScreenBag);
+	}
+}
+
+if(clickChar == "I" || clickChar == "B" || clickChar == "E" || clickChar == "C"){
 	if(frozen > 0){ return; }
 	instance_create_depth(0, 0, ww.layerS, objScreenBag);
 }
+
+
+for(var i=0; i<9; i++){
+	if(clickChar == string(i + 1)){
+		if(bag[i] != noone){
+			itemCursor = i;
+		}
+	}
+}
+
+if(mouse_wheel_up()){ itemCursorMove(-1); }
+if(mouse_wheel_down()){ itemCursorMove(1); }
+
+
 
 
 if(keyboard_check_pressed(vk_backspace)){ 

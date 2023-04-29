@@ -1,6 +1,6 @@
 function putPupAt(t, a, b){
 	
-	if(t == noone){ t = randomItem(-1); }
+	if(t == noone){ t = randomItem(); }
 	
 	t = getItem(t);
 	

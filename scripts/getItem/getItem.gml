@@ -32,7 +32,7 @@ function getItem(t){
 	}
 	
 	if(t == "Gladius"){ 
-		itm.img = imgGearWepSword;
+		itm.img = imgGearWepGlad;
 		itm.kind = "Weapon";
 		itm.bonus = 0;
 		itm.col = c_white;

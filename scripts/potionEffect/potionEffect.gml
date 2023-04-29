@@ -8,13 +8,13 @@ function potionEffect(pid, a, b){
 	
 	if(pid == ww.potHeal){
 		if(m != noone){
-			if(m.hp < m.hpMax){
+			//if(m.hp < m.hpMax){
 				m.hp = clamp(m.hp + ceil(m.hpMax / 3), 0, m.hpMax);
 				logMessageWhom(m.nam, "recover", " some HP", m);
-			} else {
-				m.hpMax += floor(m.hpMax / 20);
-				logMessageWhom(m.nam, "gain", " some Max HP", m);
-			}
+			//} else {
+				//m.hpMax += floor(m.hpMax / 20);
+				//logMessageWhom(m.nam, "gain", " some Max HP", m);
+			//}
 		}
 	}
 	
@@ -167,6 +167,9 @@ function potionEffect(pid, a, b){
 			m.agi = m.agiMax;
 			m.poison = 0;
 			m.slow = 0;
+			m.hpMax += 10;
+			m.hp = m.hpMax;
+			
 			logMessageWhom(m.nam, "feel", "amazing", m);
 		}
 	}

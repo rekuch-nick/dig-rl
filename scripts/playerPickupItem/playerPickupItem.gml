@@ -28,5 +28,5 @@ function playerPickupItem(a, b){
 	ww.pmap[a, b] = noone;
 	
 	
-
+	manageBag();
 }

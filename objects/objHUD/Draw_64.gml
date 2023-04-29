@@ -3,12 +3,7 @@ draw_self();
 //var hung = 100 - floor( (pc.food / pc.foodMax) * 100);
 //draw_text(4, 26, "Hunger: " + string(hung) + "%");
 
-for(var i=0; i<array_length(ww.messageLog); i++){
 
-	var msg = ww.messageLog[i];
-	draw_rectangle_color(0, 2 + (i * 22), string_width(msg) + 4, 26 + (i * 22), c_black, c_black, c_black, c_black, false);
-	draw_text(4, 2 + (i * 22), msg);
-}
 
 
 //draw_text(240, 4, string(pc.xSpot) + ", " + string(pc.ySpot) );
@@ -36,3 +31,42 @@ draw_text(xm, ym, "STR: " + string(pc.str) + " (" + string(pc.strMax) + ")    AG
 
 
 draw_set_halign(fa_left);
+
+
+for(var i=0; i<9; i++){
+	if(pc.bag[i] != noone){
+		var a = (8 + i) * 64;
+		var b = 0 * 64;
+		//draw_rectangle_color(a, b, a+64, b+64, c_black, c_black, c_black, c_black, false);
+		draw_rectangle_color(a+2, b+2, a+62, b+62, c_black, c_black, c_black, c_black, false);
+		if(pc.itemCursor == i){
+			draw_set_alpha(.5);
+			draw_rectangle_color(a+2, b+2, a+62, b+62, c_yellow, c_yellow, c_yellow, c_yellow, false);
+			draw_set_alpha(1);
+		}
+		
+		
+		var spt = pc.bag[i].img;
+		if(pc.bag[i].kind == "Potion"){
+			if(!pc.potionKnown[pc.bag[i].potID]){
+				spt = imgPotionUnknown;
+			}
+		}
+		
+		draw_sprite_stretched(spt, 0, a+4, b+4, 56, 56);
+		//draw_text_color(a+4, b+4, string(i + 1), c_dkgray, c_dkgray, c_dkgray, c_dkgray, 1);
+		
+		
+	}
+}
+
+
+
+
+
+for(var i=0; i<array_length(ww.messageLog); i++){
+
+	var msg = ww.messageLog[i];
+	draw_rectangle_color(0, 2 + (i * 22), string_width(msg) + 4, 26 + (i * 22), c_black, c_black, c_black, c_black, false);
+	draw_text(4, 2 + (i * 22), msg);
+}
