@@ -14,9 +14,8 @@ characterMove(id);
 if(!moved && ready){
 	ready = false;
 	if(moveCD > 0){ moveCD --; return; }
-	if(slow > 0 && choose(true, false)){ slow --; return; }
+	if(slow > 0 && choose(true, false)){ return; }
 	if(web > 0){ 
-		if(choose(true, false)){ web --; }
 		logMessage(nam + " can't move out of the web");
 		return; 
 	}

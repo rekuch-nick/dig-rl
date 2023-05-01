@@ -6,14 +6,12 @@ stepsMax = 12;
 
 
 
-hp = 62;
-hpMax = 62;
+
 hpRegen = 0;
-str = 18;
-agi = 10;
-ac = 10;
-damRange = 10;
-aim = 4;
+
 
 props = ["Big"];
 willStepOnTrap = true;
+
+//           hp,  ac,  aim, str, dam, spl
+monsterScale(4,   1.5,   2,   2,   2,   1);

@@ -17,3 +17,6 @@ aim = 4;
 
 //props = ["Mold Armor"];
 willStepOnTrap = true;
+
+//           hp,  ac,  aim, str, dam, spl
+monsterScale(1.5, 1,   .5,  1,   1,   1);

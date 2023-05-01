@@ -46,7 +46,7 @@ function manageBagQ(n){
 				pc.gear[ww.gsRing] = pc.bag[n]; changed = true;
 			} else if (t == "Ring" && pc.gear[ww.gsRing2] == noone) {
 				pc.gear[ww.gsRing2] = pc.bag[n]; changed = true;
-			} else {
+			} else if (t == "Ring") {
 				pc.gear[ww.gsRing] = noone;
 				pc.gear[ww.gsRing] = pc.bag[n]; changed = true;
 			}

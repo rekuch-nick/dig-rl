@@ -5,7 +5,7 @@ image_xscale = 2; image_yscale = 2;
 depth = -7010;
 
 playerInit();
-
+firstFrame = true;
 
 stepsMax = 12;
 
@@ -45,6 +45,13 @@ beenRestingFor = 0;
 //bag[4] = getItem("Ring of Protection");
 
 debugMode = false;
+debugStats = false;
 digPow = 1;
 
 itemCursor = 0;
+hotbarLeftmost = 0;
+
+for(var i=1; i<20; i++){ 
+	//bag[i] = getItem(randomItem()); 
+	//bag[i] = getItem("Blasting Potion");
+}

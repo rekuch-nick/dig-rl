@@ -1,6 +1,10 @@
 //if(!ww.fmap[xSpot, ySpot].playerSeen){ return; }
 if(!ww.canSee[xSpot, ySpot]){ return; }
 
+if(characterHasProp(id, "Invisible") && id != pc){
+	if(point_distance(xSpot, ySpot, pc.xSpot, pc.ySpot) > 2){ return; }
+}
+
 drawCharacter();
 
 

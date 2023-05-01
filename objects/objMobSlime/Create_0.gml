@@ -6,14 +6,13 @@ stepsMax = 8;
 
 
 
-hp = 6;
-hpMax = 6;
+
 hpRegen = 0;
-str = 10;
-agi = 10;
-ac = 6;
-damRange = 4;
-aim = 6;
+
 
 //moveType = "flee";
 willStepOnTrap = true;
+
+
+//           hp,  ac,  aim, str, dam, spl
+monsterScale(.5,  .5,  1,   .5,  1,   1);

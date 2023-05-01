@@ -32,6 +32,13 @@ function potionEffect(pid, a, b){
 			if(ww.bmap[aa, bb] != noone && tileDigCost(aa, bb) != 0){
 				tileBreak(aa, bb);
 			}
+			if(floorBreakable(aa, bb)){
+				ww.fmap[aa, bb].sprite_index = imgBGDirtBlasted;
+			}
+			if(trapBreakable(aa, bb)){
+				instance_destroy(ww.tmap[aa, bb]);
+				ww.tmap[aa, bb] = noone;
+			}
 			
 		}}
 		
@@ -91,14 +98,14 @@ function potionEffect(pid, a, b){
 	
 	if(pid == ww.potSword){
 		if(m != noone){
-			m.swordmastery += 10;
+			m.swordmastery += 30;
 			logMessage(m.nam + " can strike with might.");
 		}
 	}
 	
 	if(pid == ww.potDefense){
 		if(m != noone){
-			m.defense += 10;
+			m.defense += 30;
 			logMessage(m.nam + " can endure attacks.");
 		}
 	}
@@ -176,14 +183,14 @@ function potionEffect(pid, a, b){
 	
 	if(pid == ww.potSlow){
 		if(m != noone){
-			m.slow += 10;
+			m.slow += 30;
 			logMessageWhom(m.nam, "become", "slower", m);
 		}
 	}
 	
 	if(pid == ww.potDisplace){
 		if(m != noone){
-			m.displace += 10;
+			m.displace += 30;
 			logMessageWhom(m.nam, "become", "hard to see", m);
 		}
 	}

@@ -6,6 +6,8 @@ function worldGen(){
 	losVision = false;
 	pc.stage ++;
 	
+	worldGenMobTable(pc.stage);
+	
 	zone = "Grasslands";
 	if(pc.stage >= 6){ zone = "Desert"; }
 	if(pc.stage >= 11){ zone = "Coral"; }

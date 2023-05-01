@@ -20,9 +20,10 @@ function combat(c1, c2){
 	if(hitRoll >= tar && (natRoll == 1 || natRoll == 2)){ hitRoll = 0; }
 	
 	
-	if(slow > 0){ 
-		logMessage(c1.nam + "s attack is sluggish");
-		slow --; hitRoll -= 10; 
+	if(slow > 0 && choose(true, false)){ 
+		var ss = c1 == pc ? "r" : "s";
+		logMessage(c1.nam + ss + " attack is sluggish");
+		hitRoll = 1;
 	}
 	
 	if(characterHasProp(c1, "Blur Self") && c1.displace < 1 && irandom_range(0, 99) < (c1.gear[0].bonus * 4) ){
@@ -31,8 +32,8 @@ function combat(c1, c2){
 	}
 	
 	
-	if(c2.displace > 0){ if(choose(true, false, false)){ 
-		c2.displace --;
+	if(c2.displace > 0){ if(choose(true, false)){ 
+		//c2.displace --;
 		logMessageWhom(c1.nam, "strike", "at illusions", c1);
 		hitRoll = 0; } }
 	
@@ -44,7 +45,7 @@ function combat(c1, c2){
 	
 	//if(hitRoll < tar && c1.id == pc){ c1.rollingHitPlus ++; }
 	
-	if(hitRoll >= tar || c2.frozen > 0){
+	if(hitRoll >= tar || c2.frozen > 0 || natRoll == 20){
 		var v = c1 == pc ? " hit " : " hits ";
 		if(!isShockwave){ c1.rollingHitPlus = 0; }
 		
@@ -61,7 +62,11 @@ function combat(c1, c2){
 			var i = irandom_range(0, 25);
 			if(pc.bag[i] != noone){
 				if(pc.bag[i].kind == "Potion" || pc.bag[i].kind == "Food" || (choose(true, false) && (itemIsEquipped(pc.bag[i]) == -1) )){
-					logMessage(c1.nam + " stole a " + pc.bag[i].nam);
+					var namString = pc.bag[i].nam;
+					if(pc.bag[i].kind == "Potion" && !pc.potionKnown[pc.bag[i].potID]){
+						namString = "Unidentified Potion";
+					}
+					logMessage(c1.nam + " stole a " + namString);
 					pc.bag[i] = noone;
 				}
 			}
@@ -112,6 +117,12 @@ function combat(c1, c2){
 			logMessage(c1.nam + v + c2.nam);
 		}
 		
+		if(characterHasProp(c1, "Slowing Strikes") && choose(true, false, false)){
+			c2.slow = clamp(c2.slow, 10, max(30, c2.slow));
+			var v = c1 == pc ? " slow " : " slows ";
+			logMessage(c1.nam + v + c2.nam);
+		}
+		
 		if(characterHasProp(c1, "Ice Strikes") && choose(true, false, false) && c2.frozen < 1){
 			c2.frozen = 3;
 			logMessage(c1.nam + " freezes " + c2.nam);
@@ -132,11 +143,11 @@ function combat(c1, c2){
 		
 		if(c2.frozen > 0){ dam *= 2; }
 		if(c1.swordmastery > 0){
-			c1.swordmastery --;
+			//c1.swordmastery --;
 			dam *= 2;
 		}
 		if(c2.defense > 0){
-			c2.defense --;
+			//c2.defense --;
 			dam = ceil(dam / 2);
 		}
 		c2.hp -= dam;

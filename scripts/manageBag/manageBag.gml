@@ -18,8 +18,8 @@ function manageBag(){
 		if(shifted){ continue; }
 		
 		
-		for(i=1; i<26-4; i++){
-			if(pc.bag[i] != noone && pc.bag[i-1] == noone){
+		for(i=1; i<26; i++){
+			if(pc.bag[i] != noone && pc.bag[i-1] == noone && itemIsEquipped(pc.bag[i]) == -1){
 				manageBagSwap(i, i-1); shifted = true; break;
 			}
 		}

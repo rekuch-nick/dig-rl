@@ -1,7 +1,7 @@
 function characterEnterTile(c, a, b){
 	
 	
-	if(ww.tmap[a, b] != noone){
+	if(ww.tmap[a, b] != noone && !characterHasProp(c, "Flying")){
 		var t = ww.tmap[a, b];
 		
 		if(t.nam == "Web"){

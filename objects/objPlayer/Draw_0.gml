@@ -11,5 +11,5 @@ drawCharacter();
 //draw_text(x, y, getShadow(pc));
 //draw_rectangle(xContact * 64, yContact * 64, xContact * 64 + 64, yContact * 64 + 64, false);
 	
-
+//draw_text(x, y, itemCursor)draw_text(x, y+30, hotbarLeftmost)
 

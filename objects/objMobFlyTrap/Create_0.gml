@@ -1,19 +1,18 @@
 event_inherited();
 nam = "Fly Trap";
 
-sleepChance = 85;
+sleepChance = 75;
 stepsMax = 8;
 
 
 
-hp = 42;
-hpMax = 42;
+
 hpRegen = 0;
-str = 10;
-agi = 10;
-ac = 8;
-damRange = 10;
-aim = 8;
+
+
+
+//           hp,  ac,  aim, str, dam, spl
+monsterScale(2,   1,   1,   .5,  1,   1);
 
 props = ["Poison Strikes"];
 willStepOnTrap = true;

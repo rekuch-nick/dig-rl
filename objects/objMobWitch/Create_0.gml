@@ -7,15 +7,8 @@ sleepChance = 40;
 stepsMax = 8;
 
 
-
-hp = 45;
-hpMax = 45;
 hpRegen = 0;
-str = 10;
-agi = 10;
-ac = 15;
-damRange = 6;
-aim = 0;
+
 
 
 shotType = objFireShot;
@@ -25,3 +18,6 @@ splRange = 10;
 
 moveType = "flee";
 willStepOnTrap = false;
+
+//           hp,  ac,  aim, str, dam, spl
+monsterScale(3,   1.5, 1.5, 3,   3,   3);

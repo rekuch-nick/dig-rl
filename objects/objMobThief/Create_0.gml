@@ -6,16 +6,14 @@ stepsMax = 8;
 
 
 
-hp = 30;
-hpMax = 30;
+
 hpRegen = 0;
-str = 10;
-agi = 10;
-ac = 16;
-damRange = 10;
-aim = 4;
+
 
 lookType = "hunt";
 
 props = ["Steal Potions"];
 willStepOnTrap = false;
+
+//           hp,  ac,  aim, str, dam, spl
+monsterScale(1.5, 1.5, 1.5, 1,   1,   1);

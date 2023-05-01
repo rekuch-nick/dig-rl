@@ -3,8 +3,10 @@ if(fCD > 0){ fCD --; }
 if(hp < 1){ gameOver(); playerEatInput(); return; }
 if(instance_number(objScreen) > 0){ return; }
 if(wait > 0){ wait--; return; }
+firstFrame = false;
 
 if(keyboard_check_pressed(vk_f4)){ debugMode = !debugMode; }
+if(keyboard_check_pressed(vk_f5)){ debugStats = !debugStats; }
 if(debugMode){ hp = hpMax; food = foodMax; str = 100; agi = 100; digPow = 100; moveSpeed = 16;} else {
 	str = strMax; agi = agiMax; digPow = 1; moveSpeed = 4;
 }
@@ -64,7 +66,6 @@ if(!moved){
 			if(web > 0){ 
 				timePasses();
 				wait += 30;
-				if(choose(true, false)){ web --; }
 				logMessage(nam + " can't move out of the web");
 				return; 
 			}
@@ -134,6 +135,9 @@ if(!moved){
 	if(clickSpace || holdSpaceTime > 10){ 
 		holdSpaceTime = 0;
 		beenRestingFor ++;
+		
+		if(playerCloseToMob()){ beenRestingFor = 1; }
+		
 		logClear();
 		timePasses(); 
 		
@@ -212,6 +216,7 @@ for(var i=0; i<9; i++){
 	if(clickChar == string(i + 1)){
 		if(bag[i] != noone){
 			itemCursor = i;
+			hotbarLeftmost = 0;
 		}
 	}
 }

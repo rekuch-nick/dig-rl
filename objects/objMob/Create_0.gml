@@ -17,14 +17,9 @@ stepsMax = 8;
 
 timeSpawn = false;
 
-hp = 10;
-hpMax = 10;
 hpRegen = 0;
-str = 14;
-agi = 10;
-ac = 8;
-damRange = 6;
-aim = 6;
+
+
 
 moveCD = 0;
 
@@ -36,3 +31,10 @@ splRange = 1;
 willStepOnTrap = false;
 
 isRogue = false;
+
+
+
+//           hp,  ac,  aim, str, dam, spl
+monsterScale(.5,  1,   1,   1,   1,   1);
+
+

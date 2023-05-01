@@ -47,3 +47,13 @@ lookType = "wander";
 
 willStepOnTrap = true;
 rollingHitPlus = 0;
+
+
+
+
+
+
+
+
+
+

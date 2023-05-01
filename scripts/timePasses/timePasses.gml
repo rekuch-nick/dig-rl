@@ -24,6 +24,11 @@ function timePasses(){
 	}
 	
 	with(objCreature){
+		
+		if(hpRegen > 0 && id != pc && poison < 1){
+			hp = clamp(hp + hpRegen, 0, hpMax);
+		}
+		
 		if(poison > 0){ 
 			poison --;
 			hp -= clamp(floor(hpMax / 100), 1, 20);
@@ -36,6 +41,13 @@ function timePasses(){
 			if(hp < 1){ logMessageWhom(nam, "succumb", "to the thorns", id); }
 		}
 		
+		if(slow > 0){ slow --; }
+		if(defense > 0){ defense --; }
+		if(swordmastery > 0){ swordmastery --; }
+		if(displace > 0){ displace --; }
+		if(web > 0 && choose(true, false)){ web --; }
+		
+		if(characterHasProp(id, "Displaced") && displace < 10){ displace = 10; }
 	}
 	
 	/*

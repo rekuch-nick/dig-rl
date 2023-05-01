@@ -6,14 +6,13 @@ stepsMax = 6;
 
 
 
-hp = 40;
-hpMax = 40;
+
 hpRegen = 0;
-str = 14;
-agi = 10;
-ac = 8;
-damRange = 4;
-aim = 4;
+
+
+
+//           hp,  ac,  aim, str, dam, spl
+monsterScale(1.5, 1,   .5,  1,   1,   1);
 
 props = ["Mold Armor"];
 willStepOnTrap = true;

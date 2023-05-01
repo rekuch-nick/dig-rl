@@ -1,6 +1,8 @@
 function drawCharacter(){
 	
 	
+	
+	
 	if(face == 1){
 		draw_self();
 	} else {
@@ -41,7 +43,8 @@ function drawCharacter(){
 	
 	if(displace > 0){
 		var xx = face == -1 ? 64 : 0;
-		draw_sprite_ext(sprite_index, image_index, x+choose(-4,0,4)+xx, y+choose(-4,0,4), 2*face, 2, 0, c_aqua, .5);
+		var scl = abs(image_xscale);
+		draw_sprite_ext(sprite_index, image_index, x+choose(-4,0,4)+xx, y+choose(-4,0,4), scl*face, scl, 0, c_aqua, .5);
 	}
 	
 }

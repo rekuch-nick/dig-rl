@@ -1,5 +1,15 @@
 function worldGenMobsAt(aa, bb){
 	
+	var i = irandom_range(0, array_length(ww.mobTable) - 1);
+	var encounter = ww.mobTable[i];
+	var t = encounter.kind;
+	var n = irandom_range(encounter.m1, encounter.m2);
+	putMobCloseTo(t, aa, bb, n);
+	
+	
+	
+	return;
+	
 	
 	var r = irandom_range(1, 3) + ((pc.stage - 1) % 5);
 	

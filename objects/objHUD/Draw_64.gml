@@ -32,23 +32,31 @@ draw_text(xm, ym, "STR: " + string(pc.str) + " (" + string(pc.strMax) + ")    AG
 
 draw_set_halign(fa_left);
 
-
+var iStart = pc.hotbarLeftmost;
 for(var i=0; i<9; i++){
-	if(pc.bag[i] != noone){
+	if(pc.bag[i+iStart] != noone){
 		var a = (8 + i) * 64;
 		var b = 0 * 64;
 		//draw_rectangle_color(a, b, a+64, b+64, c_black, c_black, c_black, c_black, false);
 		draw_rectangle_color(a+2, b+2, a+62, b+62, c_black, c_black, c_black, c_black, false);
-		if(pc.itemCursor == i){
+		var c = pc.bag[i+iStart].col;
+		var typ = pc.bag[i+iStart].kind;
+		if(typ == "Weapon" || typ == "Armor" || typ == "Ring"){
+			if(pc.bag[i+iStart].bonus > 0){
+				draw_rectangle_color(a+6, b+6, a+58, b+58, c, c, c, c, false);
+				draw_rectangle_color(a+10, b+10, a+54, b+54, c_black, c_black, c_black, c_black, false);
+			}
+		}
+		if(pc.itemCursor == i+iStart){
 			draw_set_alpha(.5);
 			draw_rectangle_color(a+2, b+2, a+62, b+62, c_yellow, c_yellow, c_yellow, c_yellow, false);
 			draw_set_alpha(1);
 		}
 		
 		
-		var spt = pc.bag[i].img;
-		if(pc.bag[i].kind == "Potion"){
-			if(!pc.potionKnown[pc.bag[i].potID]){
+		var spt = pc.bag[i+iStart].img;
+		if(pc.bag[i+iStart].kind == "Potion"){
+			if(!pc.potionKnown[pc.bag[i+iStart].potID]){
 				spt = imgPotionUnknown;
 			}
 		}
