@@ -88,6 +88,7 @@
     {"id":{"name":"imgPotionBlessRing","path":"sprites/imgPotionBlessRing/imgPotionBlessRing.yy",},"order":24,},
     {"id":{"name":"getRandomAdjacent","path":"scripts/getRandomAdjacent/getRandomAdjacent.yy",},"order":64,},
     {"id":{"name":"worldGenStatic","path":"scripts/worldGenStatic/worldGenStatic.yy",},"order":70,},
+    {"id":{"name":"objMobFungus","path":"objects/objMobFungus/objMobFungus.yy",},"order":20,},
     {"id":{"name":"playerCloseToMob","path":"scripts/playerCloseToMob/playerCloseToMob.yy",},"order":93,},
     {"id":{"name":"itemColorByBonus","path":"scripts/itemColorByBonus/itemColorByBonus.yy",},"order":82,},
     {"id":{"name":"imgBlockRock03","path":"sprites/imgBlockRock03/imgBlockRock03.yy",},"order":24,},

@@ -13,6 +13,11 @@ if(disToPlayer < stepsMax - getShadow(pc) ){
 characterMove(id);
 if(!moved && ready){
 	ready = false;
+	
+	
+
+
+	
 	if(moveCD > 0){ moveCD --; return; }
 	if(slow > 0 && choose(true, false)){ return; }
 	if(web > 0){ 
@@ -41,6 +46,8 @@ if(!moved && ready){
 				var tar = pathing(xSpot, ySpot, t.a, t.b, true);
 				if(tar == noone){ tar = pathing(xSpot, ySpot, t.a, t.b, false); }
 			}
+		} else if (moveType == "still"){
+			tar = noone;
 		} else {
 			var tar = pathing(xSpot, ySpot, pc.xSpot, pc.ySpot, true);
 			if(tar == noone){ tar = pathing(xSpot, ySpot, pc.xSpot, pc.ySpot, false); }
@@ -63,9 +70,42 @@ if(!moved && ready){
 }
 
 
+if(hp > 0 && lastHp != -1 && lastHp > hp){
+	if(spawnMaster != noone){
+		var tries = 0;
+		while(tries < 10){
+			tries ++;
+			var a = irandom_range(0, 3);
+			var b = irandom_range(0, a);
+			a = choose(a, -a);
+			b = choose(b, -b);
+			a = xSpot + a;
+			b = ySpot + b;
+			if(inBounds(a, b)){
+				if(ww.mmap[a, b] == noone && ww.bmap[a, b] == noone){
+					ww.mmap[a, b] = instance_create_depth(a * 64, b * 64, ww.layerM, spawnMaster);
+					ww.mmap[a, b].spawnMaster = noone;
+					logMessage("The " + nam + " spreads")
+					break;
+				}
+			}
+		}
+	}		
+}
+
+lastHp = hp;
+
+
+
+
 if(hp < 1){
 	ww.mmap[xSpot, ySpot] = noone;
 	var caller = id;
 	with(objFireShot){ if(shooter == caller){ shooter = noone; } }
 	instance_destroy();
 }
+
+
+
+
+

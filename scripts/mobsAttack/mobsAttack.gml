@@ -6,6 +6,8 @@ function mobsAttack(){
 		var dis = abs(xSpot - pc.xSpot) + abs(ySpot - pc.ySpot);
 		
 		
+		
+		
 		if(dis == 1 ){ // || (dis == 2 && xSpot != pc.xSpot && ySpot != pc.ySpot) ){
 			characterShiftTowards(id, pc.xSpot, pc.ySpot);
 			combat(id, pc);

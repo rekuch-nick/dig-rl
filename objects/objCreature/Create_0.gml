@@ -28,6 +28,8 @@ state = "z";
 xPlayerAt = 0;
 yPlayerAt = 0;
 
+spawnMaster = noone;
+
 shadow = 0;
 attackIsCleave = false;
 attackIsLunge = false;
@@ -39,6 +41,7 @@ slow = 0;
 swordmastery = 0;
 defense = 0;
 web = 0;
+lastHp = -1;
 
 props = [];
 

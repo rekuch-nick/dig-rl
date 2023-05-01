@@ -3,7 +3,7 @@ function worldGenMobTable(l){
 	var ll = l;
 	while(ll > 5){ ll -= 5; }
 	
-	//ww.mobTable = [ {kind: objMobHydra, m1: 1, m2: 1} ]; return; ///////
+	//ww.mobTable = [ {kind: objMobFungus, m1: 1, m2: 1} ]; return; ///////
 	
 	if(l >= 1 && l <= 5){ // grasslands
 		ww.mobTable = [
