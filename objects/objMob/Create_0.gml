@@ -34,7 +34,8 @@ isRogue = false;
 
 
 
-//           hp,  ac,  aim, str, dam, spl
-monsterScale(.5,  1,   1,   1,   1,   1);
+
+hp = 10; ac = 8; aim = 4; str = 0; damRange = 6; splRange = 6;
+monsterScale(5,  2,   2,   2,   4,   0);
 
 

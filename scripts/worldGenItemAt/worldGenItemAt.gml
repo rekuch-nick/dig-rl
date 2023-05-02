@@ -3,7 +3,7 @@ function worldGenItemAt(aa, bb){
 	var t = getItem("Rock");
 	
 	var roll = irandom_range(1, 20);
-	roll += floor(pc.stage / 2);
+	//roll += floor(pc.stage / 2);
 	
 	
 	if(roll >= 5){

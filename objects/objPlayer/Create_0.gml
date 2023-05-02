@@ -2,7 +2,9 @@ event_inherited();
 nam = "You";
 xMouse = 0; yMouse = 0;
 image_xscale = 2; image_yscale = 2;
+image_xscale = 4; image_yscale = 4;
 depth = -7010;
+showBlood = false;
 
 playerInit();
 firstFrame = true;
@@ -40,7 +42,7 @@ beenRestingFor = 0;
 //bag[4] = itemEnchant( getItem("Ring of Striking"), 9, true);
 //bag[5] = itemEnchant( getItem("Venom Sword"), 9, true);
 //bag[6] = itemEnchant( getItem("Leather Armor"), 1, true); bag[6] = itemEnchantArmorProp(bag[6], 3);
-//bag[6] = itemEnchant( getItem("Sword"), 1, true); bag[6] = itemEnchantWepProp(bag[6], 1);
+//bag[6] = itemEnchant( getItem("Sword"), 1, true); bag[6] = itemEnchantWepProp(bag[6], 2);
 
 //bag[4] = getItem("Ring of Protection");
 

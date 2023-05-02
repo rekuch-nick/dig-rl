@@ -126,7 +126,7 @@ function getItem(t){
 	
 	
 	if(t == "Ring of Protection"){ 
-		itm.img = imgGearRing;
+		itm.img = imgGearRingProt;
 		itm.kind = "Ring";
 		itm.bonus = 1;
 		itm.col = c_lime;
@@ -134,7 +134,7 @@ function getItem(t){
 	}
 	
 	if(t == "Ring of Sustenance"){ 
-		itm.img = imgGearRing;
+		itm.img = imgGearRingSus;
 		itm.kind = "Ring";
 		itm.bonus = 1;
 		itm.col = c_lime;
@@ -142,7 +142,7 @@ function getItem(t){
 	}
 	
 	if(t == "Ring of Lightning"){ 
-		itm.img = imgGearRing;
+		itm.img = imgGearRingBolts;
 		itm.kind = "Ring";
 		itm.bonus = 1;
 		itm.col = c_lime;
@@ -150,11 +150,19 @@ function getItem(t){
 	}
 	
 	if(t == "Ring of Striking"){ 
-		itm.img = imgGearRing;
+		itm.img = imgGearRingStrike;
 		itm.kind = "Ring";
 		itm.bonus = 1;
 		itm.col = c_lime;
 		itm.props = ["Melee Aim"];
+	}
+	
+	if(t == "Ring of Regen"){ 
+		itm.img = imgGearRingRegen;
+		itm.kind = "Ring";
+		itm.bonus = 1;
+		itm.col = c_lime;
+		itm.props = ["Regen"];
 	}
 	
 	

@@ -13,7 +13,10 @@ function combat(c1, c2){
 	
 	
 	
-	if(c1.attackIsLunge){ hitRoll += 4; }
+	if(c1.attackIsLunge){ 
+		if(characterHasProp(pc, "Perfect Lunges")){ hitRoll += 8; }
+		hitRoll += 4; 
+	}
 	
 	
 	if(hitRoll < tar && (natRoll == 19 || natRoll == 20)){ hitRoll = tar; }
@@ -75,7 +78,12 @@ function combat(c1, c2){
 		var dam = irandom_range(getMeleeMin(c1), getMeleeMax(c1));
 		if(c1.attackIsLunge){ 
 			var v = c1 == pc ? " lunge into " : " lunges into ";
-			dam = ceil(dam * 1.5); 
+			
+			if(characterHasProp(pc, "Perfect Lunges")){ 
+				dam = ceil(dam * 2); 
+			} else {
+				dam = ceil(dam * 1.5); 
+			}
 		}
 		
 		
@@ -126,6 +134,15 @@ function combat(c1, c2){
 		if(characterHasProp(c1, "Ice Strikes") && choose(true, false, false) && c2.frozen < 1){
 			c2.frozen = 3;
 			logMessage(c1.nam + " freezes " + c2.nam);
+		}
+		
+		//"Memory Burn"
+		if(characterHasProp(c1, "Memory Burn") && choose(true, false) && c2 == pc){
+			logMessage(c1.nam + " muddles " + c2.nam);
+			for(var a=0; a<ww.W; a++){ for(var b=0; b<ww.H; b++){
+				ww.memmap[a, b] = false;
+				
+			}}
 		}
 		
 		if(characterHasProp(c2, "Protection")){

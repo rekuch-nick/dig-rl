@@ -19,5 +19,5 @@ shotChance = 0;
 shotRange = 0;
 splRange = 1;
 
-//           hp,  ac,  aim, str, dam, spl
-monsterScale(10,  1.5, 1.5, 2,   2,   2);
+hp = 100; ac = 10; aim = 4; str = 0; damRange = 6; splRange = 6;
+monsterScale(25,  2,   2,   2,   4,   2);

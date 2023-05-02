@@ -11,8 +11,10 @@ hpRegen = 0;
 
 
 
-//           hp,  ac,  aim, str, dam, spl
-monsterScale(1.5, 1,   .5,  1,   1,   1);
 
 props = ["Mold Armor"];
 willStepOnTrap = true;
+
+
+hp = 40; ac = 8; aim = 0; str = 0; damRange = 10; splRange = 6;
+monsterScale(15,  2,   2,   0,   6,   0);

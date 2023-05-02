@@ -1,5 +1,6 @@
 function randomGoodItem(){
 	
+	
 	return choose(
 		randomRarePotionType(),
 		randomWeaponType(),randomWeaponType(),

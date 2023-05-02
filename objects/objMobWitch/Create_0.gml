@@ -1,5 +1,5 @@
 event_inherited();
-image_xscale = 2; image_yscale = 2
+image_xscale = 4; image_yscale = 4;
 
 nam = "Witch";
 
@@ -7,7 +7,7 @@ sleepChance = 40;
 stepsMax = 8;
 
 
-hpRegen = 0;
+
 
 
 
@@ -19,5 +19,5 @@ splRange = 10;
 moveType = "flee";
 willStepOnTrap = false;
 
-//           hp,  ac,  aim, str, dam, spl
-monsterScale(3,   1.5, 1.5, 3,   3,   3);
+hp = 15; ac = 8; aim = 4; str = 0; damRange = 6; splRange = 6;
+monsterScale(25,  2,   2,   2,   4,   4);

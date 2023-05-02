@@ -13,5 +13,5 @@ hpRegen = 0;
 props = ["Big"];
 willStepOnTrap = true;
 
-//           hp,  ac,  aim, str, dam, spl
-monsterScale(4,   1.5,   2,   2,   2,   1);
+hp = 40; ac = 8; aim = 4; str = 8; damRange = 6; splRange = 6;
+monsterScale(15,  2,   3,   2,   4,   0);

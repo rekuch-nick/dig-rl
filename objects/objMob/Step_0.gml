@@ -102,6 +102,15 @@ if(hp < 1){
 	ww.mmap[xSpot, ySpot] = noone;
 	var caller = id;
 	with(objFireShot){ if(shooter == caller){ shooter = noone; } }
+	
+	if(pc.showBlood && hasBlood){
+		if(floorBreakable(xSpot, ySpot)){
+			var t = choose(imgBGDirtBlood, imgBGDirtBlood2);
+			if(hasGreenBlood){ t = choose(imgBGDirtBloodGreen, imgBGDirtBloodGreen2); }
+			ww.fmap[xSpot, ySpot].sprite_index = t;
+		}
+	}
+	
 	instance_destroy();
 }
 

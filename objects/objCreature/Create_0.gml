@@ -51,7 +51,8 @@ lookType = "wander";
 willStepOnTrap = true;
 rollingHitPlus = 0;
 
-
+hasBlood = true;
+hasGreenBlood = false;
 
 
 

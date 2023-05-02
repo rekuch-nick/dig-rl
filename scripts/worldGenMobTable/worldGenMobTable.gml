@@ -3,7 +3,7 @@ function worldGenMobTable(l){
 	var ll = l;
 	while(ll > 5){ ll -= 5; }
 	
-	//ww.mobTable = [ {kind: objMobFungus, m1: 1, m2: 1} ]; return; ///////
+	//ww.mobTable = [ {kind: objMobOnion, m1: 1, m2: 1} ]; return; ///////
 	
 	if(l >= 1 && l <= 5){ // grasslands
 		ww.mobTable = [
@@ -15,10 +15,10 @@ function worldGenMobTable(l){
 		
 		if(ll > 1){
 			ww.mobTable[array_length(ww.mobTable)] = choose(
-				{kind: objMobGrub, m1: 1, m2: 1},
+				{kind: objMobOnion, m1: 1, m2: 1},
 				{kind: objMobSnail, m1: 1, m2: 1},
-				{kind: objMobThief, m1: 1, m2: 1},
 				{kind: objMobGolem, m1: 1, m2: 1},
+				{kind: objMobFungus, m1: 1, m2: 1},
 			);
 		}
 		if(ll > 3){
@@ -106,6 +106,10 @@ function worldGenMobTable(l){
 		{kind: objMobIceGolem, m1: 1, m2: 1},
 		{kind: objMobCyclops, m1: 1, m2: 1},
 		{kind: objMobWitch, m1: 1, m2: 1},
+		
+		{kind: objMobFungus, m1: 1, m2: 2},
+		{kind: objMobOnion, m1: 1, m2: 3},
+		{kind: objMobWasp, m1: 2, m2: 4},
 		
 		{kind: objMobGhost, m1: 1, m2: 1},
 		{kind: objMobGolem, m1: 1, m2: 2},

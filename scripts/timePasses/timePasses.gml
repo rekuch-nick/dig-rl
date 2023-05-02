@@ -16,6 +16,15 @@ function timePasses(){
 		
 		if(pc.poison < 1){
 			var r = pc.hpRegen;
+			
+			if(characterHasProp(pc, "Regen")){
+				var n = itemPropBonus(pc, "Regen") * .4;
+				while(n >= 1){
+					n --; r ++;
+				}
+				if(random_range(0, .99) < n){ r ++; }
+			}
+			
 			pc.hp = clamp(pc.hp + r, 0, pc.hpMax);
 		}
 	} else {
