@@ -17,13 +17,13 @@ moved = false;
 justFinished = false;
 
 xSpot = floor(x / 64); ySpot = floor(y / 64);
-xFirst = xSpot; 
-yFirst = ySpot;
+xFirst = xSpot; yFirst = ySpot;
+xLast = xSpot; yLast = ySpot;
 
 viewCD = 10;
 
 seeAll = false;
-
+fastRunner = 0;
 autoPickup = true;
 
 holdSpaceTime = 0;

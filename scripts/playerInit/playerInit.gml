@@ -39,6 +39,7 @@ function playerInit(){
 	pc.xp = 0;
 	
 	
+	pc.fastRunner = 0;
 	
 	pc.stage = 0;
 	pc.hp = 200;

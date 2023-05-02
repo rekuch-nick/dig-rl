@@ -23,8 +23,13 @@ function worldGenCaveAt(aa, bb){
 		}
 	}
 	
-	worldGenMobsAt(aa, bb);
 	
+	
+	
+	worldGenFeatureAt(aa, bb);
+	
+	
+	worldGenMobsAt(aa, bb);
 	
 	if(choose(true, false, false)){
 		worldGenItemAt(aa, bb);
@@ -33,7 +38,7 @@ function worldGenCaveAt(aa, bb){
 	}
 	
 	
-	worldGenFeatureAt(aa, bb);
+	
 	
 	
 	

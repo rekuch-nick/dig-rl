@@ -62,9 +62,9 @@ function combat(c1, c2){
 		}
 		
 		if(characterHasProp(c1, "Steal Potions")){
-			var i = irandom_range(0, 25);
+			var i = irandom_range(0, 21);
 			if(pc.bag[i] != noone){
-				if(pc.bag[i].kind == "Potion" || pc.bag[i].kind == "Food" || (choose(true, false) && (itemIsEquipped(pc.bag[i]) == -1) )){
+				if(pc.bag[i].kind != "Wand" && itemIsEquipped(pc.bag[i]) == -1 ){
 					var namString = pc.bag[i].nam;
 					if(pc.bag[i].kind == "Potion" && !pc.potionKnown[pc.bag[i].potID]){
 						namString = "Unidentified Potion";
@@ -122,12 +122,12 @@ function combat(c1, c2){
 		if(characterHasProp(c1, "Poison Strikes")){
 			c2.poison += dam;
 			var v = c1 == pc ? " poison " : " poisons ";
-			logMessage(c1.nam + v + c2.nam);
+			//logMessage(c1.nam + v + c2.nam);
 		}
 		
 		if(characterHasProp(c1, "Slowing Strikes") && choose(true, false, false)){
 			c2.slow = clamp(c2.slow, 10, max(30, c2.slow));
-			var v = c1 == pc ? " slow " : " slows ";
+			//var v = c1 == pc ? " slow " : " slows ";
 			logMessage(c1.nam + v + c2.nam);
 		}
 		

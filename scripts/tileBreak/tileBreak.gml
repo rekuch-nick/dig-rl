@@ -21,6 +21,7 @@ function tileBreak(a, b){
 	
 	
 	
+	
 	instance_destroy(ww.bmap[a, b]);
 	ww.bmap[a, b] = noone;
 }

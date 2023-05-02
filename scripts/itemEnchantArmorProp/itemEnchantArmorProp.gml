@@ -6,7 +6,7 @@ function itemEnchantArmorProp(itm, fix){
 	}
 	
 	
-	var r = irandom_range(1, 6);
+	var r = irandom_range(1, 7);
 	//r = 6; /////
 	if(fix != -1){ r = fix; }
 	var t = "Mage"; var p =  "Cast Damage Up";
@@ -20,6 +20,8 @@ function itemEnchantArmorProp(itm, fix){
 	if(r == 4){ t = "Shadow"; p = "Shadow"; }
 	if(r == 5){ t = "Glow"; p = "X-Ray"; }
 	if(r == 6){ t = "Swordmaster"; p = "Perfect Lunges"; }
+	if(r == 7){ t = "Bushman"; p = "Grass Walking"; }
+	
 	
 	
 	if(itm.nam == "Leather Armor"){

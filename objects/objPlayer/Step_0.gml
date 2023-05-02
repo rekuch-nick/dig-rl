@@ -84,6 +84,9 @@ if(!moved){
 				}
 			}
 			
+			
+			
+			
 			ww.mmap[xSpot, ySpot] = noone;
 			xSpot = xTar; ySpot = yTar;
 			ww.mmap[xSpot, ySpot] = id;
@@ -166,8 +169,16 @@ if(justFinished){
 		playerPickupItem(xSpot, ySpot);
 	}
 	
+	spawnGrassMob(xLast, yLast);
+	
 	
 	timePasses();
+	
+	spawnStatueMob(xSpot, ySpot);
+	
+	if(ww.fmap[xSpot, ySpot].sprite_index == imgWater){
+		spawnWaterMob(xSpot, ySpot);
+	}
 	
 	if(ww.fmap[xSpot, ySpot].sprite_index == imgExit){
 		xSpot = xFirst; ySpot = yFirst;
@@ -175,6 +186,7 @@ if(justFinished){
 		ww.rollWord = true;
 	}
 	
+	xLast = xSpot; yLast = ySpot;
 	return;
 }
 
