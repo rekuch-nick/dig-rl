@@ -7,7 +7,7 @@ charSmall = [imgMCHero, imgMCBarbarian, imgMCBard, imgMCKnight, imgMCMonk, imgMC
 charPower = [
 	"Extra Food",
 	"More STR",
-	".",
+	"Fast Runner",
 	"Rich",
 	"Fast Healing",
 	"More AGI",

@@ -8,8 +8,8 @@ function playerInit(){
 
 	pc.hpRegen = 1;
 
-	pc.str = 11;
-	pc.agi = 11;
+	pc.str = 10;
+	pc.agi = 10;
 	pc.strMax = pc.str;
 	pc.agiMax = pc.agi;
 

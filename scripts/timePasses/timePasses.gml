@@ -15,15 +15,15 @@ function timePasses(){
 	if(pc.food > 0){
 		
 		if(pc.poison < 1){
-			var r = pc.hpRegen;
+			var reg = pc.hpRegen;
 			
 			if(characterHasProp(pc, "Regen")){
-				var n = itemPropBonus(pc, "Regen") * .4;
-				while(n >= 1){
-					n --; r ++;
-				}
-				if(random_range(0, .99) < n){ r ++; }
+				reg += itemPropBonus(pc, "Regen") * .4;
 			}
+			
+			var r = 0;
+			while(reg >= 1){ reg --; r ++; }
+			if(random_range(0, .99) < reg){ r ++; }
 			
 			pc.hp = clamp(pc.hp + r, 0, pc.hpMax);
 		}

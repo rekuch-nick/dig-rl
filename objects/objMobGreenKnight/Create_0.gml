@@ -12,5 +12,6 @@ hpRegen = 0;
 
 willStepOnTrap = true;
 
-hp = 15; ac = 15; aim = 4; str = 2; damRange = 6; splRange = 6;
-monsterScale(15,  2,   3,   2,   4,   0);
+monsterNormalStats();
+hp *= 2; ac += 2; aim += 2; str += 2;
+monsterScale(hp/2,  2,   2,   1,   2,   1);

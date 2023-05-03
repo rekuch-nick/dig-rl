@@ -2,7 +2,7 @@ function randomItem(){
 	
 	
 	return choose(
-		"Food","Food",
+		"Food",
 		randomPotionType(),randomPotionType(),randomPotionType(),
 		randomArmorType(),
 		randomWeaponType(),

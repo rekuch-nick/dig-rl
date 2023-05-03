@@ -15,5 +15,6 @@ lookType = "hunt";
 props = ["Steal Potions"];
 willStepOnTrap = false;
 
-hp = 15; ac = 8; aim = 10; str = 0; damRange = 6; splRange = 6;
-monsterScale(25,  2,   3,   2,   4,   0);
+monsterNormalStats();
+ac += 2; aim += 6;
+monsterScale(hp/2,  2,   2,   1,   2,   1);

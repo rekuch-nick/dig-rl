@@ -23,5 +23,5 @@ lookType = "hunt";
 willStepOnTrap = false;
 
 
-hp = 20; ac = 8; aim = 4; str = 0; damRange = 6; splRange = 3;
-monsterScale(10,  2,   2,   2,   4,   1);
+monsterNormalStats();
+monsterScale(hp/2,  2,   2,   1,   2,   1);

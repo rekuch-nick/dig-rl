@@ -10,5 +10,7 @@ stepsMax = 8;
 moveType = "still";
 
 props = ["Poison Strikes"];
-hp = 10; ac = 10; aim = 2; str = 0; damRange = 6; splRange = 6;
-monsterScale(0,  2,   2,   0,   2,   0);
+
+monsterNormalStats();
+hp = 4; str = 0;
+monsterScale(hp/2,  2,   2,   1,   2,   1);

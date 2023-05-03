@@ -20,5 +20,8 @@ function monsterScale(hpS, acS, aimS, strS, damS, splS){
 	
 	hpMax = hp;
 	
+	hp = ceil(hp);
+	hpMax = ceil(hpMax);
+	
 	sleepChance = clamp(sleepChance + pc.fastRunner, 0, 90);
 }

@@ -13,5 +13,6 @@ willStepOnTrap = true;
 
 hasBlood = false;
 
-hp = 10; ac = 8; aim = 4; str = 0; damRange = 6; splRange = 6;
-monsterScale(10,  2,   2,   2,   4,   0);
+monsterNormalStats();
+str = 0; ac += 2; aim += 2;
+monsterScale(hp/2,  2,   2,   1,   2,   1);
