@@ -3,6 +3,7 @@ function worldGenMobTable(l){
 	var ll = l;
 	while(ll > 5){ ll -= 5; }
 	
+	//l = 33;
 	//ww.mobTable = [ {kind: objMobOnion, m1: 1, m2: 1} ]; return; ///////
 	
 	if(l == 1){
@@ -17,7 +18,7 @@ function worldGenMobTable(l){
 			{kind: objMobSnail, m1: 1, m2: 1},
 			{kind: objMobOnion, m1: 1, m2: 1},
 			{kind: objMobFungus, m1: 1, m2: 1},
-			{kind: objMobGolem, m1: 1, m2: 1},
+			{kind: objMobGhost, m1: 1, m2: 1},
 		);
 	}
 	if(l == 3){
@@ -46,9 +47,72 @@ function worldGenMobTable(l){
 			{kind: objMobGrub, m1: 1, m2: 1}
 		];
 	}
+	if(l == 7){
+		ww.mobTable[array_length(ww.mobTable)] = choose(
+			{kind: objMobMask, m1: 1, m2: 1},
+			{kind: objMobWasp, m1: 2, m2: 3},
+		);
+	}
+	if(l == 8){
+		ww.mobTable[array_length(ww.mobTable)] = choose(
+			{kind: objMobFlyTrap, m1: 1, m2: 2},
+			{kind: objMobThief, m1: 1, m2: 2},
+		);
+	}
+	if(l == 9){
+		ww.mobTable[array_length(ww.mobTable)] = choose(
+			{kind: objMobGreenKnight, m1: 1, m2: 2},
+			{kind: objMobHydra, m1: 1, m2: 2},
+		);
+	}
+	if(l == 10){
+		ww.mobTable[array_length(ww.mobTable)] = choose(
+			{kind: objMobAnt2, m1: 1, m2: 2},
+		);
+	}
 	
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	if(l >= 11){
+		ww.mobTable = [
+		{kind: objMobSlime, m1: 1, m2: 3},
+		{kind: objMob, m1: 1, m2: 2},
+		{kind: objMobImp, m1: 1, m2: 1},
+		{kind: objMobSnail, m1: 1, m2: 2},
+		{kind: objMobGrub, m1: 1, m2: 2},
+		{kind: objMobAnt, m1: 3, m2: 4},
+		{kind: objMobThief, m1: 1, m2: 3},
+		{kind: objMobFlyTrap, m1: 1, m2: 4},
+		{kind: objMobSnailAcid, m1: 1, m2: 3},
+		{kind: objMobIceGolem, m1: 1, m2: 1},
+		{kind: objMobCyclops, m1: 1, m2: 1},
+		{kind: objMobWitch, m1: 1, m2: 1},
+		
+		{kind: objMobFungus, m1: 1, m2: 2},
+		{kind: objMobOnion, m1: 1, m2: 3},
+		{kind: objMobWasp, m1: 2, m2: 4},
+		{kind: objMobGreenKnight, m1: 1, m2: 2},
+		
+		{kind: objMobGhost, m1: 1, m2: 1},
+		{kind: objMobGolem, m1: 1, m2: 2},
+		{kind: objMobHydra, m1: 1, m2: 1},
+		{kind: objMobPhantom, m1: 1, m2: 2},
+		{kind: objMobMask, m1: 1, m2: 1},
+	];
+	}
 	
 	
 	return;
@@ -147,31 +211,7 @@ function worldGenMobTable(l){
 	
 	
 	
-	ww.mobTable = [
-		{kind: objMobSlime, m1: 1, m2: 3},
-		{kind: objMob, m1: 1, m2: 2},
-		{kind: objMobImp, m1: 1, m2: 1},
-		{kind: objMobSnail, m1: 1, m2: 2},
-		{kind: objMobGrub, m1: 1, m2: 2},
-		{kind: objMobAnt, m1: 3, m2: 4},
-		{kind: objMobThief, m1: 1, m2: 3},
-		{kind: objMobFlyTrap, m1: 1, m2: 4},
-		{kind: objMobSnailAcid, m1: 1, m2: 3},
-		{kind: objMobIceGolem, m1: 1, m2: 1},
-		{kind: objMobCyclops, m1: 1, m2: 1},
-		{kind: objMobWitch, m1: 1, m2: 1},
-		
-		{kind: objMobFungus, m1: 1, m2: 2},
-		{kind: objMobOnion, m1: 1, m2: 3},
-		{kind: objMobWasp, m1: 2, m2: 4},
-		{kind: objMobGreenKnight, m1: 1, m2: 2},
-		
-		{kind: objMobGhost, m1: 1, m2: 1},
-		{kind: objMobGolem, m1: 1, m2: 2},
-		{kind: objMobHydra, m1: 1, m2: 1},
-		{kind: objMobPhantom, m1: 1, m2: 2},
-		{kind: objMobMask, m1: 1, m2: 1},
-	];
+	
 	
 	
 	

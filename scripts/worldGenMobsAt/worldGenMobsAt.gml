@@ -3,6 +3,7 @@ function worldGenMobsAt(aa, bb){
 	var i = irandom_range(0, array_length(ww.mobTable) - 1);
 	var encounter = ww.mobTable[i];
 	var t = encounter.kind;
+	//t = objMobAnt2; /////
 	var n = irandom_range(encounter.m1, encounter.m2);
 	putMobCloseTo(t, aa, bb, n);
 	
@@ -10,7 +11,7 @@ function worldGenMobsAt(aa, bb){
 	
 	return;
 	
-	
+	/*
 	var r = irandom_range(1, 3) + ((pc.stage - 1) % 5);
 	
 	if(zone == "Grasslands"){
@@ -55,5 +56,5 @@ function worldGenMobsAt(aa, bb){
 		if(r >= 12){	putMobCloseTo(objMobCyclops, aa, bb, 1); }
 		if(r == 13){	putMobCloseTo(objMobWitch, aa, bb, 1); }
 	}
-
+	*/
 }

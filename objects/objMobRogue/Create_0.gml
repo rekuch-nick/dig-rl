@@ -1,7 +1,7 @@
 event_inherited();
-image_xscale = 2; image_yscale = 2;
+image_xscale = 4; image_yscale = 4;
 
-isRogue = false;
+isRogue = true;
 
 sleepChance = 10;
 stepsMax = 8;
@@ -19,5 +19,5 @@ shotChance = 0;
 shotRange = 0;
 splRange = 1;
 
-hp = 100; ac = 10; aim = 4; str = 0; damRange = 6; splRange = 6;
+hp = 100; ac = 15; aim = 6; str = 4; damRange = 10; splRange = 6;
 monsterScale(25,  2,   2,   2,   4,   2);

@@ -122,12 +122,31 @@ function combat(c1, c2){
 		if(characterHasProp(c1, "Poison Strikes")){
 			c2.poison += dam;
 			var v = c1 == pc ? " poison " : " poisons ";
+			logMessage(c1.nam + v + c2.nam);
+		}
+		
+		if(characterHasProp(c1, "String Attack")){
+			c2.web = 1;
+			//var v = c1 == pc ? " poison " : " poisons ";
 			//logMessage(c1.nam + v + c2.nam);
+		}
+		
+		if(characterHasProp(c1, "Flesh to Stone")){
+			if(choose(true, false, false) && (c1.gear[0].bonus * 5) >= c2.hp ){
+				c2.hp = 0;
+				var v = c1 == pc ? " petrify " : " petrified ";
+				if(ww.bmap[c2.xSpot, c2.ySpot] == noone){
+					var a = c2.xSpot; var b = c2.ySpot;
+					var til = instance_create_depth(a*64, b*64, ww.layerB, objBlock);
+					til.sprite_index = imgBlockPetMob;
+					ww.bmap[a, b] = til;
+				}
+			}
 		}
 		
 		if(characterHasProp(c1, "Slowing Strikes") && choose(true, false, false)){
 			c2.slow = clamp(c2.slow, 10, max(30, c2.slow));
-			//var v = c1 == pc ? " slow " : " slows ";
+			var v = c1 == pc ? " slow " : " slows ";
 			logMessage(c1.nam + v + c2.nam);
 		}
 		

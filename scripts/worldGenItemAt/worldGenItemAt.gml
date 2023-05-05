@@ -6,8 +6,9 @@ function worldGenItemAt(aa, bb){
 	//roll += floor(pc.stage / 2);
 	
 	
-	if(roll >= 5){
+	if(roll >= 5 && roll <= 16){
 		t = randomItem();
+		if(t == "Food"){ foodSpawned ++; }
 		t = getItem(t);
 	}
 		

@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "objMobAnt2",
   "spriteId": {
-    "name": "imgMobAnt",
-    "path": "sprites/imgMobAnt/imgMobAnt.yy",
+    "name": "imgMobAnt2",
+    "path": "sprites/imgMobAnt2/imgMobAnt2.yy",
   },
   "solid": false,
   "visible": true,
@@ -33,7 +33,7 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "mobs",
-    "path": "folders/Objects/mobs.yy",
+    "name": "002",
+    "path": "folders/Objects/mobs/002.yy",
   },
 }

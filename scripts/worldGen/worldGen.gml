@@ -5,7 +5,7 @@ function worldGen(){
 	worldGenClearAndFill();
 	losVision = false;
 	pc.stage ++;
-	
+	foodSpawned = 0;
 	worldGenMobTable(pc.stage);
 	
 	zone = "Grasslands";
@@ -19,45 +19,70 @@ function worldGen(){
 	if(pc.stage % 5 == 0){ kind = "posts"; }
 	
 	
+	//kind = "boss";
+	normalFeatures = true;
 	
 	losVision = true;
 	
 	
-	if(kind = "rooms"){ worldGenColRooms(); worldGenReplaceAllBlocks(imgBlock, imgBlockRock); }
-	if(kind = "caves"){ 
+	if(kind == "rooms"){ worldGenColRooms(); worldGenReplaceAllBlocks(imgBlock, imgBlockRock); }
+	if(kind == "caves"){ 
 		worldGenColCaves(); 
 		worldGenReplaceRandomBlocks(imgBlock, imgBlockRock, 60); 
 		if(pc.stage >= 11){ worldGenReplaceRandomBlocks(imgBlock, imgBlockSkull, 60); }
 	}
-	if(kind = "lakes"){ worldGenPatches(noone, imgWater, false, true); }
-	if(kind = "posts"){ 
+	if(kind == "lakes"){ worldGenPatches(noone, imgWater, false, true); }
+	if(kind == "posts"){ 
 		if(zone == "Grasslands"){ worldGenPatches(noone, imgBGGrass, false, true); }
 		if(zone == "Coral"){ worldGenPatches(noone, imgWater, false, true); }
 		worldGenPosts(imgBlock); worldGenRandomPopulate(); }
-	if(kind = "mix"){ worldGenStatic(imgBlock, noone); worldGenReplaceRandomBlocks(imgBlock, imgBlockRock, 60); worldGenRandomPopulate(); }
-	if(kind = "maze"){ 
+	if(kind == "mix"){ worldGenStatic(imgBlock, noone); worldGenReplaceRandomBlocks(imgBlock, imgBlockRock, 60); worldGenRandomPopulate(); }
+	if(kind == "maze"){ 
 		worldGenMazeFrom(0, H-1); 
 		worldGenReplaceRandomBlocks(imgBlock, imgBlockSkull, 25); 
 		worldGenReplaceAllBlocks(imgBlock, imgBlockRock);
 		worldGenRandomPopulate(); 
 	}
+	if(kind == "boss"){
+		zone = "Grasslands";
+		normalFeatures = false;
+		worldGenStatic(imgBlock, noone); 
+		worldGenReplaceRandomBlocks(imgBlock, noone, 60);  
+		 
+		for(var a=0; a<W; a++){ bmap[a, 33] = noone; }
+		var a = irandom_range(1, 15);
+		bmap[a, 33] = noone;
+		fmap[a, 33] = imgExit;
+	}
 	
 	
+	if(normalFeatures){
+	
+		//force food
+		if(foodSpawned == 0){
+			var p = noone;
+			while(p == noone){
+				var a = irandom_range(0, W-1);
+				var b = irandom_range(10, H-10);
+				p = putPupObjCloseTo(getItem("Food"), a, b);
+			}
+		}
+	
+		//place exit
+		for(var a=0; a<W; a++){ bmap[a, H-1] = noone; }
+		var a = irandom_range(1, 15);
+		bmap[a, H - 1] = noone;
+		fmap[a, H - 1] = imgExit;
 	
 	
-	//place exit
-	for(var a=0; a<W; a++){ bmap[a, H-1] = noone; }
-	var a = irandom_range(1, 15);
-	bmap[a, H - 1] = noone;
-	fmap[a, H - 1] = imgExit;
-	
-	
-	//place rouge
-	var a = irandom_range(1, 15);
-	var b = irandom_range(ww.H - 16, ww.H - 2);
-	bmap[a, b] = noone;
-	instance_destroy(pmap[a, b]);
-	pmap[a, b] = instance_create_depth(a*64, b*64, layerP, objRougeFlake);
+		//place rouge
+		var a = irandom_range(1, 15);
+		var b = irandom_range(ww.H - 16, ww.H - 2);
+		bmap[a, b] = noone;
+		instance_destroy(pmap[a, b]);
+		pmap[a, b] = instance_create_depth(a*64, b*64, layerP, objRougeFlake);
+		
+	}
 	
 	
 
@@ -67,7 +92,13 @@ function worldGen(){
 	worldGenBiomeSprites(zone);
 	worldGenFinilize();
 	
-	
+	if(kind == "boss"){
+		for(var a=0; a<W; a++){ for(var b=6; b<H; b++){
+			 if(bmap[a, b] != noone && choose(true, false)){
+				 bmap[a, b].hp -= irandom_range(1, 5) * 5;
+			 }
+		 }}
+	}
 	
 	
 }

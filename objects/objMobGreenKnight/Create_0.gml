@@ -1,5 +1,5 @@
 event_inherited();
-nam = "Cyclops";
+nam = "Knight";
 
 sleepChance = 20;
 stepsMax = 12;
