@@ -16,6 +16,20 @@ if(pc.clickLM || pc.clickChar == "Z"){
 	logClear();
 	
 	
+	if(pc.bag[index].kind == "Wand"){
+		var i = array_length( cur.line ) - 1;
+		potionEffect(pc.bag[index].potID , cur.line[i].a, cur.line[i].b);
+		pc.bag[index].charges --;
+		pc.moved = true;
+		playerEatInput();
+		pc.wait = 20;
+		instance_destroy();
+		return;
+	}
+	
+	
+	
+	
 	var s = instance_create_depth(pc.xSpot * 64, pc.ySpot * 64, ww.layerM - 200, objThrowable);
 	s.sprite_index = pc.bag[index].img;
 	s.throwPower = pc.bag[index].throwPower;

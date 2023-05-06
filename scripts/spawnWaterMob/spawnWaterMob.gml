@@ -10,6 +10,7 @@ function spawnWaterMob(aa, bb){
 		var b = bb + irandom_range(-1, 1);
 		
 		if(a == aa && b == b){ continue; }
+		if(!inBounds(a, b)){ continue; }
 		if(ww.fmap[a, b].sprite_index != imgWater){ continue; }
 		
 		if(ww.mmap[a, b] == noone && ww.bmap[a, b] == noone){

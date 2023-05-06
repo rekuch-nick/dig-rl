@@ -21,6 +21,18 @@ function drawCharacter(){
 		draw_sprite_ext(imgPoison, floor(current_time / 400) % 2, x, y, 4, 4, 0, c_white, .5);
 	}
 	
+	if(sick > 0){
+		draw_sprite_ext(imgSick, floor(current_time / 400) % 2, x, y, 4, 4, 0, c_white, .5);
+	}
+	
+	if(slip > 0){
+		draw_sprite_ext(imgSlip, floor(current_time / 400) % 2, x, y, 4, 4, 0, c_white, .5);
+	}
+	
+	if(burning > 0){
+		draw_sprite_ext(imgFire, floor(current_time / 100) % 2, x, y, 4, 4, 0, c_white, .5);
+	}
+	
 	if(tangle > 0){
 		draw_sprite_ext(imgTangle, floor(current_time / 400) % 2, x, y, 4, 4, 0, c_white, .7);
 	}
@@ -45,6 +57,10 @@ function drawCharacter(){
 		var xx = face == -1 ? 64 : 0;
 		var scl = abs(image_xscale);
 		draw_sprite_ext(sprite_index, image_index, x+choose(-4,0,4)+xx, y+choose(-4,0,4), scl*face, scl, 0, c_aqua, .5);
+	}
+	
+	if(blinkNext > 0){
+		draw_sprite_ext(imgBlinkNext, floor(current_time / 400) % 3, x, y, 4, 4, 0, c_white, random_range(.5, .9));
 	}
 	
 }

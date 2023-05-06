@@ -33,6 +33,13 @@ potRestore = 12;
 potSlow = 13;
 potDisplace = 14;
 potBombSmall = 15;
+potPure = 16;
+potBlink = 31;
+potCrumble = 32;
+potFireball = 33;
+potFrost = 34;
+potPox = 35;
+
 
 rollWord = false;
 seed = 1;

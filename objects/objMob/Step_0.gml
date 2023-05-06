@@ -99,6 +99,14 @@ lastHp = hp;
 
 
 if(hp < 1){
+	
+	if(characterHasProp(id, "Spike Corpse")){
+		if(ww.tmap[xSpot, ySpot] == noone){
+			ww.tmap[xSpot, ySpot] = instance_create_depth(xSpot*64, ySpot*64, ww.layerT, objTrap);
+		}
+	}
+	
+	
 	ww.mmap[xSpot, ySpot] = noone;
 	var caller = id;
 	with(objFireShot){ if(shooter == caller){ shooter = noone; } }

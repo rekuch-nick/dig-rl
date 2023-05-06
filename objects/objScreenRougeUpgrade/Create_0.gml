@@ -15,6 +15,13 @@ do {
 	up[1] != up[2] && up[2] != up[3] && up[1] != up[3]
 );
 
+var w = randomWand();
+if(pc.wands < 3 && !playerHasItem(w) && pc.stage > 5 && choose(true, false, false) ){
+	up[1] = w;
+}
+
+
+
 up[1] = getItem(up[1]);
 up[2] = getItem(up[2]);
 up[3] = getItem(up[3]);

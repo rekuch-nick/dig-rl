@@ -5,6 +5,7 @@ function worldGen(){
 	worldGenClearAndFill();
 	losVision = false;
 	pc.stage ++;
+	chargeWands(pc.wandSkill);
 	foodSpawned = 0;
 	worldGenMobTable(pc.stage);
 	

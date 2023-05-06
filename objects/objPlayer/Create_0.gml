@@ -44,7 +44,8 @@ beenRestingFor = 0;
 //bag[6] = itemEnchant( getItem("Leather Armor"), 1, true); bag[6] = itemEnchantArmorProp(bag[6], 3);
 //bag[6] = itemEnchant( getItem("Sword"), 1, true); bag[6] = itemEnchantWepProp(bag[6], 1);
 
-//bag[4] = getItem("Ring of Protection");
+//bag[4] = getItem("Pox Wand");
+
 
 debugMode = false;
 debugStats = false;

@@ -14,7 +14,7 @@ for(var i=0; i<26; i++){
 		if(pc.bag[i].bonus != 0){ s = s + " +" + string(pc.bag[i].bonus); }
 		c = pc.bag[i].col;
 		
-		if(pc.bag[i].potID != -1 && !pc.potionKnown[pc.bag[i].potID]){
+		if(pc.bag[i].kind == "Potion" && pc.bag[i].potID != -1 && !pc.potionKnown[pc.bag[i].potID]){
 			s = "Unidentified Potion"; 
 			c = c_white;
 		}
@@ -43,7 +43,7 @@ if(pc.bag[cursor] != noone){
 	if(pc.bag[cursor].bonus != 0){ s = s + " +" + string(pc.bag[cursor].bonus); }
 	var c = pc.bag[cursor].col;
 	
-	if(pc.bag[cursor].potID != -1 && !pc.potionKnown[pc.bag[cursor].potID]){
+	if(pc.bag[cursor].kind == "Potion" && pc.bag[cursor].potID != -1 && !pc.potionKnown[pc.bag[cursor].potID]){
 		s = "Unidentified Potion"; 
 		c = c_white;
 	}

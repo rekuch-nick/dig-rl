@@ -14,6 +14,9 @@ function getItem(t){
 		throwPower: 10,
 		spell: "",
 		potID: -1,
+		wandAim: false,
+		wandAuto: false,
+		charges: 0,
 	};
 	
 	if(t == "Rock"){ 
@@ -166,6 +169,74 @@ function getItem(t){
 	}
 	
 	
+	
+	
+	
+	if(t == "Blink Wand"){ 
+		itm.img = imgGearWandBlink;
+		itm.kind = "Wand";
+		itm.throwPower = 0;
+		itm.bonus = 0;
+		itm.col = c_white;
+		itm.potID = ww.potBlink;
+		itm.wandAuto = true;
+		itm.charges = 10;
+	}
+	
+	if(t == "Crumble Wand"){ 
+		itm.img = imgGearWandDisintegrate;
+		itm.kind = "Wand";
+		itm.throwPower = 0;
+		itm.bonus = 0;
+		itm.col = c_white;
+		itm.potID = ww.potCrumble;
+		itm.wandAim = true;
+		itm.charges = 10;
+	}
+	
+	if(t == "Fireball Wand"){ 
+		itm.img = imgGearWandFireballs;
+		itm.kind = "Wand";
+		itm.throwPower = 0;
+		itm.bonus = 0;
+		itm.col = c_white;
+		itm.potID = ww.potFireball;
+		itm.wandAim = true;
+		itm.charges = 10;
+	}
+	
+	if(t == "Frost Wand"){ 
+		itm.img = imgGearWandFrost;
+		itm.kind = "Wand";
+		itm.throwPower = 0;
+		itm.bonus = 0;
+		itm.col = c_white;
+		itm.potID = ww.potFrost;
+		itm.wandAuto = true;
+		itm.charges = 10;
+	}
+	
+	if(t == "Pure Wand"){ 
+		itm.img = imgGearWandPure;
+		itm.kind = "Wand";
+		itm.throwPower = 0;
+		itm.bonus = 0;
+		itm.col = c_white;
+		itm.potID = ww.potPure;
+		itm.wandAuto = true;
+		itm.charges = 10;
+	}
+	
+	if(t == "Pox Wand"){ 
+		itm.img = imgGearWandPox;
+		itm.kind = "Wand";
+		itm.throwPower = 0;
+		itm.bonus = 0;
+		itm.col = c_white;
+		itm.potID = ww.potPox;
+		itm.wandAuto = true;
+		itm.charges = 10;
+	}
 	
 	
 	

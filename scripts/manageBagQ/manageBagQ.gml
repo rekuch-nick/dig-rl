@@ -1,6 +1,14 @@
 function manageBagQ(n){
 	
 	
+	if(pc.bag[n] != noone && pc.bag[n].kind == "Wand"){
+		
+		characterUseWand(pc.bag[n], xSpot, ySpot);
+		
+		return;
+	}
+	
+	
 	
 	if(pc.bag[n].food > 0){
 		pc.food = clamp(pc.food + pc.bag[n].food, 0, pc.foodMax);
@@ -17,7 +25,7 @@ function manageBagQ(n){
 	
 	
 			
-	if(pc.bag[n].potID != -1){
+	if(pc.bag[n].kind == "Potion" && pc.bag[n].potID != -1){
 		potionEffect(pc.bag[n].potID, pc.xSpot, pc.ySpot);
 		pc.bag[n] = noone;
 		manageBag();

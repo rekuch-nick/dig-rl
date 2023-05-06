@@ -10,7 +10,7 @@ stepsMax = 12;
 hpRegen = 0;
 
 
-props = ["Big"];
+props = ["Fire Strikes"];
 willStepOnTrap = true;
 
 hp = 40; ac = 8; aim = 4; str = 8; damRange = 6; splRange = 6;

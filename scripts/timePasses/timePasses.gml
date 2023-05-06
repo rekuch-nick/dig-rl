@@ -14,7 +14,7 @@ function timePasses(){
 	
 	if(pc.food > 0){
 		
-		if(pc.poison < 1){
+		if(pc.poison < 1 && pc.burning < 1){
 			var reg = pc.hpRegen;
 			
 			if(characterHasProp(pc, "Regen")){
@@ -44,6 +44,12 @@ function timePasses(){
 			if(hp < 1){ logMessageWhom(nam, "succumb", "to the poison", id); }
 		}
 		
+		if(burning > 0){ 
+			hp -= burning;
+			if(irandom_range(1, 20) >= 20){ burning --; }
+			if(hp < 1){ logMessageWhom(nam, "burn", "to death", id); }
+		}
+		
 		if(tangle > 0){ 
 			tangle --;
 			hp -= clamp(floor(hpMax / 30), 1, 20);
@@ -51,6 +57,8 @@ function timePasses(){
 		}
 		
 		if(slow > 0){ slow --; }
+		if(sick > 0){ sick --; }
+		if(slip > 0){ slip --; }
 		if(defense > 0){ defense --; }
 		if(swordmastery > 0){ swordmastery --; }
 		if(displace > 0){ displace --; }

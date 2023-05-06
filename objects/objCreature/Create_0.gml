@@ -33,6 +33,8 @@ spawnMaster = noone;
 shadow = 0;
 attackIsCleave = false;
 attackIsLunge = false;
+
+
 frozen = 0;
 poison = 0;
 tangle = 0;
@@ -41,6 +43,12 @@ slow = 0;
 swordmastery = 0;
 defense = 0;
 web = 0;
+blinkNext = 0;
+burning = 0;
+sick = 0;
+slip = 0;
+
+
 lastHp = -1;
 
 props = [];

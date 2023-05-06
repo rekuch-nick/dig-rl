@@ -111,6 +111,14 @@ function worldGenMobTable(l){
 		{kind: objMobHydra, m1: 1, m2: 1},
 		{kind: objMobPhantom, m1: 1, m2: 2},
 		{kind: objMobMask, m1: 1, m2: 1},
+		
+		{kind: objMobMagma, m1: 1, m2: 1},
+		{kind: objMobCreep, m1: 1, m2: 1},
+		{kind: objMobCreep2, m1: 1, m2: 1},
+		{kind: objMobFungusFighter, m1: 1, m2: 1},
+		{kind: objMobSlipSlime, m1: 1, m2: 1},
+		{kind: objMobMecha, m1: 1, m2: 2},
+		{kind: objMobGoblin, m1: 3, m2: 4},
 	];
 	}
 	

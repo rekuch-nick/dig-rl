@@ -44,6 +44,9 @@ if(pc.clickEnter || pc.clickLM){
 	if(charPower[charCursor] == "More STR"){ pc.strMax += 2; pc.str += 2; }
 	if(charPower[charCursor] == "More AGI"){ pc.agiMax += 2; pc.agi += 2; }
 	if(charPower[charCursor] == "Fast Healing"){ pc.hpRegen += .5; }
+	if(charPower[charCursor] == "Wand Expert"){ 
+		pc.wandSkill += 1; 
+	}
 	if(charPower[charCursor] == "Fast Runner"){ pc.fastRunner += 10; }
 	//if(charPower[charCursor] == "Weak"){ pc.strMax -= 3; pc.str -= 3; pc.hpMax -= 50; pc.hp -= 50; }
 	if(charPower[charCursor] == "ID Potions"){ for(var i=0; i<26; i++){ pc.potionKnown[i] = true; }}

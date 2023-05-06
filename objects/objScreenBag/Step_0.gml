@@ -49,7 +49,7 @@ if(pc.bag[cursor] != noone && pc.clickChar != ""){
 	
 	if( (pc.clickChar == "T" || pc.clickChar == "Z") && pc.bag[cursor] != noone){
 		if(itemIsEquipped(pc.bag[cursor]) == -1){
-			manageBagZ(cursor);
+			with(pc){manageBagZ(other.cursor);}
 			instance_destroy();
 		}
 		
@@ -62,10 +62,10 @@ if(pc.bag[cursor] != noone && pc.clickChar != ""){
 		
 		
 		if(pc.bag[cursor].food > 0 || pc.bag[cursor].potID != -1){
-			manageBagQ(cursor);
+			with(pc){manageBagQ(other.cursor);}
 			instance_destroy();
 		} else {
-			manageBagQ(cursor);
+			with(pc){manageBagQ(other.cursor);}
 		}
 		
 		/*

@@ -13,7 +13,8 @@ if(pc.clickChar == "1" || pc.clickChar == "2" || pc.clickChar == "3"
 	ww.pmap[pc.xSpot, pc.ySpot].potID = up[pc.clickChar].potID;
 	ww.pmap[pc.xSpot, pc.ySpot].sprite_index = up[pc.clickChar].img;
 	
-	if(ww.pmap[pc.xSpot, pc.ySpot].potID != -1){
+	//if(ww.pmap[pc.xSpot, pc.ySpot].potID != -1){
+	if(ww.pmap[pc.xSpot, pc.ySpot].itm.kind == "Potion"){
 		pc.potionKnown[ ww.pmap[pc.xSpot, pc.ySpot].potID ] = true;
 	}
 	

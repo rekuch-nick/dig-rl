@@ -76,6 +76,7 @@ function combat(c1, c2){
 		}
 		
 		var dam = irandom_range(getMeleeMin(c1), getMeleeMax(c1));
+		if(c1.sick > 0){ dam = ceil(dam / 3); }
 		if(c1.attackIsLunge){ 
 			var v = c1 == pc ? " lunge into " : " lunges into ";
 			
@@ -119,10 +120,35 @@ function combat(c1, c2){
 			dam = ceil(dam / 3);
 		}
 		
-		if(characterHasProp(c1, "Poison Strikes")){
-			c2.poison += dam;
-			var v = c1 == pc ? " poison " : " poisons ";
-			logMessage(c1.nam + v + c2.nam);
+		
+		if(characterHasProp(c1, "Sickening Strikes")){
+			c2.sick += dam;
+			var v = c1 == pc ? " sicken " : " sickens ";
+			//logMessage(c1.nam + v + c2.nam);
+		}
+		
+		if(characterHasProp(c1, "Slip Strikes")){
+			c2.slip = 60;
+			var v = c1 == pc ? " ooze on " : " oozes on ";
+			//logMessage(c1.nam + v + c2.nam);
+		}
+		
+		if(characterHasProp(c1, "Fire Strikes")){
+			c2.burning += 1;
+			var v = c1 == pc ? " burn " : " burns ";
+			//logMessage(c1.nam + v + c2.nam);
+		}
+		
+		if(characterHasProp(c1, "Cripple Touch")){
+			c2.str = clamp(c2.str - 1, 8, c2.str);
+			var v = c1 == pc ? " cripple " : " cripples ";
+			//logMessage(c1.nam + v + c2.nam);
+		}
+		
+		if(characterHasProp(c1, "Cripple Slap")){
+			c2.agi = clamp(c2.agi - 1, 8, c2.agi);
+			var v = c1 == pc ? " cripple " : " cripples ";
+			//logMessage(c1.nam + v + c2.nam);
 		}
 		
 		if(characterHasProp(c1, "String Attack")){
@@ -147,12 +173,18 @@ function combat(c1, c2){
 		if(characterHasProp(c1, "Slowing Strikes") && choose(true, false, false)){
 			c2.slow = clamp(c2.slow, 10, max(30, c2.slow));
 			var v = c1 == pc ? " slow " : " slows ";
-			logMessage(c1.nam + v + c2.nam);
+			//logMessage(c1.nam + v + c2.nam);
 		}
 		
 		if(characterHasProp(c1, "Ice Strikes") && choose(true, false, false) && c2.frozen < 1){
 			c2.frozen = 3;
 			logMessage(c1.nam + " freezes " + c2.nam);
+		}
+		
+		if(characterHasProp(c1, "Poison Strikes")){
+			c2.poison += dam;
+			var v = c1 == pc ? " poison " : " poisons ";
+			//logMessage(c1.nam + v + c2.nam);
 		}
 		
 		//"Memory Burn"
@@ -193,6 +225,7 @@ function combat(c1, c2){
 		
 		if(c1.attackIsCleave){ v = c1 == pc ? " cleave " : " cleaves "; }
 		if(isShockwave){ v = c1 == pc ? " clip " : " clips "; }
+		
 		logMessage(c1.nam + v + c2.nam + " for " + string(dam) + sn);
 		
 		if(c2.hp > 0 && characterHasProp(c2, "Thorns")){

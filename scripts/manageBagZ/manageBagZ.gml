@@ -1,5 +1,14 @@
 function manageBagZ(n){
 	
+	if(pc.bag[n] != noone && pc.bag[n].kind == "Wand"){
+		
+		characterUseWand(pc.bag[n], xSpot, ySpot);
+		
+		
+		return;
+	}
+	
+	
 	if(itemIsEquipped(pc.bag[n]) == -1){
 		logClear();
 		var s = pc.bag[n].nam;

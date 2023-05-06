@@ -26,7 +26,7 @@ if(instance_number(objScreenThrow) > 0){
 		
 		if(ww.bmap[line[i].a, line[i].b] != noone){
 			line2 = [];
-			for(var j=0; j<i; j++){
+			for(var j=0; j<=i; j++){ // added <= to make walls targetable, was < 
 				line2[j] = line[j];
 			}
 			line = line2;

@@ -5,18 +5,24 @@ if(instance_number(objScreen) > 0){ return; }
 if(wait > 0){ wait--; return; }
 firstFrame = false;
 
-if(keyboard_check_pressed(vk_f4)){ debugMode = !debugMode; }
-if(keyboard_check_pressed(vk_f5)){ debugStats = !debugStats; }
-if(debugMode){ hp = hpMax; food = foodMax; str = 100; agi = 100; digPow = 100; moveSpeed = 16;} else {
-	str = strMax; agi = agiMax; digPow = 1; moveSpeed = 4;
+if(keyboard_check_pressed(vk_f4)){ 
+	debugMode = !debugMode; 
+	if(debugMode){ 
+		hp = hpMax; food = foodMax; str = 100; agi = 100; digPow = 100; moveSpeed = 16;
+	} else {
+		str = strMax; agi = agiMax; digPow = 1; moveSpeed = 4;
+	}
 }
+if(keyboard_check_pressed(vk_f5)){ debugStats = !debugStats; }
+
 
 if(characterHasProp(id, "Ice Immune")){ 
 	if(frozen > 0){ logMessage("You are immune to being frozen"); }
 	frozen = 0; 
 }
 
-
+//show_debug_message("player step")
+//show_debug_message(random_range(0, 1))
 
 if(!moved){
 	
@@ -60,6 +66,13 @@ if(!moved){
 		
 		if(xTar < xSpot){ face = -1; }
 		if(xTar > xSpot){ face = 1; }
+		
+		if(blinkNext > 0){
+			blinkNext --;
+			characterBlink(pc, getDir(xTar - xSpot), getDir(yTar - ySpot));
+			playerEatInput();
+			return;
+		}
 	
 		if(characterCanMove(id, xTar, yTar)){
 			
@@ -136,6 +149,7 @@ if(!moved){
 	
 	if(holdSpaceTime < 1 || hp >= hpMax){ beenRestingFor = 0; }
 	if(clickSpace || holdSpaceTime > 10){ 
+		blinkNext = 0;
 		holdSpaceTime = 0;
 		beenRestingFor ++;
 		
@@ -177,6 +191,10 @@ if(justFinished){
 	spawnStatueMob(xSpot, ySpot);
 	
 	if(ww.fmap[xSpot, ySpot].sprite_index == imgWater){
+		if(burning > 0){
+			logMessage("The water stops you from burning");
+			burning = 0;
+		}
 		spawnWaterMob(xSpot, ySpot);
 	}
 	

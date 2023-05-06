@@ -58,7 +58,6 @@ function potionEffect(pid, a, b){
 		if(ww.bmap[a, b] != noone && tileDigCost(a, b) != 0){
 			tileBreak(a, b);
 		}
-		
 	}
 	
 	if(pid == ww.potIce){
@@ -82,7 +81,8 @@ function potionEffect(pid, a, b){
 		
 		if(m != noone){
 			m.str += 1;
-			if(m.str > m.strMax){ m.strMax = m.str; }
+			//if(m.str > m.strMax){ 
+			m.strMax ++;
 			logMessageWhom(m.nam, "get", "more STR", m);
 		}
 	}
@@ -91,7 +91,8 @@ function potionEffect(pid, a, b){
 		
 		if(m != noone){
 			m.agi += 1;
-			if(m.agi > m.agiMax){ m.agiMax = m.agi; }
+			//if(m.agi > m.agiMax){ 
+			m.agiMax ++;
 			logMessageWhom(m.nam, "get", "more AGI", m);
 		}
 	}
@@ -172,8 +173,6 @@ function potionEffect(pid, a, b){
 		if(m != noone){
 			m.str = m.strMax;
 			m.agi = m.agiMax;
-			m.poison = 0;
-			m.slow = 0;
 			m.hpMax += 10;
 			m.hp = m.hpMax;
 			
@@ -194,5 +193,109 @@ function potionEffect(pid, a, b){
 			logMessageWhom(m.nam, "become", "hard to see", m);
 		}
 	}
+	
+	
+	if(pid == ww.potBlink){
+		if(m != noone){
+			m.blinkNext = 1;
+		}
+	}
+	
+	if(pid == ww.potCrumble){
+		
+		if(!inBounds(a, b)){ return; }
+		
+		instance_create_depth(a * 64, b * 64, ww.layerE, effBlast);
+		
+		var mm = ww.mmap[a, b];
+		if(mm != noone){
+			mm.hp -= 20;
+			logMessageWhom(mm.nam, "get", " caught in the blast", mm);
+		}
+		if(ww.bmap[a, b] != noone && tileDigCost(a, b) != 0){
+			tileBreak(a, b);
+		}
+	}
+	
+	
+	
+	if(pid == ww.potFireball){
+		for(var aa=a-3; aa<=a+3; aa++){ for(var bb=b-3; bb<=b+3; bb++){
+			if(!inBounds(aa, bb)){ continue; }
+			if(abs(aa - a) + abs(bb - b) > 3){ continue; }
+			if(aa == pc.xSpot && bb == pc.ySpot){ continue; }
+			
+			instance_create_depth(aa * 64, bb * 64, ww.layerE, effFire);
+			
+			var mm = ww.mmap[aa, bb];
+			if(mm != noone){
+				mm.hp -= 10;
+				mm.burning += 1;
+				logMessageWhom(mm.nam, "get", " caught in the blast", mm);
+			}
+			
+			if(floorBreakable(aa, bb)){
+				ww.fmap[aa, bb].sprite_index = imgBGDirtBlasted;
+			}
+			if(trapBreakable(aa, bb)){
+				instance_destroy(ww.tmap[aa, bb]);
+				ww.tmap[aa, bb] = noone;
+			}
+			
+		}}
+		
+	}
+	
+	if(pid == ww.potFrost){
+		for(var aa=a-3; aa<=a+3; aa++){ for(var bb=b-3; bb<=b+3; bb++){
+			if(!inBounds(aa, bb)){ continue; }
+			
+			
+			instance_create_depth(aa * 64, bb * 64, ww.layerE, effColdBlast);
+			
+			if(a != aa || b != bb){
+				var mm = ww.mmap[aa, bb];
+				if(mm != noone){
+					mm.frozen = 3;
+				}
+			}
+			
+			if(ww.fmap[aa, bb].sprite_index == imgWater){
+				ww.fmap[aa, bb].sprite_index = imgBGFrozen;
+			}
+		}}
+		
+	}
+	
+	if(pid == ww.potPure){
+		instance_create_depth(a * 64, b * 64, ww.layerE, effHeal);
+		if(m != noone){
+			m.poison = 0;
+			m.burning = 0;
+			m.slow = 0;
+			m.frozen = 0;
+			m.sick = 0;
+			m.slip = 0;
+		}
+	}
+	
+	
+	
+	if(pid == ww.potPox){
+		for(var aa=a-10; aa<=a+10; aa++){ for(var bb=b-10; bb<=b+10; bb++){
+			if(!inBounds(aa, bb)){ continue; }
+			if(aa == pc.xSpot && bb == pc.ySpot){ continue; }
+			
+			instance_create_depth(aa * 64, bb * 64, ww.layerE, effPoison);
+			
+			var mm = ww.mmap[aa, bb];
+			if(mm != noone){
+				mm.poison += 15;
+			}
+			
+		}}
+		
+	}
+	
 	
 }

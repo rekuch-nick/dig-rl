@@ -63,7 +63,9 @@ for(var i=0; i<9; i++){
 		
 		draw_sprite_stretched(spt, 0, a+4, b+4, 56, 56);
 		//draw_text_color(a+4, b+4, string(i + 1), c_dkgray, c_dkgray, c_dkgray, c_dkgray, 1);
-		
+		if(pc.bag[i+iStart].kind == "Wand"){
+			draw_text(a+4, b+40, string(pc.bag[i+iStart].charges));
+		}
 		
 	}
 }
