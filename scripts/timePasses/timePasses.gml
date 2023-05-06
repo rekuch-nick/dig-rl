@@ -57,6 +57,8 @@ function timePasses(){
 		}
 		
 		if(slow > 0){ slow --; }
+		if(webArmor > 0){ webArmor --; }
+		if(frozen > 0){ frozen --; }
 		if(sick > 0){ sick --; }
 		if(slip > 0){ slip --; }
 		if(defense > 0){ defense --; }

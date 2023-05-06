@@ -43,7 +43,12 @@ if(pc.clickLM || pc.clickChar == "Z"){
 	
 	
 	
-	pc.bag[index] = noone;
+	if(pc.bag[index].stacks && pc.bag[index].charges >= 2){
+		pc.bag[index].charges --;
+	} else {
+	
+		pc.bag[index] = noone;
+	}
 	manageBag();
 	playerEatInput();
 	instance_destroy();	

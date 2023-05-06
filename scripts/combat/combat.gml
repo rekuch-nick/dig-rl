@@ -36,9 +36,14 @@ function combat(c1, c2){
 	
 	
 	if(c2.displace > 0){ if(choose(true, false)){ 
-		//c2.displace --;
 		logMessageWhom(c1.nam, "strike", "at illusions", c1);
-		hitRoll = 0; } }
+		hitRoll = 0;
+	}}
+	
+	if(c2.webArmor > 0){ if(choose(true, false)){ 
+		logMessageWhom(c1.nam, "strike", "harmlessly at the webs", c1);
+		hitRoll = 0;
+	}}
 	
 	
 	if(hitRoll < tar && characterHasProp(c1, "Shockwave")){
@@ -207,6 +212,23 @@ function combat(c1, c2){
 		
 		if(characterHasProp(c1, "Flaming Burst") && irandom_range(0, 99) < (c1.gear[0].bonus * 5) ){
 			potionEffect(ww.potBomb, c2.xSpot, c2.ySpot);
+		}
+		
+		if(characterHasProp(c1, "Burn Chance")){
+			var bns = itemHasProp(pc.gear[ww.gsRing], "Burn Chance") ? pc.gear[ww.gsRing].bonus : pc.gear[ww.gsRing2].bonus;
+			if(irandom_range(0, 99) < (bns * 5) ){
+				c2.burning += 1;
+				var v = c1 == pc ? " burn " : " burns ";
+			}
+		}
+		
+		if(characterHasProp(c1, "Spiderlike")){
+			var bns = itemHasProp(pc.gear[ww.gsRing], "Spiderlike") ? pc.gear[ww.gsRing].bonus : pc.gear[ww.gsRing2].bonus;
+			if(irandom_range(0, 99) < (bns * 5) ){
+				c2.sick += 5;
+				c2.poison += 5;
+				var v = c1 == pc ? " sicken " : " sickens ";
+			}
 		}
 		
 		if(c2.frozen > 0){ dam *= 2; }

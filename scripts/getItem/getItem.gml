@@ -17,6 +17,7 @@ function getItem(t){
 		wandAim: false,
 		wandAuto: false,
 		charges: 0,
+		stacks: false,
 	};
 	
 	if(t == "Rock"){ 
@@ -24,6 +25,8 @@ function getItem(t){
 		itm.kind = "Other";
 		itm.bonus = 0;
 		itm.col = c_white;
+		itm.charges = 1;
+		itm.stacks = true;
 	}
 	
 	if(t == "Food"){ 
@@ -166,6 +169,30 @@ function getItem(t){
 		itm.bonus = 1;
 		itm.col = c_lime;
 		itm.props = ["Regen"];
+	}
+	
+	if(t == "Ring of Spiders"){ 
+		itm.img = imgGearRingSpiders;
+		itm.kind = "Ring";
+		itm.bonus = 1;
+		itm.col = c_lime;
+		itm.props = ["Spiderlike"];
+	}
+	
+	if(t == "Ring of Rocks"){ 
+		itm.img = imgGearRingRocks;
+		itm.kind = "Ring";
+		itm.bonus = 1;
+		itm.col = c_lime;
+		itm.props = ["Rock Finding"];
+	}
+	
+	if(t == "Ring of Fire"){ 
+		itm.img = imgGearRingFire;
+		itm.kind = "Ring";
+		itm.bonus = 1;
+		itm.col = c_lime;
+		itm.props = ["Burn Chance"];
 	}
 	
 	

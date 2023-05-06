@@ -1,10 +1,11 @@
 function manageBagZ(n){
 	
 	if(pc.bag[n] != noone && pc.bag[n].kind == "Wand"){
-		
 		characterUseWand(pc.bag[n], xSpot, ySpot);
-		
-		
+		return;
+	}
+	
+	if(pc.bag[n] != noone && pc.bag[n].food > 0){
 		return;
 	}
 	

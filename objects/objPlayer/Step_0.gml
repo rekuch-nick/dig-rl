@@ -59,7 +59,7 @@ if(!moved){
 	
 	
 	if(xTar != xSpot || yTar != ySpot){
-		if(frozen > 0){ timePasses(); frozen --; wait += 6; return; }
+		if(frozen > 0){ timePasses(); wait += 6; return; }
 		
 		
 		if(clickLM || !holdLM){ logClear(); }
@@ -135,6 +135,17 @@ if(!moved){
 					
 					
 					if(digAt(xTar, yTar, dp)){
+						if(characterHasProp(pc, "Rock Finding")){
+							var bns = itemHasProp(pc.gear[ww.gsRing], "Rock Finding") ? pc.gear[ww.gsRing].bonus : pc.gear[ww.gsRing2].bonus;
+							var a = xTar; var b = yTar;
+							if(inBounds(a, b) && irandom_range(0, 99) < (bns * 2) + 10){
+								if(ww.pmap[a, b] == noone){
+									ww.pmap[a, b] = instance_create_depth(a * 64, b * 64, ww.layerP, objPup);
+									ww.pmap[a, b].sprite_index = imgRock;
+									ww.pmap[a, b].itm = getItem("Rock");
+								}
+							}
+						}
 						timePasses();
 					}
 					

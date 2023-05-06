@@ -290,7 +290,8 @@ function potionEffect(pid, a, b){
 			
 			var mm = ww.mmap[aa, bb];
 			if(mm != noone){
-				mm.poison += 15;
+				mm.poison += 10;
+				mm.sick += 5;
 			}
 			
 		}}

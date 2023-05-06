@@ -14,3 +14,9 @@ charPower = [
 	"Wand Expert",
 	"ID Potions",
 ]
+
+
+pc.bossSeen = [];
+for(var i=0; i<array_length(charSmall); i++){
+	pc.bossSeen[i] = charSmall[i];
+}

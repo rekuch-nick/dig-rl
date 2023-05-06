@@ -47,6 +47,7 @@ blinkNext = 0;
 burning = 0;
 sick = 0;
 slip = 0;
+webArmor = 0;
 
 
 lastHp = -1;

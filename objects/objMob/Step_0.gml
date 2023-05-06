@@ -30,7 +30,7 @@ if(!moved && ready){
 	
 	
 	if(characterHasProp(id, "Ice Immune")){ frozen = 0; }
-	if(frozen > 0){ frozen --; return; }
+	if(frozen > 0){ return; }
 	
 	if(irandom_range(0, 99) < sleepChance){ return; }
 	//if(abs(xSpot - pc.xSpot) + abs(ySpot - pc.ySpot) > stepsMax){ return; }
@@ -99,6 +99,9 @@ lastHp = hp;
 
 
 if(hp < 1){
+	
+	if(isRogue){ openExit(); }
+	
 	
 	if(characterHasProp(id, "Spike Corpse")){
 		if(ww.tmap[xSpot, ySpot] == noone){

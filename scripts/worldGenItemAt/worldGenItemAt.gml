@@ -32,7 +32,14 @@ function worldGenItemAt(aa, bb){
 		}
 	}
 	
-	
+	if(t.kind == "Weapon" && pc.gear[ww.gsWep] != noone){
+		var ii = pc.gear[ww.gsWep];
+		if(ii.bonus > t.bonus + 1){ t = getItem("Rock"); }
+	}
+	if(t.kind == "Armor" && pc.gear[ww.gsArm] != noone){
+		var ii = pc.gear[ww.gsArm];
+		if(ii.bonus > t.bonus + 1){ t = getItem("Rock"); }
+	}
 	
 	putPupObjCloseTo(t, aa, bb);
 }

@@ -46,6 +46,7 @@ if(pc.clickEnter || pc.clickLM){
 	if(charPower[charCursor] == "Fast Healing"){ pc.hpRegen += .5; }
 	if(charPower[charCursor] == "Wand Expert"){ 
 		pc.wandSkill += 1; 
+		pc.wands -= 1;
 	}
 	if(charPower[charCursor] == "Fast Runner"){ pc.fastRunner += 10; }
 	//if(charPower[charCursor] == "Weak"){ pc.strMax -= 3; pc.str -= 3; pc.hpMax -= 50; pc.hp -= 50; }
@@ -62,6 +63,8 @@ if(pc.clickEnter || pc.clickLM){
 		pc.bag[25] = itemEnchant(getItem("Ring of Striking"), 2, true);
 		pc.gear[ww.gsRing2] = pc.bag[25];
 	}
+	
+	pc.bossSeen[charCursor] = noone;
 	
 	playerEatInput();
 	ww.rollWord = true;

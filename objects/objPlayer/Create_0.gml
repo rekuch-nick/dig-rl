@@ -45,6 +45,9 @@ beenRestingFor = 0;
 //bag[6] = itemEnchant( getItem("Sword"), 1, true); bag[6] = itemEnchantWepProp(bag[6], 1);
 
 //bag[4] = getItem("Pox Wand");
+//bag[3] = getItem("Ring of Spiders");
+//bag[4] = getItem("Ring of Rocks");
+//bag[5] = getItem("Ring of Fire");
 
 
 debugMode = false;

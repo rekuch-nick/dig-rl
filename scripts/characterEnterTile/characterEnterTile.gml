@@ -5,8 +5,16 @@ function characterEnterTile(c, a, b){
 		var t = ww.tmap[a, b];
 		
 		if(t.nam == "Web"){
-			logMessageWhom(c.nam, "get", "stuck in the webs", c);
-			c.web = 1;
+			
+			if(characterHasProp(c, "Spiderlike")){
+				var bns = itemHasProp(pc.gear[ww.gsRing], "Spiderlike") ? pc.gear[ww.gsRing].bonus : pc.gear[ww.gsRing2].bonus;
+				t.charges ++;
+				c.webArmor = 30;
+			} else {
+			
+				logMessageWhom(c.nam, "get", "stuck in the webs", c);
+				c.web = 1;
+			}
 		}
 		
 		

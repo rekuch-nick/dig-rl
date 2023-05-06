@@ -11,7 +11,7 @@ function worldGen(){
 	
 	zone = "Grasslands";
 	if(pc.stage >= 6){ zone = "Desert"; }
-	if(pc.stage >= 11){ zone = "Coral"; }
+	if(pc.stage >= 11 && pc.stage <= 15){ zone = "Coral"; }
 	
 	kind = "caves";
 	if(pc.stage % 5 == 2){ kind = "rooms"; }
@@ -19,8 +19,10 @@ function worldGen(){
 	if(pc.stage % 5 == 4){ kind = "maze"; }
 	if(pc.stage % 5 == 0){ kind = "posts"; }
 	
+	if(pc.stage % 10 == 0){
+		kind = "boss"; ///
+	}
 	
-	//kind = "boss";
 	normalFeatures = true;
 	
 	losVision = true;
@@ -47,13 +49,31 @@ function worldGen(){
 	if(kind == "boss"){
 		zone = "Grasslands";
 		normalFeatures = false;
-		worldGenStatic(imgBlock, noone); 
-		worldGenReplaceRandomBlocks(imgBlock, noone, 60);  
-		 
-		for(var a=0; a<W; a++){ bmap[a, 33] = noone; }
-		var a = irandom_range(1, 15);
-		bmap[a, 33] = noone;
-		fmap[a, 33] = imgExit;
+		
+		for(var b=groundLevel; b<H; b++){
+			var a1 = irandom_range(0, 6);
+			var a2 = irandom_range(W-7, W-1);
+			for(var a=a1; a<=a2; a++){
+				bmap[a, b] = noone;
+			}
+		}
+		
+		
+		var doorRow = 33;
+		for(var a=0; a<W; a++){ bmap[a, doorRow] = noone; }
+		var a = irandom_range(1, 15); 
+		bmap[a, doorRow] = noone; 
+		fmap[a, doorRow] = imgExitShut;
+		
+		
+		mobTable = [{kind: objMobRogue, m1: 1, m2: 1}];
+		worldGenMobsAt(7, doorRow);
+		
+		for(var a=0; a<W; a++){
+			for(var b=doorRow + 2; b<H; b++){
+				bmap[a, b] = imgBlockRock;
+			}
+		}
 	}
 	
 	

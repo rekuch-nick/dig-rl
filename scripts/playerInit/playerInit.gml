@@ -34,7 +34,7 @@ function playerInit(){
 	
 	pc.shadow = 0;
 	
-	pc.wandSkill = 0;
+	pc.wandSkill = 1;
 	
 	
 	pc.xp = 0;

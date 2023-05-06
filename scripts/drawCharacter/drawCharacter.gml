@@ -53,6 +53,10 @@ function drawCharacter(){
 		draw_sprite_ext(imgTrapWeb, floor(current_time / 400) % 3, x, y, 4, 4, 0, c_white, .9);
 	}
 	
+	if(webArmor > 0){
+		draw_sprite_ext(imgWebArmor, floor(current_time / 400) % 3, x, y, 4, 4, 0, c_yellow, .5);
+	}
+	
 	if(displace > 0){
 		var xx = face == -1 ? 64 : 0;
 		var scl = abs(image_xscale);

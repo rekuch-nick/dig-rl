@@ -7,6 +7,8 @@ function playerPickupItem(a, b){
 		return;
 	}
 	
+	var stackIndex = -1;
+	
 	if(i.object_index == objRougeFlake){
 		instance_create_depth(0, 0, ww.layerS, objScreenRougeUpgrade);
 		
@@ -15,16 +17,30 @@ function playerPickupItem(a, b){
 		return;
 	}
 	
-	if(playerGetEmptyBagSlot() == -1){ 
-		logMessage("Backpack is full.")
-		return; 
+	if(i.itm.stacks && playerHasItem(i.itm.nam)){
+		stackIndex = playerHasItemId(i.itm.nam);
+		pc.bag[stackIndex].charges ++;
 	}
 	
-	pc.bag[playerGetEmptyBagSlot()] = i.itm;
 	var n = i.itm.nam;
-	if(i.itm.potID != -1 && i.itm.kind == "Potion" && !pc.potionKnown[i.itm.potID]){
-		n = "Unidentified Potion";
+	
+	
+	if(stackIndex == -1){
+		if(playerGetEmptyBagSlot() == -1){ 
+			logMessage("Backpack is full.")
+			return; 
+		}
+		
+		pc.bag[playerGetEmptyBagSlot()] = i.itm;
+		if(i.itm.potID != -1 && i.itm.kind == "Potion" && !pc.potionKnown[i.itm.potID]){
+			n = "Unidentified Potion";
+		}
 	}
+	
+	
+	
+	
+	
 	logMessage("Picked up " + string(n));
 	if(ww.pmap[a, b].itm.kind == "Wand"){ pc.wands ++; }
 	
