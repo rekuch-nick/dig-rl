@@ -268,9 +268,9 @@ if(mouse_wheel_down()){ itemCursorMove(1); }
 
 
 
-if(keyboard_check_pressed(vk_backspace)){ 
+if(keyboard_check_pressed(vk_backspace)){
 	instance_create_depth(0, 0, ww.layerS, objScreenRougeUpgrade);
-	//spawnMobClose(); 
+	//spawnMobClose();
 }
 
 
