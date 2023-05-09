@@ -10,8 +10,8 @@ function worldGenFeatureAt(aa, bb){
 		{t: "trap", c: 20},
 		{t: "web", c: 20},
 		{t: "grass", c: 20},
-		{t: "cauldren", c: 10},
-		{t: "pool", c: 20},
+		{t: "cauldren", c: 5},
+		{t: "pool", c: 25},
 		{t: "walled pot", c: 20},
 		{t: "stats", c: 20},
 	);

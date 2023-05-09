@@ -66,7 +66,10 @@ hasGreenBlood = false;
 
 
 
-
+hitLuckBase = 0;
+procLuckBase = 0;
+hitLuck = 0;
+procLuck = 0;
 
 
 

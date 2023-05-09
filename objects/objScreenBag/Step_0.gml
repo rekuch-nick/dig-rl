@@ -97,6 +97,11 @@ if(pc.bag[cursor] != noone && pc.clickChar != ""){
 		}*/
 	}
 	
+	if(pc.clickChar == "C"){
+		playerEatInput();
+		instance_destroy();
+	}
+	
 	
 	playerEatInput();
 }
@@ -105,7 +110,7 @@ if(pc.bag[cursor] != noone && pc.clickChar != ""){
 
 
 
-if(pc.clickNO){
+if(pc.clickNO || pc.clickChar == "C"){
 	playerEatInput();
 	instance_destroy();
 }

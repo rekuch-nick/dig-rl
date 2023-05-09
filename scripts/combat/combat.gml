@@ -26,7 +26,7 @@ function combat(c1, c2){
 	if(slow > 0 && choose(true, false)){ 
 		var ss = c1 == pc ? "r" : "s";
 		logMessage(c1.nam + ss + " attack is sluggish");
-		hitRoll = 1;
+		hitRoll = 0;
 	}
 	
 	if(characterHasProp(c1, "Blur Self") && c1.displace < 1 && irandom_range(0, 99) < (c1.gear[0].bonus * 4) ){
@@ -46,7 +46,7 @@ function combat(c1, c2){
 	}}
 	
 	
-	if(hitRoll < tar && characterHasProp(c1, "Shockwave")){
+	if(hitRoll < tar && characterHasProp(c1, "Shockwave") && hitRoll > 0){
 		hitRoll = tar;
 		isShockwave = true;
 	}
@@ -186,6 +186,11 @@ function combat(c1, c2){
 			logMessage(c1.nam + " freezes " + c2.nam);
 		}
 		
+		//if(characterHasProp(c1, "Icy Strikes") && irandom_range(0, 99) < 4 + (c1.gear[0].bonus * 1) && c2.frozen < 1){
+		//	c2.frozen = 3;
+		//	logMessage(c1.nam + " freezes " + c2.nam);
+		//}
+		
 		if(characterHasProp(c1, "Poison Strikes")){
 			c2.poison += dam;
 			var v = c1 == pc ? " poison " : " poisons ";
@@ -206,30 +211,26 @@ function combat(c1, c2){
 			dam = clamp(dam - protReduction, 0, dam);
 		}
 		
-		if(characterHasProp(c1, "Teleport Foe") && irandom_range(0, 99) < 5 + (c1.gear[0].bonus * 2) ){
-			potionEffect(ww.potWarp, c2.xSpot, c2.ySpot);
-		}
+
+		if(c1 == pc){ playerProcRoll(c1, c2); }
 		
-		if(characterHasProp(c1, "Flaming Burst") && irandom_range(0, 99) < (c1.gear[0].bonus * 5) ){
-			potionEffect(ww.potBomb, c2.xSpot, c2.ySpot);
-		}
 		
-		if(characterHasProp(c1, "Burn Chance")){
-			var bns = itemHasProp(pc.gear[ww.gsRing], "Burn Chance") ? pc.gear[ww.gsRing].bonus : pc.gear[ww.gsRing2].bonus;
-			if(irandom_range(0, 99) < (bns * 5) ){
-				c2.burning += 1;
-				var v = c1 == pc ? " burn " : " burns ";
-			}
-		}
+		//if(characterHasProp(c1, "Burn Chance")){
+		//	var bns = itemHasProp(pc.gear[ww.gsRing], "Burn Chance") ? pc.gear[ww.gsRing].bonus : pc.gear[ww.gsRing2].bonus;
+		//	if(irandom_range(0, 99) < (bns * 5) ){
+		//		c2.burning += 1;
+		//		var v = c1 == pc ? " burn " : " burns ";
+		//	}
+		//}
 		
-		if(characterHasProp(c1, "Spiderlike")){
-			var bns = itemHasProp(pc.gear[ww.gsRing], "Spiderlike") ? pc.gear[ww.gsRing].bonus : pc.gear[ww.gsRing2].bonus;
-			if(irandom_range(0, 99) < (bns * 5) ){
-				c2.sick += 5;
-				c2.poison += 5;
-				var v = c1 == pc ? " sicken " : " sickens ";
-			}
-		}
+		//if(characterHasProp(c1, "Spiderlike")){
+		//	var bns = itemHasProp(pc.gear[ww.gsRing], "Spiderlike") ? pc.gear[ww.gsRing].bonus : pc.gear[ww.gsRing2].bonus;
+		//	if(irandom_range(0, 99) < (bns * 5) ){
+		//		c2.sick += 5;
+		//		c2.poison += 5;
+		//		var v = c1 == pc ? " sicken " : " sickens ";
+		//	}
+		//}
 		
 		if(c2.frozen > 0){ dam *= 2; }
 		if(c1.swordmastery > 0){

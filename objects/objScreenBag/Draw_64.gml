@@ -5,34 +5,8 @@ draw_rectangle_color(x + 64, cursor * 32, x + (64 * 9), cursor * 32 + 32, c_navy
 
 
 for(var i=0; i<26; i++){
-	var equiped = false;
-	var c = c_grey;
-	var s = "[Empty Slot]";
-	if(pc.bag[i] != noone){
-		s = pc.bag[i].nam;
-		
-		if(pc.bag[i].bonus != 0){ s = s + " +" + string(pc.bag[i].bonus); }
-		c = pc.bag[i].col;
-		
-		if(pc.bag[i].kind == "Potion" && pc.bag[i].potID != -1 && !pc.potionKnown[pc.bag[i].potID]){
-			s = "Unidentified Potion"; 
-			c = c_white;
-		}
-		
-		for(var j=0; j<4; j++){
-			if(pc.bag[i] == pc.gear[j]){ equiped = true; }
-		}
-		
-	}
-	
-	if(equiped){
-		s = "@ " + s;
-	} else {
-		s = "  " + s;
-	}
-	
-	
-	draw_text_color(x + 72, i * 32 + 10, s, c, c, c, c, 1);
+	var c = itemTextColor(pc.bag[i]);
+	draw_text_color(x + 72, i * 32 + 10, itemTextName1LineAt(pc.bag[i]), c, c, c, c, 1);
 }
 
 //item card

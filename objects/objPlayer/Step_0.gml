@@ -40,7 +40,7 @@ if(!moved){
 	if(xIn > 0){ face = 1; }
 	
 	
-	if(holdLM){
+	if(holdLM && yMouseUI > 0){
 		var dis = abs(xSpot - xMouse) + abs(ySpot - yMouse);
 		
 		if(dis == 1){ xTar = xMouse; yTar = yMouse; }
@@ -231,7 +231,7 @@ if(viewCD > 0){ viewCD --; } else {
 }
 
 
-if(clickChar == "Z"){
+if(clickChar == "Z" || (yMouseUI == 0 && hud.itemTooltip && clickRM) ){
 	playerEatInput();
 	if(frozen > 0){ return; }
 	if(bag[itemCursor] != noone){ manageBagZ(itemCursor); } else {
@@ -239,7 +239,7 @@ if(clickChar == "Z"){
 	}
 }
 
-if(clickChar == "Q"){
+if(clickChar == "Q" || (yMouseUI == 0 && hud.itemTooltip && clickLM) ){
 	playerEatInput();
 	if(frozen > 0){ return; }
 	if(bag[itemCursor] != noone){ manageBagQ(itemCursor); } else {
@@ -247,7 +247,8 @@ if(clickChar == "Q"){
 	}
 }
 
-if(clickChar == "I" || clickChar == "B" || clickChar == "E" || clickChar == "C"){
+//if(clickChar == "I" || clickChar == "B" || clickChar == "E" || clickChar == "C"){
+if(clickChar == "C" || clickNO){
 	if(frozen > 0){ return; }
 	instance_create_depth(0, 0, ww.layerS, objScreenBag);
 }
@@ -255,16 +256,25 @@ if(clickChar == "I" || clickChar == "B" || clickChar == "E" || clickChar == "C")
 
 for(var i=0; i<9; i++){
 	if(clickChar == string(i + 1)){
+		if(keyboard_check(vk_shift)){
+			manageBagSwap(itemCursor, i);
+		} 
+		
 		if(bag[i] != noone){
 			itemCursor = i;
 			hotbarLeftmost = 0;
 		}
+		
 	}
 }
 
-if(mouse_wheel_up()){ itemCursorMove(-1); }
-if(mouse_wheel_down()){ itemCursorMove(1); }
-
+var n = 0;
+if(mouse_wheel_up()){ n = -1; }
+if(mouse_wheel_down()){ n = 1; }
+if(n != 0){ 
+	if(yMouseUI == 0){ n *= 5; }
+	itemCursorMove(n); 
+}
 
 
 

@@ -8,8 +8,7 @@ function playerGetInput(){
 	
 	xMouse = clamp(floor(mouse_x / 64), 0, ww.W - 1);
 	yMouse = clamp(floor(mouse_y / 64), 0, ww.H - 1);
-	
-	
+	yMouseUI = clamp(floor(device_mouse_y_to_gui(0) / 64), 0, ww.H - 1);
 	
 	
 	xIn = 0;
