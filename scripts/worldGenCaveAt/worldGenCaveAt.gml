@@ -31,7 +31,7 @@ function worldGenCaveAt(aa, bb){
 	
 	worldGenMobsAt(aa, bb);
 	
-	if(choose(true, false, false)){
+	if(choose(true, false, false) || (pc.stage == 1) ){
 		worldGenItemAt(aa, bb);
 		//var t = randomItem(-1);
 		//putPupCloseTo(t, aa, bb)

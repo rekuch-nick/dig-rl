@@ -15,9 +15,10 @@ draw_self();
 //	if(hung >= 99){ c = floor(current_time / 400) % 2 == 1 ? c_red: c_white; }
 //	draw_text_color(4, ym, "Hunger: " + string(hung) + "%", c, c, c, c, 1);
 
-if(itemTooltip){
-	var c = itemTextColor(pc.bag[pc.itemCursor]);
-	draw_text_color(4, 6, itemTextName1Line(pc.bag[pc.itemCursor]), c, c, c, c, 1);
+if(itemTooltip != -1){ 
+	//var c = itemTextColor(pc.bag[pc.itemCursor]);
+	var c = itemTextColor(itemTooltip);
+	draw_text_color(4, 2, itemTextName2Line(itemTooltip), c, c, c, c, 1);
 } else {
 	draw_text(4, 6, "HP: " + string(pc.hp) + " (" + string(pc.hpMax) + ")");
 	var hung = 100 - floor( (pc.food / pc.foodMax) * 100);
@@ -49,6 +50,18 @@ for(var i=0; i<9; i++){
 		var a = (8 + i) * 64;
 		var b = 0 * 64;
 		
+		drawItemIcon(a, b, pc.bag[i+iStart]);
+		if(pc.itemCursor == i+iStart){
+			draw_set_alpha(.5);
+			draw_rectangle_color(a+2, b+2, a+62, b+62, c_yellow, c_yellow, c_yellow, c_yellow, true);
+			draw_rectangle_color(a+3, b+3, a+61, b+61, c_yellow, c_yellow, c_yellow, c_yellow, true);
+			draw_rectangle_color(a+4, b+4, a+60, b+60, c_yellow, c_yellow, c_yellow, c_yellow, true);
+			draw_rectangle_color(a+5, b+5, a+59, b+59, c_yellow, c_yellow, c_yellow, c_yellow, true);
+			draw_set_alpha(1);
+		}
+		
+		/*
+		
 		//draw_rectangle_color(a+2, b+2, a+62, b+62, c_black, c_black, c_black, c_black, false);
 		var c = pc.bag[i+iStart].col;
 		var typ = pc.bag[i+iStart].kind;
@@ -61,6 +74,8 @@ for(var i=0; i<9; i++){
 				//draw_rectangle_color(a+10, b+10, a+54, b+54, c_black, c_black, c_black, c_black, false);
 			}
 		}
+		
+		
 		if(pc.itemCursor == i+iStart){
 			draw_set_alpha(.5);
 			draw_rectangle_color(a+2, b+2, a+62, b+62, c_yellow, c_yellow, c_yellow, c_yellow, false);
@@ -81,10 +96,16 @@ for(var i=0; i<9; i++){
 			draw_text(a+4, b+40, string(pc.bag[i+iStart].charges));
 		}
 		
+		
+		*/
+		
 	}
 }
 
-
+if(pc.gear[ww.gsWep] != noone){ drawItemIcon(0, 12 * 64, pc.gear[ww.gsWep]); }
+if(pc.gear[ww.gsArm] != noone){ drawItemIcon(64, 12 * 64, pc.gear[ww.gsArm]); }
+if(pc.gear[ww.gsRing] != noone){ drawItemIcon(128, 12 * 64, pc.gear[ww.gsRing]); }
+if(pc.gear[ww.gsRing2] != noone){ drawItemIcon(192, 12 * 64, pc.gear[ww.gsRing2]); }
 
 
 

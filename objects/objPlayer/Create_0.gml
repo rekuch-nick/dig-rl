@@ -33,6 +33,14 @@ rollingHitPlus = 0;
 fCD = 2;
 beenRestingFor = 0;
 
+
+for(var i=1; i<20; i++){ 
+	//bag[i] = getItem(randomItem()); 
+	//bag[i] = getItem(randomRingType());
+	//bag[i] = getItem("Blasting Potion");
+	//bag[i] = itemEnchant( getItem(randomWeaponType()), irandom_range(1, 4), true); bag[6] = itemEnchantWepProp(bag[i], -1);
+}
+
 //bag[2] = getItem("Spear");
 //bag[3] = getItem("Displacement Potion");
 //bag[4] = getItem("Slow Potion");
@@ -57,7 +65,3 @@ digPow = 1;
 itemCursor = 0;
 hotbarLeftmost = 0;
 
-for(var i=1; i<20; i++){ 
-	//bag[i] = getItem(randomItem()); 
-	//bag[i] = getItem("Blasting Potion");
-}

@@ -40,7 +40,7 @@ if(!moved){
 	if(xIn > 0){ face = 1; }
 	
 	
-	if(holdLM && yMouseUI > 0){
+	if(holdLM && yMouseUI > 0 && yMouseUI < 12){
 		var dis = abs(xSpot - xMouse) + abs(ySpot - yMouse);
 		
 		if(dis == 1){ xTar = xMouse; yTar = yMouse; }
@@ -231,21 +231,28 @@ if(viewCD > 0){ viewCD --; } else {
 }
 
 
-if(clickChar == "Z" || (yMouseUI == 0 && hud.itemTooltip && clickRM) ){
+if(clickChar == "Z" || (yMouseUI == 0 && hud.itemTooltip != -1 && clickRM) ){
 	playerEatInput();
 	if(frozen > 0){ return; }
-	if(bag[itemCursor] != noone){ manageBagZ(itemCursor); } else {
-		instance_create_depth(0, 0, ww.layerS, objScreenBag);
-	}
+	if(bag[itemCursor] != noone){ manageBagZ(itemCursor); } 
+	
 }
 
-if(clickChar == "Q" || (yMouseUI == 0 && hud.itemTooltip && clickLM) ){
+if(clickChar == "Q" || (yMouseUI == 0 && hud.itemTooltip != -1 && clickLM) ){
 	playerEatInput();
 	if(frozen > 0){ return; }
-	if(bag[itemCursor] != noone){ manageBagQ(itemCursor); } else {
-		instance_create_depth(0, 0, ww.layerS, objScreenBag);
-	}
+	if(bag[itemCursor] != noone){ manageBagQ(itemCursor); }
 }
+
+if( (clickLM || clickRM) && (hud.itemTooltip != -1 && yMouseUI == 12) ){
+	if(frozen > 0){ return; }
+	if(xMouse == 0){ unequip(0, 22); }
+	if(xMouse == 1){ unequip(1, 23); }
+	if(xMouse == 2){ unequip(2, 24); }
+	if(xMouse == 3){ unequip(3, 25); }
+	playerEatInput();
+}
+
 
 //if(clickChar == "I" || clickChar == "B" || clickChar == "E" || clickChar == "C"){
 if(clickChar == "C" || clickNO){
@@ -272,7 +279,7 @@ var n = 0;
 if(mouse_wheel_up()){ n = -1; }
 if(mouse_wheel_down()){ n = 1; }
 if(n != 0){ 
-	if(yMouseUI == 0){ n *= 5; }
+	//if(yMouseUI == 0){ n *= 5; }
 	itemCursorMove(n); 
 }
 

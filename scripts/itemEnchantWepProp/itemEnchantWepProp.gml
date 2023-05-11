@@ -7,14 +7,14 @@ function itemEnchantWepProp(itm, fix){
 	var r = irandom_range(1, 8);
 	if(fix != -1){ r = fix; }
 	
-	var t = "Mason"; var p = [w, "Flesh to Stone"];
-	if(r == 2){ t = "Venom"; p = [w, "Poison Strikes"]; }
-	if(r == 3){ t = "Crushing"; p = [w, "Knockback"]; }
-	if(r == 4){ t = "Any"; p = ["Lunge", "Pierce", "Cleave", "Shockwave"]; }
-	if(r == 5){ t = "Blur"; p = [w, "Blur Self"]; }
-	if(r == 6){ t = "Warp"; p = [w, "Teleport Foe"]; }
-	if(r == 7){ t = "Firey"; p = [w, "Flaming Burst"]; }
-	if(r == 8){ t = "Ice"; p = [w, "Icy Strikes"]; }
+	var t = "Mason"; var p = [w, "Flesh to Stone"]; var de = "Petrify low HP foes";
+	if(r == 2){ t = "Venom"; p = [w, "Poison Strikes"]; de = "Poison foes"; }
+	if(r == 3){ t = "Crushing"; p = [w, "Knockback"]; de = "Break walls behind foes"; }
+	if(r == 4){ t = "Any"; p = ["Lunge", "Pierce", "Cleave", "Shockwave"]; de = "All 4 basic weapon powers"; }
+	if(r == 5){ t = "Blur"; p = [w, "Blur Self"]; de = "Create illusions"; }
+	if(r == 6){ t = "Warp"; p = [w, "Teleport Foe"]; de = "Teleport foes"; }
+	if(r == 7){ t = "Firey"; p = [w, "Flaming Burst"]; de = "Explodes"; }
+	if(r == 8){ t = "Ice"; p = [w, "Icy Strikes"]; de = "Freeze foes"; }
 	
 	if(itm.nam == "Sword" && t == "Venom"){ itm.img = imgGearWepSwordVenom; }
 	if(itm.nam == "Axe" && t == "Venom"){ itm.img = imgGearWepAxeVenom; }
@@ -41,11 +41,14 @@ function itemEnchantWepProp(itm, fix){
 	if(itm.nam == "Spear" && t == "Ice"){ itm.img = imgGearWepSpearIce; }
 	if(itm.nam == "Maul" && t == "Ice"){ itm.img = imgGearWepMaulIce; }
 	
-	if(t == "Any"){ itm.img = imgGearWepAnySword; }
 	
 	
+	itm.desc = de;
 	itm.nam = t + " " + itm.nam;
 	itm.props = p;
+	
+	if(t == "Any"){ itm.img = imgGearWepAnySword; itm.nam = "Multi-Tool" }
+	
 	
 	return itm;
 }

@@ -18,6 +18,7 @@ function getItem(t){
 		wandAuto: false,
 		charges: 0,
 		stacks: false,
+		desc: "",
 	};
 	
 	if(t == "Rock"){ 
@@ -27,6 +28,7 @@ function getItem(t){
 		itm.col = c_white;
 		itm.charges = 1;
 		itm.stacks = true;
+		itm.desc = "Throw at foes";
 	}
 	
 	if(t == "Food"){ 
@@ -35,6 +37,7 @@ function getItem(t){
 		itm.bonus = 0;
 		itm.col = $A3620A;
 		itm.food = 1000;
+		itm.desc = "Cure 50% Hunger";
 	}
 	
 	if(t == "Gladius"){ 
@@ -43,6 +46,7 @@ function getItem(t){
 		itm.bonus = 0;
 		itm.col = c_white;
 		itm.damRange = 8;
+		itm.desc = "Better than nothing";
 	}
 	if(t == "Sword"){ 
 		itm.img = imgGearWepSword;
@@ -51,6 +55,7 @@ function getItem(t){
 		itm.col = c_white;
 		itm.damRange = 10;
 		itm.props = ["Lunge"];
+		itm.desc = "Spring Attack";
 	}
 	if(t == "Spear"){ 
 		itm.img = imgGearWepSpear;
@@ -59,6 +64,7 @@ function getItem(t){
 		itm.col = c_white;
 		itm.damRange = 10;
 		itm.props = ["Pierce"];
+		itm.desc = "Strikethrough";
 	}
 	if(t == "Axe"){ 
 		itm.img = imgGearWepAxe;
@@ -67,6 +73,7 @@ function getItem(t){
 		itm.col = c_white;
 		itm.damRange = 10;
 		itm.props = ["Cleave"];
+		itm.desc = "1/3 dmg to adjacent";
 	}
 	if(t == "Maul"){ 
 		itm.img = imgGearWepMaul;
@@ -75,6 +82,7 @@ function getItem(t){
 		itm.col = c_white;
 		itm.damRange = 10;
 		itm.props = ["Shockwave"];
+		itm.desc = "Misses do 1/3 dmg";
 	}
 	
 	
@@ -87,6 +95,7 @@ function getItem(t){
 		itm.armor = 2;
 		itm.armorCheck = 10;
 		itm.props = ["Not Metal"];
+		itm.desc = "";
 	}
 	if(t == "Scale Armor"){ 
 		itm.img = imgGearArmScale;
@@ -95,6 +104,7 @@ function getItem(t){
 		itm.col = c_white;
 		itm.armor = 4;
 		itm.armorCheck = 12;
+		itm.desc = "";
 	}
 	if(t == "Chain Armor"){ 
 		itm.img = imgGearArmRing;
@@ -103,6 +113,7 @@ function getItem(t){
 		itm.col = c_white;
 		itm.armor = 5;
 		itm.armorCheck = 13;
+		itm.desc = "";
 	}
 	if(t == "Banded Armor"){ 
 		itm.img = imgGearArmBanded;
@@ -111,6 +122,7 @@ function getItem(t){
 		itm.col = c_white;
 		itm.armor = 6;
 		itm.armorCheck = 14;
+		itm.desc = "";
 	}
 	if(t == "Splint Armor"){ 
 		itm.img = imgGearArmSplint;
@@ -119,6 +131,7 @@ function getItem(t){
 		itm.col = c_white;
 		itm.armor = 7;
 		itm.armorCheck = 16;
+		itm.desc = "";
 	}
 	if(t == "Plate Armor"){ 
 		itm.img = imgGearArmPlate;
@@ -127,6 +140,7 @@ function getItem(t){
 		itm.col = c_white;
 		itm.armor = 8;
 		itm.armorCheck = 18;
+		itm.desc = "";
 	}
 	
 	
@@ -137,6 +151,7 @@ function getItem(t){
 		itm.bonus = 1;
 		itm.col = c_lime;
 		itm.props = ["Protection"];
+		itm.desc = "Reduces damage taken";
 	}
 	
 	if(t == "Ring of Sustenance"){ 
@@ -145,6 +160,7 @@ function getItem(t){
 		itm.bonus = 1;
 		itm.col = c_lime;
 		itm.props = ["Slow Digestion"];
+		itm.desc = "Slow hunger gain";
 	}
 	
 	if(t == "Ring of Lightning"){ 
@@ -153,6 +169,7 @@ function getItem(t){
 		itm.bonus = 1;
 		itm.col = c_lime;
 		itm.props = ["Random Bolts"];
+		itm.desc = "Zap when attacking";
 	}
 	
 	if(t == "Ring of Striking"){ 
@@ -161,6 +178,7 @@ function getItem(t){
 		itm.bonus = 1;
 		itm.col = c_lime;
 		itm.props = ["Melee Aim"];
+		itm.desc = "+Hit chance";
 	}
 	
 	if(t == "Ring of Regen"){ 
@@ -169,6 +187,7 @@ function getItem(t){
 		itm.bonus = 1;
 		itm.col = c_lime;
 		itm.props = ["Regen"];
+		itm.desc = "+HP Regen";
 	}
 	
 	if(t == "Ring of Spiders"){ 
@@ -177,6 +196,7 @@ function getItem(t){
 		itm.bonus = 1;
 		itm.col = c_lime;
 		itm.props = ["Spiderlike"];
+		itm.desc = "Chance to Sicken";
 	}
 	
 	if(t == "Ring of Rocks"){ 
@@ -185,6 +205,7 @@ function getItem(t){
 		itm.bonus = 1;
 		itm.col = c_lime;
 		itm.props = ["Rock Finding"];
+		itm.desc = "Find rocks when digging";
 	}
 	
 	if(t == "Ring of Fire"){ 
@@ -193,6 +214,7 @@ function getItem(t){
 		itm.bonus = 1;
 		itm.col = c_lime;
 		itm.props = ["Burn Chance"];
+		itm.desc = "Chance to Burn";
 	}
 	
 	
@@ -275,6 +297,7 @@ function getItem(t){
 		itm.bonus = 0;
 		itm.col = c_orange;
 		itm.potID = ww.potHeal;
+		itm.desc = "Heal some HP";
 	}
 	
 	if(t == "Blasting Potion"){ 
@@ -284,6 +307,7 @@ function getItem(t){
 		itm.bonus = 0;
 		itm.col = c_orange;
 		itm.potID = ww.potBomb;
+		itm.desc = "Explodes";
 	}
 	
 	if(t == "Ice Potion"){ 
@@ -293,6 +317,7 @@ function getItem(t){
 		itm.bonus = 0;
 		itm.col = c_orange;
 		itm.potID = ww.potIce;
+		itm.desc = "Freezes";
 	}
 	
 	if(t == "Poison Potion"){ 
@@ -302,6 +327,7 @@ function getItem(t){
 		itm.bonus = 0;
 		itm.col = c_orange;
 		itm.potID = ww.potPoison;
+		itm.desc = "Poisons";
 	}
 	
 	if(t == "STR Potion"){ 
@@ -311,6 +337,7 @@ function getItem(t){
 		itm.bonus = 0;
 		itm.col = c_teal;
 		itm.potID = ww.potSTR;
+		itm.desc = "Permanent +1 STR";
 	}
 	
 	if(t == "AGI Potion"){ 
@@ -320,6 +347,7 @@ function getItem(t){
 		itm.bonus = 0;
 		itm.col = c_teal;
 		itm.potID = ww.potAGI;
+		itm.desc = "Permanent +1 AGI";
 	}
 	
 	if(t == "Warp Potion"){ 
@@ -329,6 +357,7 @@ function getItem(t){
 		itm.bonus = 0;
 		itm.col = c_orange;
 		itm.potID = ww.potWarp;
+		itm.desc = "Random teleport";
 	}
 	
 	if(t == "Swordmastery Potion"){ 
@@ -338,6 +367,7 @@ function getItem(t){
 		itm.bonus = 0;
 		itm.col = c_orange;
 		itm.potID = ww.potSword;
+		itm.desc = "Bonus melee damage";
 	}
 	
 	if(t == "Defense Potion"){ 
@@ -347,6 +377,7 @@ function getItem(t){
 		itm.bonus = 0;
 		itm.col = c_orange;
 		itm.potID = ww.potDefense;
+		itm.desc = "Reduce damage taken";
 	}
 	
 	if(t == "Bless Weapon Potion"){ 
@@ -356,6 +387,7 @@ function getItem(t){
 		itm.bonus = 0;
 		itm.col = c_teal;
 		itm.potID = ww.potBlessWep;
+		itm.desc = "Permanent + to Wep";
 	}
 	
 	if(t == "Bless Armor Potion"){ 
@@ -365,6 +397,7 @@ function getItem(t){
 		itm.bonus = 0;
 		itm.col = c_teal;
 		itm.potID = ww.potBlessArm;
+		itm.desc = "Permanent + to Armor";
 	}
 	
 	if(t == "Bless Rings Potion"){ 
@@ -374,6 +407,7 @@ function getItem(t){
 		itm.bonus = 0;
 		itm.col = c_teal;
 		itm.potID = ww.potBlessRing;
+		itm.desc = "Permanent + to both Rings";
 	}
 	
 	if(t == "Slow Potion"){ 
@@ -383,6 +417,7 @@ function getItem(t){
 		itm.bonus = 0;
 		itm.col = c_orange;
 		itm.potID = ww.potSlow;
+		itm.desc = "Miss half of attacks";
 	}
 	
 	if(t == "Restore Potion"){ 
@@ -392,6 +427,7 @@ function getItem(t){
 		itm.bonus = 0;
 		itm.col = c_orange;
 		itm.potID = ww.potRestore;
+		itm.desc = "Restore STR/AGI and +HP Max";
 	}
 	
 	if(t == "Displacement Potion"){
@@ -401,6 +437,7 @@ function getItem(t){
 		itm.bonus = 0;
 		itm.col = c_orange;
 		itm.potID = ww.potDisplace;
+		itm.desc = "Dodge half of attacks";
 	}
 	
 	

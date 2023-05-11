@@ -22,12 +22,12 @@ if(keyboard_check(ord("3"))){
 	playerEatInput();
 }
 
-if(pc.clickLeft){
+if(pc.clickLeft || mouse_wheel_up() ){
 	charCursor --;
 	if(charCursor < 0){ charCursor = array_length(charBig) - 1; }
 	playerEatInput();
 }
-if(pc.clickRight){
+if(pc.clickRight || mouse_wheel_down() ){
 	charCursor ++;
 	if(charCursor > array_length(charBig) - 1){ charCursor = 0; }
 	playerEatInput();
