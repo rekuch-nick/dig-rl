@@ -69,6 +69,7 @@ function worldGenMobTable(l){
 	if(l == 10){
 		ww.mobTable[array_length(ww.mobTable)] = choose(
 			{kind: objMobAnt2, m1: 1, m2: 2},
+			{kind: objMobFireSkull, m1: 1, m2: 1},
 		);
 	}
 	
@@ -120,6 +121,7 @@ function worldGenMobTable(l){
 		{kind: objMobSlipSlime, m1: 1, m2: 1},
 		{kind: objMobMecha, m1: 1, m2: 2},
 		{kind: objMobGoblin, m1: 3, m2: 4},
+		{kind: objMobFireSkull, m1: 1, m2: 1},
 	];
 	}
 	

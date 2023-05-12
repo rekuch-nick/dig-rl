@@ -45,6 +45,7 @@ function combat(c1, c2){
 		hitRoll = 0;
 	}}
 	
+	if(!attackIsCleave){ c1.dataAttacks ++; }
 	
 	if(hitRoll < tar && characterHasProp(c1, "Shockwave") && hitRoll > 0){
 		hitRoll = tar;
@@ -55,7 +56,7 @@ function combat(c1, c2){
 	
 	if(hitRoll >= tar || c2.frozen > 0 || natRoll == 20){
 		var v = c1 == pc ? " hit " : " hits ";
-		if(!isShockwave){ c1.rollingHitPlus = 0; }
+		if(!isShockwave){ c1.rollingHitPlus = 0; c1.dataHits ++; }
 		
 		if(characterHasProp(c1, "Mold Armor") && c2.gear[1] != noone){
 			if(!itemHasProp(c2.gear[1], "Not Metal")){
@@ -242,6 +243,7 @@ function combat(c1, c2){
 			dam = ceil(dam / 2);
 		}
 		c2.hp -= dam;
+		if(c2.hp < 1){ c1.dataKills ++; }
 		
 		var sn = c2.hp < 1 ? ". " + c2.nam + " is killed!" : ".";
 		if(c2.id == pc){ sn = " (" + string(pc.hp) + ")"; }

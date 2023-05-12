@@ -19,7 +19,7 @@ timeSpawn = false;
 
 hpRegen = 0;
 
-
+fireTrail = 0;
 
 moveCD = 0;
 

@@ -66,5 +66,11 @@ function playerInit(){
 	
 	
 	
-	
+	pc.dataAttacks = 0;
+	pc.dataHits = 0;
+	pc.dataDigs = 0;
+	pc.dataKills = 0;
+	pc.dataFoodEaten = 0;
+	pc.dataRogueKilled = 0;
+	pc.dataLeftBehind = 0;
 }

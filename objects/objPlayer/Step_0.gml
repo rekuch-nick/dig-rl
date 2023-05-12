@@ -135,6 +135,8 @@ if(!moved){
 					
 					
 					if(digAt(xTar, yTar, dp)){
+						pc.dataDigs ++;
+						
 						if(characterHasProp(pc, "Rock Finding")){
 							var bns = itemHasProp(pc.gear[ww.gsRing], "Rock Finding") ? pc.gear[ww.gsRing].bonus : pc.gear[ww.gsRing2].bonus;
 							var a = xTar; var b = yTar;
@@ -210,6 +212,10 @@ if(justFinished){
 	}
 	
 	if(ww.fmap[xSpot, ySpot].sprite_index == imgExit){
+		var n = 0;
+		with(objMob){ if(aly == -1){ n ++; }}
+		pc.dataLeftBehind += n;
+		
 		xSpot = xFirst; ySpot = yFirst;
 		x = xSpot * 64; y = ySpot * 64;
 		ww.rollWord = true;

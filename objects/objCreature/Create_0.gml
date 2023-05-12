@@ -63,7 +63,7 @@ rollingHitPlus = 0;
 hasBlood = true;
 hasGreenBlood = false;
 
-
+aly = -1;
 
 
 hitLuckBase = 0;
@@ -72,4 +72,8 @@ hitLuck = 0;
 procLuck = 0;
 
 
-
+dataAttacks = 0;
+dataHits = 0;
+dataDigs = 0;
+dataKills = 0;
+dataFoodEaten = 0;

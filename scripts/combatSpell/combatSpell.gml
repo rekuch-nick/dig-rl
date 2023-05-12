@@ -19,6 +19,7 @@ function combatSpell(c1, c2){
 	}
 	
 	c2.hp -= dam;
+	if(c2.hp < 1){ c1.dataKills ++; }
 	
 	var sn = c2.hp < 1 ? ". " + c2.nam + " is killed!" : ".";
 	var v = c1 == pc ? " zap " : " zaps ";

@@ -21,6 +21,7 @@ function playerProcRoll(c1, c2){
 		pc.procLuck ++;
 		if(roll + (bns * 2) >= 96){
 			potionEffect(ww.potWarp, c2.xSpot, c2.ySpot);
+			pc.procLuck = pc.procLuckBase;
 		}
 	}
 	
@@ -33,6 +34,7 @@ function playerProcRoll(c1, c2){
 		if(roll + (bns * 5) >= 100){
 			c2.poison += 5;
 			c2.sick += 5;
+			pc.procLuck = pc.procLuckBase;
 		}
 	}
 	
@@ -44,6 +46,7 @@ function playerProcRoll(c1, c2){
 		pc.procLuck ++;
 		if(roll + (bns * 5) >= 100){
 			c2.burning += 1;
+			pc.procLuck = pc.procLuckBase;
 		}
 	}
 	
@@ -54,6 +57,7 @@ function playerProcRoll(c1, c2){
 		pc.procLuck ++;
 		if(roll + (bns * 2) >= 96){
 			c2.frozen += 3;
+			pc.procLuck = pc.procLuckBase;
 		}
 	}
 	

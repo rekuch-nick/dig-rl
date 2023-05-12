@@ -60,6 +60,14 @@ if(!moved && ready){
 		if(characterCanMove(id, tar.a, tar.b)){
 			ww.mmap[xSpot, ySpot] = noone;
 			
+			if(irandom_range(0, 99) < fireTrail){
+				if(ww.tmap[xSpot, ySpot] == noone){
+					ww.tmap[xSpot, ySpot] = instance_create_depth(xSpot*64, ySpot*64, ww.layerT, objTrapFire);
+				}
+			}
+			
+			
+			
 			xSpot = tar.a;
 			ySpot = tar.b;
 			
@@ -100,7 +108,10 @@ lastHp = hp;
 
 if(hp < 1){
 	
-	if(isRogue){ openExit(); }
+	if(isRogue){ 
+		pc.dataRogueKilled ++;
+		openExit(); 
+	}
 	
 	
 	if(characterHasProp(id, "Spike Corpse")){
