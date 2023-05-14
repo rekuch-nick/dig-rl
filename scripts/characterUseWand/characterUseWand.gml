@@ -9,6 +9,7 @@ function characterUseWand(w, a, b){
 	if(w.wandAuto){
 		potionEffect(w.potID, a, b);
 		w.charges --;
+		with(objMob){ if(isRogue){ timePasses(); break; }}
 	} else if(w.wandAim){
 		for(var i=0; i<26; i++){
 			if(pc.bag[i] != noone){

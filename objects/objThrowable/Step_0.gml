@@ -26,7 +26,10 @@ if(dis < -30){
 		
 	if(m != noone){
 		
-		
+		if(m.isRogue){ 
+			//m.ready = true; 
+			timePasses();
+		}
 		
 		
 		if(throwPower > 0){		

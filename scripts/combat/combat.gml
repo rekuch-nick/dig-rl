@@ -153,6 +153,7 @@ function combat(c1, c2){
 		
 		if(characterHasProp(c1, "Ice Strikes") && choose(true, false, false) && c2.frozen < 1){
 			c2.frozen = 3;
+			c2.burning = 0;
 			logMessage(c1.nam + " freezes " + c2.nam);
 		}
 		

@@ -1,6 +1,6 @@
 function worldGen(){
 	
-	random_set_seed(seed); for(var i=0; i<pc.stage; i++){ var n = irandom_range(0, 99); }
+	random_set_seed(seed); for(var i=0; i<pc.stage*9; i++){ var n = irandom_range(0, 99); }
 	groundLevel = 6;
 	worldGenClearAndFill();
 	losVision = false;
@@ -10,7 +10,7 @@ function worldGen(){
 	worldGenMobTable(pc.stage);
 	
 	zone = "Grasslands";
-	if(pc.stage >= 6){ zone = "Desert"; }
+	if(pc.stage >= 6 && pc.stage <= 10){ zone = "Desert"; }
 	if(pc.stage >= 11 && pc.stage <= 15){ zone = "Coral"; }
 	
 	kind = "caves";

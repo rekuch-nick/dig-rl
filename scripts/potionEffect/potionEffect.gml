@@ -64,6 +64,7 @@ function potionEffect(pid, a, b){
 		instance_create_depth(a * 64, b * 64, ww.layerE, effColdBlast);
 		if(m != noone){
 			m.frozen += 6;
+			m.burning = 0;
 			logMessageWhom(m.nam, "freeze", "", m);
 		}
 	}
@@ -257,6 +258,7 @@ function potionEffect(pid, a, b){
 				var mm = ww.mmap[aa, bb];
 				if(mm != noone){
 					mm.frozen = 3;
+					mm.burning = 0;
 				}
 			}
 			

@@ -46,7 +46,7 @@ function timePasses(){
 		
 		if(burning > 0){ 
 			hp -= burning;
-			if(irandom_range(1, 20) >= 20){ burning --; }
+			if(irandom_range(1, 10) >= 10){ burning --; }
 			if(hp < 1){ logMessageWhom(nam, "burn", "to death", id); }
 		}
 		
@@ -56,15 +56,19 @@ function timePasses(){
 			if(hp < 1){ logMessageWhom(nam, "succumb", "to the thorns", id); }
 		}
 		
-		if(slow > 0){ slow --; }
-		if(webArmor > 0){ webArmor --; }
-		if(frozen > 0){ frozen --; }
-		if(sick > 0){ sick --; }
-		if(slip > 0){ slip --; }
-		if(defense > 0){ defense --; }
-		if(swordmastery > 0){ swordmastery --; }
-		if(displace > 0){ displace --; }
-		if(web > 0 && choose(true, false)){ web --; }
+		var ii = 1;
+		if(isRogue){ ii = 2; }
+		for(var i=0; i<ii; i++){
+			if(slow > 0){ slow --; }
+			if(webArmor > 0){ webArmor --; }
+			if(frozen > 0){ frozen --; }
+			if(sick > 0){ sick --; }
+			if(slip > 0){ slip --; }
+			if(defense > 0){ defense --; }
+			if(swordmastery > 0){ swordmastery --; }
+			if(displace > 0){ displace --; }
+			if(web > 0 && choose(true, false)){ web --; }
+		}
 		
 		if(characterHasProp(id, "Displaced") && displace < 10){ displace = 10; }
 	}

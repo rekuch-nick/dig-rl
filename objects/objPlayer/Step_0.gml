@@ -21,7 +21,10 @@ if(characterHasProp(id, "Ice Immune")){
 	if(frozen > 0){ logMessage("You are immune to being frozen"); }
 	frozen = 0; 
 }
-if(characterHasProp(id, "Frozen")){ frozen = 0; burning = 0; }
+if(characterHasProp(id, "Frozen")){ 
+	if(frozen > 0){ logMessage("You are immune to being frozen"); }
+	frozen = 0; burning = 0; 
+}
 
 //show_debug_message("player step")
 //show_debug_message(random_range(0, 1))

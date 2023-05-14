@@ -122,11 +122,24 @@ function worldGenMobTable(l){
 		{kind: objMobMecha, m1: 1, m2: 2},
 		{kind: objMobGoblin, m1: 3, m2: 4},
 		{kind: objMobFireSkull, m1: 1, m2: 1},
-	];
+		];
+	
+		var tt = [];
+		for(var i=0; i<5; i++){
+			var n = irandom_range(0, array_length(ww.mobTable) - 1);
+			
+			tt[i] = mobTable[n];
+		}
+		
+		
+		mobTable = [];
+		for(var i=0; i<5; i++){ mobTable[i] = tt[i]; }
+	
+	
 	}
 	
 	
-	return;
+	return; /////////////////////////////////////////////////////////////////////////////////////
 	
 	
 	

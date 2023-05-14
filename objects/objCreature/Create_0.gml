@@ -33,7 +33,7 @@ spawnMaster = noone;
 shadow = 0;
 attackIsCleave = false;
 attackIsLunge = false;
-
+isRogue = false;
 
 frozen = 0;
 poison = 0;

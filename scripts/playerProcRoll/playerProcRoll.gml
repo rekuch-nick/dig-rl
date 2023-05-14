@@ -121,6 +121,7 @@ function playerProcRoll(c1, c2){
 		pc.procLuck ++;
 		if(roll + (bns * 2) >= 96){
 			c2.frozen += 3;
+			c2.burning = 0;
 			pc.procLuck = pc.procLuckBase;
 		}
 	}

@@ -17,6 +17,9 @@ if(pc.clickLM || pc.clickChar == "Z"){
 	
 	
 	if(pc.bag[index].kind == "Wand"){
+		
+		
+		
 		var i = array_length( cur.line ) - 1;
 		potionEffect(pc.bag[index].potID , cur.line[i].a, cur.line[i].b);
 		pc.bag[index].charges --;
@@ -24,6 +27,9 @@ if(pc.clickLM || pc.clickChar == "Z"){
 		playerEatInput();
 		pc.wait = 20;
 		instance_destroy();
+		
+		with(objMob){ if(isRogue){ timePasses(); return; }}
+		
 		return;
 	}
 	

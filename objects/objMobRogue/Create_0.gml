@@ -7,6 +7,11 @@ sleepChance = 5;
 stepsMax = 8;
 moveCD = 0;
 
+shotType = noone; shotChance = 0; shotRange = 0; splRange = 1;
+hpRegen = 1;
+hp = 200; ac = 18; aim = 6; str = 4; damRange = 10; splRange = 6;
+monsterScale(25,  2,   2,   2,   4,   2);
+
 var tries = 0;
 do {
 	tries ++;
@@ -21,18 +26,46 @@ if(tries <= 1000){
 	pc.bossSeen[i] = noone;
 }
 
+if(sprite_index == imgMCWizard){
+	moveType = "flee";
+	shotType = objFireShot;
+	shotChance = 100;
+	shotRange = 5;
+}
+if(sprite_index == imgMCSorcerer){
+	sleepChance = 30;
+	props = ["Cripple Touch", "Cripple Slap"];
+	shotType = objFireShot;
+	shotChance = 100;
+	shotRange = 5;
+}
+if(sprite_index == imgMCBarbarian){
+	shotType = objRockShot;
+	shotChance = 100;
+	shotRange = 12;
+}
+if(sprite_index == imgMCMonk){
+	hpRegen = 8;
+}
+if(sprite_index == imgMCRogue){
+	props = ["Poison Strikes"];
+}
+if(sprite_index == imgMCBard){
+	props = ["Displaced"];
+}
+if(sprite_index == imgMCKnight){
+	ac += 2; str += 4; aim += 2;
+}
+if(sprite_index == imgMCHero){
+	props = ["Fire Strikes"];
+	shotType = objFireShot;
+	shotChance = 50;
+	shotRange = 5;
+	fireTrail = 100;
+}
 
 
 
 
 
 
-
-hpRegen = 1;
-shotType = noone;
-shotChance = 0;
-shotRange = 0;
-splRange = 1;
-
-hp = 200; ac = 18; aim = 6; str = 4; damRange = 10; splRange = 6;
-monsterScale(25,  2,   2,   2,   4,   2);
