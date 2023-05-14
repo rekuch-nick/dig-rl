@@ -39,6 +39,7 @@ potCrumble = 32;
 potFireball = 33;
 potFrost = 34;
 potPox = 35;
+potShock = 36;
 
 
 rollWord = false;

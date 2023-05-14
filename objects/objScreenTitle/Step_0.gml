@@ -1,4 +1,4 @@
-
+if(instance_number(objScreen) > 1){ return; }
 
 
 //if(pc.clickChar == "R"){
@@ -35,7 +35,7 @@ if(pc.clickRight || mouse_wheel_down() ){
 
 
 
-if(pc.clickEnter || pc.clickLM){
+if(pc.clickEnter){
 	pc.sprite_index = charSmall[charCursor];
 	if(charPower[charCursor] == "Extra Food"){
 		var i = playerGetEmptyBagSlot(); if(i != -1){ pc.bag[i] = getItem("Food"); }

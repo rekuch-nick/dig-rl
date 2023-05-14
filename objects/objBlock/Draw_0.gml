@@ -1,3 +1,4 @@
+if(dontDrawByY()){ return; }
 //if(ww.fmap[xSpot, ySpot].playerSeen){
 if(ww.canSee[xSpot, ySpot]){
 	draw_self();

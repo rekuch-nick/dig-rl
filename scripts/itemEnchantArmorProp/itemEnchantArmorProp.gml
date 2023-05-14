@@ -5,8 +5,10 @@ function itemEnchantArmorProp(itm, fix){
 		w = itm.props[0];
 	}
 	
-	
-	var r = irandom_range(1, 7);
+	var r = fix;
+	if(fix == -1){
+		r = irandom_range(1, 7);
+	}
 	//r = 6; /////
 	if(fix != -1){ r = fix; }
 	var t = "Mage"; var p =  "Cast Damage Up"; var de = "+Zap damage"
@@ -15,9 +17,17 @@ function itemEnchantArmorProp(itm, fix){
 		t = "Iron-Wood"; p = "Not Metal"; de = "";
 		if(itm.nam == "Leather Armor"){
 			t = "Druid"; p = "Thorns"; de = "Tangle attackers";
+			itm.img = imgGearArmLeatherDruid;
 		}
 	}
-	if(r == 4){ t = "Shadow"; p = "Shadow"; de = "Wake fewer monsters"; }
+	if(r == 4){ 
+		t = "Shadow"; p = "Shadow"; de = "Wake fewer monsters"; 
+		if(itm.nam == "Chain Armor"){
+			t = "Darkness"; p = "Shadow";
+			itm.armor += 2;
+			itm.img = imgGearArmRingDark;
+		}
+	}
 	if(r == 5){ t = "Glow"; p = "X-Ray"; de = "See through walls"}
 	if(r == 6){ t = "Swordmaster"; p = "Perfect Lunges"; de = "Bonus to Spring Attacks"; }
 	if(r == 7){ t = "Bushman"; p = "Grass Walking"; de = "Grass doesn't spawn Pests"; }

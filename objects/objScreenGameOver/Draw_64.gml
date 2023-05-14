@@ -11,7 +11,7 @@ draw_text((room_width/4) * 1, 230, "Reached stage " + string(pc.stage));
 draw_text((room_width/4) * 3, 230, "Beat " + string(pc.dataRogueKilled) + " Rogues");
 
 draw_text((room_width/4) * 1, 310, "Made " + string(pc.dataAttacks) + " attacks");
-draw_text((room_width/4) * 3, 310, "Hit " + string(pc.dataHits) + " times");
+draw_text((room_width/4) * 3, 310, "Landed " + string(pc.dataHits) + " attacks");
 
 draw_text((room_width/4) * 1, 390, "Killed " + string(pc.dataKills) + " foes");
 draw_text((room_width/4) * 3, 390, "Eluded " + string(pc.dataLeftBehind) + " foes");

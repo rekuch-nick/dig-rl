@@ -1,4 +1,5 @@
 //if(!ww.fmap[xSpot, ySpot].playerSeen){ return; }
+if(dontDrawByY()){ return; }
 if(!ww.canSee[xSpot, ySpot]){ return; }
 
 if(characterHasProp(id, "Invisible") && id != pc){

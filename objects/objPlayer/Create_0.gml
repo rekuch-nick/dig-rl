@@ -50,7 +50,10 @@ for(var i=1; i<20; i++){
 //bag[4] = itemEnchant( getItem("Ring of Striking"), 9, true);
 //bag[5] = itemEnchant( getItem("Venom Sword"), 9, true);
 //bag[6] = itemEnchant( getItem("Leather Armor"), 1, true); bag[6] = itemEnchantArmorProp(bag[6], 3);
-//bag[6] = itemEnchant( getItem("Sword"), 7, true); bag[6] = itemEnchantWepProp(bag[6], 8);
+//bag[6] = itemEnchant( getItem("Sword"), 3, true); bag[6] = itemEnchantWepProp(bag[6], 3);
+//bag[6] = itemEnchant( getItem("Chain Armor"), 3, true); bag[6] = itemEnchantArmorProp(bag[6], 4);
+//bag[6] = itemEnchant( getItem("Leather Armor"), 3, true); bag[6] = itemEnchantArmorProp(bag[6], 3);
+
 
 //bag[4] = getItem("Pox Wand");
 //bag[3] = getItem("Ring of Spiders");

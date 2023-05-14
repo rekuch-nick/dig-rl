@@ -1,13 +1,13 @@
 event_inherited();
 nam = "Pest";
 
-sleepChance = 40;
+sleepChance = irandom_range(40, 90);
 stepsMax = 8;
 
 
 
 
-moveType = "still";
+//moveType = "still";
 
 props = ["Poison Strikes"];
 

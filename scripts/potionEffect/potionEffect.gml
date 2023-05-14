@@ -298,5 +298,19 @@ function potionEffect(pid, a, b){
 		
 	}
 	
+	if(pid == ww.potShock){
+		
+		if(!inBounds(a, b)){ return; }
+		
+		instance_create_depth(a * 64, b * 64, ww.layerE, effBlastLightning);
+		
+		var mm = ww.mmap[a, b];
+		if(mm != noone){
+			mm.hp -= 10;
+			logMessageWhom(mm.nam, "get", " shocked", mm);
+		}
+		
+	}
+	
 	
 }

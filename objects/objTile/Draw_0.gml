@@ -1,4 +1,7 @@
 //if(playerSeen){
+if(dontDrawByY()){ return; }
+
+
 if(ww.canSee[xSpot, ySpot]){
 
 	

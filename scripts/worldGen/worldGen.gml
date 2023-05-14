@@ -121,5 +121,7 @@ function worldGen(){
 		 }}
 	}
 	
-	
+	//remove all monsters for speed tests
+	//with(objMob){ if(id != pc){ instance_destroy(); }}
+	//for(var a=0; a<ww.W; a++){ for(var b=0; b<ww.H; b++){ ww.mmap[a, b] = noone; }}
 }

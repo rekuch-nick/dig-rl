@@ -1,7 +1,7 @@
 function getArmorClass(c){
 	
 	var n = c.ac;
-	var agiBonus = clamp(c.agi - 10, 0, c.agi);
+	var agiBonus = clamp(c.agi - 10, 0, 10);
 	
 	
 	

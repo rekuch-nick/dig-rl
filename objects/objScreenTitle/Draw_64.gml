@@ -17,4 +17,10 @@ draw_sprite_ext(charBig[charCursor], 0, 1010, 350, -4, 4, 0, c_white, random_ran
 draw_text_transformed(872, 400, "<  >", 2, 2, 0);
 draw_set_halign(fa_center);
 draw_text(942, 500, charPower[charCursor]);
+
+
+draw_set_halign(fa_right);
+draw_text_color(room_width - 10, 10, "version " + string(version), c_grey, c_grey, c_grey, c_grey, 1);
+
+
 draw_set_halign(fa_left);

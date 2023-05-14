@@ -29,10 +29,7 @@ function combat(c1, c2){
 		hitRoll = 0;
 	}
 	
-	if(characterHasProp(c1, "Blur Self") && c1.displace < 1 && irandom_range(0, 99) < (c1.gear[0].bonus * 4) ){
-		c1.displace = 4;
-		logMessageWhom(c1.nam, "become", "hard to see", c1);
-	}
+	
 	
 	
 	if(c2.displace > 0){ if(choose(true, false)){ 
@@ -93,34 +90,6 @@ function combat(c1, c2){
 			}
 		}
 		
-		
-		if(characterHasProp(c1, "Knockback")){
-			var a = c2.xSpot; var b = c2.ySpot;
-			if(c1.xSpot < c2.xSpot){ a ++; }
-			if(c1.xSpot > c2.xSpot){ a --; }
-			if(c1.ySpot < c2.ySpot){ b ++; }
-			if(c1.ySpot > c2.ySpot){ b --; }
-			
-			if(inBounds(a, b) && ( ww.bmap[a, b] == noone || tileDigCost(a, b) != 0) ){
-				if(ww.mmap[a, b] == noone){
-					//just move too strong //
-					if(ww.bmap[a, b] != noone){
-						ww.mmap[c2.xSpot, c2.ySpot] = noone;
-						c2.xSpot = a; c2.ySpot = b; c2.x = a*64; c2.y = b*64;
-						ww.mmap[a, b] = c2;
-						//break tile
-						dam += ceil(dam / 5);
-						digAt(a, b, 30000);
-					}
-				} else {
-					//bump monster
-					dam += ceil(dam / 5);
-				}
-			} else {
-				//bump edge of world or unbreakable
-				dam += ceil(dam / 5);
-			}
-		}
 		
 		if(c1.attackIsCleave || isShockwave){
 			dam = ceil(dam / 3);
