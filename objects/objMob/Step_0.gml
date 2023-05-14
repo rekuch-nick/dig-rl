@@ -30,6 +30,7 @@ if(!moved && ready){
 	
 	
 	if(characterHasProp(id, "Ice Immune")){ frozen = 0; }
+	if(characterHasProp(id, "Frozen")){ frozen = 0; }
 	if(frozen > 0){ return; }
 	
 	if(irandom_range(0, 99) < sleepChance){ return; }

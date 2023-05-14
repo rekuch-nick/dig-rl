@@ -14,12 +14,14 @@ if(keyboard_check_pressed(vk_f4)){
 	}
 }
 if(keyboard_check_pressed(vk_f5)){ debugStats = !debugStats; }
+if(keyboard_check_pressed(vk_f6)){ nextRoom(); }
 
 
 if(characterHasProp(id, "Ice Immune")){ 
 	if(frozen > 0){ logMessage("You are immune to being frozen"); }
 	frozen = 0; 
 }
+if(characterHasProp(id, "Frozen")){ frozen = 0; burning = 0; }
 
 //show_debug_message("player step")
 //show_debug_message(random_range(0, 1))
@@ -204,21 +206,21 @@ if(justFinished){
 	spawnStatueMob(xSpot, ySpot);
 	
 	if(ww.fmap[xSpot, ySpot].sprite_index == imgWater){
-		if(burning > 0){
-			logMessage("The water stops you from burning");
-			burning = 0;
+		
+		if(characterHasProp(pc, "Frozen")){ 
+			ww.fmap[xSpot, ySpot].sprite_index = imgBGFrozen;
+			
+		} else {
+			if(burning > 0){
+				logMessage("The water stops you from burning");
+				burning = 0;
+			}
+			spawnWaterMob(xSpot, ySpot);
 		}
-		spawnWaterMob(xSpot, ySpot);
 	}
 	
 	if(ww.fmap[xSpot, ySpot].sprite_index == imgExit){
-		var n = 0;
-		with(objMob){ if(aly == -1){ n ++; }}
-		pc.dataLeftBehind += n;
-		
-		xSpot = xFirst; ySpot = yFirst;
-		x = xSpot * 64; y = ySpot * 64;
-		ww.rollWord = true;
+		nextRoom();
 	}
 	
 	xLast = xSpot; yLast = ySpot;
