@@ -122,7 +122,7 @@ function worldGenMobTable(l){
 	
 	
 	
-	if(l >= 11){
+	if(l >= 16){
 		ww.mobTable = [
 		{kind: objMobSlime, m1: 1, m2: 3},
 		{kind: objMob, m1: 1, m2: 2},

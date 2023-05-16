@@ -450,6 +450,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"000","folderPath":"folders/Objects/mobs/000.yy","order":5,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"001","folderPath":"folders/Objects/mobs/001.yy","order":4,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"002","folderPath":"folders/Objects/mobs/002.yy","order":6,},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"003","folderPath":"folders/Objects/mobs/003.yy","order":17,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"system","folderPath":"folders/Objects/system.yy","order":3,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Paths","folderPath":"folders/Paths.yy","order":3,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Rooms","folderPath":"folders/Rooms.yy","order":9,},
@@ -466,7 +467,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"tiles","folderPath":"folders/Sprites/tiles.yy","order":65,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tile Sets","folderPath":"folders/Tile Sets.yy","order":1,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy","order":7,},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"003","folderPath":"folders/Objects/mobs/003.yy","order":17,},
   ],
   "AudioGroups": [
     {"resourceType":"GMAudioGroup","resourceVersion":"1.3","name":"audiogroup_default","targets":-1,},
