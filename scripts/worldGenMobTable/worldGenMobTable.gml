@@ -4,7 +4,7 @@ function worldGenMobTable(l){
 	while(ll > 5){ ll -= 5; }
 	
 	//l = 33;
-	//ww.mobTable = [ {kind: objMobOnion, m1: 1, m2: 1} ]; return; ///////
+	//ww.mobTable = [ {kind: objMobPhantom, m1: 1, m2: 1} ]; return; ///////
 	
 	if(l == 1){
 		ww.mobTable = [
@@ -73,6 +73,40 @@ function worldGenMobTable(l){
 		);
 	}
 	
+	if(l == 11){
+		ww.mobTable = [
+			{kind: objMobGoblin, m1: 1, m2: 4},
+			{kind: objMobCyclops, m1: 1, m2: 1},
+			{kind: objMobMecha, m1: 1, m2: 1}
+		];
+	}
+	if(l == 12){
+		ww.mobTable[array_length(ww.mobTable)] = choose(
+			{kind: objMobSlipSlime, m1: 1, m2: 1},
+			{kind: objMobFireSkull, m1: 2, m2: 3},
+			{kind: objMobFungusFighter, m1: 2, m2: 3},
+		);
+	}
+	if(l == 13){
+		ww.mobTable[array_length(ww.mobTable)] = choose(
+			{kind: objMobCreep, m1: 1, m2: 1},
+			{kind: objMobCreep2, m1: 1, m2: 1},
+			{kind: objMobDarkBug, m1: 1, m2: 2},
+		);
+	}
+	if(l == 14){
+		ww.mobTable[array_length(ww.mobTable)] = choose(
+			{kind: objMobFungusFighter, m1: 1, m2: 1},
+			{kind: objMobSnailAcid, m1: 1, m2: 1},
+		);
+	}
+	if(l == 15){
+		ww.mobTable[array_length(ww.mobTable)] = choose(
+			{kind: objMobPhantom, m1: 1, m2: 2},
+			{kind: objMobWitch, m1: 1, m2: 1},
+		);
+	}
+	
 	
 	
 	
@@ -122,6 +156,8 @@ function worldGenMobTable(l){
 		{kind: objMobMecha, m1: 1, m2: 2},
 		{kind: objMobGoblin, m1: 3, m2: 4},
 		{kind: objMobFireSkull, m1: 1, m2: 1},
+		{kind: objMobDarkBug, m1: 1, m2: 1},
+		{kind: objMobKnight, m1: 1, m2: 1},
 		];
 	
 		var tt = [];

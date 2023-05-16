@@ -10,7 +10,7 @@ function combat(c1, c2){
 	hitRoll += c1.rollingHitPlus;
 	
 	var tar = getArmorClass(c2);
-	
+	if(c2.frozen > 0){ tar = 1; }
 	
 	
 	if(c1.attackIsLunge){ 
@@ -58,8 +58,17 @@ function combat(c1, c2){
 		if(characterHasProp(c1, "Mold Armor") && c2.gear[1] != noone){
 			if(!itemHasProp(c2.gear[1], "Not Metal")){
 				if(c2.gear[1].bonus > -5){
-					logMessage(c1.nam + "'s slime corodes metal armor.");
+					logMessage(c1.nam + "'s slime corodes metal armor");
 					itemEnchant(c2.gear[1], -1, false);
+				}
+			}
+		}
+		
+		if(characterHasProp(c1, "Sunder") && c2.gear[0] != noone){
+			if(choose(true, false)){
+				if(c2.gear[0].bonus > -5){
+					logMessage(c1.nam + "'s attack damages your weapon");
+					itemEnchant(c2.gear[0], -1, false);
 				}
 			}
 		}
@@ -212,6 +221,7 @@ function combat(c1, c2){
 			//c2.defense --;
 			dam = ceil(dam / 2);
 		}
+		if(dam < 1){ dam = 1; }
 		c2.hp -= dam;
 		if(c2.hp < 1){ c1.dataKills ++; }
 		

@@ -67,7 +67,8 @@ function worldGen(){
 		
 		
 		mobTable = [{kind: objMobRogue, m1: 1, m2: 1}];
-		worldGenMobsAt(7, doorRow);
+		worldGenMobsAt(7, doorRow - 2);
+		bmap[7, doorRow - 2] = noone;
 		
 		for(var a=0; a<W; a++){
 			for(var b=doorRow + 2; b<H; b++){

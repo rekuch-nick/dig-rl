@@ -33,7 +33,7 @@ function playerVisionCheck(){
 		if(pc.debugMode){ ww.canSee[a, b] = true; continue; }
 		
 		var n = 0;
-		if(characterHasProp(pc, "X-Ray")){ n = 1; }
+		if(characterHasProp(pc, "X-Ray") || characterHasProp(pc, "Light")){ n = 1; }
 		
 		//if(ww.losVision && b <= ww.groundLevel){
 		var line = getLine(a, b, pc.xSpot, pc.ySpot);

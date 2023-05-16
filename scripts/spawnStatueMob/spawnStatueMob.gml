@@ -4,7 +4,7 @@ function spawnStatueMob(aa, bb){
 	
 	for(var a=aa-2; a<=aa+2; a++){ for(var b=bb-2; b<=bb+2; b++){
 		if(a == aa && b == bb){ continue; }
-		if(point_distance(a, b, aa, bb) >= 4){ continue; }
+		if(orthDistance(a, b, aa, bb) >= 4){ continue; }
 	
 		if(inBounds(a, b) && ww.bmap[a, b] != noone){
 			var spt = ww.bmap[a, b].sprite_index;
@@ -16,6 +16,21 @@ function spawnStatueMob(aa, bb){
 					tileBreak(a, b);
 				}
 			}
+			
+			
+		}
+		
+		if(inBounds(a, b)){
+			var spt = ww.fmap[a, b].sprite_index;
+			if(spt == imgBGDirtGrave && choose(true, false, false, false) ){
+				if(ww.mmap[a, b] == noone){
+					ww.fmap[a, b].sprite_index = imgBGDirtGraveBroken
+					ww.mmap[a, b] = instance_create_depth(a*64, b*64, ww.layerM, objMobZomb);
+					logMessage("Something rises from the ground");
+					
+				}
+			}
+			
 		}
 	
 	

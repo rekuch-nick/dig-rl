@@ -1,5 +1,5 @@
 image_xscale = 4; image_yscale = 4;
-version = "0.0.4.31";
+version = "0.0.4.32";
 
 charCursor = 0;
 
@@ -13,7 +13,7 @@ charPower = [
 	"Extra Food",
 	"More STR",
 	"Evasive",
-	"Rich",
+	"Wealthy",
 	"Fast Healing",
 	"More AGI",
 	"Wand Expert",

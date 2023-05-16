@@ -427,7 +427,7 @@ function getItem(t){
 		itm.bonus = 0;
 		itm.col = c_orange;
 		itm.potID = ww.potRestore;
-		itm.desc = "Restore STR/AGI and +HP Max";
+		itm.desc = "Restore STR/AGI/HP";
 	}
 	
 	if(t == "Displacement Potion"){

@@ -3,7 +3,13 @@ if(dontDrawByY()){ return; }
 if(!ww.canSee[xSpot, ySpot]){ return; }
 
 if(characterHasProp(id, "Invisible") && id != pc){
-	if(point_distance(xSpot, ySpot, pc.xSpot, pc.ySpot) > 2){ return; }
+	if(point_distance(xSpot, ySpot, pc.xSpot, pc.ySpot) > 2){ 
+		if(characterHasProp(pc, "Light")){
+			draw_sprite_ext(imgSpotted, 0, x+32, y+32, 4, 4, 0, c_white, .6);
+		} else {
+			return; 
+		}
+	}
 }
 
 drawCharacter();

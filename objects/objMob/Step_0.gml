@@ -121,6 +121,19 @@ if(hp < 1){
 		}
 	}
 	
+	if(characterHasProp(id, "Death Curse")){
+		var dis = point_distance(xSpot, ySpot, pc.xSpot, pc.ySpot);
+		if(dis <= 2){ if(choose(true, false)){
+			if(choose(true, false)){
+				pc.agi = clamp(pc.agi - 1, 8, pc.agi);
+				logMessage(nam + " drains AGI as it dies");
+			} else {
+				pc.str = clamp(pc.str - 1, 8, pc.str);
+				logMessage(nam + " drains STR as it dies");
+			}
+		}}
+	}
+	
 	
 	ww.mmap[xSpot, ySpot] = noone;
 	var caller = id;

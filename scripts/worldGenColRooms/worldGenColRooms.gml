@@ -27,6 +27,14 @@ function worldGenColRooms(){
 			bmap[aExitLast - 3, b] = noone;
 		}
 		
+		if(irandom_range(0, 99) < 30){ bmap[5, b] = noone; }
+		if(irandom_range(0, 99) < 30){ bmap[11, b] = noone; }
+		if(irandom_range(0, 99) < 40){ 
+			do{ a = choose(2, 8, 14); } until (a != aExit);
+			bmap[a, b + 3] = noone;
+		}
+		
+		
 
 		
 		

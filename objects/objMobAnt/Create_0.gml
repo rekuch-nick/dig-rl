@@ -1,5 +1,5 @@
 event_inherited();
-nam = "Slime";
+nam = "Ant";
 
 sleepChance = 40;
 stepsMax = 8;

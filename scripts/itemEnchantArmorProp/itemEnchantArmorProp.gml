@@ -11,11 +11,11 @@ function itemEnchantArmorProp(itm, fix){
 	}
 	//r = 6; /////
 	if(fix != -1){ r = fix; }
-	var t = "Mage"; var p =  "Cast Damage Up"; var de = "+Zap damage"
-	if(r == 2){ t = "Yeti"; p = "Ice Immune"; de = "Frozen Immunity"}
-	if(r == 3){ t = "Iron-Wood"; p = "Not Metal"; de = ""; }
-	if(r == 4){ t = "Shadow"; p = "Shadow"; de = "Wake fewer monsters"; }
-	if(r == 5){ t = "Glow"; p = "X-Ray"; de = "See through walls"}
+	var t = "Mage"; var p =  "Cast Damage Up"; var de = "+Zap damage"//plate
+	if(r == 2){ t = "Yeti"; p = "Ice Immune"; de = "Frozen Immunity"}//splint
+	if(r == 3){ t = "Iron-Wood"; p = "Not Metal"; de = ""; }//leather
+	if(r == 4){ t = "Shadow"; p = "Shadow"; de = "Wake fewer monsters"; }//chain
+	if(r == 5){ t = "Glow"; p = "X-Ray"; de = "See through walls"}//scale
 	if(r == 6){ t = "Swordmaster"; p = "Perfect Lunges"; de = "Bonus to Spring Attacks"; }
 	if(r == 7){ t = "Bushman"; p = "Grass Walking"; de = "Grass doesn't spawn Pests"; }
 	
@@ -31,7 +31,7 @@ function itemEnchantArmorProp(itm, fix){
 		t = "Druid"; p = "Thorns"; de = "Tangle attackers";
 		itm.img = imgGearArmLeatherDruid;
 	}
-	if(t == "Shadow" && itm.nam == "Leather Armor"){
+	if(t == "Shadow" && itm.nam == "Chain Armor"){
 		t = "Darkness";
 		itm.armor += 2;
 		itm.img = imgGearArmRingDark;
@@ -39,6 +39,11 @@ function itemEnchantArmorProp(itm, fix){
 	if(t == "Yeti" && itm.nam == "Splint Armor"){
 		t = "Frozen"; p = "Frozen"; de = "Frozen/Burn/Water Resist";
 		itm.img = imgGearArmSplintFrozen;
+	}
+	if(t == "Glow" && itm.nam == "Scale Armor"){
+		t = "Light"; p = "Light"; de = "True Sight";
+		itm.img = imgGearArmScaleLight;
+		itm.armor += 2;
 	}
 	
 	

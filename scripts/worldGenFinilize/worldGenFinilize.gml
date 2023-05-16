@@ -1,5 +1,11 @@
 function worldGenFinilize(){
 	
+	//remove blocks from populated spaces
+	for(var a=0; a<W; a++){ for(var b=0; b<H; b++){
+		if(mmap[a, b] != noone || pmap[a, b] != noone){
+			bmap[a, b] = noone;
+		}
+	}}
 	
 	
 	//implement images to tile obects
