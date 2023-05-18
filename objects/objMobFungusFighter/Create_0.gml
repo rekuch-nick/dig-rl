@@ -1,5 +1,5 @@
 event_inherited();
-nam = "Fungus";
+nam = "Cobra";
 
 sleepChance = 15;
 stepsMax = 8;

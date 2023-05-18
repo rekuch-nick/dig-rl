@@ -10,8 +10,8 @@ function combatSpell(c1, c2){
 	
 	
 		
-	var dam = irandom_range(getSpellMin(c1), getSpellMax(c1)); //
-	if(characterHasProp(c1, "Cast Damage Up")){ dam *= 2; }
+	var dam = irandom_range(getSpellMin(c1), getSpellMax(c1));
+	if(characterHasProp(c1, "Cast Damage Up")){ dam += irandom_range(getSpellMin(c1), getSpellMax(c1)); }
 	
 	if(characterHasProp(c2, "Protection")){
 		var protReduction = itemPropBonus(c2, "Protection");

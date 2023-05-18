@@ -48,6 +48,36 @@ function getItem(t){
 		itm.damRange = 8;
 		itm.desc = "Better than nothing";
 	}
+	
+	if(t == "Storm Staff"){ 
+		itm.img = imgGearWepStaffStorm;
+		itm.kind = "Weapon";
+		itm.bonus = 0;
+		itm.col = c_white;
+		itm.damRange = 14;
+		itm.props = ["Storm Bolts"];
+		itm.desc = "Zap when attacking";
+	}
+	if(t == "Slime Staff"){ 
+		itm.img = imgGearWepStaffSlime;
+		itm.kind = "Weapon";
+		itm.bonus = 0;
+		itm.col = c_white;
+		itm.damRange = 14;
+		itm.props = ["Polymorph"];
+		itm.desc = "Polymorph Foes";
+	}
+	if(t == "Root Staff"){ 
+		itm.img = imgGearWepStaffRoots;
+		itm.kind = "Weapon";
+		itm.bonus = 0;
+		itm.col = c_white;
+		itm.damRange = 14;
+		itm.props = [""];
+		itm.desc = "";
+	}
+	
+	
 	if(t == "Sword"){ 
 		itm.img = imgGearWepSword;
 		itm.kind = "Weapon";

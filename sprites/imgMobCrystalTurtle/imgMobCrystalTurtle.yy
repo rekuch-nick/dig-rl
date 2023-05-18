@@ -12,7 +12,7 @@
   "swfPrecision": 2.525,
   "bbox_left": 0,
   "bbox_right": 15,
-  "bbox_top": 0,
+  "bbox_top": 1,
   "bbox_bottom": 15,
   "HTile": false,
   "VTile": false,
@@ -67,7 +67,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "mobs",
-    "path": "folders/Sprites/mobs.yy",
+    "name": "clear",
+    "path": "folders/Sprites/mobs/clear.yy",
   },
 }

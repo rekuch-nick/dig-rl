@@ -44,5 +44,8 @@ function worldGenItemAt(aa, bb){
 		if(ii.bonus > t.bonus + 1){ t = getItem("Rock"); }
 	}
 	
+	if(irandom_range(1, 500) == 1){ t = getItem("Storm Staff"); }
+	
+	
 	putPupObjCloseTo(t, aa, bb);
 }

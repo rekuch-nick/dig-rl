@@ -54,12 +54,15 @@ for(var i=1; i<20; i++){
 //bag[6] = itemEnchant( getItem("Chain Armor"), 3, true); bag[6] = itemEnchantArmorProp(bag[6], 4);
 //bag[6] = itemEnchant( getItem("Leather Armor"), 3, true); bag[6] = itemEnchantArmorProp(bag[6], 3);
 //bag[6] = itemEnchant( getItem("Scale Armor"), 3, true); bag[6] = itemEnchantArmorProp(bag[6], 5);
+//bag[6] = itemEnchant( getItem("Plate Armor"), 2, true); bag[6] = itemEnchantArmorProp(bag[6], 1);
 
 
 //bag[4] = getItem("Fireball Wand");
 //bag[3] = getItem("Ring of Spiders");
 //bag[4] = getItem("Ring of Rocks");
 //bag[5] = getItem("Ring of Fire");
+//bag[5] = getItem("Storm Staff");
+//bag[7] = getItem("Ring of Lightning");
 
 
 debugMode = false;

@@ -112,10 +112,14 @@ if(!moved){
 		
 		} else if(inBounds(xTar, yTar) && ww.mmap[xTar, yTar] != noone && (clickLM || !holdLM) ) {
 			logClear();
-			
-			if(characterHasProp(pc, "Random Bolts")){
-				var n = itemPropBonus(pc, "Random Bolts") * 10;
-				if(irandom_range(0, 99) < n){ playerRandomLightning(); }
+			if(characterHasProp(pc, "Random Bolts") || characterHasProp(pc, "Storm Bolts")){
+				var rollMax = 100 + (itemPropBonus(pc, "Random Bolts") * 20);
+				var roll = irandom_range(0, rollMax);
+				if(characterHasProp(pc, "Storm Bolts")){ roll += 60; }
+				while(roll >= 100){
+					roll -= 100;
+					playerRandomLightning(); 
+				}
 			}
 			
 			
