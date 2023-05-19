@@ -7,6 +7,6 @@ function randomRingType(){
 		"Ring of Regen",
 		"Ring of Fire",
 		"Ring of Spiders",
-		"Ring of Rocks",
+		"Ring of Knives",
 	);
 }

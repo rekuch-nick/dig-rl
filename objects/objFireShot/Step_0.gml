@@ -13,6 +13,7 @@ pc.wait = 1;
 x += xs;
 y += ys;
 dis -= moveSpeed;
+image_angle += rot;
 
 if(dis < -30){
 	

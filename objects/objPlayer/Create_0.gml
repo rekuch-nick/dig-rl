@@ -58,6 +58,7 @@ for(var i=1; i<20; i++){
 
 
 //bag[4] = getItem("Fireball Wand");
+//bag[4] = getItem("Spark Wand");
 //bag[3] = getItem("Ring of Spiders");
 //bag[4] = getItem("Ring of Rocks");
 //bag[5] = getItem("Ring of Fire");

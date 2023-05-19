@@ -99,9 +99,10 @@ function combat(c1, c2){
 			}
 		}
 		
-		
-		if(c1.attackIsCleave || isShockwave){
+		if(c1.attackIsCleave){
 			dam = ceil(dam / 3);
+		} else if(isShockwave){
+			dam = ceil(dam / 4);
 		}
 		
 		

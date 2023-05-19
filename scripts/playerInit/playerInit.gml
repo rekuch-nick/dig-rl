@@ -1,5 +1,8 @@
 function playerInit(){
 	
+	ds_list_destroy(ww.itemDeck);
+	ww.itemDeck = ds_list_create();
+	
 	pc.x = 320;
 	pc.y = 320;
 	pc.xSpot = 5;
@@ -34,7 +37,7 @@ function playerInit(){
 	
 	pc.shadow = 0;
 	
-	pc.wandSkill = 1;
+	pc.wandSkill = 0;
 	
 	
 	pc.xp = 0;
@@ -73,4 +76,23 @@ function playerInit(){
 	pc.dataFoodEaten = 0;
 	pc.dataRogueKilled = 0;
 	pc.dataLeftBehind = 0;
+	
+	
+	
+	
+	pc.frozen = 0;
+	pc.poison = 0;
+	pc.tangle = 0;
+	pc.displace = 0;
+	pc.slow = 0;
+	pc.swordmastery = 0;
+	pc.defense = 0;
+	pc.web = 0;
+	pc.blinkNext = 0;
+	pc.burning = 0;
+	pc.sick = 0;
+	pc.slip = 0;
+	pc.webArmor = 0;
+	
+	
 }

@@ -1,6 +1,12 @@
 //if(!ww.fmap[xSpot, ySpot].playerSeen){ return; }
 if(!ww.canSee[xSpot, ySpot]){ return; }
 
+
+if(sprite_index == imgHeart || sprite_index == imgHeartStack){
+	image_alpha = random_range(.5, .7);
+}
+
+
 if(itm.potID != -1 && itm.kind == "Potion"){
 	
 	if(pc.potionKnown[itm.potID]){ draw_self(); } else {

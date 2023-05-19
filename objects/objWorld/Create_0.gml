@@ -46,6 +46,8 @@ rollWord = false;
 seed = 1;
 
 
+itemDeck = ds_list_create();
+
 draw_set_font(fntPlain);
 
 instance_create_depth(0, 0, layerS, objScreenTitle);

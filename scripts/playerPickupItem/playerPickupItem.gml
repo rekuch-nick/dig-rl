@@ -7,14 +7,27 @@ function playerPickupItem(a, b){
 		return;
 	}
 	
+	if(i.sprite_index == imgHeart){
+		pc.hp = clamp(pc.hp + 20, 0, pc.hpMax);
+		instance_destroy(ww.pmap[a, b]); ww.pmap[a, b] = noone; return;
+	}
+	
+	if(i.sprite_index == imgHeartStack){
+		for(var i=0; i<26; i++){ if(pc.bag[i] != noone){ 
+			if(pc.bag[i].stacks || pc.bag[i].kind == "Wand"){
+				pc.bag[i].charges ++;
+			}
+		}}
+		instance_destroy(ww.pmap[a, b]); ww.pmap[a, b] = noone; return;
+	}
+	
+	
 	var stackIndex = -1;
 	
 	if(i.object_index == objRougeFlake){
 		instance_create_depth(0, 0, ww.layerS, objScreenRougeUpgrade);
 		
-		instance_destroy(ww.pmap[a, b]);
-		ww.pmap[a, b] = noone;
-		return;
+		instance_destroy(ww.pmap[a, b]); ww.pmap[a, b] = noone; return;
 	}
 	
 	if(i.itm.stacks && playerHasItem(i.itm.nam)){

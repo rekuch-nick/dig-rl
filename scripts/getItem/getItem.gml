@@ -19,7 +19,16 @@ function getItem(t){
 		charges: 0,
 		stacks: false,
 		desc: "",
+		wandCharge: 0,
 	};
+	
+	if(t == "Orb"){ 
+		itm.img = imgRock;
+		itm.kind = "Other";
+		itm.bonus = 0;
+		itm.col = c_white;
+		itm.desc = "";
+	}
 	
 	if(t == "Rock"){ 
 		itm.img = imgRock;
@@ -30,6 +39,16 @@ function getItem(t){
 		itm.stacks = true;
 		itm.desc = "Throw at foes";
 	}
+	if(t == "Throwing Knife"){ 
+		itm.img = imgThrowingKnife;
+		itm.kind = "Other";
+		itm.bonus = 0;
+		itm.col = c_white;
+		itm.charges = 1;
+		itm.stacks = true;
+		itm.desc = "Throw at foes";
+	}
+	
 	
 	if(t == "Food"){ 
 		itm.img = imgFood;
@@ -54,7 +73,7 @@ function getItem(t){
 		itm.kind = "Weapon";
 		itm.bonus = 0;
 		itm.col = c_white;
-		itm.damRange = 14;
+		itm.damRange = 18;
 		itm.props = ["Storm Bolts"];
 		itm.desc = "Zap when attacking";
 	}
@@ -112,7 +131,7 @@ function getItem(t){
 		itm.col = c_white;
 		itm.damRange = 10;
 		itm.props = ["Shockwave"];
-		itm.desc = "Misses do 1/3 dmg";
+		itm.desc = "Misses do 1/4 dmg";
 	}
 	
 	
@@ -226,16 +245,16 @@ function getItem(t){
 		itm.bonus = 1;
 		itm.col = c_lime;
 		itm.props = ["Spiderlike"];
-		itm.desc = "Chance to Sicken";
+		itm.desc = "Spider powers";
 	}
 	
-	if(t == "Ring of Rocks"){ 
+	if(t == "Ring of Knives"){ 
 		itm.img = imgGearRingRocks;
 		itm.kind = "Ring";
 		itm.bonus = 1;
 		itm.col = c_lime;
 		itm.props = ["Rock Finding"];
-		itm.desc = "Find rocks when digging";
+		itm.desc = "Find knives when digging";
 	}
 	
 	if(t == "Ring of Fire"){ 
@@ -260,6 +279,7 @@ function getItem(t){
 		itm.potID = ww.potBlink;
 		itm.wandAuto = true;
 		itm.charges = 10;
+		itm.wandCharge = 1;
 	}
 	
 	if(t == "Crumble Wand"){ 
@@ -271,6 +291,7 @@ function getItem(t){
 		itm.potID = ww.potCrumble;
 		itm.wandAim = true;
 		itm.charges = 10;
+		itm.wandCharge = 1;
 	}
 	
 	if(t == "Fireball Wand"){ 
@@ -282,6 +303,7 @@ function getItem(t){
 		itm.potID = ww.potFireball;
 		itm.wandAim = true;
 		itm.charges = 10;
+		itm.wandCharge = 1;
 	}
 	
 	if(t == "Frost Wand"){ 
@@ -293,6 +315,7 @@ function getItem(t){
 		itm.potID = ww.potFrost;
 		itm.wandAuto = true;
 		itm.charges = 10;
+		itm.wandCharge = 1;
 	}
 	
 	if(t == "Pure Wand"){ 
@@ -304,6 +327,7 @@ function getItem(t){
 		itm.potID = ww.potPure;
 		itm.wandAuto = true;
 		itm.charges = 10;
+		itm.wandCharge = 1;
 	}
 	
 	if(t == "Pox Wand"){ 
@@ -315,6 +339,19 @@ function getItem(t){
 		itm.potID = ww.potPox;
 		itm.wandAuto = true;
 		itm.charges = 10;
+		itm.wandCharge = 1;
+	}
+	
+	if(t == "Spark Wand"){ 
+		itm.img = imgGearWandSparks;
+		itm.kind = "Wand";
+		itm.throwPower = 0;
+		itm.bonus = 0;
+		itm.col = c_white;
+		itm.potID = ww.potShock;
+		itm.wandAim = true;
+		itm.charges = 20;
+		itm.wandCharge = 5;
 	}
 	
 	

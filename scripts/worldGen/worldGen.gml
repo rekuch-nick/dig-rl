@@ -5,7 +5,7 @@ function worldGen(){
 	worldGenClearAndFill();
 	losVision = false;
 	pc.stage ++;
-	chargeWands(pc.wandSkill);
+	chargeWands();
 	foodSpawned = 0;
 	worldGenMobTable(pc.stage);
 	
@@ -37,7 +37,10 @@ function worldGen(){
 	if(kind == "lakes"){ worldGenPatches(noone, imgWater, false, true); }
 	if(kind == "posts"){ 
 		if(zone == "Grasslands"){ worldGenPatches(noone, imgBGGrass, false, true); }
-		if(zone == "Coral"){ worldGenPatches(noone, imgWater, false, true); }
+		if(zone == "Coral"){ 
+			worldGenPatches(noone, imgWater, false, true); 
+			worldGenReplaceRandomFloor(imgWater, imgWaterLilly, 200);
+		}
 		worldGenPosts(imgBlock); worldGenRandomPopulate(); }
 	if(kind == "mix"){ worldGenStatic(imgBlock, noone); worldGenReplaceRandomBlocks(imgBlock, imgBlockRock, 60); worldGenRandomPopulate(); }
 	if(kind == "maze"){ 
@@ -81,14 +84,14 @@ function worldGen(){
 	if(normalFeatures){
 	
 		//force food
-		if(foodSpawned == 0){
-			var p = noone;
-			while(p == noone){
-				var a = irandom_range(0, W-1);
-				var b = irandom_range(10, H-10);
-				p = putPupObjCloseTo(getItem("Food"), a, b);
-			}
-		}
+		//if(foodSpawned == 0){
+			//var p = noone;
+			//while(p == noone){
+				//var a = irandom_range(0, W-1);
+				//var b = irandom_range(10, H-10);
+				//p = putPupObjCloseTo(getItem("Food"), a, b);
+			//}
+		//}
 	
 		//place exit
 		for(var a=0; a<W; a++){ bmap[a, H-1] = noone; }

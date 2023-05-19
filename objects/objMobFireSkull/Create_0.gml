@@ -1,5 +1,5 @@
 event_inherited();
-nam = "Phantom";
+nam = "Fire Skull";
 
 sleepChance = 15;
 stepsMax = 8;

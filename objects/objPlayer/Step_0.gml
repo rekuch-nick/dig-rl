@@ -153,7 +153,7 @@ if(!moved){
 								if(ww.pmap[a, b] == noone){
 									ww.pmap[a, b] = instance_create_depth(a * 64, b * 64, ww.layerP, objPup);
 									ww.pmap[a, b].sprite_index = imgRock;
-									ww.pmap[a, b].itm = getItem("Rock");
+									ww.pmap[a, b].itm = getItem("Throwing Knife");
 								}
 							}
 						}

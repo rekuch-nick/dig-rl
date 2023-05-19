@@ -20,6 +20,9 @@ function putPupObjCloseTo(t, aa, bb){
 		pmap[a, b] = instance_create_depth(a * 64, b * 64, ww.layerP, objPup);
 		pmap[a, b].sprite_index = t.img;
 		pmap[a, b].itm = t;
+		
+		if(pmap[a, b].sprite_index == imgThrowingKnife){ pmap[a, b].image_speed = 0; }
+		
 		return pmap[a, b];
 	}
 	

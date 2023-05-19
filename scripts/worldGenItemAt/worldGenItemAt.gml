@@ -1,5 +1,6 @@
 function worldGenItemAt(aa, bb){
 	
+	/*
 	var t = getItem("Rock");
 	
 	var roll = irandom_range(1, 20);
@@ -44,8 +45,18 @@ function worldGenItemAt(aa, bb){
 		if(ii.bonus > t.bonus + 1){ t = getItem("Rock"); }
 	}
 	
-	if(irandom_range(1, 500) == 1){ t = getItem("Storm Staff"); }
+	if(irandom_range(1, 400) == 1){ 
+		//t = getItem("Storm Staff"); 
+		show_debug_message("Storm Staff on level " + string(pc.stage))
+	}
 	
+	*/
+	
+	
+	if(ds_list_size(ww.itemDeck) < 1){ ItemDeckPopulate(); }
+	var i = irandom_range(0, ds_list_size(ww.itemDeck) - 1);
+	var t = ds_list_find_value(ww.itemDeck, i);
+	ds_list_delete(ww.itemDeck, i);
 	
 	putPupObjCloseTo(t, aa, bb);
 }

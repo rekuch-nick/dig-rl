@@ -1,5 +1,7 @@
 function getArmorClass(c){
 	
+	if(c == pc && pc.debugMode){ return 100; }
+	
 	var n = c.ac;
 	var agiBonus = clamp(c.agi - 10, 0, 10);
 	

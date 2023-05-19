@@ -62,7 +62,7 @@ if(!moved && ready){
 			ww.mmap[xSpot, ySpot] = noone;
 			
 			if(irandom_range(0, 99) < fireTrail){
-				if(ww.tmap[xSpot, ySpot] == noone){
+				if(ww.tmap[xSpot, ySpot] == noone && ww.fmap[xSpot, ySpot].sprite_index != imgWater){
 					ww.tmap[xSpot, ySpot] = instance_create_depth(xSpot*64, ySpot*64, ww.layerT, objTrapFire);
 				}
 			}
@@ -133,6 +133,27 @@ if(hp < 1){
 			}
 		}}
 	}
+	
+	
+	if(ww.pmap[xSpot, ySpot] == noone){
+		var t = noone;
+		if(choose(true, false)){
+			if(irandom_range(1, 4) >= 3){
+				var t = imgHeart;
+			}
+		} else {
+			if(pc.wands > 0 && irandom_range(1, 4) >= 4){
+				var t = imgHeartStack;
+			}
+		}
+		if(t != noone){
+			ww.pmap[xSpot, ySpot] = instance_create_depth(xSpot * 64, ySpot * 64, ww.layerP, objPup);
+			ww.pmap[xSpot, ySpot].sprite_index = t;
+			ww.pmap[xSpot, ySpot].itm = getItem("Orb");
+			//ww.pmap[xSpot, ySpot].potID = -1;
+		}
+	}
+	
 	
 	
 	ww.mmap[xSpot, ySpot] = noone;

@@ -16,7 +16,7 @@ function itemEnchantArmorProp(itm, fix){
 	if(r == 3){ t = "Iron-Wood"; p = "Not Metal"; de = ""; }//leather
 	if(r == 4){ t = "Shadow"; p = "Shadow"; de = "Wake fewer monsters"; }//chain
 	if(r == 5){ t = "Glow"; p = "X-Ray"; de = "See through walls"}//scale
-	if(r == 6){ t = "Swordmaster"; p = "Perfect Lunges"; de = "Bonus to Spring Attacks"; }
+	if(r == 6){ t = "Swordmaster"; p = "Perfect Lunges"; de = "Bonus to Spring Attacks"; }//leather
 	if(r == 7){ t = "Bushman"; p = "Grass Walking"; de = "Grass doesn't spawn Pests"; }
 	
 	
@@ -44,6 +44,11 @@ function itemEnchantArmorProp(itm, fix){
 		t = "Light"; p = "Light"; de = "True Sight";
 		itm.img = imgGearArmScaleLight;
 		itm.armor += 2;
+	}
+	if(t == "Swordmaster" && itm.nam == "Leather Armor"){
+		t = "Crusader";
+		itm.armor += 4;
+		itm.img = imgGearArmLeatherDruid;
 	}
 	
 	
