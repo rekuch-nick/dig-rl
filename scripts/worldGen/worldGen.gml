@@ -33,6 +33,7 @@ function worldGen(){
 		worldGenColCaves(); 
 		worldGenReplaceRandomBlocks(imgBlock, imgBlockRock, 60); 
 		if(pc.stage >= 11){ worldGenReplaceRandomBlocks(imgBlock, imgBlockSkull, 60); }
+		worldGenRiver(-1, -1, -1, -1);
 	}
 	if(kind == "lakes"){ worldGenPatches(noone, imgWater, false, true); }
 	if(kind == "posts"){ 
