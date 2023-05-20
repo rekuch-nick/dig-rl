@@ -57,7 +57,7 @@ for(var i=1; i<20; i++){
 //bag[6] = itemEnchant( getItem("Plate Armor"), 2, true); bag[6] = itemEnchantArmorProp(bag[6], 1);
 
 
-//bag[4] = getItem("Fireball Wand");
+//bag[4] = getItem("Valor Wand");
 //bag[4] = getItem("Spark Wand");
 //bag[3] = getItem("Ring of Spiders");
 //bag[4] = getItem("Ring of Rocks");

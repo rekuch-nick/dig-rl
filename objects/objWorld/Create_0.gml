@@ -34,12 +34,14 @@ potSlow = 13;
 potDisplace = 14;
 potBombSmall = 15;
 potPure = 16;
+potTrueStrike = 17;
 potBlink = 31;
 potCrumble = 32;
 potFireball = 33;
 potFrost = 34;
 potPox = 35;
 potShock = 36;
+potValor = 37;
 
 
 rollWord = false;

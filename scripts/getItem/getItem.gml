@@ -282,6 +282,18 @@ function getItem(t){
 		itm.wandCharge = 1;
 	}
 	
+	if(t == "Valor Wand"){ 
+		itm.img = imgGearWandValor;
+		itm.kind = "Wand";
+		itm.throwPower = 0;
+		itm.bonus = 0;
+		itm.col = c_white;
+		itm.potID = ww.potValor;
+		itm.wandAuto = true;
+		itm.charges = 20;
+		itm.wandCharge = 1;
+	}
+	
 	if(t == "Crumble Wand"){ 
 		itm.img = imgGearWandDisintegrate;
 		itm.kind = "Wand";
@@ -445,6 +457,16 @@ function getItem(t){
 		itm.col = c_orange;
 		itm.potID = ww.potDefense;
 		itm.desc = "Reduce damage taken";
+	}
+	
+	if(t == "TrueStrike Potion"){ 
+		itm.img = imgPotionTrueStrike;
+		itm.kind = "Potion";
+		itm.throwPower = 0;
+		itm.bonus = 0;
+		itm.col = c_orange;
+		itm.potID = ww.potTrueStrike;
+		itm.desc = "Bonuse Hit Chance";
 	}
 	
 	if(t == "Bless Weapon Potion"){ 

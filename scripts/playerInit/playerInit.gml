@@ -93,6 +93,7 @@ function playerInit(){
 	pc.sick = 0;
 	pc.slip = 0;
 	pc.webArmor = 0;
+	pc.trueStrike = 0;
 	
 	
 }

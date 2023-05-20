@@ -7,5 +7,6 @@ function randomWand(){
 		"Pure Wand", 
 		"Pox Wand",
 		"Spark Wand",
+		"Valor Wand",
 	);
 }

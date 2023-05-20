@@ -8,7 +8,8 @@ function randomPotionType(){
 		"Defense Potion",
 		"Warp Potion",
 		"Displacement Potion",
-		"Slow Potion"
+		"Slow Potion",
+		"TrueStrike Potion",
 	);
 
 }

@@ -6,19 +6,24 @@ function ItemDeckPopulate(){
 	
 	ds_list_add(ww.itemDeck, getItem("Food"));
 	
-	var t = getItem(randomWeaponType());
-	itemEnchant(t, irandom_range(0, choose(bonusMax, bonusMax + 1)), true);
-	if(t.bonus >= 1 && ( choose(true, false) || t.bonus >= 3) ){ t = itemEnchantWepProp(t, -1); }
-	if(pc.gear[0] != noone && t.bonus + 1 < pc.gear[0].bonus){ t = getItem("Throwing Knife"); }
-	ds_list_add(ww.itemDeck, t);
+	var ii = 1;
+	if(pc.stage < 2){ ii ++; }
+	for(var i=0; i<ii; i++){
 	
-	var t = getItem(randomArmorType());
-	itemEnchant(t, irandom_range(0, choose(bonusMax, bonusMax + 1)), true);
-	if(t.bonus >= 1 && ( choose(true, false) || t.bonus >= 2) ){ t = itemEnchantArmorProp(t, -1); }
-	if(pc.gear[1] != noone && t.bonus + 1 < pc.gear[1].bonus){ t = getItem("Throwing Knife"); }
-	ds_list_add(ww.itemDeck, t);
+		var t = getItem(randomWeaponType());
+		itemEnchant(t, irandom_range(0, choose(bonusMax, bonusMax + 1)), true);
+		if(t.bonus >= 1 && ( choose(true, false) || t.bonus >= 3) ){ t = itemEnchantWepProp(t, -1); }
+		if(pc.gear[0] != noone && t.bonus + 1 < pc.gear[0].bonus){ t = getItem("Throwing Knife"); }
+		ds_list_add(ww.itemDeck, t);
 	
-	var n = irandom_range(3, 5);
+		var t = getItem(randomArmorType());
+		itemEnchant(t, irandom_range(0, choose(bonusMax, bonusMax + 1)), true);
+		if(t.bonus >= 1 && ( choose(true, false) || t.bonus >= 2) ){ t = itemEnchantArmorProp(t, -1); }
+		if(pc.gear[1] != noone && t.bonus + 1 < pc.gear[1].bonus){ t = getItem("Throwing Knife"); }
+		ds_list_add(ww.itemDeck, t);
+	}
+	
+	var n = irandom_range(2, 5);
 	for(var i=0; i<n; i++){
 		ds_list_add(ww.itemDeck, getItem(randomPotionType()));
 	}
@@ -32,8 +37,8 @@ function ItemDeckPopulate(){
 		ds_list_add(ww.itemDeck, getItem(randomRarePotionType()));
 	}
 	
-	if(irandom_range(1, 2) == 1){
-		var t = getItem(randomRarePotionType());
+	if(irandom_range(1, 2) == 1 ){
+		var t = getItem(randomRingType());
 		itemEnchant(t, irandom_range(0, bonusMax), true);
 		ds_list_add(ww.itemDeck, t);
 	}

@@ -9,6 +9,8 @@ function combat(c1, c2){
 	var hitRoll = natRoll + getHitPlus(c1);
 	hitRoll += c1.rollingHitPlus;
 	
+	if(c1.trueStrike > 0){ hitRoll += 10; }
+	
 	var tar = getArmorClass(c2);
 	if(c2.frozen > 0){ tar = 1; }
 	

@@ -68,6 +68,7 @@ function timePasses(){
 			if(swordmastery > 0){ swordmastery --; }
 			if(displace > 0){ displace --; }
 			if(web > 0 && choose(true, false)){ web --; }
+			if(trueStrike > 0){ trueStrike --; }
 		}
 		
 		if(characterHasProp(id, "Displaced") && displace < 10){ displace = 10; }

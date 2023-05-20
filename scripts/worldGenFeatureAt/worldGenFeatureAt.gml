@@ -13,7 +13,6 @@ function worldGenFeatureAt(aa, bb){
 		{t: "cauldren", c: 5},
 		{t: "pool", c: 25},
 		{t: "walled pot", c: 20},
-		{t: "stats", c: 20},
 		{t: "graves", c: 20},
 	);
 	var r = irandom_range(0, 99);
@@ -66,7 +65,12 @@ function worldGenFeatureAt(aa, bb){
 				}
 			}
 		}}}
-		bmap[a-2, b-2] = noone; bmap[a-2, b+2] = noone; bmap[a+2, b-2] = noone; bmap[a+2, b+2] = noone;
+		if(kind == "rooms"){
+			bmap[aMin, bMin] = noone; 
+			bmap[aMin, bMax] = noone; 
+			bmap[aMax, bMin] = noone; 
+			bmap[aMax, bMax] = noone;
+		}
 	} else if(fet.t == "stats" && r < fet.c){
 		var i = choose(0, 1);
 		for(var a=aMin+i; a<=aMax; a+=2){ for(var b=bMin+i; b<=bMax; b+=2){ if(inBounds(a, b)){

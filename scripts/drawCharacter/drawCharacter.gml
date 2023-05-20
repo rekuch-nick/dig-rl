@@ -49,6 +49,10 @@ function drawCharacter(){
 		draw_sprite_ext(imgSlow, floor(current_time / 400) % 3, x, y, 4, 4, 0, c_white, .5);
 	}
 	
+	if(trueStrike > 0){
+		draw_sprite_ext(imgTrueStrike, floor(current_time / 400) % 3, x, y, 4, 4, 0, c_white, .5);
+	}
+	
 	if(web > 0){
 		draw_sprite_ext(imgTrapWeb, floor(current_time / 400) % 3, x, y, 4, 4, 0, c_white, .9);
 	}

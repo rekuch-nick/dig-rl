@@ -112,6 +112,23 @@ function potionEffect(pid, a, b){
 		}
 	}
 	
+	if(pid == ww.potValor){
+		if(m != noone){
+			m.defense += 30;
+			m.swordmastery += 30;
+			m.displace += 30;
+			m.trueStrike += 30;
+			logMessage(m.nam + " are ready for battle");
+		}
+	}
+	
+	if(pid == ww.potTrueStrike){
+		if(m != noone){
+			m.trueStrike += 30;
+			logMessage(m.nam + " will strike true");
+		}
+	}
+	
 	if(pid == ww.potWarp){
 		if(m != noone){
 			var tries = 0;
