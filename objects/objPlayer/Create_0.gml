@@ -37,11 +37,12 @@ beenRestingFor = 0;
 for(var i=1; i<20; i++){ 
 	//bag[i] = getItem(randomItem()); 
 	//bag[i] = getItem(randomRingType());
-	//bag[i] = getItem("Blasting Potion");
+	//bag[i] = getItem("Bless Rings Potion");
 	//bag[i] = itemEnchant( getItem(randomWeaponType()), irandom_range(1, 4), true); bag[6] = itemEnchantWepProp(bag[i], -1);
 }
 
-//bag[2] = getItem("Spear");
+//bag[2] = getItem("Ring of Sustenance");
+//bag[3] = getItem("Ring of Wandskill");
 //bag[3] = getItem("Displacement Potion");
 //bag[4] = getItem("Slow Potion");
 //bag[5] = getItem("Restore Potion");
@@ -57,7 +58,7 @@ for(var i=1; i<20; i++){
 //bag[6] = itemEnchant( getItem("Plate Armor"), 2, true); bag[6] = itemEnchantArmorProp(bag[6], 1);
 
 
-//bag[4] = getItem("Valor Wand");
+//bag[5] = getItem("Fireball Wand");
 //bag[4] = getItem("Spark Wand");
 //bag[3] = getItem("Ring of Spiders");
 //bag[4] = getItem("Ring of Rocks");

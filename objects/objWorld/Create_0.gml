@@ -35,6 +35,7 @@ potDisplace = 14;
 potBombSmall = 15;
 potPure = 16;
 potTrueStrike = 17;
+potSparks = 18;
 potBlink = 31;
 potCrumble = 32;
 potFireball = 33;

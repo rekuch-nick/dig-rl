@@ -5,6 +5,9 @@ function ItemDeckPopulate(){
 	var bonusMax = floor( (pc.stage + 1) / 5);
 	
 	ds_list_add(ww.itemDeck, getItem("Food"));
+	if(!playerHasItem("Food")){
+		ds_list_add(ww.itemDeck, getItem("Food"));
+	}
 	
 	var ii = 1;
 	if(pc.stage < 2){ ii ++; }
@@ -23,7 +26,7 @@ function ItemDeckPopulate(){
 		ds_list_add(ww.itemDeck, t);
 	}
 	
-	var n = irandom_range(2, 5);
+	var n = irandom_range(3, 5);
 	for(var i=0; i<n; i++){
 		ds_list_add(ww.itemDeck, getItem(randomPotionType()));
 	}

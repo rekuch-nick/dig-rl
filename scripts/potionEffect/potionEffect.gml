@@ -122,6 +122,16 @@ function potionEffect(pid, a, b){
 		}
 	}
 	
+	if(pid == ww.potSparks){
+		if(playerRandomLightning()){
+			for(var i=0; i<9; i++){
+				playerRandomLightning();
+			}
+		} else {
+			logMessage("Nothing nearby to Zap");
+		}
+	}
+	
 	if(pid == ww.potTrueStrike){
 		if(m != noone){
 			m.trueStrike += 30;

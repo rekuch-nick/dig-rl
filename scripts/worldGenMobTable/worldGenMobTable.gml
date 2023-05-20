@@ -64,7 +64,7 @@ function worldGenMobTable(l){
 		ww.mobTable[array_length(ww.mobTable)] = choose(
 			{kind: objMobGreenKnight, m1: 1, m2: 2},
 			{kind: objMobHydra, m1: 1, m2: 2},
-			{kind: objMobMagma, m1: 1, m2: 2},
+			//{kind: objMobMagma, m1: 1, m2: 2},
 		);
 	}
 	if(l == 10){

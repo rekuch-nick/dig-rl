@@ -22,6 +22,7 @@ if(itemTooltip != -1){
 } else {
 	draw_text(4, 6, "HP: " + string(pc.hp) + " (" + string(pc.hpMax) + ")");
 	var hung = 100 - floor( (pc.food / pc.foodMax) * 100);
+	//var hung = 100 - ( (pc.food / pc.foodMax) * 100); //////
 	var c = c_white;
 	if(hung >= 99){ c = floor(current_time / 400) % 2 == 1 ? c_red: c_white; }
 	draw_text_color(4, 32, "Hunger: " + string(hung) + "%", c, c, c, c, 1);

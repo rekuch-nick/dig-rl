@@ -78,3 +78,7 @@ dataHits = 0;
 dataDigs = 0;
 dataKills = 0;
 dataFoodEaten = 0;
+
+lavaProof = false;
+acidProof = false;
+waterProof = true;

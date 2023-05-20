@@ -12,6 +12,7 @@ function worldGen(){
 	zone = "Grasslands";
 	if(pc.stage >= 6 && pc.stage <= 10){ zone = "Desert"; }
 	if(pc.stage >= 11 && pc.stage <= 15){ zone = "Coral"; }
+	//if(pc.stage >= 16 && pc.stage <= 20){ zone = "Fire"; }
 	
 	kind = "caves";
 	if(pc.stage % 5 == 2){ kind = "rooms"; }
@@ -33,7 +34,10 @@ function worldGen(){
 		worldGenColCaves(); 
 		worldGenReplaceRandomBlocks(imgBlock, imgBlockRock, 60); 
 		if(pc.stage >= 11){ worldGenReplaceRandomBlocks(imgBlock, imgBlockSkull, 60); }
-		worldGenRiver(-1, -1, -1, -1);
+		if(pc.stage >= 20 && choose(true, false)){
+			worldGenRiver(-1, -1, -1, -1);
+			worldGenReplaceRandomFloor(imgWaterLava, imgWaterLavaRock, floor(worldGenCount(imgWaterLava)) / 3);
+		}
 	}
 	if(kind == "lakes"){ worldGenPatches(noone, imgWater, false, true); }
 	if(kind == "posts"){ 
@@ -43,9 +47,20 @@ function worldGen(){
 			worldGenReplaceRandomFloor(imgWater, imgWaterLilly, 200);
 		}
 		worldGenPosts(imgBlock); worldGenRandomPopulate(); }
-	if(kind == "mix"){ worldGenStatic(imgBlock, noone); worldGenReplaceRandomBlocks(imgBlock, imgBlockRock, 60); worldGenRandomPopulate(); }
+	if(kind == "mix"){ 
+		worldGenStatic(imgBlock, noone); 
+		if(pc.stage >= 20 && choose(true, false)){
+			worldGenRiver(-1, -1, -1, -1);
+			worldGenReplaceRandomFloor(imgWaterLava, imgWaterLavaRock, floor(worldGenCount(imgWaterLava)) / 3);
+		}
+		worldGenReplaceRandomBlocks(imgBlock, imgBlockRock, 60); 
+		worldGenRandomPopulate(); 
+	}
 	if(kind == "maze"){ 
 		worldGenMazeFrom(0, H-1); 
+		if(zone == "Desert"){
+			worldGenRiver(imgWaterAcid, -1, 6, -1);
+		}
 		worldGenReplaceRandomBlocks(imgBlock, imgBlockSkull, 25); 
 		worldGenReplaceAllBlocks(imgBlock, imgBlockRock);
 		worldGenRandomPopulate(); 

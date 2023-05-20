@@ -10,6 +10,7 @@ function randomPotionType(){
 		"Displacement Potion",
 		"Slow Potion",
 		"TrueStrike Potion",
+		"Zap Potion",
 	);
 
 }

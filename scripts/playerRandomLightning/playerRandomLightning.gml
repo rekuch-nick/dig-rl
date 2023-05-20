@@ -1,6 +1,6 @@
 function playerRandomLightning(){
 	
-	if(instance_number(objMob) < 1){ return; }
+	if(instance_number(objMob) < 1){ return false; }
 	
 	var tries = 0;
 	while(tries < 400){
@@ -10,17 +10,17 @@ function playerRandomLightning(){
 		
 		var dis = abs(pc.xSpot - m.xSpot) + abs(pc.ySpot - m.ySpot);
 		
-		if(dis > 0 && dis < 4){
+		if(dis > 0 && dis < 4 && m.hp > 0){
 			var line = getLine(pc.xSpot, pc.ySpot, m.xSpot, m.ySpot);
 			if(!lineIsBlocked(line)){
 				var s = instance_create_depth(pc.xSpot * 64 + 32, pc.ySpot * 64 + 32, ww.layerE, objLightningShot);
 				s.xt = m.x + 32; s.yt = m.y + 32;
 				s.shooter = pc;
 				
-				return;
+				return true;
 			}
 		}
 	}
 	
-	
+	return false;
 }

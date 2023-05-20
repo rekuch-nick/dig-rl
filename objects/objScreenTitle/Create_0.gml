@@ -7,7 +7,7 @@ randomize();
 ww.seed = irandom_range(1, 1000000);
 
 
-charBig = [imgMCHeroOld, imgMCBarbarianOld, imgMCBardOld, imgMCKnightOld, imgMCMonkOld, imgMCRogueOld, imgMCSorcererOld, imgMCWizardOld];
+//charBig = [imgMCHeroOld, imgMCBarbarianOld, imgMCBardOld, imgMCKnightOld, imgMCMonkOld, imgMCRogueOld, imgMCSorcererOld, imgMCWizardOld];
 charBig = [imgMCHero, imgMCBarbarian, imgMCBard, imgMCKnight, imgMCMonk, imgMCRogue, imgMCSorcerer, imgMCWizard];
 charSmall = [imgMCHero, imgMCBarbarian, imgMCBard, imgMCKnight, imgMCMonk, imgMCRogue, imgMCSorcerer, imgMCWizard];
 charPower = [

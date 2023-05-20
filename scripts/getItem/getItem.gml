@@ -203,6 +203,15 @@ function getItem(t){
 		itm.desc = "Reduces damage taken";
 	}
 	
+	if(t == "Ring of Wandskill"){ 
+		itm.img = imgGearRingWandskill;
+		itm.kind = "Ring";
+		itm.bonus = 1;
+		itm.col = c_lime;
+		itm.props = ["Wandskill"];
+		itm.desc = "Wands recharge faster";
+	}
+	
 	if(t == "Ring of Sustenance"){ 
 		itm.img = imgGearRingSus;
 		itm.kind = "Ring";
@@ -377,6 +386,16 @@ function getItem(t){
 		itm.col = c_orange;
 		itm.potID = ww.potHeal;
 		itm.desc = "Heal some HP";
+	}
+	
+	if(t == "Zap Potion"){ 
+		itm.img = imgPotionSparks;
+		itm.kind = "Potion";
+		itm.throwPower = 0;
+		itm.bonus = 0;
+		itm.col = c_orange;
+		itm.potID = ww.potSparks;
+		itm.desc = "Zap nearby foes";
 	}
 	
 	if(t == "Blasting Potion"){ 

@@ -10,7 +10,7 @@ stepsMax = 6;
 hpRegen = 0;
 
 
-
+acidProof = true;
 
 props = ["Mold Armor"];
 willStepOnTrap = true;

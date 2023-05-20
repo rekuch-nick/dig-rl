@@ -13,8 +13,7 @@ stepsMax = 12;
 //props = ["Ice Strikes", "Ice Immune"];
 willStepOnTrap = true;
 
-
-
+acidProof = true;
 
 
 
