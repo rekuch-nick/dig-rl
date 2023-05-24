@@ -109,7 +109,7 @@ function playerProcRoll(c1, c2){
 		bns = itemPropBonus(pc, "Burn Chance");
 		pc.procLuck ++;
 		if(roll + (bns * 5) >= 100){
-			c2.burning += 1;
+			c2.burning = clamp(c2.burning + 1, 0, 3);
 			pc.procLuck = pc.procLuckBase;
 		}
 	}

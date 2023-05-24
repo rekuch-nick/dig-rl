@@ -14,13 +14,17 @@ function ItemDeckPopulate(){
 	for(var i=0; i<ii; i++){
 	
 		var t = getItem(randomWeaponType());
-		itemEnchant(t, irandom_range(0, choose(bonusMax, bonusMax + 1)), true);
+		var b = irandom_range(0, choose(bonusMax, bonusMax + 1));
+		if(pc.stage <= 1){b = 0; }
+		itemEnchant(t, b, true);
 		if(t.bonus >= 1 && ( choose(true, false) || t.bonus >= 3) ){ t = itemEnchantWepProp(t, -1); }
 		if(pc.gear[0] != noone && t.bonus + 1 < pc.gear[0].bonus){ t = getItem("Throwing Knife"); }
 		ds_list_add(ww.itemDeck, t);
 	
 		var t = getItem(randomArmorType());
-		itemEnchant(t, irandom_range(0, choose(bonusMax, bonusMax + 1)), true);
+		var b = irandom_range(0, choose(bonusMax, bonusMax + 1));
+		if(pc.stage <= 1){b = 0; }
+		itemEnchant(t, b, true);
 		if(t.bonus >= 1 && ( choose(true, false) || t.bonus >= 2) ){ t = itemEnchantArmorProp(t, -1); }
 		if(pc.gear[1] != noone && t.bonus + 1 < pc.gear[1].bonus){ t = getItem("Throwing Knife"); }
 		ds_list_add(ww.itemDeck, t);

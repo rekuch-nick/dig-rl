@@ -19,4 +19,4 @@ shotRange = 4;
 
 
 hp = 10; ac = 8; aim = 4; str = 0; damRange = 6; splRange = 4;
-monsterScale(10,  2,   3,   2,   4,   2);
+monsterScale(10,  2,   3,   1,   4,   1);

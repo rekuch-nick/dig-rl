@@ -11,6 +11,7 @@ function tileDigCost(a, b){
 	if(t == imgBlockSkull){ return 1; }
 	if(t == imgBlockMobStatue){ return 1; }
 	if(t == imgBlockRock){ return 10; }
+	if(t == imgBlockMobStatue2){ return 20; }
 	
 	if(t == imgBlock02){ return 1; }
 	if(t == imgBlockGrass02){ return 1; }

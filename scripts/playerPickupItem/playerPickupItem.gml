@@ -1,5 +1,26 @@
 function playerPickupItem(a, b){
 	if(!inBounds(a, b)){ return; }
+	
+	
+	for(var aa = a-1; aa<=a+1; aa++){ for(var bb = b-1; bb<=b+1; bb++){
+		if(a != aa && b != bb){
+			if(inBounds(aa, bb)){
+				if(ww.bmap[aa, bb] != noone && ww.bmap[aa, bb].sprite_index = imgBlockMobStatue2 && ww.mmap[aa, bb] == noone){
+					instance_destroy(ww.bmap[aa, bb]);
+					ww.bmap[aa, bb] = noone;
+					
+					ww.mmap[aa, bb] = instance_create_depth(aa * 64, bb * 64, ww.layerM, objMobStatue2);
+					var mn = ww.mmap[aa, bb].nam;
+					logMessage("A " + mn + " awakens");
+				}
+			}
+		}
+	}}
+	
+	
+	
+	
+	
 	var i = ww.pmap[a, b];
 	if(i == noone){ return; }
 	if(pc.slip > 0){

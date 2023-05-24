@@ -123,9 +123,9 @@ function potionEffect(pid, a, b){
 	}
 	
 	if(pid == ww.potSparks){
-		if(playerRandomLightning()){
+		if(randomLightningAt(a, b)){
 			for(var i=0; i<9; i++){
-				playerRandomLightning();
+				randomLightningAt(a, b);
 			}
 		} else {
 			logMessage("Nothing nearby to Zap");
@@ -272,6 +272,11 @@ function potionEffect(pid, a, b){
 			
 		}}
 		
+	}
+	
+	if(pid == ww.potItemFind){
+		m.itemFind += 60;
+		logMessage(m.nam + " can spot treature");
 	}
 	
 	if(pid == ww.potFrost){

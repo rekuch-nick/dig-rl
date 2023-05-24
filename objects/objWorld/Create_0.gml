@@ -36,6 +36,7 @@ potBombSmall = 15;
 potPure = 16;
 potTrueStrike = 17;
 potSparks = 18;
+potItemFind = 19;
 potBlink = 31;
 potCrumble = 32;
 potFireball = 33;

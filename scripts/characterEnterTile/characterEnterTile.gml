@@ -8,7 +8,7 @@ function characterEnterTile(c, a, b){
 	}
 	if(ft == imgWaterLava && !c.acidProof){
 		c.hp -= 20;
-		c.burning += 2;
+		c.burning = clamp(c.burning + 2, 0, 3);
 		var v = c.id == pc ? "" : "the ";
 		logMessage("Lava burns " + v + c.nam);
 	}

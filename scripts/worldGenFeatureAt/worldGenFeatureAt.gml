@@ -14,6 +14,7 @@ function worldGenFeatureAt(aa, bb){
 		{t: "pool", c: 25},
 		{t: "walled pot", c: 20},
 		{t: "graves", c: 20},
+		{t: "item guard", c: 10},
 	);
 	var r = irandom_range(0, 99);
 	if(fet.t == "trap" && r < fet.c){
@@ -88,6 +89,18 @@ function worldGenFeatureAt(aa, bb){
 			}
 			
 		}}}
+	} else if(fet.t == "item guard" && r < fet.c){
+		bmap[aa-1, bb-1] = imgBlockMobStatue2;
+		bmap[aa-1, bb+1] = imgBlockMobStatue2;
+		bmap[aa+1, bb-1] = imgBlockMobStatue2;
+		bmap[aa+1, bb+1] = imgBlockMobStatue2;
+		
+		bmap[aa, bb] = noone;
+		var t = getItem(randomWeaponType());
+		var b = clamp(floor(pc.stage + 2) / 5, 2, 6);
+		t = itemEnchant(t, b, true);
+		itemEnchantWepProp(t, -1);
+		putPupObjectAt(t, aa, bb);
 	}
 
 }

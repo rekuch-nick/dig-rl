@@ -1,5 +1,5 @@
 //if(!ww.fmap[xSpot, ySpot].playerSeen){ return; }
-if(!ww.canSee[xSpot, ySpot]){ return; }
+if(!ww.canSee[xSpot, ySpot] && !pc.itemFind > 0){ return; }
 
 
 if(sprite_index == imgHeart || sprite_index == imgHeartStack){

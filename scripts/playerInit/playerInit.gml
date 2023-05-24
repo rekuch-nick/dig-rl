@@ -94,6 +94,7 @@ function playerInit(){
 	pc.slip = 0;
 	pc.webArmor = 0;
 	pc.trueStrike = 0;
+	pc.itemFind = 0;
 	
 	
 }

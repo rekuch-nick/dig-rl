@@ -398,6 +398,16 @@ function getItem(t){
 		itm.desc = "Zap nearby foes";
 	}
 	
+	if(t == "Treasure Potion"){ 
+		itm.img = imgPotionItemFind;
+		itm.kind = "Potion";
+		itm.throwPower = 0;
+		itm.bonus = 0;
+		itm.col = c_orange;
+		itm.potID = ww.potItemFind;
+		itm.desc = "See nearby items";
+	}
+	
 	if(t == "Blasting Potion"){ 
 		itm.img = imgPotionBlasting;
 		itm.kind = "Potion";

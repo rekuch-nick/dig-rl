@@ -49,6 +49,7 @@ sick = 0;
 slip = 0;
 webArmor = 0;
 trueStrike = 0;
+itemFind = 0;
 
 
 lastHp = -1;

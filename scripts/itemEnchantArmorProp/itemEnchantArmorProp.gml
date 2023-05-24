@@ -29,6 +29,7 @@ function itemEnchantArmorProp(itm, fix){
 	}
 	if(t == "Iron-Wood" && itm.nam == "Leather Armor"){
 		t = "Druid"; p = "Thorns"; de = "Tangle attackers";
+		itm.armor += 2;
 		itm.img = imgGearArmLeatherDruid;
 	}
 	if(t == "Shadow" && itm.nam == "Chain Armor"){
@@ -48,7 +49,7 @@ function itemEnchantArmorProp(itm, fix){
 	if(t == "Swordmaster" && itm.nam == "Leather Armor"){
 		t = "Crusader";
 		itm.armor += 4;
-		itm.img = imgGearArmLeatherDruid;
+		itm.img = imgGearArmLeatherSword;
 	}
 	
 	

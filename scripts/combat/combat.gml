@@ -51,7 +51,7 @@ function combat(c1, c2){
 		isShockwave = true;
 	}
 	
-	//if(hitRoll < tar && c1.id == pc){ c1.rollingHitPlus ++; }
+	if(hitRoll < tar && c1.id == pc){ c1.rollingHitPlus ++; }
 	
 	if(hitRoll >= tar || c2.frozen > 0 || natRoll == 20){
 		var v = c1 == pc ? " hit " : " hits ";
@@ -121,7 +121,7 @@ function combat(c1, c2){
 		}
 		
 		if(characterHasProp(c1, "Fire Strikes")){
-			c2.burning += 1;
+			c2.burning = clamp(c2.burning + 1, 0, 3);
 			var v = c1 == pc ? " burn " : " burns ";
 			//logMessage(c1.nam + v + c2.nam);
 		}

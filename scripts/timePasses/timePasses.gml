@@ -69,6 +69,7 @@ function timePasses(){
 			if(displace > 0){ displace --; }
 			if(web > 0 && choose(true, false)){ web --; }
 			if(trueStrike > 0){ trueStrike --; }
+			if(itemFind > 0){ itemFind --; }
 		}
 		
 		if(characterHasProp(id, "Displaced") && displace < 10){ displace = 10; }
@@ -87,6 +88,8 @@ function timePasses(){
 		digAt(pc.xSpot + 1, pc.ySpot, 5);
 		digAt(pc.xSpot + 1, pc.ySpot + 1, 5);
 	}*/
+	
+	
 	
 	
 	mobsAttack();

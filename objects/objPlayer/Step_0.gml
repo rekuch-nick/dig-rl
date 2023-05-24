@@ -138,9 +138,12 @@ if(!moved){
 					if(characterHasProp(pc, "Stone Carving")){ dp = dp * 2; }
 					playerDigest(dc);
 					
-					if(dc >= 10){
+					if(dc >= 20){
+						logMessage("Digging up this is very exhausting! Watch your hunger.");
+					} else if(dc >= 10){
 						logMessage("Digging up rocks is exhausting! Watch your hunger.");
 					}
+					
 					
 					
 					if(digAt(xTar, yTar, dp)){
