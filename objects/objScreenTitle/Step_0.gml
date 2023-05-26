@@ -44,7 +44,7 @@ if(pc.clickEnter){
 	if(charPower[charCursor] == "More STR"){ pc.strMax += 2; pc.str += 2; }
 	if(charPower[charCursor] == "More AGI"){ pc.agiMax += 2; pc.agi += 2; }
 	if(charPower[charCursor] == "Evasive"){ pc.ac ++; }
-	if(charPower[charCursor] == "Fast Healing"){ pc.hpRegen += .5; }
+	if(charPower[charCursor] == "Healthy"){ pc.hpRegen += 1; }
 	if(charPower[charCursor] == "Wand Expert"){ 
 		pc.wandSkill += 1; 
 		pc.wands -= 1;

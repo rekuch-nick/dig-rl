@@ -40,7 +40,11 @@ function timePasses(){
 		
 		if(poison > 0){ 
 			poison --;
-			hp -= clamp(floor(hpMax / 100), 1, 20);
+			var d = 1;
+			if(id != pc){
+				d = clamp(floor(hpMax / 100), 1, 20);
+			}
+			hp -= d;
 			if(hp < 1){ logMessageWhom(nam, "succumb", "to the poison", id); }
 		}
 		
