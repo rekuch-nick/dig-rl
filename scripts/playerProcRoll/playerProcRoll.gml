@@ -130,7 +130,7 @@ function playerProcRoll(c1, c2){
 	if(characterHasProp(c1, "Lightning Strike")){
 		bns = itemPropBonus(pc, "Lightning Strike");
 		pc.procLuck ++;
-		if(roll + (bns * 2) >= 100){
+		if(roll + (bns * 3) >= 90){
 			beamEffect(ww.potShock, c1.xSpot, c1.ySpot, c2.xSpot, c2.ySpot, "", 10);
 			pc.procLuck = pc.procLuckBase;
 		}

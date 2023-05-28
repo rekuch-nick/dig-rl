@@ -4,7 +4,7 @@ function worldGenMobTable(l){
 	while(ll > 5){ ll -= 5; }
 	
 	//l = 33;
-	//ww.mobTable = [ {kind: objMobSwarmling, m1: 3, m2: 8} ]; return; ///////
+	//ww.mobTable = [ {kind: objMobThief, m1: 3, m2: 8} ]; return; ///////
 	
 	if(l == 1){
 		ww.mobTable = [

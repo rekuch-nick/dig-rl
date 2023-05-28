@@ -275,7 +275,7 @@ function potionEffect(pid, a, b){
 	}
 	
 	if(pid == ww.potItemFind){
-		m.itemFind += 60;
+		m.itemFind += 300;
 		logMessage(m.nam + " can spot treature");
 	}
 	

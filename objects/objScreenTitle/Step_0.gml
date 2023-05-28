@@ -38,15 +38,18 @@ if(pc.clickRight || mouse_wheel_down() ){
 if(pc.clickEnter){
 	pc.sprite_index = charSmall[charCursor];
 	if(charPower[charCursor] == "Extra Food"){
-		var i = playerGetEmptyBagSlot(); if(i != -1){ pc.bag[i] = getItem("Food"); }
-		var i = playerGetEmptyBagSlot(); if(i != -1){ pc.bag[i] = getItem("Food"); }
+		pc.bag[0].charges = 3;
+		//var i = playerGetEmptyBagSlot(); if(i != -1){ pc.bag[i] = getItem("Food"); }
+		//var i = playerGetEmptyBagSlot(); if(i != -1){ pc.bag[i] = getItem("Food"); }
+		var i = playerGetEmptyBagSlot(); if(i != -1){ pc.bag[i] = getItem("Restore Potion"); }
+		pc.potionKnown[ww.potRestore] = true;
 	}
 	if(charPower[charCursor] == "More STR"){ pc.strMax += 2; pc.str += 2; }
 	if(charPower[charCursor] == "More AGI"){ pc.agiMax += 2; pc.agi += 2; }
 	if(charPower[charCursor] == "Evasive"){ pc.ac ++; }
 	if(charPower[charCursor] == "Healthy"){ pc.hpRegen += 1; }
 	if(charPower[charCursor] == "Wand Expert"){ 
-		pc.wandSkill += 1; 
+		pc.wandSkill += 2;
 		pc.wands -= 1;
 	}
 	if(charPower[charCursor] == "Fast Runner"){ pc.fastRunner += 10; }
@@ -63,6 +66,8 @@ if(pc.clickEnter){
 		pc.gear[ww.gsRing] = pc.bag[24];
 		pc.bag[25] = itemEnchant(getItem("Ring of Striking"), 1, true);
 		pc.gear[ww.gsRing2] = pc.bag[25];
+		pc.bag[1] = getItem("Throwing Knife"); pc.bag[1].charges = 10;
+		
 	}
 	
 	pc.bossSeen[charCursor] = noone;

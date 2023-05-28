@@ -34,11 +34,12 @@ function playerPickupItem(a, b){
 	}
 	
 	if(i.sprite_index == imgHeartStack){
-		for(var i=0; i<26; i++){ if(pc.bag[i] != noone){ 
-			if(pc.bag[i].stacks || pc.bag[i].kind == "Wand"){
-				pc.bag[i].charges ++;
-			}
-		}}
+		pc.hp += 50; pc.hpMax += 50;
+		//for(var i=0; i<26; i++){ if(pc.bag[i] != noone){ 
+		//	if(pc.bag[i].stacks || pc.bag[i].kind == "Wand"){
+		//		pc.bag[i].charges ++;
+		//	}
+		//}}
 		instance_destroy(ww.pmap[a, b]); ww.pmap[a, b] = noone; return;
 	}
 	

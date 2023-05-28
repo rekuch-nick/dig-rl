@@ -84,7 +84,12 @@ function combat(c1, c2){
 						namString = "Unidentified Potion";
 					}
 					logMessage(c1.nam + " stole a " + namString);
-					pc.bag[i] = noone;
+					
+					if(pc.bag[i].charges > 1){
+						pc.bag[i].charges --;
+					} else {
+						pc.bag[i] = noone;
+					}
 				}
 			}
 		}

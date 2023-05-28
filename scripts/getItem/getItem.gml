@@ -57,6 +57,8 @@ function getItem(t){
 		itm.col = $A3620A;
 		itm.food = 1000;
 		itm.desc = "Cure 50% Hunger";
+		itm.charges = 1;
+		itm.stacks = true;
 	}
 	
 	if(t == "Gladius"){ 
@@ -545,7 +547,7 @@ function getItem(t){
 		itm.bonus = 0;
 		itm.col = c_orange;
 		itm.potID = ww.potRestore;
-		itm.desc = "Restore STR/AGI/HP";
+		itm.desc = "Full Cure STR/AGI/HP";
 	}
 	
 	if(t == "Displacement Potion"){

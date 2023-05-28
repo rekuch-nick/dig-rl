@@ -18,7 +18,11 @@ function manageBagQ(n){
 			logMessage("You feel less hungry.")
 		}
 		pc.dataFoodEaten ++;
-		pc.bag[n] = noone;
+		if(pc.bag[n].charges > 1){
+			pc.bag[n].charges --;
+		} else {
+			pc.bag[n] = noone;
+		}
 		manageBag();
 		return;
 	}

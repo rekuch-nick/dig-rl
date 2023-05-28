@@ -97,6 +97,7 @@
     {"id":{"name":"imgBGCauldren","path":"sprites/imgBGCauldren/imgBGCauldren.yy",},"order":16,},
     {"id":{"name":"worldGenColCaves","path":"scripts/worldGenColCaves/worldGenColCaves.yy",},"order":64,},
     {"id":{"name":"imgMCWizardOld","path":"sprites/imgMCWizardOld/imgMCWizardOld.yy",},"order":18,},
+    {"id":{"name":"imgGearWepStaffFire","path":"sprites/imgGearWepStaffFire/imgGearWepStaffFire.yy",},"order":105,},
     {"id":{"name":"effBlast","path":"objects/effBlast/effBlast.yy",},"order":0,},
     {"id":{"name":"imgRougeFlake","path":"sprites/imgRougeFlake/imgRougeFlake.yy",},"order":27,},
     {"id":{"name":"objPlayer","path":"objects/objPlayer/objPlayer.yy",},"order":0,},

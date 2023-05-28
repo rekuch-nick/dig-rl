@@ -140,6 +140,7 @@ if(hp < 1){
 		if(irandom_range(1, 4) >= 4){
 			var t = imgHeart;
 		}
+		if(isRogue){ t = imgHeartStack; }
 		if(t != noone){
 			ww.pmap[xSpot, ySpot] = instance_create_depth(xSpot * 64, ySpot * 64, ww.layerP, objPup);
 			ww.pmap[xSpot, ySpot].sprite_index = t;
