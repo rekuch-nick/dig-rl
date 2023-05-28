@@ -50,7 +50,7 @@ function ItemDeckPopulate(){
 		ds_list_add(ww.itemDeck, t);
 	}
 	
-	if(irandom_range(1, 60) == 1){
+	if(irandom_range(1, 40) == 1){
 		ds_list_add(ww.itemDeck, getItem("Storm Staff"));
 		//show_debug_message("storm staff added to deck")
 	}

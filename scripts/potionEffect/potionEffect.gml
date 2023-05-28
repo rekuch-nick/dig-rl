@@ -275,8 +275,10 @@ function potionEffect(pid, a, b){
 	}
 	
 	if(pid == ww.potItemFind){
-		m.itemFind += 300;
-		logMessage(m.nam + " can spot treature");
+		if(m != noone){
+			m.itemFind += 300;
+			logMessage(m.nam + " can spot treature");
+		}
 	}
 	
 	if(pid == ww.potFrost){
@@ -340,7 +342,11 @@ function potionEffect(pid, a, b){
 		
 		var mm = ww.mmap[a, b];
 		if(mm != noone){
-			mm.hp -= 10;
+			var dam = 10;
+			if(characterHasProp(pc, "Cast Damage Up")){
+				dam += 10;
+			}
+			mm.hp -= dam;
 			logMessageWhom(mm.nam, "get", " shocked", mm);
 		}
 		

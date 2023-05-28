@@ -545,7 +545,7 @@ function getItem(t){
 		itm.kind = "Potion";
 		itm.throwPower = 0;
 		itm.bonus = 0;
-		itm.col = c_orange;
+		itm.col = c_teal;
 		itm.potID = ww.potRestore;
 		itm.desc = "Full Cure STR/AGI/HP";
 	}

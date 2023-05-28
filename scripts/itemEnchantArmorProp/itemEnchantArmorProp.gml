@@ -11,8 +11,8 @@ function itemEnchantArmorProp(itm, fix){
 	}
 	//r = 6; /////
 	if(fix != -1){ r = fix; }
-	var t = "Mage"; var p =  "Cast Damage Up"; var de = "+Zap damage"//plate
-	if(r == 2){ t = "Yeti"; p = "Ice Immune"; de = "Frozen Immunity"}//splint
+	var t = "Mage"; var p =  "Cast Damage Up"; var de = "Shock power up"//plate
+	if(r == 2){ t = "Yeti"; p = "Ice Immune"; de = "Frozen Resist"}//splint
 	if(r == 3){ t = "Iron-Wood"; p = "Not Metal"; de = ""; }//leather
 	if(r == 4){ t = "Shadow"; p = "Shadow"; de = "Wake fewer monsters"; }//chain
 	if(r == 5){ t = "Glow"; p = "X-Ray"; de = "See through walls"}//scale

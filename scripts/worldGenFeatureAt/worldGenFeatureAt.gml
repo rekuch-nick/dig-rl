@@ -97,7 +97,7 @@ function worldGenFeatureAt(aa, bb){
 		
 		bmap[aa, bb] = noone;
 		var t = getItem(randomWeaponType());
-		var b = clamp(floor(pc.stage + 2 / 5), 2, 6);
+		var b = clamp(floor((pc.stage + 2) / 5), 2, 6);
 		t = itemEnchant(t, b, true);
 		itemEnchantWepProp(t, -1);
 		putPupObjectAt(t, aa, bb);

@@ -18,7 +18,7 @@ function timePasses(){
 			var reg = pc.hpRegen;
 			
 			if(characterHasProp(pc, "Regen")){
-				reg += itemPropBonus(pc, "Regen") * .4;
+				reg += itemPropBonus(pc, "Regen") * .5;
 			}
 			
 			var r = 0;
