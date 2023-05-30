@@ -39,6 +39,7 @@ function playerInit(){
 	
 	pc.wandSkill = 0;
 	
+	pc.digPow = 1;
 	
 	pc.xp = 0;
 	pc.wands = 0;

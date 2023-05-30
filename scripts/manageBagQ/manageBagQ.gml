@@ -31,7 +31,11 @@ function manageBagQ(n){
 			
 	if(pc.bag[n].kind == "Potion" && pc.bag[n].potID != -1){
 		potionEffect(pc.bag[n].potID, pc.xSpot, pc.ySpot);
-		pc.bag[n] = noone;
+		if(pc.bag[n].charges > 1){
+			pc.bag[n].charges --;
+		} else {
+			pc.bag[n] = noone;
+		}
 		manageBag();
 		return;
 	}

@@ -44,7 +44,7 @@ function worldGenMobTable(l){
 	if(l == 6){
 		ww.mobTable = [
 			{kind: objMobAnt, m1: 1, m2: 3},
-			{kind: objMob, m1: 1, m2: 2},
+			{kind: objMobSnail, m1: 1, m2: 2},
 			{kind: objMobGrub, m1: 1, m2: 1}
 		];
 	}

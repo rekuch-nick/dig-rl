@@ -11,6 +11,7 @@ function playerGetInput(){
 	yMouseUI = clamp(floor(device_mouse_y_to_gui(0) / 64), 0, ww.H - 1);
 	
 	
+	
 	xIn = 0;
 	if(keyboard_check(ord("A")) || keyboard_check(vk_left)){ xIn --; }
 	if(keyboard_check(ord("D")) || keyboard_check(vk_right)){ xIn ++; }

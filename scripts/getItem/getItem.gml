@@ -388,6 +388,8 @@ function getItem(t){
 		itm.col = c_orange;
 		itm.potID = ww.potHeal;
 		itm.desc = "Heal some HP";
+		itm.charges = 1;
+		itm.stacks = true;
 	}
 	
 	if(t == "Zap Potion"){ 
@@ -398,6 +400,8 @@ function getItem(t){
 		itm.col = c_orange;
 		itm.potID = ww.potSparks;
 		itm.desc = "Zap nearby foes";
+		itm.charges = 1;
+		itm.stacks = true;
 	}
 	
 	if(t == "Treasure Potion"){ 
@@ -408,6 +412,8 @@ function getItem(t){
 		itm.col = c_orange;
 		itm.potID = ww.potItemFind;
 		itm.desc = "See nearby items";
+		itm.charges = 1;
+		itm.stacks = true;
 	}
 	
 	if(t == "Blasting Potion"){ 
@@ -418,6 +424,8 @@ function getItem(t){
 		itm.col = c_orange;
 		itm.potID = ww.potBomb;
 		itm.desc = "Explodes";
+		itm.charges = 1;
+		itm.stacks = true;
 	}
 	
 	if(t == "Ice Potion"){ 
@@ -428,6 +436,8 @@ function getItem(t){
 		itm.col = c_orange;
 		itm.potID = ww.potIce;
 		itm.desc = "Freezes";
+		itm.charges = 1;
+		itm.stacks = true;
 	}
 	
 	if(t == "Poison Potion"){ 
@@ -438,6 +448,8 @@ function getItem(t){
 		itm.col = c_orange;
 		itm.potID = ww.potPoison;
 		itm.desc = "Poisons";
+		itm.charges = 1;
+		itm.stacks = true;
 	}
 	
 	if(t == "STR Potion"){ 
@@ -448,6 +460,8 @@ function getItem(t){
 		itm.col = c_teal;
 		itm.potID = ww.potSTR;
 		itm.desc = "Permanent +1 STR";
+		itm.charges = 1;
+		itm.stacks = true;
 	}
 	
 	if(t == "AGI Potion"){ 
@@ -458,6 +472,8 @@ function getItem(t){
 		itm.col = c_teal;
 		itm.potID = ww.potAGI;
 		itm.desc = "Permanent +1 AGI";
+		itm.charges = 1;
+		itm.stacks = true;
 	}
 	
 	if(t == "Warp Potion"){ 
@@ -468,6 +484,8 @@ function getItem(t){
 		itm.col = c_orange;
 		itm.potID = ww.potWarp;
 		itm.desc = "Random teleport";
+		itm.charges = 1;
+		itm.stacks = true;
 	}
 	
 	if(t == "Swordmastery Potion"){ 
@@ -478,6 +496,8 @@ function getItem(t){
 		itm.col = c_orange;
 		itm.potID = ww.potSword;
 		itm.desc = "Bonus melee damage";
+		itm.charges = 1;
+		itm.stacks = true;
 	}
 	
 	if(t == "Defense Potion"){ 
@@ -488,6 +508,8 @@ function getItem(t){
 		itm.col = c_orange;
 		itm.potID = ww.potDefense;
 		itm.desc = "Reduce damage taken";
+		itm.charges = 1;
+		itm.stacks = true;
 	}
 	
 	if(t == "TrueStrike Potion"){ 
@@ -498,6 +520,8 @@ function getItem(t){
 		itm.col = c_orange;
 		itm.potID = ww.potTrueStrike;
 		itm.desc = "Bonuse Hit Chance";
+		itm.charges = 1;
+		itm.stacks = true;
 	}
 	
 	if(t == "Bless Weapon Potion"){ 
@@ -508,6 +532,8 @@ function getItem(t){
 		itm.col = c_teal;
 		itm.potID = ww.potBlessWep;
 		itm.desc = "Permanent + to Wep";
+		itm.charges = 1;
+		itm.stacks = true;
 	}
 	
 	if(t == "Bless Armor Potion"){ 
@@ -518,6 +544,8 @@ function getItem(t){
 		itm.col = c_teal;
 		itm.potID = ww.potBlessArm;
 		itm.desc = "Permanent + to Armor";
+		itm.charges = 1;
+		itm.stacks = true;
 	}
 	
 	if(t == "Bless Rings Potion"){ 
@@ -528,6 +556,8 @@ function getItem(t){
 		itm.col = c_teal;
 		itm.potID = ww.potBlessRing;
 		itm.desc = "Permanent + to both Rings";
+		itm.charges = 1;
+		itm.stacks = true;
 	}
 	
 	if(t == "Slow Potion"){ 
@@ -538,6 +568,8 @@ function getItem(t){
 		itm.col = c_orange;
 		itm.potID = ww.potSlow;
 		itm.desc = "Miss half of attacks";
+		itm.charges = 1;
+		itm.stacks = true;
 	}
 	
 	if(t == "Restore Potion"){ 
@@ -548,6 +580,8 @@ function getItem(t){
 		itm.col = c_teal;
 		itm.potID = ww.potRestore;
 		itm.desc = "Full Cure STR/AGI/HP";
+		itm.charges = 1;
+		itm.stacks = true;
 	}
 	
 	if(t == "Displacement Potion"){
@@ -558,6 +592,8 @@ function getItem(t){
 		itm.col = c_orange;
 		itm.potID = ww.potDisplace;
 		itm.desc = "Dodge half of attacks";
+		itm.charges = 1;
+		itm.stacks = true;
 	}
 	
 	

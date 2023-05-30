@@ -68,7 +68,7 @@ for(var i=1; i<20; i++){
 
 debugMode = false;
 debugStats = false;
-digPow = 1;
+
 
 itemCursor = 0;
 hotbarLeftmost = 0;

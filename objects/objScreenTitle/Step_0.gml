@@ -36,6 +36,15 @@ if(pc.clickRight || mouse_wheel_down() ){
 
 
 if(pc.clickEnter){
+	
+	if(keyboard_check(vk_shift)){
+		playerEatInput();
+		var s = instance_create_depth(0, 0, ww.layerS - 1, objScreenAdvancedStart);
+		s.charCursor = charCursor;
+		instance_destroy();
+		return;
+	}
+	
 	pc.sprite_index = charSmall[charCursor];
 	if(charPower[charCursor] == "Extra Food"){
 		pc.bag[0].charges = 3;
