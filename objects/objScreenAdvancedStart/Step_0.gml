@@ -72,7 +72,7 @@ if(!go.selected){
 	}
 	
 	if(bBombs.selected){ 
-		var i = getItem("Blast Potion");
+		var i = getItem("Blasting Potion");
 		i.charges = 10;
 		playerGainItem(i);
 		pc.potionKnown[ww.potBomb] = true;
