@@ -7,6 +7,7 @@ random_set_seed(ww.seed + (pc.xSpot * 10) + (pc.ySpot) + (pc.stage * 100));
 
 do {
 	up[1] = randomPotionType();
+	up[1] = "Restore HP";
 	up[2] = randomRarePotionType();
 	up[3] = "STR Potion";
 	up[4] = "AGI Potion";

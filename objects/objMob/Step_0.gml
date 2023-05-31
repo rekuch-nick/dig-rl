@@ -67,6 +67,12 @@ if(!moved && ready){
 				}
 			}
 			
+			if(ww.fmap[xSpot, ySpot].sprite_index == imgBGDirtSpikeHoles && ww.tmap[xSpot, ySpot] == noone){
+				if(!characterHasProp(id, "Flying")){
+					ww.tmap[xSpot, ySpot] = instance_create_depth(xSpot*64, ySpot*64, ww.layerT, objTrap);
+				}
+			}
+			
 			
 			
 			xSpot = tar.a;
@@ -134,6 +140,7 @@ if(hp < 1){
 		}}
 	}
 	
+	ww.mmap[xSpot, ySpot] = noone;
 	
 	if(ww.pmap[xSpot, ySpot] == noone){
 		var t = noone;
@@ -141,7 +148,12 @@ if(hp < 1){
 			var t = imgHeart;
 		}
 		if(isRogue){ t = imgHeartStack; }
-		if(t != noone){
+		if(t == noone && pc.knifeFind && hpMax > 10){ t = "Throwing Knife"; }
+		if(t == "Throwing Knife"){
+			var i = putPupAt(t, xSpot, ySpot);
+			if(i != noone){ i.image_speed = 0; }
+		} else if(t != noone){
+			
 			ww.pmap[xSpot, ySpot] = instance_create_depth(xSpot * 64, ySpot * 64, ww.layerP, objPup);
 			ww.pmap[xSpot, ySpot].sprite_index = t;
 			ww.pmap[xSpot, ySpot].itm = getItem("Orb");
@@ -151,7 +163,7 @@ if(hp < 1){
 	
 	
 	
-	ww.mmap[xSpot, ySpot] = noone;
+	
 	var caller = id;
 	with(objFireShot){ if(shooter == caller){ shooter = noone; } }
 	

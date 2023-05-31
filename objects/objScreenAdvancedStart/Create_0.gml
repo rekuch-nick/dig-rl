@@ -32,21 +32,14 @@ bWepType[1].txt = "Axe";
 bWepType[2].txt = "Maul";
 bWepType[3].txt = "Spear";
 
-for(var i=0; i<8; i++){
-	bWepProp[i] = instance_create_depth(100 + (i * 130), 240, depth - 1, objSetupButton);
-	bWepProp[i].wepPropGroup = true;
-}
-bWepProp[0].txt = "Mason"; bWepProp[0].selected = true;
-bWepProp[1].txt = "Venom";
-bWepProp[2].txt = "Crush";
-bWepProp[3].txt = "Multi";
-bWepProp[4].txt = "Blur";
-bWepProp[5].txt = "Firey";
-bWepProp[6].txt = "Ice";
-bWepProp[7].txt = "Bolt";
+//for(var i=0; i<8; i++){
+//	bWepProp[i] = instance_create_depth(100 + (i * 130), 240, depth - 1, objSetupButton);
+//	bWepProp[i].wepPropGroup = true;
+//}
+//bWepProp[0].txt = "Mason"; bWepProp[0].selected = true; bWepProp[1].txt = "Venom"; bWepProp[2].txt = "Crush"; bWepProp[3].txt = "Multi"; bWepProp[4].txt = "Blur"; bWepProp[5].txt = "Firey"; bWepProp[6].txt = "Ice"; bWepProp[7].txt = "Bolt";
 
 for(var i=0; i<6; i++){
-	bArmType[i] = instance_create_depth(270 + (i * 150), 300, depth - 1, objSetupButton);
+	bArmType[i] = instance_create_depth(270 + (i * 150), 240, depth - 1, objSetupButton);
 	bArmType[i].armTypeGroup = true;
 }
 bArmType[0].txt = "Leather"; bArmType[0].selected = true;
@@ -65,13 +58,23 @@ bPerkRegen.txt = "Hp Regen+";
 
 bPerkWandRegen = instance_create_depth(800, 400, depth - 1, objSetupButton);
 bPerkWandRegen.txt = "Wand Regen+";
-
+bPerkWandRegen.desc = "Your wands will recharge 2 extra charges per stage.";
 
 bPerkMole = instance_create_depth(220, 440, depth - 1, objSetupButton);
 bPerkMole.txt = "Mole Hands";
+bPerkMole.desc = "Dig much more quickly, but AGI is reduced by 2.";
+
+bPerkFin = instance_create_depth(480, 440, depth - 1, objSetupButton);
+bPerkFin.txt = "Weapon Finesse";
+bPerkFin.desc = "While unencumbdered, if your AGI bonus is greater than your STR bonus, add it to damage rolls instead of STR. Cannot gain more than 10 damage in this way.";
+
+bPerkScav = instance_create_depth(480, 480, depth - 1, objSetupButton);
+bPerkScav.txt = "Scavenge Knives";
+bPerkScav.desc = "Many monsters will drop Throwing Knives when they die.";
 
 bPerkWandMore = instance_create_depth(816, 440, depth - 1, objSetupButton);
 bPerkWandMore.txt = "Can find 4th Wand";
+bPerkWandMore.desc = "Without this perk you will stop finding wands once you have collected 3 of them.";
 
 bPerkID = instance_create_depth(200, 480, depth - 1, objSetupButton);
 bPerkID.txt = "ID Potions";
@@ -90,6 +93,7 @@ bBombs.txt = "Bombs";
 
 bSparkWand = instance_create_depth(670, 585, depth - 1, objSetupButton);
 bSparkWand.txt = "Apprentice Wand";
+bSparkWand.desc = "Does not count against your total number of wands.";
 
 bRestore = instance_create_depth(800, 550, depth - 1, objSetupButton);
 bRestore.txt = "Restore Potion"

@@ -22,6 +22,15 @@ function getItem(t){
 		wandCharge: 0,
 	};
 	
+	if(t == "Restore HP"){
+		itm.nam = t + " (" + string(pc.hp) + "/" + string(pc.hpMax) + ")";
+		itm.img = imgHeart2;
+		itm.kind = "Other";
+		itm.bonus = 0;
+		itm.col = c_white;
+		itm.desc = "";
+	}
+	
 	if(t == "Orb"){ 
 		itm.img = imgRock;
 		itm.kind = "Other";

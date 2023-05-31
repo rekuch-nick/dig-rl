@@ -10,3 +10,10 @@ if(img != noone){
 	draw_sprite_ext(img, 0, x-xx, y-yy, 4, 4, 0, c_white, image_alpha);
 }
 
+
+if(underMouse && desc != ""){
+	draw_rectangle_color(9, 9, room_width - 9, 100, c_black, c_black, c_black, c_black, false);
+	draw_text_ext(10, 10, desc, 22, room_width - 20);
+	
+	
+}

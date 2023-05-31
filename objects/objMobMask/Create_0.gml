@@ -1,7 +1,7 @@
 event_inherited();
 
 
-nam = "Oni";
+nam = "Mask";
 
 sleepChance = 40;
 stepsMax = 8;
@@ -19,10 +19,10 @@ shotRange = 4;
 splRange = 4;
 
 lookType = "hunt";
-willStepOnTrap = true;
+//willStepOnTrap = true;
 
 
-props = ["Flying"];
+//props = ["Flying"];
 
 hp = 5; ac = 8; aim = 4; str = 0; damRange = 6; splRange = 6;
 monsterScale(5,  2,   2,   2,   4,   2);

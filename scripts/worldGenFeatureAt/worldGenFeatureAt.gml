@@ -15,6 +15,9 @@ function worldGenFeatureAt(aa, bb){
 		{t: "walled pot", c: 20},
 		{t: "graves", c: 20},
 		{t: "item guard", c: 10},
+		{t: "warp", c: 30},
+		{t: "cactus", c: 20},
+		{t: "spike holes", c: 40},
 	);
 	var r = irandom_range(0, 99);
 	if(fet.t == "trap" && r < fet.c){
@@ -101,6 +104,23 @@ function worldGenFeatureAt(aa, bb){
 		t = itemEnchant(t, b, true);
 		itemEnchantWepProp(t, -1);
 		putPupObjectAt(t, aa, bb);
+	} else if(fet.t == "warp" && r < fet.c){
+		
+		bmap[aa, bb] = noone;
+		fmap[aa, bb] = imgBGDirtWarp;
+	} else if(fet.t == "cactus" && r < fet.c){
+		for(var a=aMin; a<=aMax; a++){ for(var b=bMin; b<=bMax; b++){ if(inBounds(a, b)){
+			if(irandom_range(0, 99) < 80){
+				if(bmap[a, b] == noone){ bmap[a, b] = imgBlockCactus; }
+			}
+			
+		}}}
+	} else if(fet.t == "spike holes" && r < fet.c){
+		for(var a=aMin; a<=aMax; a++){ for(var b=bMin; b<=bMax; b++){ if(inBounds(a, b)){
+			if(irandom_range(0, 99) < 100){
+				fmap[a, b] = imgBGDirtSpikeHoles;
+			}
+			
+		}}}
 	}
-
 }

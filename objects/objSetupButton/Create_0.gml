@@ -8,6 +8,8 @@ spriteGroup = false;
 img = noone;
 col = c_white;
 txt = "fh";
+desc = "";
+underMouse = false;
 
 xx = 32; yy = 32;
 

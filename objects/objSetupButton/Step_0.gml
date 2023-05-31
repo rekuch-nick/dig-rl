@@ -15,15 +15,15 @@ if(firstFrame){
 	firstFrame = false;
 }
 
-
+underMouse = mouse_x >= x - sprite_width / 2 && mouse_x < x + sprite_width / 2 && device_mouse_y_to_gui(0) >= y - sprite_height / 2 && device_mouse_y_to_gui(0) < y + sprite_height / 2;
 
 
 if(pc.clickLM){
 	
-	
-	if(mouse_x >= x - sprite_width / 2 && mouse_x < x + sprite_width / 2){
+	if(underMouse){
+	//if(mouse_x >= x - sprite_width / 2 && mouse_x < x + sprite_width / 2){
 		
-		if(device_mouse_y_to_gui(0) >= y - sprite_height / 2 && device_mouse_y_to_gui(0) < y + sprite_height / 2){
+		//if(device_mouse_y_to_gui(0) >= y - sprite_height / 2 && device_mouse_y_to_gui(0) < y + sprite_height / 2){
 			if(wepTypeGroup){
 				with(objSetupButton){ if(wepTypeGroup){ selected = false; } }
 				selected = true;
@@ -50,6 +50,6 @@ if(pc.clickLM){
 			
 			
 			
-		}
+		//}
 	}
 }

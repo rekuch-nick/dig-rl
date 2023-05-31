@@ -133,6 +133,12 @@ if(!moved){
 			if(inBounds(xTar, yTar)){
 				var dc = tileDigCost(xTar, yTar);
 				if(ww.bmap[xTar, yTar] != noone && dc > 0){
+					
+					if(ww.bmap[xTar, yTar].sprite_index == imgBlockCactus){
+						hp --;
+						logMessage("Digging up cactus is painful! Watch your health.");
+					}
+					
 					var dp = digPow;
 					
 					if(characterHasProp(pc, "Stone Carving")){ dp = dp * 2; }
@@ -208,6 +214,10 @@ if(justFinished){
 		playerPickupItem(xSpot, ySpot);
 	}
 	
+	if(ww.fmap[xLast, yLast].sprite_index == imgBGDirtSpikeHoles && ww.tmap[xLast, yLast] == noone){
+		ww.tmap[xLast, yLast] = instance_create_depth(xLast*64, yLast*64, ww.layerT, objTrap);
+	}
+	
 	spawnGrassMob(xLast, yLast);
 	
 	
@@ -273,10 +283,10 @@ if( (clickLM || clickRM) && (hud.itemTooltip != -1 && yMouseUI == 12) ){
 
 
 //if(clickChar == "I" || clickChar == "B" || clickChar == "E" || clickChar == "C"){
-if(clickChar == "C" || clickNO){
-	if(frozen > 0){ return; }
-	instance_create_depth(0, 0, ww.layerS, objScreenBag);
-}
+//if(clickChar == "C" || clickNO){
+	//if(frozen > 0){ return; }
+	//instance_create_depth(0, 0, ww.layerS, objScreenBag);
+//}
 
 
 for(var i=0; i<9; i++){

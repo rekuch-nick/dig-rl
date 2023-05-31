@@ -25,6 +25,7 @@ if(!go.selected){
 	if(bWepType[2].selected){ w = bWepType[2].txt; }
 	if(bWepType[3].selected){ w = bWepType[3].txt; }
 	w = itemEnchant(getItem(w), 1, true);
+	/*
 	var n = -1;
 	if(bWepProp[0].selected){ n = 1; }
 	if(bWepProp[1].selected){ n = 2; }
@@ -35,7 +36,7 @@ if(!go.selected){
 	if(bWepProp[6].selected){ n = 7; }
 	if(bWepProp[7].selected){ n = 8; }
 	w = itemEnchantWepProp(w, n);
-	
+	*/
 	pc.gear[0] = w;
 	pc.bag[22] = w;
 	
@@ -47,7 +48,7 @@ if(!go.selected){
 	if(bArmType[4].selected){ a = bArmType[4].txt; }
 	if(bArmType[5].selected){ a = bArmType[5].txt; }
 	a = getItem(a + " Armor");
-	
+	a = itemEnchant(a, 1, true);
 	pc.gear[1] = a;
 	pc.bag[23] = a;
 	
@@ -67,7 +68,7 @@ if(!go.selected){
 	
 	if(bKnives.selected){ 
 		var i = getItem("Throwing Knife");
-		i.charges = 40;
+		i.charges = 60;
 		playerGainItem(i);
 	}
 	
@@ -115,8 +116,9 @@ if(!go.selected){
 	if(bPerkWandMore.selected){ pc.wands -= 1; }
 	if(bPerkWandRegen.selected){ pc.wandSkill += 2; }
 	if(bPerkRegen.selected){ pc.hpRegen += 1; }
-	if(bPerkMole.selected){ pc.digPow = 3; }
-	
+	if(bPerkMole.selected){ pc.digPow = 3; pc.agi -= 2; }
+	if(bPerkFin.selected){ pc.finesse = true; }
+	if(bPerkScav.selected){ pc.knifeFind = true; }
 	
 	pc.stage = 5;
 	

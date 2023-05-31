@@ -12,6 +12,6 @@ function putPupAt(t, a, b){
 	ww.pmap[a, b] = instance_create_depth(a * 64, b * 64, ww.layerP, objPup);
 	ww.pmap[a, b].sprite_index = t.img;
 	ww.pmap[a, b].itm = t;
-	return pmap[a, b];
+	return ww.pmap[a, b];
 	
 }

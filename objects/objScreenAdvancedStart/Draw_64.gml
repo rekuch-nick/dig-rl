@@ -13,8 +13,8 @@ draw_text(800, 40, ww.seed);
 draw_set_halign(fa_left);
 
 draw_text(20, 120, "Character:");
-draw_text(20, 200, "Weapon:");
-draw_text(20, 300, "Armor:");
+draw_text(20, 190, "Weapon:");
+draw_text(20, 230, "Armor:");
 
 
 draw_text(20, 350, "Perks:");

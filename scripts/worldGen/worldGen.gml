@@ -33,6 +33,7 @@ function worldGen(){
 	if(kind == "caves"){ 
 		worldGenColCaves(); 
 		worldGenReplaceRandomBlocks(imgBlock, imgBlockRock, 60); 
+		//if(pc.stage == 6){ worldGenReplaceRandomBlocks(imgBlock, imgBlockCactus, 120); }
 		if(pc.stage >= 11){ worldGenReplaceRandomBlocks(imgBlock, imgBlockSkull, 60); }
 		if(pc.stage >= 15 && choose(true, false)){
 			worldGenRiver(-1, -1, -1, -1);
@@ -54,6 +55,7 @@ function worldGen(){
 			worldGenReplaceRandomFloor(imgWaterLava, imgWaterLavaRock, floor(worldGenCount(imgWaterLava)) / 3);
 		}
 		worldGenReplaceRandomBlocks(imgBlock, imgBlockRock, 60); 
+		if(pc.stage == 8){ worldGenReplaceRandomBlocks(imgBlock, imgBlockCactus, 120); }
 		worldGenRandomPopulate(); 
 	}
 	if(kind == "maze"){ 

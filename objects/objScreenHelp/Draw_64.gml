@@ -5,7 +5,7 @@ draw_text(40, 40, "Move: WASD, click, arrows");
 draw_text(40, 70, "Rest and Heal: Hold Space");
 draw_text(40, 100, "");
 draw_text(40, 130, "Use selected item: Q or click");
-draw_text(40, 160, "Throw selected item: Z or leftclick");
+draw_text(40, 160, "Throw selected item: Z or rightclick");
 draw_text(40, 190, "Select item: mousewheel, hover over or press #");
 draw_text(40, 220, "Swap selected item: shift + #");
 draw_text(40, 250, "");

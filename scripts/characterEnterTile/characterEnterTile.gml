@@ -1,16 +1,20 @@
 function characterEnterTile(c, a, b){
 	
 	var ft = ww.fmap[a, b].sprite_index;
-	if(ft == imgWaterAcid && !c.acidProof){
+	if(ft == imgWaterAcid && !c.acidProof && !characterHasProp(c, "Flying")){
 		c.hp -= 5;
 		var v = c.id == pc ? "" : "the ";
 		logMessage("Acid burns " + v + c.nam);
 	}
-	if(ft == imgWaterLava && !c.acidProof){
+	if(ft == imgWaterLava && !c.lavaProof && !characterHasProp(c, "Flying")){
 		c.hp -= 20;
 		c.burning = clamp(c.burning + 2, 0, 3);
 		var v = c.id == pc ? "" : "the ";
 		logMessage("Lava burns " + v + c.nam);
+	}
+	
+	if(c == pc && ft == imgBGDirtWarp){
+		pc.blinkNext = 1;
 	}
 	
 	if(ww.tmap[a, b] != noone && !characterHasProp(c, "Flying")){

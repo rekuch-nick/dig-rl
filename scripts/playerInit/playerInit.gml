@@ -44,6 +44,9 @@ function playerInit(){
 	pc.xp = 0;
 	pc.wands = 0;
 	
+	pc.finesse = false;
+	pc.knifeFind = false;
+	
 	pc.fastRunner = 0;
 	
 	pc.stage = 0;

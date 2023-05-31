@@ -64,6 +64,7 @@ rollingHitPlus = 0;
 
 hasBlood = true;
 hasGreenBlood = false;
+finesse = false;
 
 aly = -1;
 

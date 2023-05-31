@@ -33,6 +33,11 @@ function playerPickupItem(a, b){
 		instance_destroy(ww.pmap[a, b]); ww.pmap[a, b] = noone; return;
 	}
 	
+	if(i.sprite_index == imgHeart2){
+		pc.hp = pc.hpMax;
+		instance_destroy(ww.pmap[a, b]); ww.pmap[a, b] = noone; return;
+	}
+	
 	if(i.sprite_index == imgHeartStack){
 		pc.hp += 50; pc.hpMax += 50;
 		//for(var i=0; i<26; i++){ if(pc.bag[i] != noone){ 

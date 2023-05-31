@@ -6,6 +6,7 @@ function tileBreak(a, b){
 	
 	if(spt == imgBlock || spt == imgBlockGrass
 				|| spt == imgBlock02 || spt == imgBlockGrass02
+				|| spt == imgBlockCactus
 					){
 		instance_create_depth(a * 64 + 8, b * 64 + 8, ww.layerE, effChip);
 		instance_create_depth(a * 64 + 24, b * 64 + 8, ww.layerE, effChip);
