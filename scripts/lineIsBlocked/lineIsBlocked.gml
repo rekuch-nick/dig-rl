@@ -10,7 +10,11 @@ function lineIsBlocked(line){
 		
 		if(!inBounds(a, b)){ blocks += 1; continue; }
 		
-		if(ww.bmap[a, b] != noone){ blocks ++; }
+		if(ww.bmap[a, b] != noone){ 
+			if(ww.bmap[a, b].sprite_index != imgBlockPush){
+				blocks ++; 
+			}
+		}
 	}
 	
 	return blocks;

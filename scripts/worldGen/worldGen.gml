@@ -33,6 +33,7 @@ function worldGen(){
 	if(kind == "caves"){ 
 		worldGenColCaves(); 
 		worldGenReplaceRandomBlocks(imgBlock, imgBlockRock, 60); 
+		//worldGenReplaceRandomBlocks(imgBlock, imgBlockPush, 60); 
 		//if(pc.stage == 6){ worldGenReplaceRandomBlocks(imgBlock, imgBlockCactus, 120); }
 		if(pc.stage >= 11){ worldGenReplaceRandomBlocks(imgBlock, imgBlockSkull, 60); }
 		if(pc.stage >= 15 && choose(true, false)){

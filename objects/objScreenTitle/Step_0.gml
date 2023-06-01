@@ -55,15 +55,15 @@ if(pc.clickEnter){
 	}
 	if(charPower[charCursor] == "More STR"){ pc.strMax += 2; pc.str += 2; }
 	if(charPower[charCursor] == "More AGI"){ pc.agiMax += 2; pc.agi += 2; }
-	if(charPower[charCursor] == "Evasive"){ pc.ac ++; }
-	if(charPower[charCursor] == "Healthy"){ pc.hpRegen += 1; }
+	if(charPower[charCursor] == "Evasive"){ pc.ac ++; pc.perk[ww.perkDef] = true; }
+	if(charPower[charCursor] == "Healthy"){ pc.hpRegen += 1; pc.perk[ww.perkRegen] = true; }
 	if(charPower[charCursor] == "Wand Expert"){ 
-		pc.wandSkill += 2;
-		pc.wands -= 1;
+		pc.wandSkill += 2; pc.perk[ww.perkWandCharge] = true;
+		pc.wands -= 1; pc.perk[ww.perkWandMore] = true;
 	}
 	if(charPower[charCursor] == "Fast Runner"){ pc.fastRunner += 10; }
 	if(charPower[charCursor] == "Weak"){ pc.strMax -= 1; pc.str -= 1; pc.hpMax -= 50; pc.hp -= 50; }
-	if(charPower[charCursor] == "ID Potions"){ for(var i=0; i<26; i++){ pc.potionKnown[i] = true; }}
+	if(charPower[charCursor] == "ID Potions"){ for(var i=0; i<26; i++){ pc.potionKnown[i] = true; } pc.perk[ww.perkIDPotions] = true; }
 	if(charPower[charCursor] == "Wealthy"){ 
 		pc.bag[22] = itemEnchant(getItem("Sword"), 2, true);
 		//pc.bag[22] = itemEnchantWepProp(pc.bag[22], 7);

@@ -57,6 +57,7 @@ function playerInit(){
 	for(var i=0; i<26; i++){
 		pc.gear[i] = noone;
 		pc.bag[i] = noone;
+		pc.perk[i] = false;
 	}
 	pc.bag[0] = getItem("Gladius"); pc.gear[ww.gsWep] = pc.bag[0];
 	//pc.bag[1] = getItem("Scale Armor"); pc.gear[ww.gsArm] = pc.bag[1];

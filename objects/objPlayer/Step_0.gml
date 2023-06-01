@@ -127,7 +127,8 @@ if(!moved){
 			combat(id, ww.mmap[xTar, yTar]);
 			combatExtraTiles(id, xTar, yTar);
 			//mobsAttack();
-		
+		} else if(inBounds(xTar, yTar) && ww.bmap[xTar, yTar] != noone && ww.bmap[xTar, yTar].sprite_index == imgBlockPush && pushBlock(xSpot, ySpot, xTar, yTar)) {
+			
 		} else {
 		
 			if(inBounds(xTar, yTar)){

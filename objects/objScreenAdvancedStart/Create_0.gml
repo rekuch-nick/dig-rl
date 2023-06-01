@@ -51,33 +51,35 @@ bArmType[5].txt = "Plate";
 
 bPerkEvade = instance_create_depth(200, 400, depth - 1, objSetupButton);
 bPerkEvade.txt = "+1 to DEF";
+bPerkEvade.desc = ww.perkDescDef;
 
 bPerkRegen = instance_create_depth(500, 400, depth - 1, objSetupButton);
 bPerkRegen.txt = "Hp Regen+";
-
+bPerkRegen.desc = ww.perkDescRegen;
 
 bPerkWandRegen = instance_create_depth(800, 400, depth - 1, objSetupButton);
 bPerkWandRegen.txt = "Wand Regen+";
-bPerkWandRegen.desc = "Your wands will recharge 2 extra charges per stage.";
+bPerkWandRegen.desc = ww.perkDescWandCharge;
 
 bPerkMole = instance_create_depth(220, 440, depth - 1, objSetupButton);
 bPerkMole.txt = "Mole Hands";
-bPerkMole.desc = "Dig much more quickly, but AGI is reduced by 2.";
+bPerkMole.desc = ww.perkDescMoleHands;
 
 bPerkFin = instance_create_depth(480, 440, depth - 1, objSetupButton);
 bPerkFin.txt = "Weapon Finesse";
-bPerkFin.desc = "While unencumbdered, if your AGI bonus is greater than your STR bonus, add it to damage rolls instead of STR. Cannot gain more than 10 damage in this way.";
+bPerkFin.desc = ww.perkDescFin;
 
 bPerkScav = instance_create_depth(480, 480, depth - 1, objSetupButton);
 bPerkScav.txt = "Scavenge Knives";
-bPerkScav.desc = "Many monsters will drop Throwing Knives when they die.";
+bPerkScav.desc = ww.perkDescScan;
 
 bPerkWandMore = instance_create_depth(816, 440, depth - 1, objSetupButton);
 bPerkWandMore.txt = "Can find 4th Wand";
-bPerkWandMore.desc = "Without this perk you will stop finding wands once you have collected 3 of them.";
+bPerkWandMore.desc = ww.perkDescWandMore;
 
 bPerkID = instance_create_depth(200, 480, depth - 1, objSetupButton);
 bPerkID.txt = "ID Potions";
+bPerkID.desc = ww.perkDescIPPotions;
 
 for(var i=0; i<4; i++){
 	bFood[i] = instance_create_depth(250 + (i * 100), 550, depth - 1, objSetupButton);

@@ -29,3 +29,16 @@ if(pc.yMouseUI == 12){
 	if(pc.xMouse == 2 && pc.gear[2] != noone){ itemTooltip = pc.gear[2]; }
 	if(pc.xMouse == 3 && pc.gear[3] != noone){ itemTooltip = pc.gear[3]; }
 }
+
+
+perkDesc = -1;
+if(mouse_x >= 288 && mouse_x < 288 + (7 * 32)){
+	if(device_mouse_y_to_gui(0) < 64){
+		var n = floor((mouse_x - 256) / 32);
+		if(device_mouse_y_to_gui(0) >= 32){ n += 7; }
+		if(pc.perk[n]){
+			show_debug_message(choose(n));
+			perkDesc = n;
+		}
+	}
+}

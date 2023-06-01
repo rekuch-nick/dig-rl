@@ -48,6 +48,12 @@ function playerPickupItem(a, b){
 		instance_destroy(ww.pmap[a, b]); ww.pmap[a, b] = noone; return;
 	}
 	
+	if(i.sprite_index == imgKey){
+		logMessage("The Exit opens")
+		openExit();
+		instance_destroy(ww.pmap[a, b]); ww.pmap[a, b] = noone; return;
+	}
+	
 	
 	var stackIndex = -1;
 	
@@ -59,7 +65,8 @@ function playerPickupItem(a, b){
 	
 	if(i.itm.stacks && playerHasItem(i.itm.nam)){
 		stackIndex = playerHasItemId(i.itm.nam);
-		pc.bag[stackIndex].charges ++;
+		//pc.bag[stackIndex].charges ++;
+		pc.bag[stackIndex].charges = clamp(pc.bag[stackIndex].charges + 1, 0, pc.bag[stackIndex].chargesMax);
 	}
 	
 	var n = i.itm.nam;

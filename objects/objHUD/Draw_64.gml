@@ -117,3 +117,28 @@ for(var i=0; i<array_length(ww.messageLog); i++){
 	draw_rectangle_color(0, 2 + ((i+mm) * 22), string_width(msg) + 4, 26 + ((i+mm) * 22), c_black, c_black, c_black, c_black, false);
 	draw_text(4, 2 + ((i+mm) * 22), msg);
 }
+
+//perk display
+var slot = 0;
+if(itemTooltip == -1){
+	for(var i=1; i<9; i++){
+	
+		var frame = i;
+		var a = 288 + (slot * 32);
+		var b = 0;
+		if(slot >= 7){ b += 32; a -= (32 * 7); }
+		
+	
+		if(pc.perk[i]){
+			draw_sprite_ext(imgPerkIcon, frame, a, b, 4, 4, 0, c_white, 1);
+			slot ++;
+		}
+	
+	
+	}
+}
+
+if(perkDesc != -1){
+	draw_rectangle_color(0, 64 * 12, room_width, 64 * 13, c_blue, c_blue, c_blue, c_blue, false);
+}
+

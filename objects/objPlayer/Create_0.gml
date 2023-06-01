@@ -1,4 +1,5 @@
 event_inherited();
+playerGetInput();
 nam = "You";
 xMouse = 0; yMouse = 0;
 image_xscale = 2; image_yscale = 2;
@@ -34,11 +35,11 @@ fCD = 2;
 beenRestingFor = 0;
 
 
-for(var i=1; i<20; i++){ 
+for(var i=1; i<21; i++){ 
 	//bag[i] = getItem(randomItem()); 
 	//bag[i] = getItem(randomRingType());
 	//bag[i] = getItem("Zap Potion");
-	//bag[i] = itemEnchant( getItem(randomWeaponType()), irandom_range(1, 4), true); bag[6] = itemEnchantWepProp(bag[i], -1);
+	bag[i] = itemEnchant( getItem(randomWeaponType()), irandom_range(1, 4), true); bag[6] = itemEnchantWepProp(bag[i], -1);
 }
 
 //bag[2] = getItem("Ring of Sustenance");

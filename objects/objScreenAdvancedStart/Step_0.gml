@@ -109,16 +109,17 @@ if(!go.selected){
 		}
 	}
 	
-	if(bPerkEvade.selected){ pc.ac ++; }
+	if(bPerkEvade.selected){ pc.ac ++; pc.perk[ww.perkDef] = true; }
 	if(bPerkID.selected){
 		for(var i=0; i<26; i++){ pc.potionKnown[i] = true; }
+		pc.perk[ww.perkIDPotions] = true;
 	}
-	if(bPerkWandMore.selected){ pc.wands -= 1; }
-	if(bPerkWandRegen.selected){ pc.wandSkill += 2; }
-	if(bPerkRegen.selected){ pc.hpRegen += 1; }
-	if(bPerkMole.selected){ pc.digPow = 3; pc.agi -= 2; }
-	if(bPerkFin.selected){ pc.finesse = true; }
-	if(bPerkScav.selected){ pc.knifeFind = true; }
+	if(bPerkWandMore.selected){ pc.wands -= 1; pc.perk[ww.perkWandMore] = true; }
+	if(bPerkWandRegen.selected){ pc.wandSkill += 2; pc.perk[ww.perkWandCharge] = true; }
+	if(bPerkRegen.selected){ pc.hpRegen += 1; pc.perk[ww.perkRegen] = true; }
+	if(bPerkMole.selected){ pc.digPow = 3; pc.agi -= 2; pc.perk[ww.perkMoleHands] = true; }
+	if(bPerkFin.selected){ pc.finesse = true; pc.perk[ww.perkFin] = true; }
+	if(bPerkScav.selected){ pc.knifeFind = true; pc.perk[ww.perkScan] = true; }
 	
 	pc.stage = 5;
 	

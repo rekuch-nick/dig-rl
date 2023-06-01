@@ -17,6 +17,7 @@ function getItem(t){
 		wandAim: false,
 		wandAuto: false,
 		charges: 0,
+		chargesMax: 99,
 		stacks: false,
 		desc: "",
 		wandCharge: 0,
@@ -25,6 +26,14 @@ function getItem(t){
 	if(t == "Restore HP"){
 		itm.nam = t + " (" + string(pc.hp) + "/" + string(pc.hpMax) + ")";
 		itm.img = imgHeart2;
+		itm.kind = "Other";
+		itm.bonus = 0;
+		itm.col = c_white;
+		itm.desc = "";
+	}
+	
+	if(t == "Key"){
+		itm.img = imgKey;
 		itm.kind = "Other";
 		itm.bonus = 0;
 		itm.col = c_white;
@@ -54,6 +63,7 @@ function getItem(t){
 		itm.bonus = 0;
 		itm.col = c_white;
 		itm.charges = 1;
+		itm.chargesMax = 999;
 		itm.stacks = true;
 		itm.desc = "Throw at foes";
 	}
@@ -383,6 +393,7 @@ function getItem(t){
 		itm.potID = ww.potShock;
 		itm.wandAim = true;
 		itm.charges = 20;
+		itm.chargesMax = 101;
 		itm.wandCharge = 5;
 	}
 	

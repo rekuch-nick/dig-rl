@@ -45,6 +45,26 @@ potPox = 35;
 potShock = 36;
 potValor = 37;
 
+perkDescDef = "+1 to DEF";
+perkDescRegen = "+1 HP Regen";
+perkDescWandCharge = "Your wands will recharge 2 extra charges per stage.";
+perkDescMoleHands = "Dig much more quickly, but AGI is reduced by 2."
+perkDescFin = "While unencumbered, if your AGI bonus is greater than your STR bonus, add it to damage rolls instead of STR. Cannot gain more than 10 damage in this way.";
+perkDescScan = "Many monsters will drop Throwing Knives when they die."
+perkDescWandMore = "Without this perk you will stop finding wands once you have collected 3 of them.";
+perkDescIPPotions = "All potions are IDed";
+
+perkDef = 1;
+perkRegen = 2;
+perkWandCharge = 3;
+perkMoleHands = 4;
+perkFin = 5;
+perkScan = 6;
+perkWandMore = 7;
+perkIDPotions = 8;
+
+
+
 
 rollWord = false;
 seed = 1;
