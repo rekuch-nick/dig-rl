@@ -45,14 +45,14 @@ potPox = 35;
 potShock = 36;
 potValor = 37;
 
-perkDescDef = "+1 to DEF";
-perkDescRegen = "+1 HP Regen";
-perkDescWandCharge = "Your wands will recharge 2 extra charges per stage.";
-perkDescMoleHands = "Dig much more quickly, but AGI is reduced by 2."
-perkDescFin = "While unencumbered, if your AGI bonus is greater than your STR bonus, add it to damage rolls instead of STR. Cannot gain more than 10 damage in this way.";
-perkDescScan = "Many monsters will drop Throwing Knives when they die."
-perkDescWandMore = "Without this perk you will stop finding wands once you have collected 3 of them.";
-perkDescIPPotions = "All potions are IDed";
+perkDesc[1] = "+1 to DEF";
+perkDesc[2] = "+1 HP Regen";
+perkDesc[3] = "Your wands will recharge 2 extra charges per stage.";
+perkDesc[4] = "Dig much more quickly, but AGI is reduced by 2."
+perkDesc[5] = "While unencumbered, if your AGI bonus is greater than your STR bonus, add it to damage rolls instead of STR. Cannot gain more than 10 damage in this way.";
+perkDesc[6] = "Many monsters will drop Throwing Knives when they die."
+perkDesc[7] = "Without this perk you will stop finding wands once you have collected 3 of them.";
+perkDesc[8] = "All potions are IDed";
 
 perkDef = 1;
 perkRegen = 2;
@@ -63,8 +63,20 @@ perkScan = 6;
 perkWandMore = 7;
 perkIDPotions = 8;
 
+wepDesc[1] = "Swords grant Spring Attack: Make a free attack immediately after steping towards an enemy.";
+wepDesc[2] = "Spears grant Strikethrough: Hit the two tiles behind an enemy when attacking.";
+wepDesc[3] = "Axes grant Cleave: Make a free attack for 1/3 damage against other adjacent enemies when attacking.";
+wepDesc[4] = "Mauls grant Shockwave: Clip your enemy for 1/4 damage even when the attack would miss.";
+
+armDesc[1] = "Leather Armor grants 2 DEF and lets you add any AGI bonus to your DEF as long as STR is 10 or more. Being non-metal, it is immune to some effects."
+armDesc[2] = "Scale Armor grants 4 DEF and lets you add any AGI bonus to your DEF as long as STR is 12 or more."
+armDesc[3] = "Chain Armor grants 5 DEF and lets you add any AGI bonus to your DEF as long as STR is 13 or more."
+armDesc[4] = "Banded Armor grants 6 DEF and lets you add any AGI bonus to your DEF as long as STR is 14 or more."
+armDesc[5] = "Splint Armor grants 7 DEF and lets you add any AGI bonus to your DEF as long as STR is 16 or more."
+armDesc[6] = "Plate Armor grants 8 DEF and lets you add any AGI bonus to your DEF as long as STR is 18 or more."
 
 
+doorSigns = ["Horse","Goat","Monkey","Rooster","Dog","Pig","Rat","Ox","Tiger","Rabbit","Dragon","Snake"];
 
 rollWord = false;
 seed = 1;

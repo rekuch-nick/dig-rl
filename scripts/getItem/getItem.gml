@@ -221,7 +221,7 @@ function getItem(t){
 		itm.bonus = 1;
 		itm.col = c_lime;
 		itm.props = ["Protection"];
-		itm.desc = "Reduces damage taken";
+		itm.desc = "Reduces melee damage taken";
 	}
 	
 	if(t == "Ring of Wandskill"){ 

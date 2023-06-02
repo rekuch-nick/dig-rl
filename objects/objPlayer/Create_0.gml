@@ -39,7 +39,7 @@ for(var i=1; i<21; i++){
 	//bag[i] = getItem(randomItem()); 
 	//bag[i] = getItem(randomRingType());
 	//bag[i] = getItem("Zap Potion");
-	bag[i] = itemEnchant( getItem(randomWeaponType()), irandom_range(1, 4), true); bag[6] = itemEnchantWepProp(bag[i], -1);
+	//bag[i] = itemEnchant( getItem(randomWeaponType()), irandom_range(1, 4), true); bag[6] = itemEnchantWepProp(bag[i], -1);
 }
 
 //bag[2] = getItem("Ring of Sustenance");

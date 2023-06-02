@@ -11,6 +11,6 @@ itemTooltip = -1;
 
 
 //draw_sprite_ext(imgBagBar, 0, 64 * 8, 64, 4, 4, 0, c_white, 1);
-instance_create_depth(64*8, 64, depth, objBagBar);
+instance_create_depth(64*8, 64, depth+1, objBagBar);
 
 perkDesc = -1;

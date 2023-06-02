@@ -121,7 +121,7 @@ if(!go.selected){
 	if(bPerkFin.selected){ pc.finesse = true; pc.perk[ww.perkFin] = true; }
 	if(bPerkScav.selected){ pc.knifeFind = true; pc.perk[ww.perkScan] = true; }
 	
-	pc.stage = 5;
+	
 	
 	with(objSetupButton){ instance_destroy(); }
 	instance_destroy();

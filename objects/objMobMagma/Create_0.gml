@@ -9,7 +9,7 @@ stepsMax = 12;
 
 hpRegen = 0;
 
-
+lavaProof = true;
 props = ["Fire Strikes"];
 willStepOnTrap = true;
 

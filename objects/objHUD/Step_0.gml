@@ -31,14 +31,25 @@ if(pc.yMouseUI == 12){
 }
 
 
+perkMap = []; perkIndex = 1;
+for(var i=1; i<26; i++){
+	if(pc.perk[i]){
+		perkMap[perkIndex] = i;
+		perkIndex ++;
+	}
+}
+
+
 perkDesc = -1;
+
 if(mouse_x >= 288 && mouse_x < 288 + (7 * 32)){
 	if(device_mouse_y_to_gui(0) < 64){
 		var n = floor((mouse_x - 256) / 32);
 		if(device_mouse_y_to_gui(0) >= 32){ n += 7; }
-		if(pc.perk[n]){
-			show_debug_message(choose(n));
-			perkDesc = n;
+		
+		if(n >= 0 && n < array_length(perkMap)){
+			perkDesc = perkMap[n];
+			
 		}
 	}
 }

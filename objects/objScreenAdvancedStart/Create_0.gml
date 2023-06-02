@@ -28,9 +28,10 @@ for(var i=0; i<4; i++){
 	bWepType[i].wepTypeGroup = true;
 }
 bWepType[0].txt = "Sword"; bWepType[0].selected = true;
-bWepType[1].txt = "Axe";
-bWepType[2].txt = "Maul";
-bWepType[3].txt = "Spear";
+bWepType[0].desc = ww.wepDesc[1];
+bWepType[1].txt = "Axe"; bWepType[1].desc = ww.wepDesc[2];
+bWepType[2].txt = "Maul"; bWepType[2].desc = ww.wepDesc[3];
+bWepType[3].txt = "Spear"; bWepType[3].desc = ww.wepDesc[4];
 
 //for(var i=0; i<8; i++){
 //	bWepProp[i] = instance_create_depth(100 + (i * 130), 240, depth - 1, objSetupButton);
@@ -42,44 +43,44 @@ for(var i=0; i<6; i++){
 	bArmType[i] = instance_create_depth(270 + (i * 150), 240, depth - 1, objSetupButton);
 	bArmType[i].armTypeGroup = true;
 }
-bArmType[0].txt = "Leather"; bArmType[0].selected = true;
-bArmType[1].txt = "Scale";
-bArmType[2].txt = "Chain";
-bArmType[3].txt = "Banded";
-bArmType[4].txt = "Splint";
-bArmType[5].txt = "Plate";
+bArmType[0].txt = "Leather"; bArmType[0].selected = true; bArmType[0].desc = ww.armDesc[1];
+bArmType[1].txt = "Scale"; bArmType[1].desc = ww.armDesc[2];
+bArmType[2].txt = "Chain"; bArmType[2].desc = ww.armDesc[3];
+bArmType[3].txt = "Banded"; bArmType[3].desc = ww.armDesc[4];
+bArmType[4].txt = "Splint"; bArmType[4].desc = ww.armDesc[5];
+bArmType[5].txt = "Plate"; bArmType[5].desc = ww.armDesc[6];
 
 bPerkEvade = instance_create_depth(200, 400, depth - 1, objSetupButton);
 bPerkEvade.txt = "+1 to DEF";
-bPerkEvade.desc = ww.perkDescDef;
+bPerkEvade.desc = ww.perkDesc[ww.perkDef];
 
 bPerkRegen = instance_create_depth(500, 400, depth - 1, objSetupButton);
 bPerkRegen.txt = "Hp Regen+";
-bPerkRegen.desc = ww.perkDescRegen;
+bPerkRegen.desc = ww.perkDesc[ww.perkRegen];
 
 bPerkWandRegen = instance_create_depth(800, 400, depth - 1, objSetupButton);
 bPerkWandRegen.txt = "Wand Regen+";
-bPerkWandRegen.desc = ww.perkDescWandCharge;
+bPerkWandRegen.desc = ww.perkDesc[ww.perkWandCharge];
 
 bPerkMole = instance_create_depth(220, 440, depth - 1, objSetupButton);
 bPerkMole.txt = "Mole Hands";
-bPerkMole.desc = ww.perkDescMoleHands;
+bPerkMole.desc = ww.perkDesc[ww.perkMoleHands];
 
 bPerkFin = instance_create_depth(480, 440, depth - 1, objSetupButton);
 bPerkFin.txt = "Weapon Finesse";
-bPerkFin.desc = ww.perkDescFin;
+bPerkFin.desc = ww.perkDesc[ww.perkFin];
 
 bPerkScav = instance_create_depth(480, 480, depth - 1, objSetupButton);
 bPerkScav.txt = "Scavenge Knives";
-bPerkScav.desc = ww.perkDescScan;
+bPerkScav.desc = ww.perkDesc[ww.perkScan];
 
 bPerkWandMore = instance_create_depth(816, 440, depth - 1, objSetupButton);
 bPerkWandMore.txt = "Can find 4th Wand";
-bPerkWandMore.desc = ww.perkDescWandMore;
+bPerkWandMore.desc = ww.perkDesc[ww.perkWandMore];
 
 bPerkID = instance_create_depth(200, 480, depth - 1, objSetupButton);
 bPerkID.txt = "ID Potions";
-bPerkID.desc = ww.perkDescIPPotions;
+bPerkID.desc = ww.perkDesc[ww.perkIDPotions];
 
 for(var i=0; i<4; i++){
 	bFood[i] = instance_create_depth(250 + (i * 100), 550, depth - 1, objSetupButton);

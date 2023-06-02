@@ -79,6 +79,8 @@ if(pc.clickEnter){
 		
 	}
 	
+	pc.stage = -5;
+	
 	pc.bossSeen[charCursor] = noone;
 	
 	playerEatInput();

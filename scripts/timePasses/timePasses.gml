@@ -1,6 +1,31 @@
 function timePasses(){
 	
 	
+	
+	if(ww.flood != noone){
+		var tries = 0;
+		var n = 3;
+		while(tries < 10000){
+			tries ++;
+			var a = irandom_range(0, ww.W - 1);
+			var b = irandom_range(ww.groundLevel + 1, ww.H - 1);
+			if(ww.fmap[a, b].sprite_index == ww.flood){
+				a += irandom_range(-1, 1);
+				b += irandom_range(-1, 1);
+				if(inBounds(a, b)){
+					if(floorBreakable(a, b)){
+						ww.fmap[a, b].sprite_index = ww.flood;
+						n --;
+						if(n < 1){ break; }
+					}
+				}
+			}
+		}
+		
+	}
+	
+	
+	
 	with(objMob){ 
 		//if(ww.fmap[xSpot, ySpot].playerSeen){
 			if(abs(xSpot - pc.xSpot) + abs(ySpot - pc.ySpot) < stepsMax){

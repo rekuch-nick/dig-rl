@@ -45,7 +45,7 @@ if(!moved){
 	if(xIn > 0){ face = 1; }
 	
 	
-	if(holdLM && yMouseUI > 0 && yMouseUI < 12){
+	if(holdLM && yMouseUI > 0 && yMouseUI < 12 && device_mouse_y_to_gui(0) > 80){
 		var dis = abs(xSpot - xMouse) + abs(ySpot - yMouse);
 		
 		if(dis == 1){ xTar = xMouse; yTar = yMouse; }
@@ -162,7 +162,8 @@ if(!moved){
 							if(inBounds(a, b) && irandom_range(0, 99) < (bns * 2) + 10){
 								if(ww.pmap[a, b] == noone){
 									ww.pmap[a, b] = instance_create_depth(a * 64, b * 64, ww.layerP, objPup);
-									ww.pmap[a, b].sprite_index = imgRock;
+									ww.pmap[a, b].sprite_index = imgThrowingKnife;
+									ww.pmap[a, b].image_speed = 0;
 									ww.pmap[a, b].itm = getItem("Throwing Knife");
 								}
 							}
@@ -225,6 +226,14 @@ if(justFinished){
 	timePasses();
 	
 	spawnStatueMob(xSpot, ySpot);
+	
+	if(ww.txtmap[xSpot, ySpot] != ""){
+		logMessage(ww.txtmap[xSpot, ySpot]);
+	}
+	
+	if(ww.fmap[xSpot, ySpot].sprite_index == imgBGDirt3Doors){
+		spawn3DoorRoom(xSpot, ySpot);
+	}
 	
 	if(ww.fmap[xSpot, ySpot].sprite_index == imgWater){
 		

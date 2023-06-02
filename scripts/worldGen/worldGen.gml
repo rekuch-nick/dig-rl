@@ -1,6 +1,9 @@
 function worldGen(){
 	
-	random_set_seed(seed); for(var i=0; i<pc.stage*9; i++){ var n = irandom_range(0, 99); }
+	random_set_seed(seed); 
+	possibleRooms = ["Water","Lava","Acid","Food","Swarm","Fight1","Fight2","Fight3","Fight4","Item","Gear","Grass"];
+	roomMap3Doors = array_shuffle(possibleRooms);
+	for(var i=0; i<pc.stage*9; i++){ var n = irandom_range(0, 99); }
 	groundLevel = 6;
 	worldGenClearAndFill();
 	losVision = false;
@@ -8,21 +11,36 @@ function worldGen(){
 	chargeWands();
 	foodSpawned = 0;
 	worldGenMobTable(pc.stage);
+	flood = noone;
 	
-	zone = "Grasslands";
-	if(pc.stage >= 6 && pc.stage <= 10){ zone = "Desert"; }
-	if(pc.stage >= 11 && pc.stage <= 15){ zone = "Coral"; }
+	zone = 0;
+	if(pc.stage >= 11 && pc.stage <= 20){ zone = 1; }
+	if(pc.stage >= 21 && pc.stage <= 30){ zone = 2; }
+	if(pc.stage <= 0 && pc.stage <= 30){ zone = 10; }
 	//if(pc.stage >= 16 && pc.stage <= 20){ zone = "Fire"; }
 	
 	kind = "caves";
-	if(pc.stage % 5 == 2){ kind = "rooms"; }
-	if(pc.stage % 5 == 3 && zone != "Grasslands"){ kind = "mix"; }
-	if(pc.stage % 5 == 4){ kind = "maze"; }
-	if(pc.stage % 5 == 0){ kind = "posts"; }
+	if(pc.stage % 10 == 2){ kind = "rooms"; }
+	if(pc.stage % 10 == 3 && zone != 0){ kind = "mix"; }
+	if(pc.stage % 10 == 4){ kind = "wide maze"; }
+	if(pc.stage % 10 == 5){ kind = "posts"; }
+	if(pc.stage % 10 == 6){ kind = "caves"; }
+	if(pc.stage % 10 == 7){ kind = "caves"; }
+		if(pc.stage == 7){ kind = "push blocks"; }
+		if(pc.stage == 17){ kind = "cactus clump"; }
+	if(pc.stage % 10 == 8){ kind = "3 doors"; }
+	if(pc.stage % 10 == 9){ kind = "maze"; }
+	if(pc.stage % 10 == 0){ kind = "boss"; }
 	
-	if(pc.stage % 10 == 0){
-		kind = "boss"; ///
-	}
+	if(pc.stage == -4){ kind = "caves"; }
+	if(pc.stage == -3){ kind = "wide maze"; }
+	if(pc.stage == -2){ kind = "rooms"; }
+	if(pc.stage == -1){ kind = "maze"; }
+	if(pc.stage == 0){ kind = "posts"; }
+	
+	
+	
+	//kind = "cactus clump";
 	
 	normalFeatures = true;
 	
@@ -43,12 +61,36 @@ function worldGen(){
 	}
 	if(kind == "lakes"){ worldGenPatches(noone, imgWater, false, true); }
 	if(kind == "posts"){ 
-		if(zone == "Grasslands"){ worldGenPatches(noone, imgBGGrass, false, true); }
-		if(zone == "Coral"){ 
+		worldGenPosts(imgBlock);
+		if(zone == 9){
+			for(var a=0; a<W; a++){
+				var t = choose(imgWaterLava, imgWaterLavaRock);
+				if(a == 0 || a == W - 1){ t = imgWaterLava; }
+				fmap[a, groundLevel + 1] = t;
+			}
+			flood = imgWaterLava;
+		}
+		
+		if(zone == 10){
+			worldGenReplaceRandomFloor(imgBGDirt, imgBGDirtGrave, 50);
+			worldGenTrapPatch(objTrap, 1, 50, 50);
+		}
+		
+		if(zone == 0){ 
+			worldGenPatches(noone, imgBGGrass, false, true); 
+			worldGenPosts(imgBlock);
+		}
+		if(zone == 1){ 
+			worldGenPatches(noone, imgBGFrozen, false, true);
+			worldGenPosts(imgBlock);
+		}
+		if(zone == 2){ 
 			worldGenPatches(noone, imgWater, false, true); 
 			worldGenReplaceRandomFloor(imgWater, imgWaterLilly, 200);
+			worldGenPosts(imgBlock);
 		}
-		worldGenPosts(imgBlock); worldGenRandomPopulate(); }
+		worldGenRandomPopulate(); 
+	}
 	if(kind == "mix"){ 
 		worldGenStatic(imgBlock, noone); 
 		if(pc.stage >= 15 && choose(true, false)){
@@ -56,20 +98,67 @@ function worldGen(){
 			worldGenReplaceRandomFloor(imgWaterLava, imgWaterLavaRock, floor(worldGenCount(imgWaterLava)) / 3);
 		}
 		worldGenReplaceRandomBlocks(imgBlock, imgBlockRock, 60); 
-		if(pc.stage == 8){ worldGenReplaceRandomBlocks(imgBlock, imgBlockCactus, 120); }
+		if(zone == 1){ worldGenReplaceRandomBlocks(imgBlock, imgBlockCactus, 120); }
+		worldGenRandomPopulate(); 
+	}
+	if(kind == "cactus clump"){ 
+		worldGenStatic(imgBlockCactus, noone); 
+		worldGenReplaceRandomBlocks(imgBlock, noone, 60); 
+		worldGenReplaceRandomFloor(imgBGDirt, imgBGDirtWarp, 70);
 		worldGenRandomPopulate(); 
 	}
 	if(kind == "maze"){ 
 		worldGenMazeFrom(0, H-1); 
-		if(zone == "Desert"){
+		if(zone == 1){
 			worldGenRiver(imgWaterAcid, -1, 6, -1);
 		}
+		
 		worldGenReplaceRandomBlocks(imgBlock, imgBlockSkull, 25); 
+		
 		worldGenReplaceAllBlocks(imgBlock, imgBlockRock);
+		
+		
+		
+		if(zone == 10){ 
+			worldGenRiver(imgWater, floor(H / 3), 3, -1); 
+			worldGenRiver(imgWater, floor(H / 3) * 2, 3, -1); 
+			worldGenReplaceRandomBlocks(imgBlockRock, imgBlock, 200); 
+			worldGenReplaceRandomFloor(imgWater, imgWaterLilly, 60); 
+		}
+		worldGenRandomPopulate(); 
+	}
+	if(kind == "wide maze"){
+		for(var a=0; a<W; a++){ for(var b=0; b<H; b++){ fmap[a, b] = imgBGDirt; bmap[a, b] = imgBlock; }}
+		for(var a=8; a<W; a++){ for(var b=0; b<H; b++){ bmap[a, b] = noone; fmap[a, b] = imgBGDirt; }}
+		for(var a=0; a<W; a++){ for(var b=floor(H/2); b<H; b++){ bmap[a, b] = noone; }}
+		worldGenMazeFrom(0, groundLevel + 1); 
+		worldGenDoubleMap();
+		worldGenSky();
+		worldGenReplaceRandomBlocks(imgBlock, imgBlockRock, 130); 
+		worldGenRandomPopulate(); 
+	}
+	if(kind == "3 doors"){
+		worldGen3Doors();
+		normalFeatures = false;
+		for(var a=0; a<W; a++){ bmap[a, H-1] = noone; }
+		if(choose(true, false)){
+			fmap[1, H - 1] = imgExit;
+			instance_destroy(pmap[15, H - 1]);
+			pmap[15, H - 1] = instance_create_depth(15*64, (H-1)*64, layerP, objRougeFlake);
+		} else {
+			fmap[15, H - 1] = imgExit;
+			instance_destroy(pmap[1, H - 1]);
+			pmap[1, H - 1] = instance_create_depth(1*64, (H-1)*64, layerP, objRougeFlake);
+		}
+	}
+	if(kind == "push blocks"){ 
+		worldGenStatic(imgBlock, noone); 
+		worldGenReplaceRandomBlocks(imgBlock, imgBlockPush, 120); 
+		worldGenReplaceRandomBlocks(imgBlock, noone, 220); 
+		worldGenReplaceRandomBlocks(imgBlock, imgBlockMobStatue, 20); 
 		worldGenRandomPopulate(); 
 	}
 	if(kind == "boss"){
-		zone = "Grasslands";
 		normalFeatures = false;
 		
 		for(var b=groundLevel; b<H; b++){
@@ -114,9 +203,7 @@ function worldGen(){
 	
 		//place exit
 		for(var a=0; a<W; a++){ bmap[a, H-1] = noone; }
-		var a = irandom_range(1, 15);
-		bmap[a, H - 1] = noone;
-		fmap[a, H - 1] = imgExit;
+		var a = irandom_range(1, 15); bmap[a, H - 1] = noone; fmap[a, H - 1] = imgExit;
 	
 	
 		//place rouge
@@ -126,6 +213,16 @@ function worldGen(){
 		instance_destroy(pmap[a, b]);
 		pmap[a, b] = instance_create_depth(a*64, b*64, layerP, objRougeFlake);
 		
+		
+		
+		if(pc.stage == -2 || pc.stage = -1){
+			var a = irandom_range(0, W-1);
+			var b = groundLevel + 20;
+			pmap[a, b] = instance_create_depth(a*64, b*64, layerP, objRougeFlake);
+			bmap[a, b] = noone;
+			tmap[a, b] = noone;
+		}
+		
 	}
 	
 	
@@ -133,7 +230,7 @@ function worldGen(){
 	
 	
 	
-	worldGenBiomeSprites(zone);
+	//worldGenBiomeSprites(zone);
 	worldGenFinilize();
 	
 	if(kind == "boss"){

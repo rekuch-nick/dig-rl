@@ -1,165 +1,115 @@
 function worldGenMobTable(l){
 	
-	var ll = l;
-	while(ll > 5){ ll -= 5; }
+	ww.mobTable = [];
 	
-	//l = 33;
-	//ww.mobTable = [ {kind: objMobThief, m1: 3, m2: 8} ]; return; ///////
 	
-	if(l == 1){
+	
+	
+	
+	if(l == -4){
+		mobTableAdd(objMobSlime, 1, 3);
+		mobTableAdd(objMob, 1, 2);
+		mobTableAdd(objMobImp, 1, 1);
+	} else if(l == -3){
+		mobTableAdd(objMobSlime, 1, 3); mobTableAdd(objMob, 1, 2); mobTableAdd(objMobImp, 1, 1);
+		mobTableAdd(choose(objMobSnail, objMobOnion, objMobFungus), 1, 1);
+	} else if(l == -2){
+		mobTableAdd(objMobSlime, 1, 3); mobTableAdd(objMob, 1, 2); mobTableAdd(objMobImp, 1, 1);
+		mobTableAdd(choose(objMobSnail, objMobOnion, objMobFungus), 1, 1);
+		mobTableAdd(objMobSwarmling, 3, 8);
+	} else if(l == -1){
+		mobTableAdd(objMobSlime, 1, 3); mobTableAdd(objMob, 1, 2); mobTableAdd(objMobImp, 1, 1);
+		mobTableAdd(choose(objMobSnail, objMobOnion, objMobFungus), 1, 1);
+		mobTableAdd(objMobSwarmling, 3, 8);
+		mobTableAdd(choose(objMobGreenKnight, objMobIceGolem), 1, 1);
+	} else if(l == 0){
+		mobTableAdd(objMobSlime, 1, 3); mobTableAdd(objMob, 1, 2); mobTableAdd(objMobImp, 1, 1);
+		mobTableAdd(choose(objMobSnail, objMobOnion, objMobFungus), 1, 1);
+		mobTableAdd(objMobSwarmling, 3, 8);
+		mobTableAdd(choose(objMobGreenKnight, objMobIceGolem), 1, 1);
+		choose(mobTableAdd(objMobSnailAcid, 1, 2), mobTableAdd(objMobHydra, 1, 1));
+		
+		
+		
+	} else if(l == 1){
+		mobTableAdd(objMobAnt, 1, 3); mobTableAdd(objMobEye, 1, 2); mobTableAdd(objMobGrub, 1, 1);		
+	} else if(l == 2){
+		mobTableAdd(objMobAnt, 1, 3); mobTableAdd(objMobEye, 1, 2); mobTableAdd(objMobGrub, 1, 1);		
+		choose(mobTableAdd(objMobMask, 1, 1), mobTableAdd(objMobWasp, 2, 3));
+	} else if(l == 3){
+		mobTableAdd(objMobAnt, 1, 3); mobTableAdd(objMobEye, 1, 2); mobTableAdd(objMobGrub, 1, 1);		
+		choose(mobTableAdd(objMobMask, 1, 1), mobTableAdd(objMobWasp, 2, 3));
+		mobTableAdd(choose(objMobFlyTrap, objMobThief), 1, 2);
+	} else if(l == 4){
+		mobTableAdd(objMobAnt, 1, 3); mobTableAdd(objMobEye, 1, 2); mobTableAdd(objMobGrub, 1, 1);		
+		choose(mobTableAdd(objMobMask, 1, 1), mobTableAdd(objMobWasp, 2, 3));
+		mobTableAdd(choose(objMobFlyTrap, objMobThief), 1, 2);
+		mobTableAdd(choose(objMobGreenKnight, objMobHydra), 1, 2);
+	} else if(l == 5){
+		mobTableAdd(objMobAnt, 1, 3); mobTableAdd(objMobEye, 1, 2); mobTableAdd(objMobGrub, 1, 1);		
+		choose(mobTableAdd(objMobMask, 1, 1), mobTableAdd(objMobWasp, 2, 3));
+		mobTableAdd(choose(objMobFlyTrap, objMobThief), 1, 2);
+		mobTableAdd(choose(objMobGreenKnight, objMobHydra), 1, 2);
+		mobTableAdd(objMobAnt2, 1, 3);
+	} else if(l == 6){
+		mobTableAdd(objMobGoblin, 1, 4); mobTableAdd(objMobCyclops, 1, 1); mobTableAdd(objMobMecha, 1, 1);
+	} else if(l == 7){
+		mobTableAdd(objMobGoblin, 1, 4); mobTableAdd(objMobCyclops, 1, 1); mobTableAdd(objMobMecha, 1, 1);
+		mobTableAdd(choose(objMobSlipSlime, objMobFireSkull, objMobFungusFighter), 1, 3);
+	} else if(l == 8){
+		mobTableAdd(objMobGoblin, 1, 4); mobTableAdd(objMobCyclops, 1, 1); mobTableAdd(objMobMecha, 1, 1);
+		mobTableAdd(choose(objMobSlipSlime, objMobFireSkull, objMobFungusFighter), 1, 3);
+		choose(mobTableAdd(objMobCreep, 1, 1), mobTableAdd(objMobCreep2, 1, 1), mobTableAdd(objMobDarkBug, 1, 2));
+	} else if(l == 9){
+		mobTableAdd(objMobGoblin, 1, 4); mobTableAdd(objMobCyclops, 1, 1); mobTableAdd(objMobMecha, 1, 1);
+		mobTableAdd(choose(objMobSlipSlime, objMobFireSkull, objMobFungusFighter), 1, 3);
+		choose(mobTableAdd(objMobCreep, 1, 1), mobTableAdd(objMobCreep2, 1, 1), mobTableAdd(objMobDarkBug, 1, 2));
+		choose(mobTableAdd(objMobSnailAcid, 1, 3), mobTableAdd(objMobKnight, 1, 1));
+	
+	
+	
+	
+	
+	
+	} else {
+		
+		
 		ww.mobTable = [
 			{kind: objMobSlime, m1: 1, m2: 3},
 			{kind: objMob, m1: 1, m2: 2},
-			{kind: objMobImp, m1: 1, m2: 1}
-		];
-	}
-	if(l == 2){
-		ww.mobTable[array_length(ww.mobTable)] = choose(
-			{kind: objMobSnail, m1: 1, m2: 1},
-			{kind: objMobOnion, m1: 1, m2: 1},
-			{kind: objMobFungus, m1: 1, m2: 1},
-			{kind: objMobGhost, m1: 1, m2: 1},
-		);
-	}
-	if(l == 3){
-		ww.mobTable[array_length(ww.mobTable)] = choose(
-			{kind: objMobGrub, m1: 1, m2: 1},
-			{kind: objMobThief, m1: 1, m2: 1},
-			{kind: objMobSwarmling, m1: 3, m2: 8},
-		);
-	}
-	if(l == 4){
-		ww.mobTable[array_length(ww.mobTable)] = choose(
-			{kind: objMobGreenKnight, m1: 1, m2: 1},
+			{kind: objMobImp, m1: 1, m2: 1},
+			{kind: objMobSnail, m1: 1, m2: 2},
+			{kind: objMobGrub, m1: 1, m2: 2},
+			{kind: objMobAnt, m1: 3, m2: 4},
+			{kind: objMobThief, m1: 1, m2: 3},
+			{kind: objMobFlyTrap, m1: 1, m2: 4},
+			{kind: objMobSnailAcid, m1: 1, m2: 3},
 			{kind: objMobIceGolem, m1: 1, m2: 1},
-		);
-	}
-	if(l == 5){
-		ww.mobTable[array_length(ww.mobTable)] = choose(
-			{kind: objMobSnailAcid, m1: 1, m2: 1},
-			{kind: objMobHydra, m1: 1, m2: 1},
-		);
-	}
-	
-	if(l == 6){
-		ww.mobTable = [
-			{kind: objMobAnt, m1: 1, m2: 3},
-			{kind: objMobEye, m1: 1, m2: 2},
-			{kind: objMobGrub, m1: 1, m2: 1}
-		];
-	}
-	if(l == 7){
-		ww.mobTable[array_length(ww.mobTable)] = choose(
-			{kind: objMobMask, m1: 1, m2: 1},
-			{kind: objMobWasp, m1: 2, m2: 3},
-		);
-	}
-	if(l == 8){
-		ww.mobTable[array_length(ww.mobTable)] = choose(
-			{kind: objMobFlyTrap, m1: 1, m2: 2},
-			{kind: objMobThief, m1: 1, m2: 2},
-		);
-	}
-	if(l == 9){
-		ww.mobTable[array_length(ww.mobTable)] = choose(
-			{kind: objMobGreenKnight, m1: 1, m2: 2},
-			{kind: objMobHydra, m1: 1, m2: 2},
-			//{kind: objMobMagma, m1: 1, m2: 2},
-		);
-	}
-	if(l == 10){
-		ww.mobTable[array_length(ww.mobTable)] = choose(
-			{kind: objMobAnt2, m1: 1, m2: 2},
-			{kind: objMobFireSkull, m1: 1, m2: 1},
-		);
-	}
-	
-	if(l == 11){
-		ww.mobTable = [
-			{kind: objMobGoblin, m1: 1, m2: 4},
 			{kind: objMobCyclops, m1: 1, m2: 1},
-			{kind: objMobMecha, m1: 1, m2: 1}
-		];
-	}
-	if(l == 12){
-		ww.mobTable[array_length(ww.mobTable)] = choose(
-			{kind: objMobSlipSlime, m1: 1, m2: 3},
-			{kind: objMobFireSkull, m1: 1, m2: 3},
-			{kind: objMobFungusFighter, m1: 2, m2: 3},
-		);
-	}
-	if(l == 13){
-		ww.mobTable[array_length(ww.mobTable)] = choose(
+			{kind: objMobWitch, m1: 1, m2: 1},
+		
+			{kind: objMobFungus, m1: 1, m2: 2},
+			{kind: objMobOnion, m1: 1, m2: 3},
+			{kind: objMobWasp, m1: 2, m2: 4},
+			{kind: objMobGreenKnight, m1: 1, m2: 2},
+		
+			{kind: objMobGhost, m1: 1, m2: 1},
+			{kind: objMobGolem, m1: 1, m2: 2},
+			{kind: objMobHydra, m1: 1, m2: 1},
+			{kind: objMobPhantom, m1: 1, m2: 2},
+			{kind: objMobMask, m1: 1, m2: 1},
+		
+			{kind: objMobMagma, m1: 1, m2: 1},
 			{kind: objMobCreep, m1: 1, m2: 1},
 			{kind: objMobCreep2, m1: 1, m2: 1},
-			{kind: objMobDarkBug, m1: 1, m2: 2},
-		);
-	}
-	if(l == 14){
-		ww.mobTable[array_length(ww.mobTable)] = choose(
 			{kind: objMobFungusFighter, m1: 1, m2: 1},
-			{kind: objMobSnailAcid, m1: 1, m2: 1},
-		);
-	}
-	if(l == 15){
-		ww.mobTable[array_length(ww.mobTable)] = choose(
-			{kind: objMobPhantom, m1: 1, m2: 2},
-			{kind: objMobWitch, m1: 1, m2: 1},
-		);
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	if(l >= 16){
-		ww.mobTable = [
-		{kind: objMobSlime, m1: 1, m2: 3},
-		{kind: objMob, m1: 1, m2: 2},
-		{kind: objMobImp, m1: 1, m2: 1},
-		{kind: objMobSnail, m1: 1, m2: 2},
-		{kind: objMobGrub, m1: 1, m2: 2},
-		{kind: objMobAnt, m1: 3, m2: 4},
-		{kind: objMobThief, m1: 1, m2: 3},
-		{kind: objMobFlyTrap, m1: 1, m2: 4},
-		{kind: objMobSnailAcid, m1: 1, m2: 3},
-		{kind: objMobIceGolem, m1: 1, m2: 1},
-		{kind: objMobCyclops, m1: 1, m2: 1},
-		{kind: objMobWitch, m1: 1, m2: 1},
-		
-		{kind: objMobFungus, m1: 1, m2: 2},
-		{kind: objMobOnion, m1: 1, m2: 3},
-		{kind: objMobWasp, m1: 2, m2: 4},
-		{kind: objMobGreenKnight, m1: 1, m2: 2},
-		
-		{kind: objMobGhost, m1: 1, m2: 1},
-		{kind: objMobGolem, m1: 1, m2: 2},
-		{kind: objMobHydra, m1: 1, m2: 1},
-		{kind: objMobPhantom, m1: 1, m2: 2},
-		{kind: objMobMask, m1: 1, m2: 1},
-		
-		{kind: objMobMagma, m1: 1, m2: 1},
-		{kind: objMobCreep, m1: 1, m2: 1},
-		{kind: objMobCreep2, m1: 1, m2: 1},
-		{kind: objMobFungusFighter, m1: 1, m2: 1},
-		{kind: objMobSlipSlime, m1: 1, m2: 1},
-		{kind: objMobMecha, m1: 1, m2: 2},
-		{kind: objMobGoblin, m1: 3, m2: 4},
-		{kind: objMobFireSkull, m1: 1, m2: 1},
-		{kind: objMobDarkBug, m1: 1, m2: 1},
-		{kind: objMobKnight, m1: 1, m2: 1},
-		{kind: objMobSwarmling, m1: 3, m2: 8},
+			{kind: objMobSlipSlime, m1: 1, m2: 1},
+			{kind: objMobMecha, m1: 1, m2: 2},
+			{kind: objMobGoblin, m1: 3, m2: 4},
+			{kind: objMobFireSkull, m1: 1, m2: 1},
+			{kind: objMobDarkBug, m1: 1, m2: 1},
+			{kind: objMobKnight, m1: 1, m2: 1},
+			{kind: objMobSwarmling, m1: 3, m2: 8},
 		];
 	
 		var tt = [];
@@ -172,13 +122,10 @@ function worldGenMobTable(l){
 		
 		mobTable = [];
 		for(var i=0; i<5; i++){ mobTable[i] = tt[i]; }
-	
-	
+		
+		
+		
 	}
-	
-	
-	return; /////////////////////////////////////////////////////////////////////////////////////
-	
 	
 	
 		

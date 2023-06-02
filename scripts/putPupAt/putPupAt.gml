@@ -2,7 +2,24 @@ function putPupAt(t, a, b){
 	
 	if(t == noone){ t = randomItem(); }
 	
-	t = getItem(t);
+	if(t == "Gear"){
+		
+		var bns = clamp(floor((pc.stage + 2) / 5), 2, 6);
+		
+		if(choose(true, false)){
+			var tt = getItem(randomWeaponType());
+			tt = itemEnchant(tt, bns, true);
+			itemEnchantWepProp(tt, -1);
+		} else {
+			var tt = getItem(randomArmorType());
+			tt = itemEnchant(tt, bns, true);
+			itemEnchantArmorProp(tt, -1);
+		}
+		t = tt;
+	} else {
+	
+		t = getItem(t);
+	}
 	
 	if(!inBounds(a, b)){ return noone; }
 	if(ww.bmap[a, b] != noone){ ww.bmap[a, b] = noone; }

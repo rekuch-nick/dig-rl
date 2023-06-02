@@ -6,7 +6,7 @@ stepsMax = 8;
 
 
 hpRegen = 0;
-
+lavaProof = true;
 
 props = ["Flying", "Fire Strikes"];
 fireTrail = 70;

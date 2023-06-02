@@ -163,7 +163,7 @@ function combat(c1, c2){
 		}
 		
 		if(characterHasProp(c1, "Slowing Strikes") && choose(true, false, false)){
-			c2.slow = clamp(c2.slow, 10, max(30, c2.slow));
+			c2.slow = clamp(c2.slow + 10, 10, 30);
 			var v = c1 == pc ? " slow " : " slows ";
 			//logMessage(c1.nam + v + c2.nam);
 		}

@@ -25,6 +25,15 @@ function mobsAttack(){
 					s.xt = pc.x + 32; s.yt = pc.y + 32;
 					s.shooter = id;
 					moveCD = 1;
+					
+					
+					if(characterHasProp(id, "Slow Shots") && choose(true, false, false)){
+						logMessage("The Zap makes you slow");
+						pc.slow = clamp(pc.slow + 10, 10, 30);
+					}
+					
+					
+					
 				}
 			}
 		}

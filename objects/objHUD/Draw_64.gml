@@ -29,8 +29,9 @@ if(itemTooltip != -1){
 }
 
 
-
-draw_text(284, ym - 28, "Zone: " + string(pc.stage) );
+var s = pc.stage;
+if(s < 1){ s = .8 - abs( (pc.stage / 10) * 2); }
+draw_text(284, ym - 28, "Zone: " + string(s) );
 draw_text(284, ym, "F1: help");
 //draw_text(304, ym, "Score: " + string(pc.xp) );
 
@@ -139,6 +140,7 @@ if(itemTooltip == -1){
 }
 
 if(perkDesc != -1){
-	draw_rectangle_color(0, 64 * 12, room_width, 64 * 13, c_blue, c_blue, c_blue, c_blue, false);
+	draw_rectangle_color(0, 64 * 11, room_width, 64 * 13, c_black, c_black, c_black, c_black, false);
+	draw_text_ext(10, 64 * 11 + 10, ww.perkDesc[perkDesc], 22, room_width - 20);
 }
 
