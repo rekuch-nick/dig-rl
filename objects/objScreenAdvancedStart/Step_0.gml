@@ -120,7 +120,13 @@ if(!go.selected){
 	if(bPerkMole.selected){ pc.digPow = 3; pc.agi -= 2; pc.perk[ww.perkMoleHands] = true; }
 	if(bPerkFin.selected){ pc.finesse = true; pc.perk[ww.perkFin] = true; }
 	if(bPerkScav.selected){ pc.knifeFind = true; pc.perk[ww.perkScan] = true; }
-	
+	if(bPerkLongT.selected){
+		var i = getItem("Treasure Potion");
+		i.charges = 2;
+		playerGainItem(i);
+		pc.potionKnown[ww.potItemFind] = true;
+		pc.perk[ww.perkLongTreasure] = true;
+	}
 	
 	
 	with(objSetupButton){ instance_destroy(); }

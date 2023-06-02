@@ -17,7 +17,7 @@ draw_text(20, 190, "Weapon:");
 draw_text(20, 230, "Armor:");
 
 
-draw_text(20, 350, "Perks:");
+draw_text(20, 280, "Perks:");
 
 
 draw_text(20, 540, "Supplies:");

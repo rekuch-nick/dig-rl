@@ -22,6 +22,11 @@ function pushBlock(x1, y1, x2, y2){
 				b.y = y3 * 64;
 				ww.bmap[x3, y3] = ww.bmap[x2, y2];
 				ww.bmap[x2, y2] = noone;
+				
+				if(ww.tmap[x3, y3] != noone){
+					instance_destroy(ww.tmap[x3, y3]);
+					ww.tmap[x3, y3] = noone;
+				}
 			}
 		}
 	}

@@ -276,7 +276,8 @@ function potionEffect(pid, a, b){
 	
 	if(pid == ww.potItemFind){
 		if(m != noone){
-			m.itemFind += 300;
+			m.itemFind += 100;
+			if(pc.perk[ww.perkLongTreasure]){ m.itemFind += 200; }
 			logMessage(m.nam + " can spot treature");
 		}
 	}

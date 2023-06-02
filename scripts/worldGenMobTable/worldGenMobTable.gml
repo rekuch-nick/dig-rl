@@ -55,7 +55,7 @@ function worldGenMobTable(l){
 		mobTableAdd(objMobGoblin, 1, 4); mobTableAdd(objMobCyclops, 1, 1); mobTableAdd(objMobMecha, 1, 1);
 	} else if(l == 7){
 		mobTableAdd(objMobGoblin, 1, 4); mobTableAdd(objMobCyclops, 1, 1); mobTableAdd(objMobMecha, 1, 1);
-		mobTableAdd(choose(objMobSlipSlime, objMobFireSkull, objMobFungusFighter), 1, 3);
+		mobTableAdd(objMobFireSkull, 1, 3);
 	} else if(l == 8){
 		mobTableAdd(objMobGoblin, 1, 4); mobTableAdd(objMobCyclops, 1, 1); mobTableAdd(objMobMecha, 1, 1);
 		mobTableAdd(choose(objMobSlipSlime, objMobFireSkull, objMobFungusFighter), 1, 3);

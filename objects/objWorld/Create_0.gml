@@ -51,8 +51,9 @@ perkDesc[3] = "Your wands will recharge 2 extra charges per stage.";
 perkDesc[4] = "Dig much more quickly, but AGI is reduced by 2."
 perkDesc[5] = "While unencumbered, if your AGI bonus is greater than your STR bonus, add it to damage rolls instead of STR. Cannot gain more than 10 damage in this way.";
 perkDesc[6] = "Many monsters will drop Throwing Knives when they die."
-perkDesc[7] = "Without this perk you will stop finding wands once you have collected 3 of them.";
+perkDesc[7] = "Normally you will cannot find another wand after getting 3 of them.";
 perkDesc[8] = "All potions are IDed";
+perkDesc[9] = "Treasure Potions last much longer. Start with 2.";
 
 perkDef = 1;
 perkRegen = 2;
@@ -62,6 +63,7 @@ perkFin = 5;
 perkScan = 6;
 perkWandMore = 7;
 perkIDPotions = 8;
+perkLongTreasure = 9;
 
 wepDesc[1] = "Swords grant Spring Attack: Make a free attack immediately after steping towards an enemy.";
 wepDesc[2] = "Spears grant Strikethrough: Hit the two tiles behind an enemy when attacking.";

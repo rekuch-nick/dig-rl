@@ -1,6 +1,6 @@
 function worldGenFinilize(){
 	var z = zone;
-	if(z == 0 && pc.stage > 10){ z = 1; }
+	//if(z == 0 && pc.stage > 10){ z = 1; }
 	//remove blocks from populated spaces
 	for(var a=0; a<W; a++){ for(var b=0; b<H; b++){
 		if(mmap[a, b] != noone || pmap[a, b] != noone){

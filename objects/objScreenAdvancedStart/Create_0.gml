@@ -50,6 +50,10 @@ bArmType[3].txt = "Banded"; bArmType[3].desc = ww.armDesc[4];
 bArmType[4].txt = "Splint"; bArmType[4].desc = ww.armDesc[5];
 bArmType[5].txt = "Plate"; bArmType[5].desc = ww.armDesc[6];
 
+bPerkLongT = instance_create_depth(200, 360, depth - 1, objSetupButton);
+bPerkLongT.txt = "Treasure Sight";
+bPerkLongT.desc = ww.perkDesc[ww.perkLongTreasure];
+
 bPerkEvade = instance_create_depth(200, 400, depth - 1, objSetupButton);
 bPerkEvade.txt = "+1 to DEF";
 bPerkEvade.desc = ww.perkDesc[ww.perkDef];
@@ -104,18 +108,20 @@ bRestore.txt = "Restore Potion"
 for(var i=0; i<5; i++){
 	bSTR[i] = instance_create_depth(100 + (i * 100), 680, depth - 1, objSetupButton);
 	bSTR[i].txt = "STR";
+	bSTR[i].desc = "STR increases your melee damage by 1. If you have as much STR as your worn armor's WEIGHT, you add AGI over 10 to DEF, up to a max of +10."
 	
 	bAGI[i] = instance_create_depth(600 + (i * 100), 680, depth - 1, objSetupButton);
 	bAGI[i].txt = "AGI";
+	bAGI[i].desc = "AGI increases your chance to hit by 1, which is 5 percent. If you have as much STR as your worn armor's WEIGHT, you add AGI over 10 to DEF, up to a max of +10."
 }
 
-for(var i=0; i<2; i++){
-	bWep[i] = instance_create_depth(100 + (i * 140), 750, depth - 1, objSetupButton);
-	bWep[i].txt = "Weapon";
+
+bWep[0] = instance_create_depth(100, 750, depth - 1, objSetupButton); bWep[0].txt = "Weapon";
+bWep[1] = instance_create_depth(100, 785, depth - 1, objSetupButton); bWep[1].txt = "Weapon";
 	
-	bArm[i] = instance_create_depth(100 + (i * 140), 785, depth - 1, objSetupButton);
-	bArm[i].txt = "Armor";
-}
+bArm[0] = instance_create_depth(240, 750, depth - 1, objSetupButton); bArm[0].txt = "Armor";
+bArm[1] = instance_create_depth(240, 785, depth - 1, objSetupButton); bArm[1].txt = "Armor";
+
 bRing[0] = instance_create_depth(100 + (2 * 140), 750, depth - 1, objSetupButton); bRing[0].txt = "Rings";
 bRing[1] = instance_create_depth(100 + (2 * 140), 785, depth - 1, objSetupButton); bRing[1].txt = "Rings";
 

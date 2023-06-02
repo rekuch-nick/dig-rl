@@ -16,6 +16,7 @@ function worldGen(){
 	zone = 0;
 	if(pc.stage >= 11 && pc.stage <= 20){ zone = 1; }
 	if(pc.stage >= 21 && pc.stage <= 30){ zone = 2; }
+	if(pc.stage >= 31 && pc.stage <= 40){ zone = 3; }
 	if(pc.stage <= 0 && pc.stage <= 30){ zone = 10; }
 	//if(pc.stage >= 16 && pc.stage <= 20){ zone = "Fire"; }
 	

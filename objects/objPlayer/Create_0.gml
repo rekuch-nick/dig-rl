@@ -56,7 +56,7 @@ for(var i=1; i<21; i++){
 //bag[6] = itemEnchant( getItem("Chain Armor"), 3, true); bag[6] = itemEnchantArmorProp(bag[6], 4);
 //bag[6] = itemEnchant( getItem("Leather Armor"), 3, true); bag[6] = itemEnchantArmorProp(bag[6], 3);
 //bag[6] = itemEnchant( getItem("Scale Armor"), 3, true); bag[6] = itemEnchantArmorProp(bag[6], 5);
-//bag[6] = itemEnchant( getItem("Plate Armor"), 2, true); bag[6] = itemEnchantArmorProp(bag[6], 1);
+//bag[6] = itemEnchant( getItem("Axe"), 2, true); bag[6] = itemEnchantWepProp(bag[6], 1);
 
 
 //bag[5] = getItem("Spark Wand");
