@@ -213,6 +213,7 @@
     {"id":{"name":"objMobDarkBug","path":"objects/objMobDarkBug/objMobDarkBug.yy",},"order":0,},
     {"id":{"name":"objMobIceGolem","path":"objects/objMobIceGolem/objMobIceGolem.yy",},"order":9,},
     {"id":{"name":"objMobWasp","path":"objects/objMobWasp/objMobWasp.yy",},"order":3,},
+    {"id":{"name":"itemRestore","path":"scripts/itemRestore/itemRestore.yy",},"order":140,},
     {"id":{"name":"imgMCWizard","path":"sprites/imgMCWizard/imgMCWizard.yy",},"order":16,},
     {"id":{"name":"imgScreenBag","path":"sprites/imgScreenBag/imgScreenBag.yy",},"order":28,},
     {"id":{"name":"imgMobSlime2","path":"sprites/imgMobSlime2/imgMobSlime2.yy",},"order":10,},

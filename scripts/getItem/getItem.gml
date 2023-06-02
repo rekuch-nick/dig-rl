@@ -5,6 +5,7 @@ function getItem(t){
 		img: imgBlank,
 		kind: "Other",
 		bonus: 0,
+		bonusMax: 0,
 		col: c_white,
 		damRange: 0,
 		props: [],
@@ -616,6 +617,7 @@ function getItem(t){
 		itm.stacks = true;
 	}
 	
+	itm.bonusMax = itm.bonus;
 	
 	
 	return itm;

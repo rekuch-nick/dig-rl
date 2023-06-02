@@ -31,5 +31,11 @@ function drawItemIcon(a, b, ii){
 	if(ii.kind == "Wand" || ii.charges > 1){
 		draw_text(a+4, b+40, string(ii.charges));
 	}
+	
+	if(ii.bonus < ii.bonusMax){
+		draw_text_color(a+40, b+40, "X", c_red, c_red, c_red, c_red, 1);
+	}
+	
+	
 
 }

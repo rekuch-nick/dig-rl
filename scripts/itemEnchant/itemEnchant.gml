@@ -1,6 +1,9 @@
 function itemEnchant(itm, val, quiet){
 	
-	itm.bonus = itm.bonus + val;
+	itm.bonus += val;
+	if(val > 0){
+		itm.bonusMax += val;
+	}
 	
 	itm.col = itemColorByBonus(itm.bonus);
 	
