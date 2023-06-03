@@ -125,4 +125,7 @@ bArm[1] = instance_create_depth(240, 785, depth - 1, objSetupButton); bArm[1].tx
 bRing[0] = instance_create_depth(100 + (2 * 140), 750, depth - 1, objSetupButton); bRing[0].txt = "Rings";
 bRing[1] = instance_create_depth(100 + (2 * 140), 785, depth - 1, objSetupButton); bRing[1].txt = "Rings";
 
-
+var s = "Bless potions will improve equipped items of the indicated kind by +1. Any negative effects on those items will also be removed.";
+bWep[0].desc = s; bWep[1].desc = s;
+bArm[0].desc = s; bArm[1].desc = s;
+bRing[0].desc = s; bRing[1].desc = s;
