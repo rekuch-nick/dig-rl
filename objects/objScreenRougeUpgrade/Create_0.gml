@@ -17,7 +17,8 @@ do {
 );
 
 var w = randomWand();
-if(pc.wands < 3 && !playerHasItem(w) && pc.stage > 5 && choose(true, false) ){
+//if(pc.wands < 3 && !playerHasItem(w) && pc.stage > 5 && choose(true, false) ){
+if(pc.wands < 3 && !playerHasItem(w) && pc.stage > 5 ){
 	up[1] = w;
 }
 

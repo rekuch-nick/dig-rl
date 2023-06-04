@@ -2,7 +2,7 @@ function timePasses(){
 	
 	
 	
-	if(ww.flood != noone){
+	if(ww.flood != noone && pc.ySpot > ww.groundLevel){
 		var tries = 0;
 		var n = 3;
 		while(tries < 10000){
@@ -59,6 +59,10 @@ function timePasses(){
 	
 	with(objCreature){
 		
+		if(healing > 0){
+			hp = clamp(hp + 2, 0, hpMax);
+		}
+		
 		if(hpRegen > 0 && id != pc && poison < 1){
 			hp = clamp(hp + hpRegen, 0, hpMax);
 		}
@@ -99,6 +103,7 @@ function timePasses(){
 			if(web > 0 && choose(true, false)){ web --; }
 			if(trueStrike > 0){ trueStrike --; }
 			if(itemFind > 0){ itemFind --; }
+			if(healing > 0){ healing --; }
 		}
 		
 		if(characterHasProp(id, "Displaced") && displace < 10){ displace = 10; }

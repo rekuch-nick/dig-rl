@@ -87,7 +87,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "tiles",
-    "path": "folders/Sprites/tiles.yy",
+    "name": "mainBlocks",
+    "path": "folders/Sprites/tiles/mainBlocks.yy",
   },
 }

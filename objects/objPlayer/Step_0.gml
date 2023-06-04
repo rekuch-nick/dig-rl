@@ -74,7 +74,7 @@ if(!moved){
 		
 		if(blinkNext > 0){
 			blinkNext --;
-			characterBlink(pc, getDir(xTar - xSpot), getDir(yTar - ySpot));
+			characterBlink(pc, getDir(xTar - xSpot), getDir(yTar - ySpot), true);
 			playerEatInput();
 			return;
 		}
@@ -138,6 +138,12 @@ if(!moved){
 					if(ww.bmap[xTar, yTar].sprite_index == imgBlockCactus){
 						hp --;
 						logMessage("Digging up cactus is painful! Watch your health.");
+						
+						if(characterHasProp(pc, "Cactus Harvest")){
+							healing = clamp(healing + 1, 0, 60);
+						}
+						
+						
 					}
 					
 					var dp = digPow;
@@ -151,14 +157,23 @@ if(!moved){
 						logMessage("Digging up rocks is exhausting! Watch your hunger.");
 					}
 					
-					
-					
-					if(digAt(xTar, yTar, dp)){
+					var a = xTar; var b = yTar;
+					if(ww.bmap[xTar, yTar].sprite_index == imgBlockCactus){
+						if(digAt(xTar, yTar, dp)){
+							if(characterHasProp(pc, "Cactus Harvest")){
+								if(ww.pmap[a, b] == noone){
+									ww.pmap[a, b] = instance_create_depth(a * 64, b * 64, ww.layerP, objPup);
+									ww.pmap[a, b].sprite_index = imgCactusHeart;
+									ww.pmap[a, b].itm = getItem("Cactus Heart");
+								}
+							}
+						}
+					} else if(digAt(xTar, yTar, dp)){
 						pc.dataDigs ++;
 						
 						if(characterHasProp(pc, "Rock Finding")){
 							var bns = itemHasProp(pc.gear[ww.gsRing], "Rock Finding") ? pc.gear[ww.gsRing].bonus : pc.gear[ww.gsRing2].bonus;
-							var a = xTar; var b = yTar;
+							
 							if(inBounds(a, b) && irandom_range(0, 99) < (bns * 2) + 10){
 								if(ww.pmap[a, b] == noone){
 									ww.pmap[a, b] = instance_create_depth(a * 64, b * 64, ww.layerP, objPup);

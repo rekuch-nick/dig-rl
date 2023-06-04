@@ -46,7 +46,7 @@ for(var i=1; i<21; i++){
 //bag[3] = getItem("Ring of Wandskill");
 //bag[3] = getItem("Displacement Potion");
 //bag[4] = getItem("Slow Potion");
-//bag[5] = getItem("Restore Potion");
+//bag[5] = getItem("Cactus Scythe");
 
 //bag[3] = itemEnchant( getItem("Ring of Protection"), 9, true);
 //bag[4] = itemEnchant( getItem("Ring of Striking"), 9, true);

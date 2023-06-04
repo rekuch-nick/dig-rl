@@ -12,7 +12,7 @@ draw_set_halign(fa_right);
 draw_text(800, 40, ww.seed);
 draw_set_halign(fa_left);
 
-draw_text(20, 120, "Character:");
+draw_text(20, 120, "Appearance:");
 draw_text(20, 190, "Weapon:");
 draw_text(20, 230, "Armor:");
 

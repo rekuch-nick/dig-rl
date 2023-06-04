@@ -1,7 +1,9 @@
-function worldGenRandomPopulate(){
+function worldGenRandomPopulate(overRideN){
 	
 	var tries = 0;
 	n = 36;
+	
+	if(!is_undefined(overRideN)){ n = overRideN; }
 	
 	while(tries < 1000 && n > 0){
 		tries ++;

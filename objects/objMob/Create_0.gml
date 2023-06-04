@@ -32,6 +32,11 @@ willStepOnTrap = false;
 
 isRogue = false;
 
+castDis = 4;
+spellRange = 0;
+spellChance = 0;
+spell = "";
+
 
 
 monsterNormalStats();

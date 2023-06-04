@@ -90,6 +90,28 @@ function getItem(t){
 		itm.desc = "Better than nothing";
 	}
 	
+	if(t == "Cactus Scythe"){ 
+		itm.img = imgGearWepScythe;
+		itm.kind = "Weapon";
+		itm.bonus = 0;
+		itm.col = c_white;
+		itm.damRange = 18;
+		itm.props = ["Cactus Harvest"];
+		itm.desc = "Harvest cacti.";
+	}
+	if(t == "Cactus Heart"){ 
+		itm.img = imgCactusHeart;
+		itm.kind = "Other";
+		itm.bonus = 0;
+		itm.col = c_white;
+		itm.charges = 1;
+		itm.stacks = true;
+		itm.desc = "Nearly good for food";
+		itm.throwPower = 0;
+	}
+	
+	
+	
 	if(t == "Storm Staff"){ 
 		itm.img = imgGearWepStaffStorm;
 		itm.kind = "Weapon";

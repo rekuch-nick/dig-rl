@@ -22,7 +22,10 @@ function putPupAt(t, a, b){
 	}
 	
 	if(!inBounds(a, b)){ return noone; }
-	if(ww.bmap[a, b] != noone){ ww.bmap[a, b] = noone; }
+	if(ww.bmap[a, b] != noone){ 
+		instance_destroy(ww.bmap[a, b]);
+		ww.bmap[a, b] = noone; 
+	}
 	if(ww.mmap[a, b] != noone){ return noone; }
 	if(ww.pmap[a, b] != noone){ return noone; }
 	

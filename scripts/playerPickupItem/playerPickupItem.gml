@@ -95,5 +95,18 @@ function playerPickupItem(a, b){
 	ww.pmap[a, b] = noone;
 	
 	
+	
+	var playerCac = playerHasItemId("Cactus Heart");
+	if(playerCac != -1){
+		if(pc.bag[playerCac].charges >= 20){
+			pc.bag[playerCac] = noone;
+			ww.pmap[a, b] = instance_create_depth(a * 64, b * 64, ww.layerP, objPup);
+			ww.pmap[a, b].itm = getItem("Food");
+			ww.pmap[a, b].sprite_index = ww.pmap[a, b].itm.img;
+			logMessage("That's enough cactus hearts to eat");
+			playerPickupItem(a, b);
+		}
+	}
+	
 	manageBag();
 }

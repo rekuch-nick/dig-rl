@@ -1,4 +1,4 @@
-function characterBlink(c, xx, yy){
+function characterBlink(c, xx, yy, moveBlocks){
 	
 	
 	var xt = c.xSpot + (xx * 4);
@@ -9,7 +9,8 @@ function characterBlink(c, xx, yy){
 	while(yt < 0){ yt ++; }
 	while(yt >= ww.H){ yt --; }
 	
-	if(xt == c.xSpot && yt == c.ySpot){ return; }
+	if(xt == c.xSpot && yt == c.ySpot){ return false; }
+	if(ww.bmap[xt, yt] != noone && is_undefined(moveBlocks)){ return false; }
 	
 	var m = ww.mmap[xt, yt];
 	var a = c.xSpot; var b = c.ySpot;
@@ -38,4 +39,5 @@ function characterBlink(c, xx, yy){
 	}
 	ww.bmap[xt, yt] = noone;
 	
+	return true;
 }

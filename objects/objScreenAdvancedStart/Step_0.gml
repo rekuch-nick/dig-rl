@@ -127,6 +127,7 @@ if(!go.selected){
 		pc.potionKnown[ww.potItemFind] = true;
 		pc.perk[ww.perkLongTreasure] = true;
 	}
+	if(bPerkPotsHeal.selected){ pc.perk[ww.perkPotionsHeal] = true; }
 	
 	
 	with(objSetupButton){ instance_destroy(); }

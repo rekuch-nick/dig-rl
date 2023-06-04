@@ -36,6 +36,11 @@ function manageBagQ(n){
 		} else {
 			pc.bag[n] = noone;
 		}
+		
+		if(pc.perk[ww.perkPotionsHeal]){
+			pc.healing += 20;
+		}
+		
 		manageBag();
 		return;
 	}

@@ -17,7 +17,7 @@ function worldGen(){
 	if(pc.stage >= 11 && pc.stage <= 20){ zone = 1; }
 	if(pc.stage >= 21 && pc.stage <= 30){ zone = 2; }
 	if(pc.stage >= 31 && pc.stage <= 40){ zone = 3; }
-	if(pc.stage <= 0 && pc.stage <= 30){ zone = 10; }
+	if(pc.stage <= 0){ zone = 10; }
 	//if(pc.stage >= 16 && pc.stage <= 20){ zone = "Fire"; }
 	
 	kind = "caves";
@@ -29,6 +29,7 @@ function worldGen(){
 	if(pc.stage % 10 == 7){ kind = "caves"; }
 		if(pc.stage == 7){ kind = "push blocks"; }
 		if(pc.stage == 17){ kind = "cactus clump"; }
+		if(pc.stage == 26){ kind = "trap and lock"; }
 	if(pc.stage % 10 == 8){ kind = "3 doors"; }
 	if(pc.stage % 10 == 9){ kind = "maze"; }
 	if(pc.stage % 10 == 0){ kind = "boss"; }
@@ -41,7 +42,7 @@ function worldGen(){
 	
 	
 	
-	//kind = "cactus clump";
+	//kind = "trap and lock";
 	
 	normalFeatures = true;
 	
@@ -52,8 +53,9 @@ function worldGen(){
 	if(kind == "caves"){ 
 		worldGenColCaves(); 
 		worldGenReplaceRandomBlocks(imgBlock, imgBlockRock, 60); 
-		//worldGenReplaceRandomBlocks(imgBlock, imgBlockPush, 60); 
+		//if(stage >= 20 && irandom_range(1, 3) == 1){ worldGenReplaceRandomBlocks(imgBlock, imgBlockPush, 60); }
 		//if(pc.stage == 6){ worldGenReplaceRandomBlocks(imgBlock, imgBlockCactus, 120); }
+		//worldGenReplaceRandomBlocks(imgBlock, imgBlockCactus, 120);
 		if(pc.stage >= 11){ worldGenReplaceRandomBlocks(imgBlock, imgBlockSkull, 60); }
 		if(pc.stage >= 15 && choose(true, false)){
 			worldGenRiver(-1, -1, -1, -1);
@@ -63,7 +65,7 @@ function worldGen(){
 	if(kind == "lakes"){ worldGenPatches(noone, imgWater, false, true); }
 	if(kind == "posts"){ 
 		worldGenPosts(imgBlock);
-		if(zone == 9){
+		if(zone == 3){
 			for(var a=0; a<W; a++){
 				var t = choose(imgWaterLava, imgWaterLavaRock);
 				if(a == 0 || a == W - 1){ t = imgWaterLava; }
@@ -106,7 +108,26 @@ function worldGen(){
 		worldGenStatic(imgBlockCactus, noone); 
 		worldGenReplaceRandomBlocks(imgBlock, noone, 60); 
 		worldGenReplaceRandomFloor(imgBGDirt, imgBGDirtWarp, 70);
+		for(var a=0; a<W; a++){ fmap[a, H-1] = imgBGDirt; }
 		worldGenRandomPopulate(); 
+	}
+	if(kind == "trap and lock"){ 
+		for(var a=0; a<ww.W; a++){ for(var b=groundLevel + 1; b<ww.H; b++){ bmap[a, b] = noone; }}
+		for(var a=0; a<ww.W; a++){ for(var b=groundLevel + 2; b<ww.H - 1; b++){
+			fmap[a, b] = imgBGDirtSpikeHoles;
+		}}
+		fmap[irandom_range(0, W-1), groundLevel + 1] = imgExitShut;
+		putPupAt("Key", irandom_range(3, W-4), H - irandom_range(1, 6));
+		
+		//var a = choose(1, W-2);
+		//pmap[a, H - 1] = instance_create_depth(a*64, (H-1)*64, layerP, objRougeFlake);		
+		
+		worldGenRandomPopulate(); 
+		normalFeatures = false;
+		
+		worldGenRiver(imgWater, floor(H / 3), 3, -1); 
+		worldGenRiver(imgWater, floor(H / 3) * 2, 3, -1); 
+		worldGenReplaceRandomFloor(imgWater, imgWaterLilly, 10); 
 	}
 	if(kind == "maze"){ 
 		worldGenMazeFrom(0, H-1); 
@@ -145,12 +166,14 @@ function worldGen(){
 		if(choose(true, false)){
 			fmap[1, H - 1] = imgExit;
 			instance_destroy(pmap[15, H - 1]);
-			pmap[15, H - 1] = instance_create_depth(15*64, (H-1)*64, layerP, objRougeFlake);
+			//pmap[15, H - 1] = instance_create_depth(15*64, (H-1)*64, layerP, objRougeFlake);
 		} else {
 			fmap[15, H - 1] = imgExit;
 			instance_destroy(pmap[1, H - 1]);
-			pmap[1, H - 1] = instance_create_depth(1*64, (H-1)*64, layerP, objRougeFlake);
+			//pmap[1, H - 1] = instance_create_depth(1*64, (H-1)*64, layerP, objRougeFlake);
 		}
+		
+		worldGenRandomPopulate(12); 
 	}
 	if(kind == "push blocks"){ 
 		worldGenStatic(imgBlock, noone); 
@@ -208,21 +231,15 @@ function worldGen(){
 	
 	
 		//place rouge
-		var a = irandom_range(1, 15);
-		var b = irandom_range(ww.H - 16, ww.H - 2);
-		bmap[a, b] = noone;
-		instance_destroy(pmap[a, b]);
-		pmap[a, b] = instance_create_depth(a*64, b*64, layerP, objRougeFlake);
-		
-		
-		
-		if(pc.stage == -2 || pc.stage = -1){
-			var a = irandom_range(0, W-1);
-			var b = groundLevel + 20;
-			pmap[a, b] = instance_create_depth(a*64, b*64, layerP, objRougeFlake);
+		if(pc.stage <= 1 || pc.stage % 2 == 1){
+			var a = irandom_range(1, 15);
+			var b = irandom_range(ww.H - 16, ww.H - 2);
 			bmap[a, b] = noone;
-			tmap[a, b] = noone;
+			instance_destroy(pmap[a, b]);
+			pmap[a, b] = instance_create_depth(a*64, b*64, layerP, objRougeFlake);
 		}
+		
+		
 		
 	}
 	

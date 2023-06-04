@@ -46,13 +46,14 @@ function ItemDeckPopulate(){
 	
 	if(irandom_range(1, 2) == 1 ){
 		var t = getItem(randomRingType());
-		itemEnchant(t, irandom_range(0, bonusMax), true);
+		itemEnchant(t, irandom_range(1, max(bonusMax, 1)), true);
 		ds_list_add(ww.itemDeck, t);
 	}
 	
 	if(irandom_range(1, 40) == 1){
-		ds_list_add(ww.itemDeck, getItem("Storm Staff"));
-		//show_debug_message("storm staff added to deck")
+		ds_list_add(ww.itemDeck, getItem( choose(
+			"Storm Staff", "Cactus Scythe"
+		)));
 	}
 	
 }

@@ -5,7 +5,12 @@ function mobsAttack(){
 		
 		var dis = abs(xSpot - pc.xSpot) + abs(ySpot - pc.ySpot);
 		
+		var spellRoll = irandom_range(0, 99);
+		if(spellRoll < spellChance && dis <= castDis){
+			mobsCast(id, spell);
+		}
 		
+		var dis = abs(xSpot - pc.xSpot) + abs(ySpot - pc.ySpot);
 		
 		
 		if(dis == 1 ){ // || (dis == 2 && xSpot != pc.xSpot && ySpot != pc.ySpot) ){

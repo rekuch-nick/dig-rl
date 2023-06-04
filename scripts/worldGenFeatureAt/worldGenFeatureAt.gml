@@ -7,13 +7,14 @@ function worldGenFeatureAt(aa, bb){
 	
 	
 	var fet = choose(
-		{t: "trap", c: 40},
-		{t: "web", c: 20},
-		{t: "grass", c: 25},
-		{t: "cauldren", c: 5},
-		{t: "pool", c: 25},
+		{t: "trap", c: 45},
+		{t: "web", c: 25},
+		{t: "grass", c: 35},
+		{t: "cauldren", c: 10},
+		{t: "pool", c: 30},
 		{t: "walled pot", c: 20},
 		{t: "graves", c: 20},
+		{t: "stats", c: 20},
 		{t: "item guard", c: 10},
 		{t: "warp", c: 30},
 		{t: "cactus", c: 20},

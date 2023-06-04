@@ -122,7 +122,7 @@ for(var i=0; i<array_length(ww.messageLog); i++){
 //perk display
 var slot = 0;
 if(itemTooltip == -1){
-	for(var i=1; i<9; i++){
+	for(var i=1; i<11; i++){
 	
 		var frame = i;
 		var a = 288 + (slot * 32);

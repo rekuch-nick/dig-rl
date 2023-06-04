@@ -54,6 +54,7 @@ perkDesc[6] = "Many monsters will drop Throwing Knives when they die."
 perkDesc[7] = "Normally you will cannot find another wand after getting 3 of them.";
 perkDesc[8] = "All potions are IDed";
 perkDesc[9] = "Treasure Potions last much longer. Start with 2.";
+perkDesc[10] = "Drinking any potion will give you some bonus healing over time.";
 
 perkDef = 1;
 perkRegen = 2;
@@ -64,6 +65,7 @@ perkScan = 6;
 perkWandMore = 7;
 perkIDPotions = 8;
 perkLongTreasure = 9;
+perkPotionsHeal = 10;
 
 wepDesc[1] = "Swords grant Spring Attack: Make a free attack immediately after steping towards an enemy.";
 wepDesc[2] = "Spears grant Strikethrough: Hit the two tiles behind an enemy when attacking.";

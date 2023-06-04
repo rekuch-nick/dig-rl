@@ -9,8 +9,8 @@ moveCD = 0;
 
 shotType = noone; shotChance = 0; shotRange = 0; splRange = 1;
 hpRegen = 1;
-hp = 200; ac = 18; aim = 6; str = 4; damRange = 10; splRange = 6;
-monsterScale(40,  2,   2,   2,   4,   2);
+hp = 300; ac = 18; aim = 6; str = 4; damRange = 10; splRange = 6;
+monsterScale(40,  2,   4,   3,   4,   2);
 
 var tries = 0;
 do {

@@ -54,6 +54,10 @@ bPerkLongT = instance_create_depth(200, 360, depth - 1, objSetupButton);
 bPerkLongT.txt = "Treasure Sight";
 bPerkLongT.desc = ww.perkDesc[ww.perkLongTreasure];
 
+bPerkPotsHeal = instance_create_depth(500, 360, depth - 1, objSetupButton);
+bPerkPotsHeal.txt = "All poions heal";
+bPerkPotsHeal.desc = ww.perkDesc[ww.perkPotionsHeal];
+
 bPerkEvade = instance_create_depth(200, 400, depth - 1, objSetupButton);
 bPerkEvade.txt = "+1 to DEF";
 bPerkEvade.desc = ww.perkDesc[ww.perkDef];
