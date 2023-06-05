@@ -33,6 +33,23 @@ function characterEnterTile(c, a, b){
 			}
 		}
 		
+		if(t.nam == "Summon" && c == pc){
+			var mm = randomEncounter();
+			var mt = mm.kind;
+			var tries = 0;
+			while(tries < 20){
+				tries ++;
+				var aa = pc.xSpot + irandom_range(-1, 1);
+				var bb = pc.ySpot + irandom_range(-1, 1);
+				if(inBounds(aa, bb) && ww.mmap[aa, bb] == noone && ww.bmap[aa, bb] == noone){
+					ww.mmap[aa, bb] = instance_create_depth(aa * 64, bb * 64, ww.layerM, mt);
+					var mn = ww.mmap[aa, bb].nam;
+					logMessage("A " + mn + " steps out of the aether");
+					break;
+				}
+			}			
+		}
+		
 		
 		if(t.damMax > 0){
 			var dam = irandom_range(t.damMin, t.damMax);

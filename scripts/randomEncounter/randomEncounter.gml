@@ -33,13 +33,14 @@ function randomEncounter(ignoreLevel){
 			{kind: objMobCreep2, m1: 1, m2: 1, l: 10},
 			{kind: objMobFungusFighter, m1: 1, m2: 1, l: 10},
 			{kind: objMobDarkBug, m1: 1, m2: 1, l: 10},
-			
+			{kind: objMobBlastTurtle, m1: 1, m2: 2, l: 10},
 			
 			{kind: objMobMagma, m1: 1, m2: 1, l: 20},
 			{kind: objMobFireSkull, m1: 1, m2: 1, l: 20},
 			{kind: objMobKnight, m1: 1, m2: 1, l: 20},
 			{kind: objMobLurker, m1: 1, m2: 1, l: 20},
 			{kind: objMobBufflock, m1: 1, m2: 2, l: 20},
+			
 	
 		);
 	} until (e.l <= pc.stage || !is_undefined(ignoreLevel));

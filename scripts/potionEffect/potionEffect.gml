@@ -276,6 +276,26 @@ function potionEffect(pid, a, b){
 		
 	}
 	
+	
+	if(pid == ww.potFireSingle){
+		instance_create_depth(a * 64,b * 64, ww.layerE, effFire);
+		var mm = ww.mmap[a, b];
+		if(mm != noone){
+			mm.hp -= 20;
+			mm.burning += 1;
+			logMessageWhom(mm.nam, "get", " caught in the blast", mm);
+		}
+			
+		if(floorBreakable(a, b)){
+			ww.fmap[a, b].sprite_index = imgBGDirtBlasted;
+		}
+		if(trapBreakable(a, b)){
+			instance_destroy(ww.tmap[a, b]);
+			ww.tmap[a, b] = noone;
+		}
+	}
+	
+	
 	if(pid == ww.potItemFind){
 		if(m != noone){
 			m.itemFind += 100;

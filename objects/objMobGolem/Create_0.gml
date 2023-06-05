@@ -11,7 +11,12 @@ hpRegen = 0;
 props = ["Slowing Strikes"];
 willStepOnTrap = true;
 
-hasBlood = false;
+
+spellRange = 2;
+spellChance = 10;
+spell = "Flame Strike";
+castDis = 6;
+
 
 monsterNormalStats();
 str = 0; ac += 2; aim += 2;

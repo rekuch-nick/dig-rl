@@ -4,7 +4,7 @@ function worldGenMobTable(l){
 	ww.mobTable = [];
 	
 	
-	//ww.mobTable = [{kind: objMobLurker, m1: 1, m2: 3}]; return; //
+	//ww.mobTable = [{kind: objMobBlastTurtle, m1: 1, m2: 1}]; return; //
 	var addRand = 2;
 	
 	if(l == -4){

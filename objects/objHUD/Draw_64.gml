@@ -29,9 +29,8 @@ if(itemTooltip != -1){
 }
 
 
-var s = pc.stage;
-if(s < 1){ s = .8 - abs( (pc.stage / 10) * 2); }
-draw_text(284, ym - 28, "Zone: " + string(s) );
+
+draw_text(284, ym - 28, "Zone: " + stageDisplay() );
 draw_text(284, ym, "F1: help");
 //draw_text(304, ym, "Score: " + string(pc.xp) );
 
