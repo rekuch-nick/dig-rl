@@ -3,6 +3,36 @@ function worldGenMobTable(l){
 	ww.mobTable = noone;
 	ww.mobTable = [];
 	
+	if(pc.stage == -4){
+		mobTableAdd(ww.mobList[0]);
+		mobTableAdd(ww.mobList[1]);
+		mobTableAdd(ww.mobList[2]);
+		return;
+	}
+	
+	l += 6;
+	
+	if(l >= array_length(ww.mobList)){ 
+		repeat(5){
+			l = irandom_range(0, array_length(ww.mobList) - 1);
+			mobTableAdd(ww.mobList[l].kind, ww.mobList[l].m1, ww.mobList[l].m2);
+		}
+		return;
+	}
+	
+	mobTableAdd(ww.mobList[l].kind, ww.mobList[l].m1, ww.mobList[l].m2);
+	mobTableAdd(ww.mobList[l].kind, ww.mobList[l].m1, ww.mobList[l].m2);
+	repeat(choose(3)){
+		do {
+			var m = ww.mobList[irandom_range(0, l - 1)];
+		} until (m.l <= pc.stage && !array_contains_kind(ww.mobTable, m));
+		mobTableAdd(m);
+	}
+	
+	
+	return;
+	
+	
 	
 	//ww.mobTable = [{kind: objMobLurker, m1: 1, m2: 3}]; return; //
 	var addRand = 2;

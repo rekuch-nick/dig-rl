@@ -82,6 +82,10 @@ armDesc[6] = "Plate Armor grants 8 DEF and lets you add any AGI bonus to your DE
 
 doorSigns = ["Horse","Goat","Monkey","Rooster","Dog","Pig","Rat","Ox","Tiger","Rabbit","Dragon","Snake"];
 
+defineMobSets();
+
+
+
 rollWord = false;
 seed = 1;
 
