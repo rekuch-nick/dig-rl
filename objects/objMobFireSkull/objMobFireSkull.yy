@@ -33,7 +33,7 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "001-005",
-    "path": "folders/Objects/mobs/001-005.yy",
+    "name": "001-010",
+    "path": "folders/Objects/mobs/001-010.yy",
   },
 }

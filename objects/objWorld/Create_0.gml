@@ -83,6 +83,27 @@ armDesc[6] = "Plate Armor grants 8 DEF and lets you add any AGI bonus to your DE
 
 doorSigns = ["Horse","Goat","Monkey","Rooster","Dog","Pig","Rat","Ox","Tiger","Rabbit","Dragon","Snake"];
 
+
+enum mobRole {
+	minion, //very low stats, normal attack
+	goon, // low everything
+	rank, // normal everything
+	champ, //moderate high all
+	
+	striker, //high attack / hit , good evade, 
+	brute, //high dmg, low hit, hit hp, low def
+	wild, //high hit, random damage
+	tank, //high hp / def
+	bat, //very high def, bad else
+	sponge, //high hp goon
+	rogue //boss level stats
+	
+	
+}
+
+
+
+
 defineMobSets();
 
 

@@ -9,7 +9,7 @@ function playerPickupItem(a, b){
 					instance_destroy(ww.bmap[aa, bb]);
 					ww.bmap[aa, bb] = noone;
 					
-					ww.mmap[aa, bb] = instance_create_depth(aa * 64, bb * 64, ww.layerM, objMobStatue2);
+					ww.mmap[aa, bb] = instance_create_depth(aa * 64, bb * 64, ww.layerM, objMobStatue);
 					var mn = ww.mmap[aa, bb].nam;
 					logMessage("A " + mn + " awakens");
 				}

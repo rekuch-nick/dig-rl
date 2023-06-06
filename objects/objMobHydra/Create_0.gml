@@ -1,26 +1,14 @@
 event_inherited();
 nam = "Hydra";
 
-sleepChance = 20;
-stepsMax = 12;
 
 
 
-
-
-
-
-//props = ["Ice Strikes", "Ice Immune"];
 willStepOnTrap = true;
-
 acidProof = true;
 
 
-
-monsterNormalStats();
-hp *= 2.5; str += 4;
-monsterScale(hp/2,  2,   2,   1,   2,   1);
+mobTune(mobRole.brute);
 
 
-
-hpRegen = ceil(hp / 20);
+hpRegen = ceil(hp / 10);

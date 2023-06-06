@@ -1,5 +1,5 @@
 image_xscale = 4; image_yscale = 4;
-version = "0.0.5.2";
+version = "0.1.0.0";
 
 charCursor = 0;
 

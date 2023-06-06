@@ -27,33 +27,33 @@ function combat(c1, c2){
 	if(hitRoll >= tar && (natRoll == 1 || natRoll == 2)){ hitRoll = 0; }
 	
 	
-	if(slow > 0 && choose(true, false)){ 
+	if(c1.slow > 0 && irandom_range(0, 99) < 40){ 
 		var ss = c1 == pc ? "r" : "s";
 		logMessage(c1.nam + ss + " attack is sluggish");
-		hitRoll = 0;
+		hitRoll = -1;
 	}
 	
 	
 	
 	
-	if(c2.displace > 0){ if(choose(true, false)){ 
+	if(c2.displace > 0){ if(irandom_range(0, 99) < 40){ 
 		logMessageWhom(c1.nam, "strike", "at illusions", c1);
-		hitRoll = 0;
+		hitRoll = -1;
 	}}
 	
-	if(c2.webArmor > 0){ if(choose(true, false)){ 
+	if(c2.webArmor > 0){ if(irandom_range(0, 99) < 40){ 
 		logMessageWhom(c1.nam, "strike", "harmlessly at the webs", c1);
-		hitRoll = 0;
+		hitRoll = -1;
 	}}
 	
 	if(!attackIsCleave){ c1.dataAttacks ++; }
 	
-	if(hitRoll < tar && characterHasProp(c1, "Shockwave") && hitRoll > 0){
+	if(hitRoll < tar && characterHasProp(c1, "Shockwave") && hitRoll > -1){
 		hitRoll = tar;
 		isShockwave = true;
 	}
 	
-	if(hitRoll < tar && c1.id == pc){ c1.rollingHitPlus ++; }
+	if(hitRoll < tar && c1.id == pc){ c1.rollingHitPlus += 2; }
 	
 	if(hitRoll >= tar || c2.frozen > 0 || natRoll == 20){
 		var v = c1 == pc ? " hit " : " hits ";
@@ -97,7 +97,7 @@ function combat(c1, c2){
 		}
 		
 		var dam = irandom_range(getMeleeMin(c1), getMeleeMax(c1));
-		if(c1.sick > 0){ dam = ceil(dam / 3); }
+		if(c1.sick > 0){ dam = ceil(dam * .6); }
 		if(c1.attackIsLunge){ 
 			var v = c1 == pc ? " lunge into " : " lunges into ";
 			
@@ -199,6 +199,10 @@ function combat(c1, c2){
 		if(characterHasProp(c2, "Protection")){
 			var protReduction = itemPropBonus(c2, "Protection");
 			dam = clamp(dam - protReduction, 0, dam);
+		}
+		
+		if(characterHasProp(c2, "Ironskin")){
+			dam = clamp(dam - 4, 1, dam);
 		}
 		
 

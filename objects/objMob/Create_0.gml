@@ -12,7 +12,7 @@ moveSpeed = 4;
 moved = false;
 justFinished = false;
 
-sleepChance = 10;
+sleepChance = 15;
 stepsMax = 8;
 
 timeSpawn = false;
@@ -39,8 +39,6 @@ spell = "";
 
 
 
-monsterNormalStats();
-hp *= .5;
-monsterScale(hp/2,  2,   2,   1,   2,   1);
+mobTune(mobRole.minion);
 
 

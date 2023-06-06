@@ -1,7 +1,7 @@
 image_xscale = 4;
 image_yscale = 4;
 
-waitTurns = 1;
+waitTurns = 2;
 effect = ww.potFireSingle;
 xSpot = 0;
 ySpot = 0;

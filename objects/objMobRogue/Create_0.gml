@@ -3,14 +3,15 @@ image_xscale = 4; image_yscale = 4;
 nam = "Rogue";
 isRogue = true;
 
-sleepChance = 5;
+sleepChance = 0;
 stepsMax = 8;
 moveCD = 0;
 
 shotType = noone; shotChance = 0; shotRange = 0; splRange = 1;
 hpRegen = 1;
-hp = 300; ac = 18; aim = 6; str = 4; damRange = 10; splRange = 6;
-monsterScale(40,  2,   4,   3,   4,   2);
+
+
+mobTune(mobRole.rogue);
 
 var tries = 0;
 do {
@@ -19,6 +20,13 @@ do {
 	var spt = pc.bossSeen[i];
 	if(tries > 1000){ break; }
 } until (spt != noone);
+
+
+spellRange = 0;
+spellChance = 10;
+spell = "Random Buff";
+castDis = 2;
+
 
 
 if(tries <= 1000){
@@ -31,6 +39,7 @@ if(sprite_index == imgMCWizard){
 	shotType = objFireShot;
 	shotChance = 100;
 	shotRange = 5;
+	spellRange *= 2;
 }
 if(sprite_index == imgMCSorcerer){
 	sleepChance = 30;
@@ -43,25 +52,35 @@ if(sprite_index == imgMCBarbarian){
 	shotType = objRockShot;
 	shotChance = 100;
 	shotRange = 12;
+	props = ["Ironskin"];
 }
 if(sprite_index == imgMCMonk){
 	hpRegen = 8;
+	props = ["Slowing Strikes"];
 }
 if(sprite_index == imgMCRogue){
 	props = ["Poison Strikes"];
 }
 if(sprite_index == imgMCBard){
-	props = ["Displaced"];
+	props = ["Displaced", "Steal Potions"];
 }
 if(sprite_index == imgMCKnight){
-	ac += 2; str += 4; aim += 2;
+	props = ["Sunder"];
+	ac += 2; str += 8; aim += 2;
 }
 if(sprite_index == imgMCHero){
-	props = ["Fire Strikes"];
+	props = ["Fire Strikes", "Ice Immune"];
 	shotType = objFireShot;
 	shotChance = 50;
 	shotRange = 5;
 	fireTrail = 100;
+	
+	spellRange = 0;
+	spellChance = 10;
+	spell = "Flame Strike";
+	castDis = 2;
+	
+	
 }
 
 

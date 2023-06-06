@@ -1,16 +1,10 @@
 event_inherited();
 nam = "Pest";
 
-sleepChance = irandom_range(40, 90);
-stepsMax = 8;
+sleepChance = irandom_range(5, 40) + irandom_range(5, 40);
 
 
-
-
-//moveType = "still";
 
 props = ["Poison Strikes"];
 
-monsterNormalStats();
-hp = 4; str = 0;
-monsterScale(hp/2,  2,   2,   1,   2,   1);
+mobTune(mobRole.minion);

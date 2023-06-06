@@ -1,10 +1,10 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "objMobStatue2",
+  "name": "objMobSnake",
   "spriteId": {
-    "name": "imgMobStatueBeast2",
-    "path": "sprites/imgMobStatueBeast2/imgMobStatueBeast2.yy",
+    "name": "imgFungusFighter",
+    "path": "sprites/imgFungusFighter/imgFungusFighter.yy",
   },
   "solid": false,
   "visible": true,
@@ -33,7 +33,7 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "anywhere",
-    "path": "folders/Objects/mobs/anywhere.yy",
+    "name": "031-40",
+    "path": "folders/Objects/mobs/031-40.yy",
   },
 }

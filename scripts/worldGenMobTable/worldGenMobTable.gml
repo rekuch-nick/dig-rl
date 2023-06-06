@@ -1,5 +1,6 @@
 function worldGenMobTable(l){
 	
+	ww.stageOffset = 6;
 	ww.mobTable = noone;
 	ww.mobTable = [];
 	
@@ -9,23 +10,33 @@ function worldGenMobTable(l){
 		mobTableAdd(ww.mobList[2]);
 		return;
 	}
-	
-	l += 6;
-	
+	l += ww.stageOffset;
+	if(pc.stage <= 0){
+		mobTableAdd(ww.mobList[l].kind, ww.mobList[l].m1, ww.mobList[l].m2);
+		mobTableAdd(ww.mobList[0]);
+		mobTableAdd(ww.mobList[1]);
+		mobTableAdd(ww.mobList[2]);
+		return;
+	}	
 	if(l >= array_length(ww.mobList)){ 
 		repeat(5){
-			l = irandom_range(0, array_length(ww.mobList) - 1);
+			do{
+				l = irandom_range(0, array_length(ww.mobList) - 1);
+				var m = ww.mobList[l];
+			} until(m != noone);
+			
 			mobTableAdd(ww.mobList[l].kind, ww.mobList[l].m1, ww.mobList[l].m2);
 		}
 		return;
 	}
 	
-	mobTableAdd(ww.mobList[l].kind, ww.mobList[l].m1, ww.mobList[l].m2);
-	mobTableAdd(ww.mobList[l].kind, ww.mobList[l].m1, ww.mobList[l].m2);
+	var m = ww.mobList[l];
+	while(m == noone){ l --; m = ww.mobList[l]; }
+	mobTableAdd(m);
 	repeat(choose(3)){
 		do {
 			var m = ww.mobList[irandom_range(0, l - 1)];
-		} until (m.l <= pc.stage && !array_contains_kind(ww.mobTable, m));
+		} until (m != noone && m.l <= pc.stage && !array_contains_kind(ww.mobTable, m));
 		mobTableAdd(m);
 	}
 	

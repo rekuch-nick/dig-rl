@@ -1,13 +1,6 @@
 event_inherited();
 nam = "Goblin";
 
-sleepChance = 20;
-stepsMax = 12;
-
-
-
-
-hpRegen = 0;
 
 moveType = "flee";
 
@@ -17,6 +10,4 @@ shotType = objRockShot;
 shotChance = 50;
 shotRange = 4;
 
-
-hp = 10; ac = 8; aim = 4; str = 0; damRange = 6; splRange = 4;
-monsterScale(10,  2,   3,   1,   4,   1);
+mobTune(mobRole.goon);

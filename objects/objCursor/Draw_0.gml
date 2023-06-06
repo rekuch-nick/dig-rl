@@ -31,8 +31,8 @@ if(pc.debugStats){
 		if(inBounds(pc.xMouse, pc.yMouse)){
 			var m = ww.mmap[pc.xMouse, pc.yMouse];
 			if(m != noone){
-				draw_text(x, y + 64, m.hp);
-				draw_text(x, y + 64 + 32 * 1, m.ac);
+				draw_text(x, y + 64, "hp " + string(m.hp));
+				draw_text(x, y + 64 + 32 * 1, "ac " + string(m.ac));
 				draw_text(x, y + 64 + 32 * 2, "+" + string(m.aim));
 				draw_text(x, y + 64 + 32 * 3, string(m.str-10) + "-" + string(m.str-10 + m.damRange));
 			}

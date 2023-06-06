@@ -3,21 +3,16 @@ image_xscale = 4; image_yscale = 4;
 
 nam = "Witch";
 
-sleepChance = 40;
-stepsMax = 8;
 
 
-
-
+props = ["Flying"];
 
 
 shotType = objFireShot;
 shotChance = 100;
 shotRange = 4;
-splRange = 10;
 
 moveType = "flee";
-willStepOnTrap = false;
+willStepOnTrap = true;
 
-hp = 20; ac = 8; aim = 4; str = 0; damRange = 6; splRange = 6;
-monsterScale(20,  3,   2,   2,   4,   4);
+mobTune(mobRole.champ);

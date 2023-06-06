@@ -94,10 +94,10 @@ function worldGenFeatureAt(aa, bb){
 			
 		}}}
 	} else if(fet.t == "item guard" && r < fet.c){
-		bmap[aa-1, bb-1] = imgBlockMobStatue2;
-		bmap[aa-1, bb+1] = imgBlockMobStatue2;
-		bmap[aa+1, bb-1] = imgBlockMobStatue2;
-		bmap[aa+1, bb+1] = imgBlockMobStatue2;
+		bmap[aa-1, bb-1] = imgBlockMobStatue;
+		bmap[aa-1, bb+1] = imgBlockMobStatue;
+		bmap[aa+1, bb-1] = imgBlockMobStatue;
+		bmap[aa+1, bb+1] = imgBlockMobStatue;
 		
 		bmap[aa, bb] = noone;
 		var t = getItem(randomWeaponType());
