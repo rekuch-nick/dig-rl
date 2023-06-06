@@ -7,7 +7,7 @@ draw_text_transformed(room_width/2, 70, "Game Over", 3, 3, 0);
 
 draw_text((room_width/2), 160, "Seed " + string(ww.seed));
 
-draw_text((room_width/4) * 1, 230, "Reached stage " + string(pc.stage));
+draw_text((room_width/4) * 1, 230, "Reached stage " + stageDisplay() );
 draw_text((room_width/4) * 3, 230, "Beat " + string(pc.dataRogueKilled) + " Rogues");
 
 draw_text((room_width/4) * 1, 310, "Made " + string(pc.dataAttacks) + " attacks");

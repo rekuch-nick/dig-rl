@@ -55,12 +55,14 @@ function worldGen(){
 		worldGenReplaceRandomBlocks(imgBlock, imgBlockRock, 60); 
 		//if(stage >= 20 && irandom_range(1, 3) == 1){ worldGenReplaceRandomBlocks(imgBlock, imgBlockPush, 60); }
 		//if(pc.stage == 6){ worldGenReplaceRandomBlocks(imgBlock, imgBlockCactus, 120); }
-		//worldGenReplaceRandomBlocks(imgBlock, imgBlockCactus, 120);
+		//worldGenReplaceRandomBlocks(imgBlock, imgBlockTurret, 120);
 		if(pc.stage >= 11){ worldGenReplaceRandomBlocks(imgBlock, imgBlockSkull, 60); }
 		if(pc.stage >= 15 && choose(true, false)){
 			worldGenRiver(-1, -1, -1, -1);
 			worldGenReplaceRandomFloor(imgWaterLava, imgWaterLavaRock, floor(worldGenCount(imgWaterLava)) / 3);
 		}
+		
+		//worldGenTrapPatch(objTrapSummon, 0, 100, 40);
 	}
 	if(kind == "lakes"){ worldGenPatches(noone, imgWater, false, true); }
 	if(kind == "posts"){ 

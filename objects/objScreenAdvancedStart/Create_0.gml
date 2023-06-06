@@ -29,9 +29,9 @@ for(var i=0; i<4; i++){
 }
 bWepType[0].txt = "Sword"; bWepType[0].selected = true;
 bWepType[0].desc = ww.wepDesc[1];
-bWepType[1].txt = "Axe"; bWepType[1].desc = ww.wepDesc[2];
-bWepType[2].txt = "Maul"; bWepType[2].desc = ww.wepDesc[3];
-bWepType[3].txt = "Spear"; bWepType[3].desc = ww.wepDesc[4];
+bWepType[1].txt = "Axe"; bWepType[1].desc = ww.wepDesc[3];
+bWepType[2].txt = "Maul"; bWepType[2].desc = ww.wepDesc[4];
+bWepType[3].txt = "Spear"; bWepType[3].desc = ww.wepDesc[2];
 
 //for(var i=0; i<8; i++){
 //	bWepProp[i] = instance_create_depth(100 + (i * 130), 240, depth - 1, objSetupButton);

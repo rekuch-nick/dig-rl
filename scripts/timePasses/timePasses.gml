@@ -2,6 +2,22 @@ function timePasses(){
 	
 	
 	
+	shootTurrets();
+	
+	
+	with(objWarning){
+		waitTurns --;
+		image_speed = clamp(8 - waitTurns, 2, 10);
+		if(waitTurns < 1){
+			potionEffect(effect, xSpot, ySpot);
+			
+			instance_destroy();
+		}
+	}
+	
+	
+	
+	
 	if(ww.flood != noone && pc.ySpot > ww.groundLevel){
 		var tries = 0;
 		var n = 3;

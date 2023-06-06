@@ -1,6 +1,7 @@
 function mobsCast(c, s){
 	
 	var isBuffAoE = false;
+	var isWarning = false;
 	var txt = c.nam + " mutters something arcane";
 	
 	if(s == "Random Buff"){
@@ -11,6 +12,8 @@ function mobsCast(c, s){
 	if(s == "Rage"){ isBuffAoE = true; }
 	if(s == "Block"){ isBuffAoE = true; }
 	if(s == "Blur"){ isBuffAoE = true; }
+	
+	if(s == "Flame Strike"){ isWarning = true; }
 	
 	
 	if(isBuffAoE){
@@ -55,6 +58,22 @@ function mobsCast(c, s){
 				ww.mmap[c.xSpot, c.ySpot] = c;
 			}
 		}
+	}
+	
+	if(isWarning){
+		var a = pc.xSpot;
+		var b = pc.ySpot;
+		
+		var newWarningBlocked = false;
+		with(objWarning){
+			if(a == xSpot && b == ySpot){ newWarningBlocked = true; break; }
+		}
+		
+		if(!newWarningBlocked){
+			var w = instance_create_depth(a*64, b*64, ww.layerE, objWarning);
+			w.xSpot = a; w.ySpot = b;
+		}
+		
 	}
 	
 	

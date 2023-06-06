@@ -44,6 +44,7 @@ potFrost = 34;
 potPox = 35;
 potShock = 36;
 potValor = 37;
+potFireSingle = 38;
 
 perkDesc[1] = "+1 to DEF";
 perkDesc[2] = "+1 HP Regen";
