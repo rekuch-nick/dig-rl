@@ -2,7 +2,7 @@ event_inherited();
 nam = "Chanter";
 
 
-
+moveType = "dance";
 
 spellRange = 2;
 spellChance = 10;

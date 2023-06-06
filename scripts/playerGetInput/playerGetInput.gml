@@ -91,4 +91,10 @@ function playerGetInput(){
 	if(keyboard_check_pressed(ord("9"))){ clickChar = "9"; }
 	if(keyboard_check_pressed(ord("0"))){ clickChar = "0"; }
 	
+	
+	if(clickChar == "M"){
+		ww.music = !ww.music;
+		if(!ww.music){ audio_stop_all(); ww.nowPlaying = noone; }
+		clickChar = "";
+	}
 }

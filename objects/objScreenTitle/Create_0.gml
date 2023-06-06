@@ -1,11 +1,11 @@
 image_xscale = 4; image_yscale = 4;
-version = "0.1.0.0";
+version = "0.1.0.3";
 
 charCursor = 0;
 
 randomize();
 ww.seed = irandom_range(1, 1000000);
-
+ww.bgmTrack = irandom_range(0, 7);
 
 //charBig = [imgMCHeroOld, imgMCBarbarianOld, imgMCBardOld, imgMCKnightOld, imgMCMonkOld, imgMCRogueOld, imgMCSorcererOld, imgMCWizardOld];
 charBig = [imgMCHero, imgMCBarbarian, imgMCBard, imgMCKnight, imgMCMonk, imgMCRogue, imgMCSorcerer, imgMCWizard];

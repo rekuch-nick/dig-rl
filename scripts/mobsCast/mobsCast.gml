@@ -63,18 +63,19 @@ function mobsCast(c, s){
 	if(isWarning){
 		var a = pc.xSpot;
 		var b = pc.ySpot;
-		
-		var newWarningBlocked = false;
-		with(objWarning){
-			if(a == xSpot && b == ySpot){ newWarningBlocked = true; break; }
-		}
-		
-		if(!newWarningBlocked){
-			var w = instance_create_depth(a*64, b*64, ww.layerE, objWarning);
-			w.xSpot = a; w.ySpot = b;
-		}
-		
+		putWarning(a, b);
 	}
 	
+	
+	if(s == "Flame Box"){
+		for(var a=pc.xSpot-c.spellRange; a<=pc.xSpot+c.spellRange; a++){
+			putWarning(a, pc.ySpot-c.spellRange, "fast");
+			putWarning(a, pc.ySpot+c.spellRange, "fast");
+		}
+		for(var b=pc.ySpot-c.spellRange; b<=pc.ySpot+c.spellRange; b++){
+			putWarning(pc.xSpot-c.spellRange, b, "fast");
+			putWarning(pc.xSpot+c.spellRange, b, "fast");
+		}
+	}
 	
 }

@@ -1,6 +1,7 @@
 function gameOver(){
 	pc.hp = 1;
-	
+	audio_stop_all();
+	ww.nowPlaying = noone;
 	
 	with(objScreen){ instance_destroy(); }
 	

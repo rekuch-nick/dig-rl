@@ -258,7 +258,7 @@ function potionEffect(pid, a, b){
 			instance_create_depth(aa * 64, bb * 64, ww.layerE, effFire);
 			
 			var mm = ww.mmap[aa, bb];
-			if(mm != noone){
+			if(mm != noone && !mm.fireProof){
 				mm.hp -= 10;
 				mm.burning += 1;
 				logMessageWhom(mm.nam, "get", " caught in the blast", mm);
@@ -280,7 +280,7 @@ function potionEffect(pid, a, b){
 	if(pid == ww.potFireSingle){
 		instance_create_depth(a * 64,b * 64, ww.layerE, effFire);
 		var mm = ww.mmap[a, b];
-		if(mm != noone){
+		if(mm != noone && !mm.fireProof){
 			mm.hp -= 20;
 			mm.burning += 1;
 			logMessageWhom(mm.nam, "get", " caught in the blast", mm);
@@ -371,6 +371,23 @@ function potionEffect(pid, a, b){
 			}
 			mm.hp -= dam;
 			logMessageWhom(mm.nam, "get", " shocked", mm);
+		}
+		
+	}
+	
+	
+	if(pid == ww.potBladeSpin){
+		
+		if(!inBounds(a, b)){ return; }
+		
+		instance_create_depth(a * 64, b * 64, ww.layerE, effBladeSpin);
+		
+		var mm = ww.mmap[a, b];
+		if(mm != noone){
+			var dam = 20;
+			
+			mm.hp -= dam;
+			logMessageWhom(mm.nam, "get", "cut", mm);
 		}
 		
 	}

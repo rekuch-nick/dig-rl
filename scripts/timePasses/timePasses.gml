@@ -41,6 +41,16 @@ function timePasses(){
 	}
 	
 	
+	if(characterHasProp(pc, "Rock Finding")){
+		var bns = itemPropBonus(pc, "Rock Finding");
+		//var bns = itemHasProp(pc.gear[ww.gsRing], "Rock Finding") ? pc.gear[ww.gsRing].bonus : pc.gear[ww.gsRing2].bonus;
+		var r = irandom_range(0, 99);
+		
+		if(r < bns){
+			playerKnifeSpin();
+		}
+	}
+	
 	
 	with(objMob){ 
 		//if(ww.fmap[xSpot, ySpot].playerSeen){

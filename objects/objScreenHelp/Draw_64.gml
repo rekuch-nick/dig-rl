@@ -25,4 +25,6 @@ draw_text(10, 520, "");
 draw_text(10, 550, "Tip: Tap Space to let monsters one tile away");
 draw_text(10, 580, "come to you so they don't hit you first!");
 
+draw_text(10, 670, "M to toggle sound");
+
 

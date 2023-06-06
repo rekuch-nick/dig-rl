@@ -76,7 +76,7 @@ if(sprite_index == imgMCHero){
 	fireTrail = 100;
 	
 	spellRange = 0;
-	spellChance = 10;
+	spellChance = 25;
 	spell = "Flame Strike";
 	castDis = 2;
 	

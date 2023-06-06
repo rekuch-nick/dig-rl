@@ -45,6 +45,7 @@ potPox = 35;
 potShock = 36;
 potValor = 37;
 potFireSingle = 38;
+potBladeSpin = 39;
 
 perkDesc[1] = "+1 to DEF";
 perkDesc[2] = "+1 HP Regen";
@@ -54,8 +55,8 @@ perkDesc[5] = "While unencumbered, if your AGI bonus is greater than your STR bo
 perkDesc[6] = "Many monsters will drop Throwing Knives when they die."
 perkDesc[7] = "Normally you will cannot find another wand after getting 3 of them.";
 perkDesc[8] = "All potions are IDed";
-perkDesc[9] = "Treasure Potions last much longer. Start with 2.";
-perkDesc[10] = "Drinking any potion will give you some bonus healing over time.";
+perkDesc[9] = "Treasure Potions last much longer. Start with 3.";
+perkDesc[10] = "Drinking any potion will give you some bonus healing over time as well as its normal effect.";
 
 perkDef = 1;
 perkRegen = 2;
@@ -106,6 +107,10 @@ enum mobRole {
 
 defineMobSets();
 
+music = true;
+bgmTrack = 0;
+musicList = [bgm01,bgm02,bgm03,bgm04,bgm05,bgm06,bgm07,bgm08,bgm09,]
+nowPlaying = noone;
 
 
 rollWord = false;

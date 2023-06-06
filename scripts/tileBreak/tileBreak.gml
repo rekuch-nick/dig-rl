@@ -14,8 +14,10 @@ function tileBreak(a, b){
 	}
 	
 	if(spt == imgBlockSkull){
-		if(ww.mmap[a, b] == noone){
-			ww.mmap[a, b] = instance_create_depth(a*64, b*64, ww.layerM, objMobSkellie);
+		if(!characterHasProp(pc, "Still") && !characterHasProp(pc, "Seal") ){ 
+			if(ww.mmap[a, b] == noone){
+				ww.mmap[a, b] = instance_create_depth(a*64, b*64, ww.layerM, objMobSkellie);
+			}
 		}
 	}
 	

@@ -22,15 +22,16 @@ function spawnStatueMob(aa, bb){
 		
 		if(inBounds(a, b)){
 			var spt = ww.fmap[a, b].sprite_index;
-			if(spt == imgBGDirtGrave && choose(true, false, false, false, false) ){
-				if(ww.mmap[a, b] == noone){
-					ww.fmap[a, b].sprite_index = imgBGDirtGraveBroken
-					ww.mmap[a, b] = instance_create_depth(a*64, b*64, ww.layerM, objMobZomb);
-					logMessage("Something rises from the ground");
-					
+			if(!characterHasProp(pc, "Still") && !characterHasProp(pc, "Seal") ){ 
+				if(spt == imgBGDirtGrave && choose(true, false, false, false, false) ){
+					if(ww.mmap[a, b] == noone){
+						ww.fmap[a, b].sprite_index = imgBGDirtGraveBroken
+						ww.mmap[a, b] = instance_create_depth(a*64, b*64, ww.layerM, objMobZomb);
+						logMessage("Something rises from the ground");
+						if(ww.bmap[a, b] != noone){ tileBreak(a, b); }
+					}
 				}
 			}
-			
 		}
 	
 	

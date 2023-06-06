@@ -4,13 +4,13 @@ function randomPotionType(){
 		"Blasting Potion",
 		"Ice Potion",
 		"Poison Potion",
-		"Swordmastery Potion",
+		"Might Potion",
 		"Defense Potion",
 		"Warp Potion",
 		"Displacement Potion",
 		"Slow Potion",
 		"TrueStrike Potion",
-		"Zap Potion",
+		//"Zap Potion",
 		"Treasure Potion",
 	);
 

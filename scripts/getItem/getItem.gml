@@ -307,7 +307,7 @@ function getItem(t){
 		itm.bonus = 1;
 		itm.col = c_lime;
 		itm.props = ["Rock Finding"];
-		itm.desc = "Find knives when digging";
+		itm.desc = "Create blade barriers";
 	}
 	
 	if(t == "Ring of Fire"){ 
@@ -531,7 +531,7 @@ function getItem(t){
 		itm.stacks = true;
 	}
 	
-	if(t == "Swordmastery Potion"){ 
+	if(t == "Might Potion"){ 
 		itm.img = imgPotionSwordmastery;
 		itm.kind = "Potion";
 		itm.throwPower = 0;

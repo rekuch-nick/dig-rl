@@ -28,7 +28,7 @@ if(!moved && ready){
 	
 	if(disToPlayer >= stepsMax - getShadow(pc) && disToPlayer > 2){ return; }
 	
-	
+	if(fireProof){ burning = 0; }
 	if(characterHasProp(id, "Ice Immune")){ frozen = 0; }
 	if(characterHasProp(id, "Frozen")){ frozen = 0; }
 	if(frozen > 0){ return; }
@@ -141,6 +141,16 @@ if(hp < 1){
 	}
 	
 	ww.mmap[xSpot, ySpot] = noone;
+	
+	if(reraise != noone){
+		if(!characterHasProp(pc, "Still") && !characterHasProp(pc, "Seal")){
+			ww.mmap[xSpot, ySpot] = instance_create_depth(xSpot * 64, ySpot * 64, ww.layerM, reraise);
+			logMessage(nam + "s corpse rises again");
+		}		
+	}
+	
+	
+	
 	
 	if(ww.pmap[xSpot, ySpot] == noone){
 		var t = noone;

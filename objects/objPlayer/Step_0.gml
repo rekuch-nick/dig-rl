@@ -171,7 +171,7 @@ if(!moved){
 					} else if(digAt(xTar, yTar, dp)){
 						pc.dataDigs ++;
 						
-						if(characterHasProp(pc, "Rock Finding")){
+						/*if(characterHasProp(pc, "Rock Finding")){
 							var bns = itemHasProp(pc.gear[ww.gsRing], "Rock Finding") ? pc.gear[ww.gsRing].bonus : pc.gear[ww.gsRing2].bonus;
 							
 							if(inBounds(a, b) && irandom_range(0, 99) < (bns * 2) + 10){
@@ -182,7 +182,7 @@ if(!moved){
 									ww.pmap[a, b].itm = getItem("Throwing Knife");
 								}
 							}
-						}
+						}*/
 						timePasses();
 					}
 					

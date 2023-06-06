@@ -29,6 +29,7 @@ xPlayerAt = 0;
 yPlayerAt = 0;
 
 spawnMaster = noone;
+reraise = noone;
 
 shadow = 0;
 attackIsCleave = false;
@@ -85,3 +86,4 @@ dataFoodEaten = 0;
 lavaProof = false;
 acidProof = false;
 waterProof = true;
+fireProof = false;

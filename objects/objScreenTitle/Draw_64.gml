@@ -23,5 +23,8 @@ draw_text(942, 500, charPower[charCursor]);
 draw_set_halign(fa_right);
 draw_text_color(room_width - 10, 10, "version " + string(version), c_grey, c_grey, c_grey, c_grey, 1);
 
+c = ww.music ? c_white : c_grey;
+draw_text_color(room_width - 20, 800, "Toggle sound with M", c, c, c, c, 1);
+
 
 draw_set_halign(fa_left);

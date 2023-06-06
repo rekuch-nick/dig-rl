@@ -1,5 +1,7 @@
 function worldGenMobTable(l){
 	
+	//ww.mobTable = [{kind: objMobReraiseBrute, m1: 1, m2: 1}]; return; ////
+	
 	ww.stageOffset = 6;
 	ww.mobTable = noone;
 	ww.mobTable = [];

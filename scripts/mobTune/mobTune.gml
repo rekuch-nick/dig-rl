@@ -1,6 +1,7 @@
 function mobTune(role){
 	
-	var lvl = floor( (pc.stage) / 10);
+	//var lvl = floor( (pc.stage + 4) / 5);
+	var lvl = floor( (pc.stage) / 5);
 	if(lvl < 0){ lvl = 0; }
 	
 	
@@ -11,7 +12,7 @@ function mobTune(role){
 	aim = 8 + (lvl + 2);
 	str = 10 + 4 + (lvl * 2);
 	damRange = 6 + (lvl * 2);
-	splRange = 6 + (lvl * 2);
+	splRange = 4 + (lvl * 2);
 	
 	if(role == mobRole.minion){
 		hp = 4 + (lvl * 5);
@@ -54,7 +55,6 @@ function mobTune(role){
 		aim = 4 + (lvl + 1);
 		str = 10 + 8 + (lvl * 4);
 		damRange = 9 + (lvl * 3);
-		splRange = 9 + (lvl * 3);
 	}
 	
 	if(role == mobRole.wild){
@@ -74,13 +74,12 @@ function mobTune(role){
 		aim = 8 + (lvl + 2);
 		str = 10 + 4 + (lvl * 2);
 		damRange = 6 + (lvl * 2);
-		splRange = 6 + (lvl * 2);
 	}
 	
 	if(role == mobRole.rogue){
 		hp = 300 + (lvl * 100);
 		ac = 16 + (lvl * 3);
-		aim = 16 + (lvl + 4);
+		aim = 16 + (lvl * 3);
 		str = 10 + 8 + (lvl * 4);
 		damRange = 12 + (lvl * 4);
 		splRange = 12 + (lvl * 4);

@@ -26,11 +26,11 @@ function defineMobSets(){
 			{kind: objMobMecha, m1: 1, m2: 2, l: 12},
 			{kind: objMobWasp, m1: 2, m2: 4, l: 13},
 			{kind: objMobGoblin, m1: 3, m2: 4, l: 14},
-			{kind: objMobHydra, m1: 1, m2: 1, l: 15},
+			{kind: objMobCyclops, m1: 1, m2: 1, l: 15},
 			{kind: objMobBufflock, m1: 1, m2: 2, l: 16},
 			{kind: objMobBlastTurtle, m1: 1, m2: 2, l: 17},
 			noone,
-			{kind: objMobCyclops, m1: 1, m2: 1, l: 19},
+			{kind: objMobHydra, m1: 1, m2: 1, l: 19},
 			noone,
 			
 			{kind: objMobIceGolem, m1: 1, m2: 1, l: 21},
@@ -56,7 +56,9 @@ function defineMobSets(){
 			{kind: objMobMask, m1: 1, m2: 1, l: 39},
 			noone,
 			
-	
+			
+			
+			{kind: objMobReraiseBrute, m1: 1, m2: 1, l: 41},
 	];
 	
 
