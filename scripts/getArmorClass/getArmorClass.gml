@@ -5,7 +5,10 @@ function getArmorClass(c){
 	var n = c.ac;
 	var agiBonus = clamp(c.agi - 10, 0, 10);
 	
-	
+	if(c == pc && pc.perk[ww.perkShadow]){
+		var agi2 = clamp(pc.agi - 20, 0, pc.agi);
+		agiBonus += ceil(agi2 / 2);
+	}
 	
 	
 	

@@ -119,7 +119,7 @@ if(!go.selected){
 	if(bPerkRegen.selected){ pc.hpRegen += 1; pc.perk[ww.perkRegen] = true; }
 	if(bPerkMole.selected){ pc.digPow = 3; pc.agi -= 2; pc.agiMax -= 2; pc.perk[ww.perkMoleHands] = true; }
 	if(bPerkFin.selected){ pc.finesse = true; pc.perk[ww.perkFin] = true; }
-	if(bPerkScav.selected){ pc.knifeFind = true; pc.perk[ww.perkScan] = true; }
+	if(bPerkScav.selected){ pc.knifeFind = true; pc.perk[ww.perkScan] = true; pc.hpMax -= 100; pc.hp -= 100; }
 	if(bPerkLongT.selected){
 		var i = getItem("Treasure Potion");
 		i.charges = 3;

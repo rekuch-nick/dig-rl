@@ -42,7 +42,8 @@ for(var i=1; i<21; i++){
 	//bag[i] = itemEnchant( getItem(randomWeaponType()), irandom_range(1, 4), true); bag[6] = itemEnchantWepProp(bag[i], -1);
 }
 
-//bag[2] = getItem("Ring of Sustenance");
+//bag[2] = getItem("Ring of Lightning");
+//bag[3] = getItem("Ring of Lightning");
 //bag[3] = getItem("Ring of Wandskill");
 //bag[3] = getItem("Displacement Potion");
 //bag[4] = getItem("Slow Potion");

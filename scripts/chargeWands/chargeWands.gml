@@ -12,6 +12,11 @@ function chargeWands(){
 	for(var i=0; i<26; i++){
 		if(pc.bag[i] != noone && pc.bag[i].kind == "Wand"){
 			var n = pc.wandSkill + pc.bag[i].wandCharge + bonus;
+			
+			if(pc.perk[ww.perkManticore]){
+				n *= 2;
+			}
+			
 			pc.bag[i].charges = pc.bag[i].charges + n;
 			
 			if(pc.bag[i].charges > pc.bag[i].chargesMax){

@@ -52,6 +52,7 @@ webArmor = 0;
 trueStrike = 0;
 itemFind = 0;
 healing = 0;
+fly = 0;
 
 
 lastHp = -1;

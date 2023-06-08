@@ -1,6 +1,7 @@
 function spawnWaterMob(aa, bb){
 	
 	if(choose(true, false)){ return; }
+	if(pc.fly > 0){ return; }
 	
 	var tries = 0;
 	while(tries < 20){

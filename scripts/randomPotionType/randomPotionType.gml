@@ -12,6 +12,7 @@ function randomPotionType(){
 		"TrueStrike Potion",
 		//"Zap Potion",
 		"Treasure Potion",
+		"Flight Potion",
 	);
 
 }

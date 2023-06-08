@@ -37,6 +37,7 @@ potPure = 16;
 potTrueStrike = 17;
 potSparks = 18;
 potItemFind = 19;
+potFly = 20;
 potBlink = 31;
 potCrumble = 32;
 potFireball = 33;
@@ -52,11 +53,20 @@ perkDesc[2] = "+1 HP Regen";
 perkDesc[3] = "Your wands will recharge 2 extra charges per stage.";
 perkDesc[4] = "Dig much more quickly, but AGI is reduced by 2."
 perkDesc[5] = "While unencumbered, if your AGI bonus is greater than your STR bonus, add it to damage rolls instead of STR. Cannot gain more than 10 damage in this way.";
-perkDesc[6] = "Many monsters will drop Throwing Knives when they die."
+perkDesc[6] = "Many monsters will drop Throwing Knives when they die, but HP is reduced by 100."
 perkDesc[7] = "Normally you will cannot find another wand after getting 3 of them.";
 perkDesc[8] = "All potions are IDed";
 perkDesc[9] = "Treasure Potions last much longer. Start with 3.";
 perkDesc[10] = "Drinking any potion will give you some bonus healing over time as well as its normal effect.";
+
+perkDesc[20] = "Each point of STR over 20 gives you a chance to shrug off debuffs";
+perkDesc[21] = "Each point of AGI over 20 gives .5 DEF and a small chance to deal double damage";
+perkDesc[22] = "Greatly improves the amount of charges Wands gain each level";
+perkDesc[23] = "Thrown items deal double damage, even potions";
+perkDesc[24] = "Electric damage has a chance to remove monster abilities and cause debuffs";
+perkDesc[25] = "Fly over traps all the time. Drinking a Flight Potion will temporally disable this ability";
+
+
 
 perkDef = 1;
 perkRegen = 2;
@@ -68,6 +78,13 @@ perkWandMore = 7;
 perkIDPotions = 8;
 perkLongTreasure = 9;
 perkPotionsHeal = 10;
+
+perkTroll = 20;
+perkShadow = 21;
+perkManticore = 22;
+perkTitan = 23;
+perkRaiju = 24;
+perkPegasus = 25;
 
 wepDesc[1] = "Swords grant Spring Attack: Make a free attack immediately after steping towards an enemy.";
 wepDesc[2] = "Spears grant Strikethrough: Hit the two tiles behind an enemy when attacking.";

@@ -97,6 +97,10 @@ function combat(c1, c2){
 		}
 		
 		var dam = irandom_range(getMeleeMin(c1), getMeleeMax(c1));
+		if(c1 == pc && pc.perk[ww.perkShadow]){
+			var n = (pc.agi - 20) * 4;
+			if(irandom_range(0, 99) < n){ dam *= 2; }
+		}
 		if(c1.sick > 0){ dam = ceil(dam * .6); }
 		if(c1.attackIsLunge){ 
 			var v = c1 == pc ? " lunge into " : " lunges into ";

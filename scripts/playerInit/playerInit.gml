@@ -101,6 +101,7 @@ function playerInit(){
 	pc.trueStrike = 0;
 	pc.itemFind = 0;
 	pc.healing = 0;
+	pc.fly = 0;
 	
 	
 }

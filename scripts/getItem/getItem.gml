@@ -244,7 +244,7 @@ function getItem(t){
 		itm.bonus = 1;
 		itm.col = c_lime;
 		itm.props = ["Protection"];
-		itm.desc = "Reduces melee damage taken";
+		itm.desc = "Reduces damage from foes";
 	}
 	
 	if(t == "Ring of Wandskill"){ 
@@ -455,6 +455,18 @@ function getItem(t){
 		itm.col = c_orange;
 		itm.potID = ww.potItemFind;
 		itm.desc = "See nearby items";
+		itm.charges = 1;
+		itm.stacks = true;
+	}
+	
+	if(t == "Flight Potion"){ 
+		itm.img = imgPotionFly;
+		itm.kind = "Potion";
+		itm.throwPower = 0;
+		itm.bonus = 0;
+		itm.col = c_orange;
+		itm.potID = ww.potFly;
+		itm.desc = "Fly over traps";
 		itm.charges = 1;
 		itm.stacks = true;
 	}

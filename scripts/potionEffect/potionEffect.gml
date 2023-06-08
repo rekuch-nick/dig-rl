@@ -304,6 +304,19 @@ function potionEffect(pid, a, b){
 		}
 	}
 	
+	if(pid == ww.potFly){
+		if(m != noone){
+			if(m == pc && pc.perk[25]){
+				logMessage(m.nam + " stop flying for now");
+				if(m.fly > 0){ m.fly = 0; }
+			} else {
+				logMessage(m.nam + " can fly over traps");
+				m.fly += 40;
+			}
+			
+		}
+	}
+	
 	if(pid == ww.potFrost){
 		for(var aa=a-3; aa<=a+3; aa++){ for(var bb=b-3; bb<=b+3; bb++){
 			if(!inBounds(aa, bb)){ continue; }
@@ -370,6 +383,7 @@ function potionEffect(pid, a, b){
 				dam += 10;
 			}
 			mm.hp -= dam;
+			playerZapStrip(mm);
 			logMessageWhom(mm.nam, "get", " shocked", mm);
 		}
 		

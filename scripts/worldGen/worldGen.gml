@@ -214,7 +214,14 @@ function worldGen(){
 			}
 		}
 	}
-	
+	if(pc.stage == 31){
+		for(var a=0; a<ww.W; a++){
+			bmap[a, 14] = noone;
+			instance_destroy(pmap[a, 14]);
+			pmap[a, 14] = noone;
+		}
+		fmap[7, 14] = imgBGClassSpot;
+	}
 	
 	if(normalFeatures){
 	

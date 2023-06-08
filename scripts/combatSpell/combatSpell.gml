@@ -18,6 +18,8 @@ function combatSpell(c1, c2){
 		dam = clamp(dam - protReduction, 0, dam);
 	}
 	
+	if(c1 == pc){ playerZapStrip(c2); }
+	
 	c2.hp -= dam;
 	if(c2.hp < 1){ c1.dataKills ++; }
 	

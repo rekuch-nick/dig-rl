@@ -68,7 +68,7 @@ if(!moved && ready){
 			}
 			
 			if(ww.fmap[xSpot, ySpot].sprite_index == imgBGDirtSpikeHoles && ww.tmap[xSpot, ySpot] == noone){
-				if(!characterHasProp(id, "Flying")){
+				if(!characterHasProp(id, "Flying") && fly < 1){
 					ww.tmap[xSpot, ySpot] = instance_create_depth(xSpot*64, ySpot*64, ww.layerT, objTrap);
 				}
 			}

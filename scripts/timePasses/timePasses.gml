@@ -130,6 +130,20 @@ function timePasses(){
 			if(trueStrike > 0){ trueStrike --; }
 			if(itemFind > 0){ itemFind --; }
 			if(healing > 0){ healing --; }
+			if(fly > 0){ fly --; }
+			if(fly < 0){ fly ++; }
+		}
+		
+		if(id == pc && pc.perk[ww.perkTroll]){
+			var n = (pc.str - 20) * 2;
+			if(pc.str > 20){ n += 10; }
+			if(irandom_range(0, 99) < n){ poison = 0; }
+			if(irandom_range(0, 99) < n){ burning = 0; }
+			if(irandom_range(0, 99) < n){ slow = 0; }
+			if(irandom_range(0, 99) < n){ sick = 0; }
+			if(irandom_range(0, 99) < n){ frozen = 0; }
+			if(irandom_range(0, 99) < n){ slip = 0; }
+			if(irandom_range(0, 99) < n){ web = 0; }
 		}
 		
 		if(characterHasProp(id, "Displaced") && displace < 10){ displace = 10; }

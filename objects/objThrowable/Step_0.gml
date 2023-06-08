@@ -34,8 +34,15 @@ if(dis < -30){
 		}
 		
 		
+		if(pc.perk[ww.perkTitan]){
+			if(throwPower < 10){ throwPower = 10; }
+		}
+		
 		if(throwPower > 0){		
 			var dam = getMeleeMax(thrower);
+			if(pc.perk[ww.perkTitan]){
+				dam *= 2;
+			}
 			m.hp -= dam;	
 			var sn = m.hp < 1 ? m.nam + " is killed!" : "";
 			logMessage("Threw the " + nam + " at " + m.nam + " for " + string(dam) + ".");

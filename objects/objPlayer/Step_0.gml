@@ -16,6 +16,7 @@ if(keyboard_check_pressed(vk_f4)){
 if(keyboard_check_pressed(vk_f5)){ debugStats = !debugStats; }
 if(keyboard_check_pressed(vk_f6)){ nextRoom(); }
 
+if(pc.perk[25] && fly >= 0){ fly = 2; }
 
 if(characterHasProp(id, "Ice Immune")){ 
 	if(frozen > 0){ logMessage("You are immune to being frozen"); }
@@ -231,7 +232,7 @@ if(justFinished){
 		playerPickupItem(xSpot, ySpot);
 	}
 	
-	if(ww.fmap[xLast, yLast].sprite_index == imgBGDirtSpikeHoles && ww.tmap[xLast, yLast] == noone){
+	if(ww.fmap[xLast, yLast].sprite_index == imgBGDirtSpikeHoles && ww.tmap[xLast, yLast] == noone && fly < 1){
 		ww.tmap[xLast, yLast] = instance_create_depth(xLast*64, yLast*64, ww.layerT, objTrap);
 	}
 	
@@ -262,6 +263,11 @@ if(justFinished){
 			}
 			spawnWaterMob(xSpot, ySpot);
 		}
+	}
+	
+	if(ww.fmap[xSpot, ySpot].sprite_index == imgBGClassSpot){
+		ww.fmap[xSpot, ySpot].sprite_index = imgBGCauldren;
+		instance_create_depth(0, 0, ww.layerS, objScreenClass);
 	}
 	
 	if(ww.fmap[xSpot, ySpot].sprite_index == imgExit){
@@ -340,6 +346,7 @@ if(n != 0){
 
 if(keyboard_check_pressed(vk_backspace)){
 	instance_create_depth(0, 0, ww.layerS, objScreenRougeUpgrade);
+	//instance_create_depth(0, 0, ww.layerS, objScreenClass);
 	//spawnMobClose();
 }
 

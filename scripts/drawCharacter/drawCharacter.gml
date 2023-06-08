@@ -79,4 +79,8 @@ function drawCharacter(){
 		draw_sprite_ext(imgBlinkNext, floor(current_time / 400) % 3, x, y, 4, 4, 0, c_white, random_range(.5, .9));
 	}
 	
+	if(fly > 0 || characterHasProp(id, "Flying")){
+		draw_sprite_ext(imgItemFly, floor(current_time / 500) % 3, x, y, 4, 4, 0, c_white, .8);
+	}
+	
 }
