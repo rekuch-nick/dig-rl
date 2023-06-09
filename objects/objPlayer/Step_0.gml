@@ -128,8 +128,10 @@ if(!moved){
 			combat(id, ww.mmap[xTar, yTar]);
 			combatExtraTiles(id, xTar, yTar);
 			//mobsAttack();
-		} else if(inBounds(xTar, yTar) && ww.bmap[xTar, yTar] != noone && ww.bmap[xTar, yTar].sprite_index == imgBlockPush && pushBlock(xSpot, ySpot, xTar, yTar)) {
-			
+		} else if(inBounds(xTar, yTar) && ww.bmap[xTar, yTar] != noone && (ww.bmap[xTar, yTar].sprite_index == imgBlockPush || ww.bmap[xTar, yTar].sprite_index == imgBlockPushLight) && pushBlock(xSpot, ySpot, xTar, yTar)) {
+		
+		} else if(inBounds(xTar, yTar) && ww.bmap[xTar, yTar] != noone && ww.bmap[xTar, yTar].sprite_index == imgBlockPushHeavy) {
+			logMessage("This block is far too heavy to push");
 		} else {
 		
 			if(inBounds(xTar, yTar)){
@@ -153,9 +155,9 @@ if(!moved){
 					playerDigest(dc);
 					
 					if(dc >= 20){
-						logMessage("Digging up this is very exhausting! Watch your hunger.");
+						logMessage("Digging this is very exhausting! Watch your hunger.");
 					} else if(dc >= 10){
-						logMessage("Digging up rocks is exhausting! Watch your hunger.");
+						logMessage("Digging this is exhausting! Watch your hunger.");
 					}
 					
 					var a = xTar; var b = yTar;

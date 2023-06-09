@@ -6,5 +6,6 @@ function floorBreakable(a, b){
 	if(ww.fmap[a, b].sprite_index == imgBGDirtBlasted){ return true; }
 	
 	
+	
 	return false;
 }

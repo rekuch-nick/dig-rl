@@ -150,6 +150,23 @@ if(hp < 1){
 	}
 	
 	
+	//check for blood statue
+	for(var a=xSpot-1; a<=xSpot+1; a++){ for(var b=ySpot-1; b<=ySpot+1; b++){
+		if(!inBounds(a, b)){ continue; }
+		var bt = ww.bmap[a, b];
+		if(ww.bmap[a, b] != noone){
+			if(ww.mmap[a, b] == noone && bt.sprite_index == imgBlockMobStatueBlood04){ 
+				instance_destroy(ww.bmap[a, b]);
+				logMessage("The statue comes to life");
+				ww.bmap[a, b] = noone;
+				ww.mmap[a, b] = instance_create_depth(a * 64, b * 64, ww.layerM, objMobStatueBlood);
+			}
+			if(bt.sprite_index == imgBlockMobStatueBlood03){ ww.bmap[a, b].sprite_index = imgBlockMobStatueBlood04; }
+			if(bt.sprite_index == imgBlockMobStatueBlood02){ ww.bmap[a, b].sprite_index = imgBlockMobStatueBlood03; }
+			if(bt.sprite_index == imgBlockMobStatueBlood01){ ww.bmap[a, b].sprite_index = imgBlockMobStatueBlood02; }
+		}
+	}}
+	
 	
 	
 	if(ww.pmap[xSpot, ySpot] == noone){

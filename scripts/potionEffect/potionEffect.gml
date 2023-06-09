@@ -315,6 +315,12 @@ function potionEffect(pid, a, b){
 			}
 			
 		}
+		
+		
+		if(ww.bmap[a, b] != noone && ww.bmap[a, b].sprite_index == imgBlockPushHeavy){
+			ww.bmap[a, b].sprite_index = imgBlockPushLight;
+		}
+		
 	}
 	
 	if(pid == ww.potFrost){

@@ -2,8 +2,21 @@ function timePasses(){
 	
 	
 	
+	pc.metalSupressed = false;
+	for(var a=pc.xSpot-2; a<=pc.xSpot+2; a++){ for(var b=pc.ySpot-2; b<=pc.ySpot+2; b++){
+		if(inBounds(a, b) && ww.bmap[a, b] != noone && ww.bmap[a, b].sprite_index == imgBlockMagnet){
+			pc.metalSupressed = true;
+		}
+	}}
+	
+	
 	shootTurrets();
 	
+	ww.phaseCD --;
+	if(ww.phaseCD < 1){
+		ww.phaseCD = 3;
+		phaseBlocks();
+	}
 	
 	with(objWarning){
 		waitTurns --;
@@ -51,6 +64,22 @@ function timePasses(){
 		}
 	}
 	
+	with(objCreature){
+		if(!characterHasProp(id, "Flying") && fly < 1){
+			
+			var aa = xSpot; var bb = ySpot;
+			if(ww.fmap[xSpot, ySpot].sprite_index == imgBGDirtMoveDown && characterCanMove(id, xSpot, ySpot + 1)){ bb ++; }
+			if(ww.fmap[xSpot, ySpot].sprite_index == imgBGDirtMoveUp && characterCanMove(id, xSpot, ySpot - 1)){ bb --; }
+			if(ww.fmap[xSpot, ySpot].sprite_index == imgBGDirtMoveRight && characterCanMove(id, xSpot + 1, ySpot)){ aa ++; }
+			if(ww.fmap[xSpot, ySpot].sprite_index == imgBGDirtMoveLeft && characterCanMove(id, xSpot - 1, ySpot)){ aa --; }
+			if(aa != xSpot || bb != ySpot){
+				ww.mmap[xSpot, ySpot] = noone;
+				xSpot = aa; ySpot = bb;
+				ww.mmap[aa, bb] = id;
+			}
+		}
+	}
+	
 	
 	with(objMob){ 
 		//if(ww.fmap[xSpot, ySpot].playerSeen){
@@ -58,6 +87,13 @@ function timePasses(){
 				ready = true;
 			}
 		//}
+		
+		
+		
+		
+		
+		
+		
 	}
 	
 	playerDigest(2);

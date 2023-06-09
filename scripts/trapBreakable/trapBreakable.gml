@@ -4,6 +4,8 @@ function trapBreakable(a, b){
 	
 	if(ww.tmap[a, b].nam == "Web"){ return true; }
 	if(ww.tmap[a, b].nam == "Spikes"){ return true; }
+	if(ww.tmap[a, b].nam == "Summon"){ return true; }
+	
 	
 	
 	return false;

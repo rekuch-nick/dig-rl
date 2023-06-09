@@ -12,6 +12,8 @@ function worldGen(){
 	foodSpawned = 0;
 	worldGenMobTable(pc.stage);
 	flood = noone;
+	phaseCD = 3;
+	phaseBlue = true;
 	
 	zone = 0;
 	if(pc.stage >= 11 && pc.stage <= 20){ zone = 1; }
@@ -99,6 +101,14 @@ function worldGen(){
 	}
 	if(kind == "mix"){ 
 		worldGenStatic(imgBlock, noone); 
+		if(zone == 4){
+			worldGenReplaceAllBlocksWithBoth(imgBlock, imgBlockPhasePink, imgBGDirtPhasePink);
+			worldGenReplaceAllBlocksWithBoth(noone, noone, imgBGDirtPhaseBlue);
+		}
+		if(zone == 2){
+			worldGenReplaceRandomFloor(imgBGDirt, imgBGDirtMoveDown, 240);
+		}
+		
 		if(pc.stage >= 15 && choose(true, false)){
 			worldGenRiver(-1, -1, -1, -1);
 			worldGenReplaceRandomFloor(imgWaterLava, imgWaterLavaRock, floor(worldGenCount(imgWaterLava)) / 3);
@@ -214,7 +224,7 @@ function worldGen(){
 			}
 		}
 	}
-	if(pc.stage == 31){
+	if(pc.stage == 21){
 		for(var a=0; a<ww.W; a++){
 			bmap[a, 14] = noone;
 			instance_destroy(pmap[a, 14]);
@@ -222,6 +232,11 @@ function worldGen(){
 		}
 		fmap[7, 14] = imgBGClassSpot;
 	}
+	
+	
+	//worldGenReplaceRandomFloor(imgBGDirt, imgBGDirtMoveUp, 240);
+	//worldGenReplaceRandomBlocks(imgBlock, imgBlockMobStatueBlood01, 60);
+	
 	
 	if(normalFeatures){
 	
@@ -261,12 +276,18 @@ function worldGen(){
 	//worldGenBiomeSprites(zone);
 	worldGenFinilize();
 	
+	rotateMoveFloors();
+	
 	if(kind == "boss"){
 		for(var a=0; a<W; a++){ for(var b=6; b<H; b++){
 			 if(bmap[a, b] != noone && choose(true, false)){
 				 bmap[a, b].hp -= irandom_range(1, 5) * 5;
 			 }
 		 }}
+	}
+	
+	if(pc.perk[ww.perkBom]){
+		putPupAt("Blasting Potion", pc.xFirst + 2, pc.yFirst);
 	}
 	
 	//remove all monsters for speed tests

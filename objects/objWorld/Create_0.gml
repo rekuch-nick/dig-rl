@@ -58,6 +58,7 @@ perkDesc[7] = "Normally you will cannot find another wand after getting 3 of the
 perkDesc[8] = "All potions are IDed";
 perkDesc[9] = "Treasure Potions last much longer. Start with 3.";
 perkDesc[10] = "Drinking any potion will give you some bonus healing over time as well as its normal effect.";
+perkDesc[11] = "Find a blasting potion at the start of each stage.";
 
 perkDesc[20] = "Each point of STR over 20 gives you a chance to shrug off debuffs";
 perkDesc[21] = "Each point of AGI over 20 gives .5 DEF and a small chance to deal double damage";
@@ -78,6 +79,7 @@ perkWandMore = 7;
 perkIDPotions = 8;
 perkLongTreasure = 9;
 perkPotionsHeal = 10;
+perkBom = 11;
 
 perkTroll = 20;
 perkShadow = 21;

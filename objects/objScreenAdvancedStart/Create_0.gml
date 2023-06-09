@@ -82,6 +82,10 @@ bPerkScav = instance_create_depth(480, 480, depth - 1, objSetupButton);
 bPerkScav.txt = "Scavenge Knives";
 bPerkScav.desc = ww.perkDesc[ww.perkScan];
 
+bPerkBom = instance_create_depth(800, 480, depth - 1, objSetupButton);
+bPerkBom.txt = "Scavenge Bombs";
+bPerkBom.desc = ww.perkDesc[ww.perkBom];
+
 bPerkWandMore = instance_create_depth(816, 440, depth - 1, objSetupButton);
 bPerkWandMore.txt = "Can find 4th Wand";
 bPerkWandMore.desc = ww.perkDesc[ww.perkWandMore];

@@ -1,5 +1,10 @@
 function randomEncounter(ignoreLevel){
 	
+	
+	
+	
+	
+	
 	do {
 		var e = choose(	
 			{kind: objMob, m1: 1, m2: 2, l: -10},
@@ -31,7 +36,7 @@ function randomEncounter(ignoreLevel){
 			{kind: objMobPhantom, m1: 1, m2: 2, l: 10},
 			{kind: objMobCreep, m1: 1, m2: 1, l: 10},
 			{kind: objMobCreep2, m1: 1, m2: 1, l: 10},
-			{kind: objMobFungusFighter, m1: 1, m2: 1, l: 10},
+			{kind: objMobSnake, m1: 1, m2: 1, l: 10},
 			{kind: objMobDarkBug, m1: 1, m2: 1, l: 10},
 			{kind: objMobBlastTurtle, m1: 1, m2: 2, l: 10},
 			

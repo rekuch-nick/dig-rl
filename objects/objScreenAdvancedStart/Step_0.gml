@@ -74,7 +74,7 @@ if(!go.selected){
 	
 	if(bBombs.selected){ 
 		var i = getItem("Blasting Potion");
-		i.charges = 10;
+		i.charges = 30;
 		playerGainItem(i);
 		pc.potionKnown[ww.potBomb] = true;
 	}
@@ -120,6 +120,7 @@ if(!go.selected){
 	if(bPerkMole.selected){ pc.digPow = 3; pc.agi -= 2; pc.agiMax -= 2; pc.perk[ww.perkMoleHands] = true; }
 	if(bPerkFin.selected){ pc.finesse = true; pc.perk[ww.perkFin] = true; }
 	if(bPerkScav.selected){ pc.knifeFind = true; pc.perk[ww.perkScan] = true; pc.hpMax -= 100; pc.hp -= 100; }
+	if(bPerkBom.selected){ pc.perk[ww.perkBom] = true; pc.potionKnown[ww.potBomb] = true; }
 	if(bPerkLongT.selected){
 		var i = getItem("Treasure Potion");
 		i.charges = 3;

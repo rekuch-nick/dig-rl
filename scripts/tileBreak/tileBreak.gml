@@ -3,6 +3,7 @@ function tileBreak(a, b){
 	if(ww.bmap[a, b] == noone){ return; }
 	
 	var spt = ww.bmap[a, b].sprite_index;
+	var blo = ww.bmap[a, b];
 	
 	if(spt == imgBlock || spt == imgBlockGrass
 				|| spt == imgBlockCactus
@@ -21,9 +22,18 @@ function tileBreak(a, b){
 		}
 	}
 	
-	
-	
-	
-	instance_destroy(ww.bmap[a, b]);
 	ww.bmap[a, b] = noone;
+	instance_destroy(blo);
+	
+	if(spt == imgBlockBlast){
+		for(var aa=a-2; aa<=a+2; aa++){ for(var bb=b-2; bb<=b+2; bb++){
+			if(a == aa && b == bb){ continue; }
+			if(inBounds(aa, bb) && ww.bmap[aa, bb] != noone){ tileBreak(aa, bb); }
+		}}
+		potionEffect(ww.potBomb, a, b);
+	}
+	
+	
+	
+	
 }

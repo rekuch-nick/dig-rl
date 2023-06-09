@@ -18,7 +18,14 @@ function worldGenFeatureAt(aa, bb){
 		{t: "item guard", c: 10},
 		{t: "warp", c: 30},
 		{t: "cactus", c: 20},
-		{t: "spike holes", c: 40},
+		{t: "spike holes", c: 35},
+		{t: "move tiles", c: 30},
+		{t: "cannons", c: 20},
+		{t: "tnt", c: 20},
+		{t: "push", c: 20},
+		{t: "summon", c: 15},
+		
+		
 	);
 	var r = irandom_range(0, 99);
 	if(fet.t == "trap" && r < fet.c){
@@ -42,6 +49,9 @@ function worldGenFeatureAt(aa, bb){
 	} else if(fet.t == "cauldren" && r < fet.c){
 		bmap[aa, bb] = noone;
 		fmap[aa, bb] = imgBGCauldren;
+	} else if(fet.t == "summon" && r < fet.c){
+		bmap[aa, bb] = noone;
+		tmap[aa, bb] = objTrapSummon;
 	} else if(fet.t == "grass" && r < fet.c){
 		for(var a=aMin; a<=aMax; a++){ for(var b=bMin; b<=bMax; b++){ if(inBounds(a, b)){
 			if(bmap[a, b] == noone && fmap[a, b] == imgBGDirt ){
@@ -123,5 +133,40 @@ function worldGenFeatureAt(aa, bb){
 			}
 			
 		}}}
+	} else if(fet.t == "move tiles" && r < fet.c){
+		for(var a=aMin; a<=aMax; a++){ for(var b=bMin; b<=bMax; b++){ if(inBounds(a, b)){
+			if(bmap[a, b] == noone && fmap[a, b] == imgBGDirt ){
+				r = irandom_range(0, 99);
+				if(r < 85 || a == aMin + 2 || b == bMin + 2){
+					fmap[a, b] = imgBGDirtMoveDown;
+				}
+			}
+		}}}
+	} else if(fet.t == "tnt" && r < fet.c){
+		for(var a=aMin; a<=aMax; a++){ for(var b=bMin; b<=bMax; b++){ if(inBounds(a, b)){
+			r = irandom_range(0, 99);
+			if(r < 85){
+				bmap[a, b] = imgBlock;
+			} else {
+				bmap[a, b] = imgBlockBlast;
+			}
+			
+		}}}
+	} else if(fet.t == "cannons" && r < fet.c){
+		for(var a=aMin; a<=aMax; a++){ for(var b=bMin; b<=bMax; b++){ if(inBounds(a, b)){
+			r = irandom_range(0, 99);
+			if(r < 20){
+				bmap[a, b] = imgBlockTurret;
+			}
+			
+		}}}
+	} else if(fet.t == "push" && r < fet.c){
+		for(var a=aMin; a<=aMax; a++){ for(var b=bMin; b<=bMax; b++){ if(inBounds(a, b)){
+			r = irandom_range(0, 99);
+			if(r < 20){
+				bmap[a, b] = imgBlockPush;
+			}
+		}}}
+		
 	}
 }

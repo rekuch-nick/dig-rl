@@ -88,3 +88,4 @@ lavaProof = false;
 acidProof = false;
 waterProof = true;
 fireProof = false;
+metalSupressed = false;
