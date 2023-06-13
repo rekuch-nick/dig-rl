@@ -389,7 +389,7 @@ function potionEffect(pid, a, b){
 				dam += 10;
 			}
 			mm.hp -= dam;
-			playerZapStrip(mm);
+			if(pc.perk[ww.perkRaiju]){ playerZapStrip(mm); }
 			logMessageWhom(mm.nam, "get", " shocked", mm);
 		}
 		

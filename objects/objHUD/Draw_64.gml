@@ -143,3 +143,7 @@ if(perkDesc != -1){
 	draw_text_ext(10, 64 * 11 + 10, ww.perkDesc[perkDesc], 22, room_width - 20);
 }
 
+//diff level
+for(var i=0; i<pc.difficultyLevel; i++){
+	draw_sprite_stretched(imgDiffMark, 0, i * 15, 12 * 64 - 15, 15, 15);
+}

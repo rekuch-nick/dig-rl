@@ -11,7 +11,7 @@ do {
 	up[2] = randomRarePotionType();
 	up[3] = "STR Potion";
 	up[4] = "AGI Potion";
-	up[5] = "Food";
+	up[5] = "Cake";
 } until (
 	up[1] != up[2] && up[2] != up[3] && up[1] != up[3]
 );

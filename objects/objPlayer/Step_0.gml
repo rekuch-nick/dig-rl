@@ -5,6 +5,14 @@ if(instance_number(objScreen) > 0){ return; }
 if(wait > 0){ wait--; return; }
 firstFrame = false;
 
+if(cleanBlocks){
+	cleanBlocks = false;
+	with(objBlock){
+		x = xSpot * 64;
+		y = ySpot * 64;
+	}
+}
+
 if(keyboard_check_pressed(vk_f4)){ 
 	debugMode = !debugMode; 
 	if(debugMode){ 
@@ -154,7 +162,15 @@ if(!moved){
 					if(characterHasProp(pc, "Stone Carving")){ dp = dp * 2; }
 					playerDigest(dc);
 					
-					if(dc >= 20){
+					if(ww.bmap[xTar, yTar].sprite_index == imgBlockMobStatueGold) {
+						logMessage("Breaking this will make all future monsters stronger,");
+						logMessage("but will hasten your journey towards the Holy Rouge");
+						with(objBlock){
+							x += irandom_range(-20, 20);
+							y += irandom_range(-20, 20);
+						}
+						cleanBlocks = true;
+					} else if(dc >= 20){
 						logMessage("Digging this is very exhausting! Watch your hunger.");
 					} else if(dc >= 10){
 						logMessage("Digging this is exhausting! Watch your hunger.");

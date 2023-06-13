@@ -7,6 +7,9 @@ image_xscale = 4; image_yscale = 4;
 depth = -7010;
 showBlood = false;
 aly = 1;
+
+difficultyLevel = 0;
+
 playerInit();
 firstFrame = true;
 
@@ -75,4 +78,4 @@ debugStats = false;
 
 itemCursor = 0;
 hotbarLeftmost = 0;
-
+cleanBlocks = false;

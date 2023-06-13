@@ -16,7 +16,7 @@ function defineMobSets(){
 			{kind: objMobGolem, m1: 1, m2: 2, l: 3},
 			{kind: objMobGrub, m1: 1, m2: 2, l: 4},
 			{kind: objMobSnailAcid, m1: 1, m2: 3, l: 5},
-			{kind: objMobThief, m1: 1, m2: 3, l: 6},
+			{kind: objMobThief, m1: 1, m2: 2, l: 6},
 			{kind: objMobFireSkull, m1: 1, m2: 2, l: 7},
 			noone,
 			{kind: objMobGreenKnight, m1: 1, m2: 2, l: 9},

@@ -22,6 +22,12 @@ function tileBreak(a, b){
 		}
 	}
 	
+	if(spt == imgBlockMobStatueGold){
+		logMessage("The golden idol shatters.");
+		logMessage("The monsters scream with rage and hunger...");
+		pc.difficultyLevel += 1;
+	}
+	
 	ww.bmap[a, b] = noone;
 	instance_destroy(blo);
 	

@@ -3,6 +3,9 @@ function playerInit(){
 	ds_list_destroy(ww.itemDeck);
 	ww.itemDeck = ds_list_create();
 	
+	pc.itemCursor = 0;
+	pc.hotbarLeftmost = 0;
+	
 	pc.x = 320;
 	pc.y = 320;
 	pc.xSpot = 5;
@@ -103,5 +106,6 @@ function playerInit(){
 	pc.healing = 0;
 	pc.fly = 0;
 	
+	pc.difficultyLevel = 0;
 	
 }

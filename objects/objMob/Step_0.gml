@@ -175,7 +175,7 @@ if(hp < 1){
 			var t = imgHeart;
 		}
 		if(isRogue){ t = imgHeartStack; }
-		if(t == noone && pc.knifeFind && hpMax > 10){ t = "Throwing Knife"; }
+		if(t == noone && (pc.knifeFind || choose(true, false)) && hpMax > 10 ){ t = "Throwing Knife"; }
 		if(t == "Throwing Knife"){
 			var i = putPupAt(t, xSpot, ySpot);
 			if(i != noone){ i.image_speed = 0; }

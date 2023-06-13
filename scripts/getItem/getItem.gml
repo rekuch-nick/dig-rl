@@ -81,6 +81,17 @@ function getItem(t){
 		itm.stacks = true;
 	}
 	
+	if(t == "Cake"){ 
+		itm.img = imgFood2;
+		itm.kind = "Food";
+		itm.bonus = 0;
+		itm.col = $A3620A;
+		itm.food = 2000;
+		itm.desc = "Cure all Hunger";
+		itm.charges = 1;
+		itm.stacks = true;
+	}
+	
 	if(t == "Gladius"){ 
 		itm.img = imgGearWepGlad;
 		itm.kind = "Weapon";

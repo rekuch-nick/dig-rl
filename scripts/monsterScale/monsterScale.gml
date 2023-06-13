@@ -1,6 +1,9 @@
 function monsterScale(hpS, acS, aimS, strS, damS, splS){
 	
 	var lvl = floor( (pc.stage - 1) / 5);
+	
+	//lvl = pc.difficultyLevel; ///
+	
 	if(lvl < 0){ lvl = 0; }
 	
 	/*

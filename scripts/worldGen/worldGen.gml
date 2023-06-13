@@ -269,7 +269,9 @@ function worldGen(){
 	}
 	
 	
-
+	if(choose(true, false)){
+		worldGenReplaceRandomBlocks(imgBlock, imgBlockMobStatueGold, irandom_range(1, 3));
+	}
 	
 	
 	

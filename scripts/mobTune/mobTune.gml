@@ -2,6 +2,7 @@ function mobTune(role){
 	
 	//var lvl = floor( (pc.stage + 4) / 5);
 	var lvl = floor( (pc.stage) / 5);
+	lvl = pc.difficultyLevel; ///
 	if(lvl < 0){ lvl = 0; }
 	
 	
@@ -9,7 +10,7 @@ function mobTune(role){
 	//role == rank, default
 	hp = 20 + (lvl * 10);
 	ac = 14 + (lvl * 2);
-	aim = 8 + (lvl + 2);
+	aim = 8 + (lvl * 2);
 	str = 10 + 4 + (lvl * 2);
 	damRange = 6 + (lvl * 2);
 	splRange = 4 + (lvl * 2);
@@ -21,7 +22,7 @@ function mobTune(role){
 	if(role == mobRole.goon){
 		hp = 10 + (lvl * 10);
 		ac = 10 + (lvl * 2);
-		aim = 8 + (lvl + 2);
+		aim = 8 + (lvl * 2);
 		str = 10 + 4 + (lvl * 2);
 		damRange = 6 + (lvl * 2);
 		splRange = 6 + (lvl * 2);
@@ -29,9 +30,9 @@ function mobTune(role){
 	
 	if(role == mobRole.sponge){
 		hp = 30 + (lvl * 15);
-		ac = 10 + (lvl * 2);
-		aim = 8 + (lvl + 2);
-		str = 10 + 4 + (lvl * 2);
+		ac = 10 + (lvl * 1);
+		aim = 8 + (lvl * 1);
+		str = 10 + 4 + (lvl * 1);
 		damRange = 6 + (lvl * 2);
 		splRange = 6 + (lvl * 2);
 	}
@@ -39,7 +40,7 @@ function mobTune(role){
 	if(role == mobRole.champ){
 		hp = 30 + (lvl * 15);
 		ac = 16 + (lvl * 3);
-		aim = 12 + (lvl + 3);
+		aim = 12 + (lvl * 3);
 		str = 10 + 6 + (lvl * 3);
 		damRange = 9 + (lvl * 3);
 		splRange = 9 + (lvl * 3);
@@ -51,10 +52,10 @@ function mobTune(role){
 	
 	if(role == mobRole.brute){
 		hp = 40 + (lvl * 20);
-		ac = 10 + (lvl * 2);
-		aim = 4 + (lvl + 1);
+		ac = 10 + (lvl * 1);
+		aim = 4 + (lvl * 1);
 		str = 10 + 8 + (lvl * 4);
-		damRange = 9 + (lvl * 3);
+		damRange = 9 + (lvl * 4);
 	}
 	
 	if(role == mobRole.wild){
@@ -71,8 +72,8 @@ function mobTune(role){
 	if(role == mobRole.bat){
 		hp = 10 + (lvl * 10);
 		ac = 18 + (lvl * 4);
-		aim = 8 + (lvl + 2);
-		str = 10 + 4 + (lvl * 2);
+		aim = 8 + (lvl * 2);
+		str = 10 + 4 + (lvl * 1);
 		damRange = 6 + (lvl * 2);
 	}
 	
@@ -80,7 +81,7 @@ function mobTune(role){
 		hp = 300 + (lvl * 100);
 		ac = 16 + (lvl * 3);
 		aim = 16 + (lvl * 3);
-		str = 10 + 8 + (lvl * 4);
+		str = 10 + 6 + (lvl * 4);
 		damRange = 12 + (lvl * 4);
 		splRange = 12 + (lvl * 4);
 	}
