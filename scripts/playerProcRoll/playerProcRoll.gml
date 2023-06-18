@@ -73,7 +73,7 @@ function playerProcRoll(c1, c2){
 		bns = itemPropBonus(pc, "Flaming Burst");
 		pc.procLuck ++;
 		if(roll + (bns * 5) >= 100){
-			potionEffect(ww.potBomb, c2.xSpot, c2.ySpot);
+			potionEffect(ww.potBombSmart, c2.xSpot, c2.ySpot);
 			pc.procLuck = pc.procLuckBase;
 		}
 	}

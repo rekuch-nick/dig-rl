@@ -18,9 +18,10 @@ function potionEffect(pid, a, b){
 		}
 	}
 	
-	if(pid == ww.potBomb){
+	if(pid == ww.potBomb || pid == ww.potBombSmart){
 		for(var aa=a-1; aa<=a+1; aa++){ for(var bb=b-1; bb<=b+1; bb++){
 			if(!inBounds(aa, bb)){ continue; }
+			if(pid == ww.potBombSmart && aa == pc.xSpot && bb == pc.ySpot){ continue; }
 			
 			instance_create_depth(aa * 64, bb * 64, ww.layerE, effBlast);
 			

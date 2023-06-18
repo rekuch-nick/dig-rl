@@ -1,5 +1,5 @@
 if(instance_number(objScreen) > 1){ return; }
-
+if(keyboard_check(vk_alt)){ return; }
 
 //if(pc.clickChar == "R"){
 if(keyboard_check(ord("R"))){
