@@ -92,7 +92,7 @@ perkPegasus = 25;
 wepDesc[1] = "Swords grant Spring Attack: Make a free attack immediately after steping towards an enemy.";
 wepDesc[2] = "Spears grant Strikethrough: Hit the two tiles behind an enemy when attacking.";
 wepDesc[3] = "Axes grant Cleave: Make a free attack for 1/3 damage against other adjacent enemies when attacking.";
-wepDesc[4] = "Mauls grant Shockwave: Clip your enemy for 1/4 damage even when the attack would miss.";
+wepDesc[4] = "Mauls grant Shockwave: Clip your enemy for 1/3 damage even when the attack would miss.";
 
 armDesc[1] = "Leather Armor grants 2 DEF and lets you add any AGI bonus to your DEF as long as STR is 10 or more. Being non-metal, it is immune to some effects."
 armDesc[2] = "Scale Armor grants 4 DEF and lets you add any AGI bonus to your DEF as long as STR is 12 or more."
