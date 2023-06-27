@@ -79,3 +79,4 @@ debugStats = false;
 itemCursor = 0;
 hotbarLeftmost = 0;
 cleanBlocks = false;
+pastRouge = false;

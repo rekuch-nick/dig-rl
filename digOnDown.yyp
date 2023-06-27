@@ -152,6 +152,7 @@
     {"id":{"name":"objScreen","path":"objects/objScreen/objScreen.yy",},},
     {"id":{"name":"objBagBar","path":"objects/objBagBar/objBagBar.yy",},},
     {"id":{"name":"objBlock","path":"objects/objBlock/objBlock.yy",},},
+    {"id":{"name":"imgRougeCursor","path":"sprites/imgRougeCursor/imgRougeCursor.yy",},},
     {"id":{"name":"imgBGDirtPhasePink","path":"sprites/imgBGDirtPhasePink/imgBGDirtPhasePink.yy",},},
     {"id":{"name":"imgHeart","path":"sprites/imgHeart/imgHeart.yy",},},
     {"id":{"name":"imgHeal","path":"sprites/imgHeal/imgHeal.yy",},},

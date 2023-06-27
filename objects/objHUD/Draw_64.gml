@@ -147,3 +147,11 @@ if(perkDesc != -1){
 for(var i=0; i<pc.difficultyLevel; i++){
 	draw_sprite_stretched(imgDiffMark, 0, i * 15, 12 * 64 - 15, 15, 15);
 }
+
+
+
+with(objRougeFlake){
+	if(pc.ySpot > ySpot + 4){
+		draw_sprite_stretched(imgRougeCursor, choose(0, 1), x, 64, 64, 64);
+	}
+}

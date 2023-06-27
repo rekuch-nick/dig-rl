@@ -14,6 +14,7 @@ function worldGen(){
 	flood = noone;
 	phaseCD = 3;
 	phaseBlue = true;
+	xRouge = -1; yRouge = -1;
 	
 	zone = 0;
 	if(pc.stage >= 11 && pc.stage <= 20){ zone = 1; }
@@ -262,6 +263,8 @@ function worldGen(){
 			bmap[a, b] = noone;
 			instance_destroy(pmap[a, b]);
 			pmap[a, b] = instance_create_depth(a*64, b*64, layerP, objRougeFlake);
+			pmap[a, b].xSpot = a;
+			pmap[a, b].ySpot = b;
 		}
 		
 		

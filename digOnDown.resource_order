@@ -98,6 +98,7 @@
     {"name":"objScreen","order":7,"path":"objects/objScreen/objScreen.yy",},
     {"name":"objBagBar","order":19,"path":"objects/objBagBar/objBagBar.yy",},
     {"name":"objBlock","order":10,"path":"objects/objBlock/objBlock.yy",},
+    {"name":"imgRougeCursor","order":23,"path":"sprites/imgRougeCursor/imgRougeCursor.yy",},
     {"name":"imgBGDirtPhasePink","order":57,"path":"sprites/imgBGDirtPhasePink/imgBGDirtPhasePink.yy",},
     {"name":"imgHeart","order":98,"path":"sprites/imgHeart/imgHeart.yy",},
     {"name":"imgHeal","order":13,"path":"sprites/imgHeal/imgHeal.yy",},

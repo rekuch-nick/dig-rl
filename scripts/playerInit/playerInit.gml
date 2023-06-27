@@ -107,5 +107,5 @@ function playerInit(){
 	pc.fly = 0;
 	
 	pc.difficultyLevel = 0;
-	
+	pc.pastRouge = false;
 }

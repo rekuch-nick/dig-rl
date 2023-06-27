@@ -257,6 +257,10 @@ if(justFinished){
 	spawnGrassMob(xLast, yLast);
 	
 	
+	
+	
+	
+	
 	timePasses();
 	
 	spawnStatueMob(xSpot, ySpot);
